@@ -1,0 +1,14 @@
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\bin\Debug\MedicalComponents.exe.config
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\bin\Debug\MedicalComponents.exe
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\bin\Debug\MedicalComponents.pdb
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\obj\Debug\MedicalComponents.csprojResolveAssemblyReference.cache
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\obj\Debug\MedicalComponents.DBEditing.resources
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\obj\Debug\MedicalComponents.DBEditingV2.resources
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\obj\Debug\MedicalComponents.DBEditingV3.resources
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\obj\Debug\MedicalComponents.MainMenu.resources
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\obj\Debug\MedicalComponents.Properties.Resources.resources
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\obj\Debug\MedicalComponents.csproj.GenerateResource.cache
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\obj\Debug\MedicalComponents.csproj.CoreCompileInputs.cache
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\obj\Debug\MedicalComponents.exe
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\obj\Debug\MedicalComponents.pdb
+C:\учеба\C# MVC\DIPLOM\MedicalComponents\MedicalComponents\obj\Debug\MedicalComponents.EditingWindow.resources
