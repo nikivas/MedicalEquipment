@@ -34,21 +34,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,93 +136,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Фильтры";
             // 
-            // label3
+            // comboBox3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Дата:";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(262, 113);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(341, 28);
+            this.comboBox3.TabIndex = 14;
+            this.comboBox3.Text = "хирургическое торакальное отделение";
             // 
-            // label4
+            // label9
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(62, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "после";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(7, 117);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(104, 20);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Отделение :";
             // 
-            // label5
+            // comboBox2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(328, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 20);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "до";
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Дефибриллятор"});
+            this.comboBox2.Location = new System.Drawing.Point(202, 154);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(277, 28);
+            this.comboBox2.TabIndex = 12;
+            this.comboBox2.Text = "все";
             // 
-            // dateTimePicker1
+            // label8
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(122, 34);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 3;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(363, 34);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker2.TabIndex = 4;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 79);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(153, 20);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Группа отделений:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(262, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(218, 28);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "Реаниматологии";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 235);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(299, 20);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Калькулятор драгоценных металлов :";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(379, 232);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "0.0 гр.";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(153, 199);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(152, 24);
-            this.radioButton1.TabIndex = 9;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "По возрастанию";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 157);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(190, 20);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Модель оборудования :";
             // 
             // radioButton2
             // 
@@ -235,43 +185,93 @@
             this.radioButton2.Text = "По убыванию";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // radioButton1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 157);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(190, 20);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Модель оборудования :";
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(153, 199);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(152, 24);
+            this.radioButton1.TabIndex = 9;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "По возрастанию";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // textBox1
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Дефибриллятор"});
-            this.comboBox2.Location = new System.Drawing.Point(202, 154);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(277, 28);
-            this.comboBox2.TabIndex = 12;
-            this.comboBox2.Text = "Дефибриллятор";
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(379, 232);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.Text = "0.0 гр.";
             // 
-            // comboBox3
+            // label7
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(262, 113);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(218, 28);
-            this.comboBox3.TabIndex = 14;
-            this.comboBox3.Text = "Реаниматологии";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 235);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(299, 20);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Калькулятор драгоценных металлов :";
             // 
-            // label9
+            // comboBox1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 117);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 20);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Отделение :";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(262, 75);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(341, 28);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.Text = "отделения хирургической помощи";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 79);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(153, 20);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Группа отделений:";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(402, 37);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker2.TabIndex = 4;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(122, 34);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(367, 37);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 20);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "до";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(62, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 20);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "после";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Дата:";
             // 
             // ReportsForm
             // 

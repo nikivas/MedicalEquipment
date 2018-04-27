@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -94,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditingOrganisationsWindow.resx">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphicsForm.resx">
+      <DependentUpon>GraphicsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>

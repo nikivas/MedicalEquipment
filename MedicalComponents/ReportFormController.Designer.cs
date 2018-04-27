@@ -133,7 +133,7 @@
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(277, 28);
             this.comboBox5.TabIndex = 18;
-            this.comboBox5.Text = "Дефибриллятор";
+            this.comboBox5.Text = "все";
             // 
             // label11
             // 
@@ -149,9 +149,9 @@
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(262, 150);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(218, 28);
+            this.comboBox4.Size = new System.Drawing.Size(361, 28);
             this.comboBox4.TabIndex = 16;
-            this.comboBox4.Text = "Реаниматологии";
+            this.comboBox4.Text = "все";
             // 
             // label10
             // 
@@ -167,9 +167,9 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(262, 114);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(218, 28);
+            this.comboBox3.Size = new System.Drawing.Size(361, 28);
             this.comboBox3.TabIndex = 14;
-            this.comboBox3.Text = "Реаниматологии";
+            this.comboBox3.Text = "хирургическое торакальное отделение";
             // 
             // label9
             // 
@@ -189,7 +189,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(277, 28);
             this.comboBox2.TabIndex = 12;
-            this.comboBox2.Text = "Дефибриллятор";
+            this.comboBox2.Text = "все";
             // 
             // label8
             // 
@@ -245,9 +245,9 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(262, 75);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(218, 28);
+            this.comboBox1.Size = new System.Drawing.Size(361, 28);
             this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "Реаниматологии";
+            this.comboBox1.Text = "отделения хирургической помощи";
             // 
             // label6
             // 
@@ -260,7 +260,7 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(363, 34);
+            this.dateTimePicker2.Location = new System.Drawing.Point(423, 34);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
             this.dateTimePicker2.TabIndex = 4;
@@ -275,7 +275,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(328, 34);
+            this.label5.Location = new System.Drawing.Point(388, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 20);
             this.label5.TabIndex = 2;
