@@ -24,12 +24,14 @@ namespace MedicalComponents
 
         private void buttonHelpTableEditing_Click(object sender, EventArgs e)
         {
-            new DBEditingV2().Show();
+            new DBEditing().Show();
         }
 
         private void buttonReports_Click(object sender, EventArgs e)
         {
-            new DBEditingV3().Show();
+            new ReportsForm().Show();
+            new ReportFormController().Show();
+            new ReportFormRM().Show();
         }
 
         private void buttonPurchasePlan_Click(object sender, EventArgs e)

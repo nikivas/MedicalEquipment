@@ -51,23 +51,17 @@
     <Compile Include="DBEditing.Designer.cs">
       <DependentUpon>DBEditing.cs</DependentUpon>
     </Compile>
-    <Compile Include="DBEditingV2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DBEditingV2.Designer.cs">
-      <DependentUpon>DBEditingV2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DBEditingV3.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DBEditingV3.Designer.cs">
-      <DependentUpon>DBEditingV3.cs</DependentUpon>
-    </Compile>
     <Compile Include="EditingOrganisationsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditingOrganisationsWindow.Designer.cs">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphicsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphicsForm.Designer.cs">
+      <DependentUpon>GraphicsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -77,14 +71,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportFormController.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportFormController.Designer.cs">
+      <DependentUpon>ReportFormController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportFormRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportFormRM.Designer.cs">
+      <DependentUpon>ReportFormRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportsForm.Designer.cs">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DBEditing.resx">
       <DependentUpon>DBEditing.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DBEditingV2.resx">
-      <DependentUpon>DBEditingV2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DBEditingV3.resx">
-      <DependentUpon>DBEditingV3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditingOrganisationsWindow.resx">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
@@ -102,6 +108,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReportFormController.resx">
+      <DependentUpon>ReportFormController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFormRM.resx">
+      <DependentUpon>ReportFormRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -40,7 +40,7 @@
             // 
             // buttonTableEditing
             // 
-            this.buttonTableEditing.BackColor = System.Drawing.Color.Yellow;
+            this.buttonTableEditing.BackColor = System.Drawing.Color.Turquoise;
             this.buttonTableEditing.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTableEditing.Location = new System.Drawing.Point(12, 164);
             this.buttonTableEditing.Name = "buttonTableEditing";
@@ -52,7 +52,7 @@
             // 
             // buttonHelpTableEditing
             // 
-            this.buttonHelpTableEditing.BackColor = System.Drawing.Color.LawnGreen;
+            this.buttonHelpTableEditing.BackColor = System.Drawing.Color.Turquoise;
             this.buttonHelpTableEditing.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonHelpTableEditing.Location = new System.Drawing.Point(12, 230);
             this.buttonHelpTableEditing.Name = "buttonHelpTableEditing";
@@ -76,7 +76,7 @@
             // 
             // buttonPurchasePlan
             // 
-            this.buttonPurchasePlan.BackColor = System.Drawing.Color.Aqua;
+            this.buttonPurchasePlan.BackColor = System.Drawing.Color.Turquoise;
             this.buttonPurchasePlan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPurchasePlan.Location = new System.Drawing.Point(12, 362);
             this.buttonPurchasePlan.Name = "buttonPurchasePlan";
@@ -88,7 +88,7 @@
             // 
             // buttonSPPRAdministration
             // 
-            this.buttonSPPRAdministration.BackColor = System.Drawing.Color.Aqua;
+            this.buttonSPPRAdministration.BackColor = System.Drawing.Color.Turquoise;
             this.buttonSPPRAdministration.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSPPRAdministration.Location = new System.Drawing.Point(355, 362);
             this.buttonSPPRAdministration.Name = "buttonSPPRAdministration";
@@ -99,7 +99,7 @@
             // 
             // buttonAbout
             // 
-            this.buttonAbout.BackColor = System.Drawing.Color.Yellow;
+            this.buttonAbout.BackColor = System.Drawing.Color.Turquoise;
             this.buttonAbout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAbout.Location = new System.Drawing.Point(355, 164);
             this.buttonAbout.Name = "buttonAbout";
@@ -110,7 +110,7 @@
             // 
             // buttonSPPRInformation
             // 
-            this.buttonSPPRInformation.BackColor = System.Drawing.Color.LawnGreen;
+            this.buttonSPPRInformation.BackColor = System.Drawing.Color.Turquoise;
             this.buttonSPPRInformation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSPPRInformation.Location = new System.Drawing.Point(355, 230);
             this.buttonSPPRInformation.Name = "buttonSPPRInformation";

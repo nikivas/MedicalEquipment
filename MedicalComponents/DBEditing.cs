@@ -16,5 +16,20 @@ namespace MedicalComponents
         {
             InitializeComponent();
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            new EditingOrganisationsWindow().Show();
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            new EditingOrganisationsWindow().Show();
+        }
+
+        private void DBEditing_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MedicalComponents
 {
-    public partial class DBEditingV2 : Form
+    public partial class ReportFormRM : Form
     {
-        public DBEditingV2()
+        public ReportFormRM()
         {
             InitializeComponent();
         }

@@ -17,7 +17,7 @@ namespace MedicalComponents
             InitializeComponent();
         }
 
-        public EditingOrganisationsWindow(string OrganisationName, string OrganisationNameShort, string OrganisationUristAddress, string OrganisationPhysicalAddress, string )
+        public EditingOrganisationsWindow(string OrganisationName, string OrganisationNameShort, string OrganisationUristAddress, string OrganisationPhysicalAddress, string qwe)
         {
             InitializeComponent();
         }

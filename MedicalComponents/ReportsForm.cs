@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace MedicalComponents
 {
-    public partial class DBEditingV3 : Form
+    public partial class ReportsForm : Form
     {
-        public DBEditingV3()
+        public ReportsForm()
         {
             InitializeComponent();
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void ReportsForm_Load(object sender, EventArgs e)
         {
-            new EditingOrganisationsWindow().Show();
-        }
 
-        private void buttonEdit_Click(object sender, EventArgs e)
-        {
-            new EditingOrganisationsWindow().Show();
         }
     }
 }

@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.label_ = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,91 +36,14 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_ = new System.Windows.Forms.Label();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(511, 433);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(90, 28);
-            this.buttonAdd.TabIndex = 1;
-            this.buttonAdd.Text = "Добавить";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Location = new System.Drawing.Point(653, 433);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(90, 28);
-            this.buttonEdit.TabIndex = 2;
-            this.buttonEdit.Text = "Изменить";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(792, 433);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(90, 28);
-            this.buttonDelete.TabIndex = 3;
-            this.buttonDelete.Text = "Удалить";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            // 
-            // label_
-            // 
-            this.label_.AutoSize = true;
-            this.label_.Location = new System.Drawing.Point(12, 49);
-            this.label_.Name = "label_";
-            this.label_.Size = new System.Drawing.Size(1003, 13);
-            this.label_.TabIndex = 4;
-            this.label_.Text = "_________________________________________________________________________________" +
-    "________________________________________________________________________________" +
-    "_____";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(156, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(513, 23);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "СППР - Управление парком медицинского оборудования";
-            // 
-            // listBox1
-            // 
-            this.listBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 17;
-            this.listBox1.Items.AddRange(new object[] {
-            "Организация/Контрагенты",
-            "Модели оборудования",
-            "Организации/контрагенты",
-            "Модели оборудования",
-            "Единицы оборудования",
-            "Физические лица",
-            "Фактические должности физических лиц",
-            "Эксплуатанты единиц медицинского оборудования",
-            "Драгоценные металлы",
-            "Сервисное обслуживание медицинского оборудования",
-            "Информация об операциях при СО",
-            "Учет персонала, производившего операции при СО",
-            "Метрологические повероки единиц оборудования",
-            "Метрологические повероки средств измерения",
-            "Закупки",
-            "Наличие ЗИП на складе (текущее)",
-            "Расход ЗИП со склада",
-            "Наличие расходных материалов (РМ) на складе ",
-            "Расход РМ со склада",
-            "Заявки на ремонт",
-            "Учет периодов неработоспособности оборудования",
-            "Планы приобретения оборудования",
-            "Планы приобретения ЗИП",
-            "Планы приобретения РМ"});
-            this.listBox1.Location = new System.Drawing.Point(12, 83);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(343, 412);
-            this.listBox1.TabIndex = 6;
             // 
             // dataGridView1
             // 
@@ -140,10 +57,10 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.dataGridView1.Location = new System.Drawing.Point(375, 83);
+            this.dataGridView1.Location = new System.Drawing.Point(368, 75);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(625, 311);
-            this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.TabIndex = 14;
             // 
             // Column1
             // 
@@ -180,20 +97,104 @@
             this.Column7.HeaderText = "сайт";
             this.Column7.Name = "Column7";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(149, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(513, 23);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "СППР - Управление парком медицинского оборудования";
+            // 
+            // label_
+            // 
+            this.label_.AutoSize = true;
+            this.label_.Location = new System.Drawing.Point(5, 41);
+            this.label_.Name = "label_";
+            this.label_.Size = new System.Drawing.Size(1003, 13);
+            this.label_.TabIndex = 11;
+            this.label_.Text = "_________________________________________________________________________________" +
+    "________________________________________________________________________________" +
+    "_____";
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(785, 425);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(90, 28);
+            this.buttonDelete.TabIndex = 10;
+            this.buttonDelete.Text = "Удалить";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Location = new System.Drawing.Point(646, 425);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(90, 28);
+            this.buttonEdit.TabIndex = 9;
+            this.buttonEdit.Text = "Изменить";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(504, 425);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(90, 28);
+            this.buttonAdd.TabIndex = 8;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Организация/Контрагенты",
+            "Модели оборудования",
+            "Организации/контрагенты",
+            "Модели оборудования",
+            "Единицы оборудования",
+            "Физические лица",
+            "Фактические должности физических лиц",
+            "Эксплуатанты единиц медицинского оборудования",
+            "Драгоценные металлы",
+            "Сервисное обслуживание медицинского оборудования",
+            "Информация об операциях при СО",
+            "Учет персонала, производившего операции при СО",
+            "Метрологические повероки единиц оборудования",
+            "Метрологические повероки средств измерения",
+            "Закупки",
+            "Наличие ЗИП на складе (текущее)",
+            "Расход ЗИП со склада",
+            "Наличие расходных материалов (РМ) на складе ",
+            "Расход РМ со склада",
+            "Заявки на ремонт",
+            "Учет периодов неработоспособности оборудования",
+            "Планы приобретения оборудования",
+            "Планы приобретения ЗИП",
+            "Планы приобретения РМ"});
+            this.checkedListBox1.Location = new System.Drawing.Point(10, 78);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(323, 394);
+            this.checkedListBox1.TabIndex = 15;
+            // 
             // DBEditing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1012, 505);
+            this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonAdd);
             this.Name = "DBEditing";
-            this.Text = "DBEditing";
+            this.Load += new System.EventHandler(this.DBEditing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -201,12 +202,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Label label_;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
+
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -215,5 +211,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
