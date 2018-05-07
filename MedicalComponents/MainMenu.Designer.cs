@@ -90,9 +90,9 @@
             // 
             this.buttonSPPRAdministration.BackColor = System.Drawing.Color.Turquoise;
             this.buttonSPPRAdministration.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSPPRAdministration.Location = new System.Drawing.Point(355, 362);
+            this.buttonSPPRAdministration.Location = new System.Drawing.Point(414, 446);
             this.buttonSPPRAdministration.Name = "buttonSPPRAdministration";
-            this.buttonSPPRAdministration.Size = new System.Drawing.Size(170, 60);
+            this.buttonSPPRAdministration.Size = new System.Drawing.Size(223, 88);
             this.buttonSPPRAdministration.TabIndex = 4;
             this.buttonSPPRAdministration.Text = "Администрирование базы данных СППР";
             this.buttonSPPRAdministration.UseVisualStyleBackColor = false;
@@ -101,9 +101,9 @@
             // 
             this.buttonAbout.BackColor = System.Drawing.Color.Turquoise;
             this.buttonAbout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAbout.Location = new System.Drawing.Point(355, 164);
+            this.buttonAbout.Location = new System.Drawing.Point(414, 164);
             this.buttonAbout.Name = "buttonAbout";
-            this.buttonAbout.Size = new System.Drawing.Size(170, 60);
+            this.buttonAbout.Size = new System.Drawing.Size(223, 88);
             this.buttonAbout.TabIndex = 5;
             this.buttonAbout.Text = "О Программе";
             this.buttonAbout.UseVisualStyleBackColor = false;
@@ -112,9 +112,9 @@
             // 
             this.buttonSPPRInformation.BackColor = System.Drawing.Color.Turquoise;
             this.buttonSPPRInformation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSPPRInformation.Location = new System.Drawing.Point(355, 230);
+            this.buttonSPPRInformation.Location = new System.Drawing.Point(414, 258);
             this.buttonSPPRInformation.Name = "buttonSPPRInformation";
-            this.buttonSPPRInformation.Size = new System.Drawing.Size(170, 60);
+            this.buttonSPPRInformation.Size = new System.Drawing.Size(223, 88);
             this.buttonSPPRInformation.TabIndex = 6;
             this.buttonSPPRInformation.Text = "Состав информации в СППР и размещении его в таблицах";
             this.buttonSPPRInformation.UseVisualStyleBackColor = false;
@@ -123,9 +123,9 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Turquoise;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(355, 296);
+            this.button1.Location = new System.Drawing.Point(414, 352);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 60);
+            this.button1.Size = new System.Drawing.Size(223, 88);
             this.button1.TabIndex = 7;
             this.button1.Text = "Инструкции по заполнению";
             this.button1.UseVisualStyleBackColor = false;
@@ -136,7 +136,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MedicalComponents.Properties.Resources.MainMenuBackGround;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(537, 439);
+            this.ClientSize = new System.Drawing.Size(661, 546);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSPPRInformation);
             this.Controls.Add(this.buttonAbout);
