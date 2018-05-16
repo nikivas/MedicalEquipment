@@ -331,6 +331,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.checkedListBox1);
             this.Name = "ReportFormController";
+            this.Load += new System.EventHandler(this.ReportFormController_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

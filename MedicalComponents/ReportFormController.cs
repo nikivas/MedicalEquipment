@@ -16,5 +16,10 @@ namespace MedicalComponents
         {
             InitializeComponent();
         }
+
+        private void ReportFormController_Load(object sender, EventArgs e)
+        {
+            checkedListBox1.SelectionMode = SelectionMode.One;
+        }
     }
 }

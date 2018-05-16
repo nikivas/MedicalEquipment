@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Corpus">
+    <Key>
+      <PropertyRef Name="Corpus_id" />
+    </Key>
+    <Property Name="Corpus_id" Type="Int32" Nullable="false" />
+    <Property Name="Corpus_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DragMetalOnEquipment">
+    <Key>
+      <PropertyRef Name="Drag_metal_on_equipment_id" />
+    </Key>
+    <Property Name="Drag_metal_on_equipment_id" Type="Int32" Nullable="false" />
+    <Property Name="Equipment_object_id" Type="Int32" />
+    <Property Name="Drag_metal_id" Type="Int32" />
+    <Property Name="weight" Type="Double" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EquipmentModel">
+    <Key>
+      <PropertyRef Name="Equipment_model_id" />
+    </Key>
+    <Property Name="Equipment_model_id" Type="Int32" Nullable="false" />
+    <Property Name="Company_manufactorer_id" Type="Int32" />
+    <Property Name="Functional_purpose_id" Type="Int32" />
+    <Property Name="Full_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Apend_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EquipmentObject">
+    <Key>
+      <PropertyRef Name="Equipment_object_id" />
+    </Key>
+    <Property Name="Equipment_object_id" Type="Int32" Nullable="false" />
+    <Property Name="Equipment_model_id" Type="Int32" />
+    <Property Name="Inventory_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date_manufacture" Type="DateTime" Precision="0" />
+    <Property Name="Port" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Country_id" Type="Int32" />
+    <Property Name="Serial_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date_expluatation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="In_Buhgaltery" Type="Int32" />
+    <Property Name="Date_debited" Type="DateTime" Precision="0" />
+    <Property Name="Reason_for_debited" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OtherInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EquipmentPlace">
+    <Key>
+      <PropertyRef Name="Equipment_place_id" />
+    </Key>
+    <Property Name="Equipment_place_id" Type="Int32" Nullable="false" />
+    <Property Name="Equipment_id" Type="Int32" />
+    <Property Name="Organisation_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Organisation_unit_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Corpus_id" Type="Int32" />
+    <Property Name="Floor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Room" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date_localization_begin" Type="DateTime" Precision="0" />
+    <Property Name="Date_localization_finish" Type="DateTime" Precision="0" />
+    <Property Name="Reason_to_move" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="EquipmentsModel">
+    <Key>
+      <PropertyRef Name="Equipment_model_id" />
+    </Key>
+    <Property Name="Equipment_model_id" Type="Int32" Nullable="false" />
+    <Property Name="Company_manufactorer_id" Type="Int32" />
+    <Property Name="Functional_purpose_id" Type="Int32" />
+    <Property Name="Full_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Apend_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MOUser">
+    <Key>
+      <PropertyRef Name="MO_user_id" />
+    </Key>
+    <Property Name="MO_user_id" Type="Int32" Nullable="false" />
+    <Property Name="Position_id" Type="Int32" />
+    <Property Name="Position_type_id" Type="Int32" />
+    <Property Name="Physical_people_id" Type="Int32" />
+    <Property Name="equipment_id" Type="Int32" />
+    <Property Name="Date_begin" Type="DateTime" Precision="0" />
+    <Property Name="Date_finish" Type="DateTime" Precision="0" />
+    <Property Name="Model_role_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="Organisation_id" />
+    </Key>
+    <Property Name="Organisation_id" Type="Int32" Nullable="false" />
+    <Property Name="Organization_type_id" Type="Int32" />
+    <Property Name="Full_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Short_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Legal_address_id" Type="Int32" />
+    <Property Name="Actual_address_id" Type="Int32" />
+    <Property Name="Contact_information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Site" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Head_id" Type="Int32" />
+    <Property Name="Last_update" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="PeoplePosition">
+    <Key>
+      <PropertyRef Name="People_position_id" />
+    </Key>
+    <Property Name="People_position_id" Type="Int32" Nullable="false" />
+    <Property Name="Physical_people_id" Type="Int32" />
+    <Property Name="Organisation_id" Type="Int32" />
+    <Property Name="Position_id" Type="Int32" />
+    <Property Name="Position_type_id" Type="Int32" />
+    <Property Name="DateBegin" Type="DateTime" Precision="0" />
+    <Property Name="DateDelete" Type="DateTime" Precision="0" />
+    <Property Name="Salary" Type="Int32" />
+    <Property Name="Other_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PersonalRole">
+    <Key>
+      <PropertyRef Name="Personal_role_id" />
+    </Key>
+    <Property Name="Personal_role_id" Type="Int32" Nullable="false" />
+    <Property Name="Personal_role_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PhysicalPeople">
+    <Key>
+      <PropertyRef Name="Physical_people_Id" />
+    </Key>
+    <Property Name="Physical_people_Id" Type="Int32" Nullable="false" />
+    <Property Name="Family" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Patronymic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="Contacts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_BrokenItem">
+    <Key>
+      <PropertyRef Name="Broken_item_id" />
+    </Key>
+    <Property Name="Broken_item_id" Type="Int32" Nullable="false" />
+    <Property Name="Broken_item_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_BrokenReason">
+    <Key>
+      <PropertyRef Name="Broken_reason_id" />
+    </Key>
+    <Property Name="Broken_reason_id" Type="Int32" Nullable="false" />
+    <Property Name="Broken_reason_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_CansellerationReason">
+    <Key>
+      <PropertyRef Name="Canselleration_reason_id" />
+    </Key>
+    <Property Name="Canselleration_reason_id" Type="Int32" Nullable="false" />
+    <Property Name="Canselleration_reason_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_Corpus">
+    <Key>
+      <PropertyRef Name="Corpus_id" />
+    </Key>
+    <Property Name="Corpus_id" Type="Int32" Nullable="false" />
+    <Property Name="Corpus_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_Country">
+    <Key>
+      <PropertyRef Name="Country_id" />
+    </Key>
+    <Property Name="Country_id" Type="Int32" Nullable="false" />
+    <Property Name="Country_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_DisplacementCause">
+    <Key>
+      <PropertyRef Name="Displacement_cause_id" />
+    </Key>
+    <Property Name="Displacement_cause_id" Type="Int32" Nullable="false" />
+    <Property Name="Displacement_cause_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_DragMetal">
+    <Key>
+      <PropertyRef Name="Drag_metal_id" />
+    </Key>
+    <Property Name="Drag_metal_id" Type="Int32" Nullable="false" />
+    <Property Name="Drag_metal_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_ExpluatationRole">
+    <Key>
+      <PropertyRef Name="Expluatation_role_id" />
+    </Key>
+    <Property Name="Expluatation_role_id" Type="Int32" Nullable="false" />
+    <Property Name="Expluatation_role_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_FunctionalPurpose">
+    <Key>
+      <PropertyRef Name="Functional_purpose_id" />
+    </Key>
+    <Property Name="Functional_purpose_id" Type="Int32" Nullable="false" />
+    <Property Name="Functional_purpose_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_OrganisationType">
+    <Key>
+      <PropertyRef Name="Organisation_type_id" />
+    </Key>
+    <Property Name="Organisation_type_id" Type="Int32" Nullable="false" />
+    <Property Name="Organisation_type_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_OrganisationUnit">
+    <Key>
+      <PropertyRef Name="Organisation_unit_id" />
+    </Key>
+    <Property Name="Organisation_unit_id" Type="Int32" Nullable="false" />
+    <Property Name="Organisation_id" Type="Int32" />
+    <Property Name="Organisation_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Corpus_id" Type="Int32" />
+    <Property Name="Group_category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_PersonalRole">
+    <Key>
+      <PropertyRef Name="Personal_role_id" />
+    </Key>
+    <Property Name="Personal_role_id" Type="Int32" Nullable="false" />
+    <Property Name="Personal_role_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_PmElement">
+    <Key>
+      <PropertyRef Name="Pm_element_id" />
+    </Key>
+    <Property Name="Pm_element_id" Type="Int32" Nullable="false" />
+    <Property Name="Pm_element_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_Position">
+    <Key>
+      <PropertyRef Name="Position_id" />
+    </Key>
+    <Property Name="Position_id" Type="Int32" Nullable="false" />
+    <Property Name="Position_type_id" Type="Int32" />
+    <Property Name="Position_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bad_position" Type="Int32" />
+  </EntityType>
+  <EntityType Name="S_PurchaseType">
+    <Key>
+      <PropertyRef Name="Purchase_type_id" />
+    </Key>
+    <Property Name="Purchase_type_id" Type="Int32" Nullable="false" />
+    <Property Name="Purchase_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_Service">
+    <Key>
+      <PropertyRef Name="Service_id" />
+    </Key>
+    <Property Name="Service_id" Type="Int32" Nullable="false" />
+    <Property Name="Service_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_ServiceOperation">
+    <Key>
+      <PropertyRef Name="Service_operation_id" />
+    </Key>
+    <Property Name="Service_operation_id" Type="Int32" Nullable="false" />
+    <Property Name="Service_operation_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="S_ZipElement">
+    <Key>
+      <PropertyRef Name="Zip_element_id" />
+    </Key>
+    <Property Name="Zip_element_id" Type="Int32" Nullable="false" />
+    <Property Name="Zip_element_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ServiceMaintenance">
+    <Key>
+      <PropertyRef Name="Service_maintenance_id" />
+    </Key>
+    <Property Name="Service_maintenance_id" Type="Int32" Nullable="false" />
+    <Property Name="Functional_purpose_id" Type="Int32" />
+    <Property Name="Equipment_model_id" Type="Int32" />
+    <Property Name="Service_id" Type="Int32" />
+    <Property Name="Time_begin" Type="DateTime" Precision="3" />
+    <Property Name="Time_finish" Type="DateTime" Precision="3" />
+    <Property Name="Service_Result" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ServiceMaintenanceOperation">
+    <Key>
+      <PropertyRef Name="Service_maintenance_operation_id" />
+    </Key>
+    <Property Name="Service_maintenance_operation_id" Type="Int32" Nullable="false" />
+    <Property Name="Functional_purpose_id" Type="Int32" />
+    <Property Name="Equipment_object_id" Type="Int32" />
+    <Property Name="Service_maintenance_id" Type="Int32" />
+    <Property Name="Service_operation_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Corpus" EntityType="Self.Corpus" />
+    <EntitySet Name="DragMetalOnEquipment" EntityType="Self.DragMetalOnEquipment" />
+    <EntitySet Name="EquipmentModel" EntityType="Self.EquipmentModel" />
+    <EntitySet Name="EquipmentObject" EntityType="Self.EquipmentObject" />
+    <EntitySet Name="EquipmentPlace" EntityType="Self.EquipmentPlace" />
+    <EntitySet Name="EquipmentsModel" EntityType="Self.EquipmentsModel" />
+    <EntitySet Name="MOUser" EntityType="Self.MOUser" />
+    <EntitySet Name="Organization" EntityType="Self.Organization" />
+    <EntitySet Name="PeoplePosition" EntityType="Self.PeoplePosition" />
+    <EntitySet Name="PersonalRole" EntityType="Self.PersonalRole" />
+    <EntitySet Name="PhysicalPeople" EntityType="Self.PhysicalPeople" />
+    <EntitySet Name="S_BrokenItem" EntityType="Self.S_BrokenItem" />
+    <EntitySet Name="S_BrokenReason" EntityType="Self.S_BrokenReason" />
+    <EntitySet Name="S_CansellerationReason" EntityType="Self.S_CansellerationReason" />
+    <EntitySet Name="S_Corpus" EntityType="Self.S_Corpus" />
+    <EntitySet Name="S_Country" EntityType="Self.S_Country" />
+    <EntitySet Name="S_DisplacementCause" EntityType="Self.S_DisplacementCause" />
+    <EntitySet Name="S_DragMetal" EntityType="Self.S_DragMetal" />
+    <EntitySet Name="S_ExpluatationRole" EntityType="Self.S_ExpluatationRole" />
+    <EntitySet Name="S_FunctionalPurpose" EntityType="Self.S_FunctionalPurpose" />
+    <EntitySet Name="S_OrganisationType" EntityType="Self.S_OrganisationType" />
+    <EntitySet Name="S_OrganisationUnit" EntityType="Self.S_OrganisationUnit" />
+    <EntitySet Name="S_PersonalRole" EntityType="Self.S_PersonalRole" />
+    <EntitySet Name="S_PmElement" EntityType="Self.S_PmElement" />
+    <EntitySet Name="S_Position" EntityType="Self.S_Position" />
+    <EntitySet Name="S_PurchaseType" EntityType="Self.S_PurchaseType" />
+    <EntitySet Name="S_Service" EntityType="Self.S_Service" />
+    <EntitySet Name="S_ServiceOperation" EntityType="Self.S_ServiceOperation" />
+    <EntitySet Name="S_ZipElement" EntityType="Self.S_ZipElement" />
+    <EntitySet Name="ServiceMaintenance" EntityType="Self.ServiceMaintenance" />
+    <EntitySet Name="ServiceMaintenanceOperation" EntityType="Self.ServiceMaintenanceOperation" />
+    <EntitySet Name="Table" EntityType="Self.Table" />
+  </EntityContainer>
+</Schema>

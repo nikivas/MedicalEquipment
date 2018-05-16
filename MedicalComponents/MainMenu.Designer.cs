@@ -44,7 +44,7 @@
             this.buttonTableEditing.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTableEditing.Location = new System.Drawing.Point(12, 164);
             this.buttonTableEditing.Name = "buttonTableEditing";
-            this.buttonTableEditing.Size = new System.Drawing.Size(170, 60);
+            this.buttonTableEditing.Size = new System.Drawing.Size(213, 88);
             this.buttonTableEditing.TabIndex = 0;
             this.buttonTableEditing.Text = "Просмотр и корректировка таблиц";
             this.buttonTableEditing.UseVisualStyleBackColor = false;
@@ -54,9 +54,9 @@
             // 
             this.buttonHelpTableEditing.BackColor = System.Drawing.Color.Turquoise;
             this.buttonHelpTableEditing.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonHelpTableEditing.Location = new System.Drawing.Point(12, 230);
+            this.buttonHelpTableEditing.Location = new System.Drawing.Point(12, 258);
             this.buttonHelpTableEditing.Name = "buttonHelpTableEditing";
-            this.buttonHelpTableEditing.Size = new System.Drawing.Size(170, 60);
+            this.buttonHelpTableEditing.Size = new System.Drawing.Size(223, 88);
             this.buttonHelpTableEditing.TabIndex = 1;
             this.buttonHelpTableEditing.Text = "Просмотр и корректировка справочников";
             this.buttonHelpTableEditing.UseVisualStyleBackColor = false;
@@ -66,9 +66,9 @@
             // 
             this.buttonReports.BackColor = System.Drawing.Color.Turquoise;
             this.buttonReports.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonReports.Location = new System.Drawing.Point(12, 296);
+            this.buttonReports.Location = new System.Drawing.Point(12, 352);
             this.buttonReports.Name = "buttonReports";
-            this.buttonReports.Size = new System.Drawing.Size(170, 60);
+            this.buttonReports.Size = new System.Drawing.Size(223, 88);
             this.buttonReports.TabIndex = 2;
             this.buttonReports.Text = "Запросы и отчеты";
             this.buttonReports.UseVisualStyleBackColor = false;
@@ -78,9 +78,9 @@
             // 
             this.buttonPurchasePlan.BackColor = System.Drawing.Color.Turquoise;
             this.buttonPurchasePlan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPurchasePlan.Location = new System.Drawing.Point(12, 362);
+            this.buttonPurchasePlan.Location = new System.Drawing.Point(12, 446);
             this.buttonPurchasePlan.Name = "buttonPurchasePlan";
-            this.buttonPurchasePlan.Size = new System.Drawing.Size(170, 60);
+            this.buttonPurchasePlan.Size = new System.Drawing.Size(223, 88);
             this.buttonPurchasePlan.TabIndex = 3;
             this.buttonPurchasePlan.Text = "Планы закупок мед оборудования и расходных материалов";
             this.buttonPurchasePlan.UseVisualStyleBackColor = false;
@@ -118,6 +118,7 @@
             this.buttonSPPRInformation.TabIndex = 6;
             this.buttonSPPRInformation.Text = "Состав информации в СППР и размещении его в таблицах";
             this.buttonSPPRInformation.UseVisualStyleBackColor = false;
+            this.buttonSPPRInformation.Click += new System.EventHandler(this.buttonSPPRInformation_Click);
             // 
             // button1
             // 
@@ -147,6 +148,7 @@
             this.Controls.Add(this.buttonTableEditing);
             this.Name = "MainMenu";
             this.Text = "Главное Меню";
+            this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
 
         }

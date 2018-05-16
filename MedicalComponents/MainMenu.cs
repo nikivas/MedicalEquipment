@@ -38,5 +38,16 @@ namespace MedicalComponents
         {
             new EditingOrganisationsWindow().Show();
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSPPRInformation_Click(object sender, EventArgs e)
+        {
+            new GraphicsForm().Show();
+            new GraphicsModels().Show();
+        }
     }
 }

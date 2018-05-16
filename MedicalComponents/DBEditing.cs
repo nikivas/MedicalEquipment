@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MedicalComponents.Models;
 
 namespace MedicalComponents
 {
@@ -29,7 +30,17 @@ namespace MedicalComponents
 
         private void DBEditing_Load(object sender, EventArgs e)
         {
+            checkedListBox1.SelectionMode = SelectionMode.One;
+        }
 
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TablesModel tablesModel = new TablesModel();
+
+            if(checkedListBox1.SelectedIndex == 0)
+            {
+                tablesModel.FillOrganisation(dataGridView1);
+            }
         }
     }
 }
