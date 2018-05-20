@@ -4,1045 +4,2181 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище DatabaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Corpus">
+      <Schema Namespace="Хранилище MainDatabaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BrokenRequest">
           <Key>
-            <PropertyRef Name="Corpus_id" />
+            <PropertyRef Name="broken_request_id" />
           </Key>
-          <Property Name="Corpus_id" Type="int" Nullable="false" />
-          <Property Name="Corpus_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="broken_request_id" Type="int" Nullable="false" />
+          <Property Name="physical_people_id" Type="int" Nullable="false" />
+          <Property Name="model_element_id" Type="int" Nullable="false" />
+          <Property Name="broken_request_reason_id" Type="int" Nullable="false" />
+          <Property Name="date_to_repair" Type="date" Nullable="false" />
+          <Property Name="isFinished" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="DragMetalOnEquipment">
+        <EntityType Name="ElementsDragMetal">
           <Key>
-            <PropertyRef Name="Drag_metal_on_equipment_id" />
+            <PropertyRef Name="elements_drag_metal_id" />
           </Key>
-          <Property Name="Drag_metal_on_equipment_id" Type="int" Nullable="false" />
-          <Property Name="Equipment_object_id" Type="int" />
-          <Property Name="Drag_metal_id" Type="int" />
-          <Property Name="weight" Type="float" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="elements_drag_metal_id" Type="int" Nullable="false" />
+          <Property Name="model_element_id" Type="int" Nullable="false" />
+          <Property Name="drag_metal_id" Type="int" Nullable="false" />
+          <Property Name="size" Type="int" />
         </EntityType>
-        <EntityType Name="EquipmentModel">
+        <EntityType Name="ElementsPlaces">
           <Key>
-            <PropertyRef Name="Equipment_model_id" />
+            <PropertyRef Name="element_place_id" />
           </Key>
-          <Property Name="Equipment_model_id" Type="int" Nullable="false" />
-          <Property Name="Company_manufactorer_id" Type="int" />
-          <Property Name="Functional_purpose_id" Type="int" />
-          <Property Name="Full_name" Type="nvarchar(max)" />
-          <Property Name="Apend_info" Type="nvarchar(max)" />
+          <Property Name="element_place_id" Type="int" Nullable="false" />
+          <Property Name="model_element_id" Type="int" Nullable="false" />
+          <Property Name="corpus_id" Type="int" Nullable="false" />
+          <Property Name="floor" Type="int" Nullable="false" />
+          <Property Name="room" Type="nvarchar" MaxLength="1" />
+          <Property Name="date_begin" Type="date" Nullable="false" />
+          <Property Name="date_end" Type="date" />
+          <Property Name="move_reason_id" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="EquipmentObject">
+        <EntityType Name="FaticalPhysicalPeoplePositions">
           <Key>
-            <PropertyRef Name="Equipment_object_id" />
+            <PropertyRef Name="fatical_physical_people_position_id" />
           </Key>
-          <Property Name="Equipment_object_id" Type="int" Nullable="false" />
-          <Property Name="Equipment_model_id" Type="int" />
-          <Property Name="Inventory_number" Type="nvarchar(max)" />
-          <Property Name="Date_manufacture" Type="date" />
-          <Property Name="Port" Type="nchar" MaxLength="10" />
-          <Property Name="Country_id" Type="int" />
-          <Property Name="Serial_number" Type="nvarchar(max)" />
-          <Property Name="Date_expluatation" Type="nvarchar(max)" />
-          <Property Name="In_Buhgaltery" Type="int" />
-          <Property Name="Date_debited" Type="date" />
-          <Property Name="Reason_for_debited" Type="nvarchar(max)" />
-          <Property Name="OtherInfo" Type="nvarchar(max)" />
+          <Property Name="fatical_physical_people_position_id" Type="int" Nullable="false" />
+          <Property Name="physical_people_id" Type="int" Nullable="false" />
+          <Property Name="organisation_id" Type="int" Nullable="false" />
+          <Property Name="people_position_id" Type="int" Nullable="false" />
+          <Property Name="date_begin" Type="date" />
+          <Property Name="date_end" Type="date" />
+          <Property Name="salary" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="EquipmentPlace">
+        <EntityType Name="ModelElement">
           <Key>
-            <PropertyRef Name="Equipment_place_id" />
+            <PropertyRef Name="model_element_id" />
           </Key>
-          <Property Name="Equipment_place_id" Type="int" Nullable="false" />
-          <Property Name="Equipment_id" Type="int" />
-          <Property Name="Organisation_id" Type="nvarchar(max)" />
-          <Property Name="Organisation_unit_id" Type="nvarchar(max)" />
-          <Property Name="Corpus_id" Type="int" />
-          <Property Name="Floor" Type="nvarchar(max)" />
-          <Property Name="Room" Type="nvarchar(max)" />
-          <Property Name="Date_localization_begin" Type="date" />
-          <Property Name="Date_localization_finish" Type="date" />
-          <Property Name="Reason_to_move" Type="nvarchar(max)" />
+          <Property Name="model_element_id" Type="int" Nullable="false" />
+          <Property Name="inventory_number" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="model_type_id" Type="int" Nullable="false" />
+          <Property Name="date_creation" Type="date" />
+          <Property Name="serial_number" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="date_utilisation" Type="date" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" />
+          <Property Name="reason_write_off_id" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="EquipmentsModel">
+        <EntityType Name="ModelType">
           <Key>
-            <PropertyRef Name="Equipment_model_id" />
+            <PropertyRef Name="model_type_id" />
           </Key>
-          <Property Name="Equipment_model_id" Type="int" Nullable="false" />
-          <Property Name="Company_manufactorer_id" Type="int" />
-          <Property Name="Functional_purpose_id" Type="int" />
-          <Property Name="Full_name" Type="nvarchar(max)" />
-          <Property Name="Apend_info" Type="nvarchar(max)" />
+          <Property Name="model_type_id" Type="int" Nullable="false" />
+          <Property Name="model_type_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="organisation_id" Type="int" Nullable="false" />
+          <Property Name="functionaly_use_model_id" Type="int" Nullable="false" />
+          <Property Name="expluatation_role_id" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="MOUser">
+        <EntityType Name="MOExpluatation">
           <Key>
-            <PropertyRef Name="MO_user_id" />
+            <PropertyRef Name="mo_expluatation_id" />
           </Key>
-          <Property Name="MO_user_id" Type="int" Nullable="false" />
-          <Property Name="Position_id" Type="int" />
-          <Property Name="Position_type_id" Type="int" />
-          <Property Name="Physical_people_id" Type="int" />
-          <Property Name="equipment_id" Type="int" />
-          <Property Name="Date_begin" Type="date" />
-          <Property Name="Date_finish" Type="date" />
-          <Property Name="Model_role_id" Type="int" />
+          <Property Name="mo_expluatation_id" Type="int" Nullable="false" />
+          <Property Name="physical_people_id" Type="int" Nullable="false" />
+          <Property Name="model_element_id" Type="int" Nullable="false" />
+          <Property Name="date_begin" Type="date" Nullable="false" />
+          <Property Name="date_end" Type="date" />
+          <Property Name="service_operation_personal_role_id" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Organization">
+        <EntityType Name="Organisations">
           <Key>
-            <PropertyRef Name="Organisation_id" />
+            <PropertyRef Name="organisation_id" />
           </Key>
-          <Property Name="Organisation_id" Type="int" Nullable="false" />
-          <Property Name="Organization_type_id" Type="int" />
-          <Property Name="Full_name" Type="nvarchar(max)" />
-          <Property Name="Short_name" Type="nvarchar(max)" />
-          <Property Name="Legal_address_id" Type="int" />
-          <Property Name="Actual_address_id" Type="int" />
-          <Property Name="Contact_information" Type="nvarchar(max)" />
-          <Property Name="Email" Type="nvarchar(max)" />
-          <Property Name="Site" Type="nvarchar(max)" />
-          <Property Name="Head_id" Type="int" />
-          <Property Name="Last_update" Type="date" />
+          <Property Name="organisation_id" Type="int" Nullable="false" />
+          <Property Name="organisation_short_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="organisation_full_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="organisation_type_id" Type="int" Nullable="false" />
+          <Property Name="country_key_id" Type="int" Nullable="false" />
+          <Property Name="factic_address" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="contacts" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="PeoplePosition">
+        <EntityType Name="PersonalOnService">
           <Key>
-            <PropertyRef Name="People_position_id" />
+            <PropertyRef Name="personal_on_service_id" />
           </Key>
-          <Property Name="People_position_id" Type="int" Nullable="false" />
-          <Property Name="Physical_people_id" Type="int" />
-          <Property Name="Organisation_id" Type="int" />
-          <Property Name="Position_id" Type="int" />
-          <Property Name="Position_type_id" Type="int" />
-          <Property Name="DateBegin" Type="date" />
-          <Property Name="DateDelete" Type="date" />
-          <Property Name="Salary" Type="int" />
-          <Property Name="Other_info" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityType Name="PersonalRole">
-          <Key>
-            <PropertyRef Name="Personal_role_id" />
-          </Key>
-          <Property Name="Personal_role_id" Type="int" Nullable="false" />
-          <Property Name="Personal_role_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="personal_on_service_id" Type="int" Nullable="false" />
+          <Property Name="model_element_id" Type="int" Nullable="false" />
+          <Property Name="service_operation_type_id" Type="int" Nullable="false" />
+          <Property Name="physical_people_id" Type="int" />
+          <Property Name="service_operation_personal_role_id" Type="int" />
+          <Property Name="service_type_id" Type="int" />
         </EntityType>
         <EntityType Name="PhysicalPeople">
           <Key>
-            <PropertyRef Name="Physical_people_Id" />
+            <PropertyRef Name="physical_people_id" />
           </Key>
-          <Property Name="Physical_people_Id" Type="int" Nullable="false" />
-          <Property Name="Family" Type="nvarchar(max)" />
-          <Property Name="Name" Type="nvarchar(max)" />
-          <Property Name="Patronymic" Type="nvarchar(max)" />
+          <Property Name="physical_people_id" Type="int" Nullable="false" />
+          <Property Name="family" Type="nvarchar" MaxLength="1" />
+          <Property Name="name" Type="nvarchar" MaxLength="1" />
+          <Property Name="patronumic" Type="nvarchar" MaxLength="1" />
           <Property Name="Gender" Type="int" />
-          <Property Name="Contacts" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="contacts" Type="nvarchar" MaxLength="1" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" />
+          <Property Name="organisation_department_id" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_BrokenItem">
+        <EntityType Name="Purchase">
           <Key>
-            <PropertyRef Name="Broken_item_id" />
+            <PropertyRef Name="purchase_id" />
           </Key>
-          <Property Name="Broken_item_id" Type="int" Nullable="false" />
-          <Property Name="Broken_item_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="purchase_id" Type="int" Nullable="false" />
+          <Property Name="purchase_type_id" Type="int" Nullable="false" />
+          <Property Name="purchase_document_number" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="date_apply" Type="date" />
+          <Property Name="organisation_id" Type="int" />
         </EntityType>
-        <EntityType Name="S_BrokenReason">
+        <EntityType Name="PurchaseElements">
           <Key>
-            <PropertyRef Name="Broken_reason_id" />
+            <PropertyRef Name="purchase_element_id" />
           </Key>
-          <Property Name="Broken_reason_id" Type="int" Nullable="false" />
-          <Property Name="Broken_reason_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="purchase_element_id" Type="int" Nullable="false" />
+          <Property Name="model_element_id" Type="int" Nullable="false" />
+          <Property Name="count" Type="int" Nullable="false" />
+          <Property Name="planned_date" Type="date" Nullable="false" />
+          <Property Name="target_info" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="isPurchasing" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_CansellerationReason">
+        <EntityType Name="sp_BrokenRequestReason">
           <Key>
-            <PropertyRef Name="Canselleration_reason_id" />
+            <PropertyRef Name="broken_request_reason_id" />
           </Key>
-          <Property Name="Canselleration_reason_id" Type="int" Nullable="false" />
-          <Property Name="Canselleration_reason_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="broken_request_reason_id" Type="int" Nullable="false" />
+          <Property Name="broken_request_reason_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_Corpus">
+        <EntityType Name="sp_Corpus">
           <Key>
-            <PropertyRef Name="Corpus_id" />
+            <PropertyRef Name="corpus_id" />
           </Key>
-          <Property Name="Corpus_id" Type="int" Nullable="false" />
-          <Property Name="Corpus_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="corpus_id" Type="int" Nullable="false" />
+          <Property Name="corpus_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_Country">
+        <EntityType Name="sp_CountryKey">
           <Key>
-            <PropertyRef Name="Country_id" />
+            <PropertyRef Name="country_key_id" />
           </Key>
-          <Property Name="Country_id" Type="int" Nullable="false" />
-          <Property Name="Country_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="country_key_id" Type="int" Nullable="false" />
+          <Property Name="country_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_DisplacementCause">
+        <EntityType Name="sp_DragMetal">
           <Key>
-            <PropertyRef Name="Displacement_cause_id" />
+            <PropertyRef Name="drag_metal_id" />
           </Key>
-          <Property Name="Displacement_cause_id" Type="int" Nullable="false" />
-          <Property Name="Displacement_cause_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="drag_metal_id" Type="int" Nullable="false" />
+          <Property Name="drag_metal_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" />
         </EntityType>
-        <EntityType Name="S_DragMetal">
+        <EntityType Name="sp_ExpluatationRole">
           <Key>
-            <PropertyRef Name="Drag_metal_id" />
+            <PropertyRef Name="expluatation_role_id" />
           </Key>
-          <Property Name="Drag_metal_id" Type="int" Nullable="false" />
-          <Property Name="Drag_metal_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="expluatation_role_id" Type="int" Nullable="false" />
+          <Property Name="expluatation_role_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_ExpluatationRole">
+        <EntityType Name="sp_FunctionalyUseModel">
           <Key>
-            <PropertyRef Name="Expluatation_role_id" />
+            <PropertyRef Name="functionaly_use_model_id" />
           </Key>
-          <Property Name="Expluatation_role_id" Type="int" Nullable="false" />
-          <Property Name="Expluatation_role_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="functionaly_use_model_id" Type="int" Nullable="false" />
+          <Property Name="functionaly_use_model_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_FunctionalPurpose">
+        <EntityType Name="sp_MoveReason">
           <Key>
-            <PropertyRef Name="Functional_purpose_id" />
+            <PropertyRef Name="move_reason_id" />
           </Key>
-          <Property Name="Functional_purpose_id" Type="int" Nullable="false" />
-          <Property Name="Functional_purpose_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="move_reason_id" Type="int" Nullable="false" />
+          <Property Name="move_reason_name" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_OrganisationType">
+        <EntityType Name="sp_OrganisationDepartment">
           <Key>
-            <PropertyRef Name="Organisation_type_id" />
+            <PropertyRef Name="organisation_department_id" />
           </Key>
-          <Property Name="Organisation_type_id" Type="int" Nullable="false" />
-          <Property Name="Organisation_type_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="organisation_department_id" Type="int" Nullable="false" />
+          <Property Name="organisation_department_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="corpus_id" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_OrganisationUnit">
+        <EntityType Name="sp_OrganisationType">
           <Key>
-            <PropertyRef Name="Organisation_unit_id" />
+            <PropertyRef Name="organisation_type_id" />
           </Key>
-          <Property Name="Organisation_unit_id" Type="int" Nullable="false" />
-          <Property Name="Organisation_id" Type="int" />
-          <Property Name="Organisation_name" Type="nvarchar(max)" />
-          <Property Name="Corpus_id" Type="int" />
-          <Property Name="Group_category" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="organisation_type_id" Type="int" Nullable="false" />
+          <Property Name="organisation_type_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_PersonalRole">
+        <EntityType Name="sp_PurchaseType">
           <Key>
-            <PropertyRef Name="Personal_role_id" />
+            <PropertyRef Name="purchase_type_id" />
           </Key>
-          <Property Name="Personal_role_id" Type="int" Nullable="false" />
-          <Property Name="Personal_role_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="purchase_type_id" Type="int" Nullable="false" />
+          <Property Name="purchase_type_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_PmElement">
+        <EntityType Name="sp_PysicalPeoplePositions">
           <Key>
-            <PropertyRef Name="Pm_element_id" />
+            <PropertyRef Name="physical_people_position_id" />
           </Key>
-          <Property Name="Pm_element_id" Type="int" Nullable="false" />
-          <Property Name="Pm_element_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="physical_people_position_id" Type="int" Nullable="false" />
+          <Property Name="physical_people_position_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_Position">
+        <EntityType Name="sp_ReasonWriteOff">
           <Key>
-            <PropertyRef Name="Position_id" />
+            <PropertyRef Name="reason_write_off_id" />
           </Key>
-          <Property Name="Position_id" Type="int" Nullable="false" />
-          <Property Name="Position_type_id" Type="int" />
-          <Property Name="Position_name" Type="nvarchar(max)" />
-          <Property Name="Bad_position" Type="int" />
+          <Property Name="reason_write_off_id" Type="int" Nullable="false" />
+          <Property Name="reason_write_off_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_PurchaseType">
+        <EntityType Name="sp_ServiceOperationPersonalRole">
           <Key>
-            <PropertyRef Name="Purchase_type_id" />
+            <PropertyRef Name="service_operation_personal_role_id" />
           </Key>
-          <Property Name="Purchase_type_id" Type="int" Nullable="false" />
-          <Property Name="Purchase_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="service_operation_personal_role_id" Type="int" Nullable="false" />
+          <Property Name="service_operation_personal_role_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityType Name="S_Service">
+        <EntityType Name="sp_ServiceOperationType">
           <Key>
-            <PropertyRef Name="Service_id" />
+            <PropertyRef Name="service_operation_type_id" />
           </Key>
-          <Property Name="Service_id" Type="int" Nullable="false" />
-          <Property Name="Service_type" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="service_operation_type_id" Type="int" Nullable="false" />
+          <Property Name="service_operation_type_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" />
         </EntityType>
-        <EntityType Name="S_ServiceOperation">
+        <EntityType Name="sp_ServiceType">
           <Key>
-            <PropertyRef Name="Service_operation_id" />
+            <PropertyRef Name="service_type_id" />
           </Key>
-          <Property Name="Service_operation_id" Type="int" Nullable="false" />
-          <Property Name="Service_operation_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="service_type_id" Type="int" Nullable="false" />
+          <Property Name="service_type_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" />
         </EntityType>
-        <EntityType Name="S_ZipElement">
+        <EntityType Name="sp_ZIP_AND_PM_Element">
           <Key>
-            <PropertyRef Name="Zip_element_id" />
+            <PropertyRef Name="zipPM_element_id" />
           </Key>
-          <Property Name="Zip_element_id" Type="int" Nullable="false" />
-          <Property Name="Zip_element_name" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="zipPM_element_id" Type="int" Nullable="false" />
+          <Property Name="zipPM_element_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="isZIP" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="ServiceMaintenance">
+        <EntityType Name="ZIPPMDocumentsOnPurchase">
           <Key>
-            <PropertyRef Name="Service_maintenance_id" />
+            <PropertyRef Name="zipPM_documents_purchase_id" />
           </Key>
-          <Property Name="Service_maintenance_id" Type="int" Nullable="false" />
-          <Property Name="Functional_purpose_id" Type="int" />
-          <Property Name="Equipment_model_id" Type="int" />
-          <Property Name="Service_id" Type="int" />
-          <Property Name="Time_begin" Type="datetime" />
-          <Property Name="Time_finish" Type="datetime" />
-          <Property Name="Service_Result" Type="nvarchar(max)" />
-          <Property Name="Other" Type="nvarchar(max)" />
+          <Property Name="zipPM_documents_purchase_id" Type="int" Nullable="false" />
+          <Property Name="zipPM_element_id" Type="int" Nullable="false" />
+          <Property Name="count" Type="int" Nullable="false" />
+          <Property Name="date_coming_in" Type="date" Nullable="false" />
+          <Property Name="date_to_end_possible_use" Type="date" />
         </EntityType>
-        <EntityType Name="ServiceMaintenanceOperation">
+        <EntityType Name="ZIPPMMoves">
           <Key>
-            <PropertyRef Name="Service_maintenance_operation_id" />
+            <PropertyRef Name="zipPM_move_id" />
           </Key>
-          <Property Name="Service_maintenance_operation_id" Type="int" Nullable="false" />
-          <Property Name="Functional_purpose_id" Type="int" />
-          <Property Name="Equipment_object_id" Type="int" />
-          <Property Name="Service_maintenance_id" Type="int" />
-          <Property Name="Service_operation_id" Type="int" />
+          <Property Name="zipPM_move_id" Type="int" Nullable="false" />
+          <Property Name="date_move" Type="date" Nullable="false" />
+          <Property Name="model_element_id" Type="int" Nullable="false" />
+          <Property Name="zipPM_element_id" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Table">
+        <EntityType Name="ZIPPMonStock">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="zipPM_on_stock_id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="zipPM_on_stock_id" Type="int" Nullable="false" />
+          <Property Name="zipPM_element_id" Type="int" Nullable="false" />
+          <Property Name="count" Type="int" Nullable="false" />
+          <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="Хранилище DatabaseModelContainer">
-          <EntitySet Name="Corpus" EntityType="Self.Corpus" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DragMetalOnEquipment" EntityType="Self.DragMetalOnEquipment" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EquipmentModel" EntityType="Self.EquipmentModel" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EquipmentObject" EntityType="Self.EquipmentObject" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EquipmentPlace" EntityType="Self.EquipmentPlace" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="EquipmentsModel" EntityType="Self.EquipmentsModel" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="MOUser" EntityType="Self.MOUser" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Organization" EntityType="Self.Organization" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PeoplePosition" EntityType="Self.PeoplePosition" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PersonalRole" EntityType="Self.PersonalRole" Schema="dbo" store:Type="Tables" />
+        <Association Name="BrokenRequest_fk0">
+          <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="1" />
+          <End Role="BrokenRequest" Type="Self.BrokenRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhysicalPeople">
+              <PropertyRef Name="physical_people_id" />
+            </Principal>
+            <Dependent Role="BrokenRequest">
+              <PropertyRef Name="physical_people_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BrokenRequest_fk1">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="BrokenRequest" Type="Self.BrokenRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="BrokenRequest">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BrokenRequest_fk2">
+          <End Role="sp_BrokenRequestReason" Type="Self.sp_BrokenRequestReason" Multiplicity="1" />
+          <End Role="BrokenRequest" Type="Self.BrokenRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_BrokenRequestReason">
+              <PropertyRef Name="broken_request_reason_id" />
+            </Principal>
+            <Dependent Role="BrokenRequest">
+              <PropertyRef Name="broken_request_reason_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ElementsDragMetal_fk0">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="ElementsDragMetal" Type="Self.ElementsDragMetal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="ElementsDragMetal">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ElementsDragMetal_fk1">
+          <End Role="sp_DragMetal" Type="Self.sp_DragMetal" Multiplicity="1" />
+          <End Role="ElementsDragMetal" Type="Self.ElementsDragMetal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_DragMetal">
+              <PropertyRef Name="drag_metal_id" />
+            </Principal>
+            <Dependent Role="ElementsDragMetal">
+              <PropertyRef Name="drag_metal_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ElementsPlaces_fk0">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="ElementsPlaces" Type="Self.ElementsPlaces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="ElementsPlaces">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ElementsPlaces_fk1">
+          <End Role="sp_Corpus" Type="Self.sp_Corpus" Multiplicity="1" />
+          <End Role="ElementsPlaces" Type="Self.ElementsPlaces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_Corpus">
+              <PropertyRef Name="corpus_id" />
+            </Principal>
+            <Dependent Role="ElementsPlaces">
+              <PropertyRef Name="corpus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ElementsPlaces_fk2">
+          <End Role="sp_MoveReason" Type="Self.sp_MoveReason" Multiplicity="1" />
+          <End Role="ElementsPlaces" Type="Self.ElementsPlaces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_MoveReason">
+              <PropertyRef Name="move_reason_id" />
+            </Principal>
+            <Dependent Role="ElementsPlaces">
+              <PropertyRef Name="move_reason_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FaticalPhysicalPeoplePositions_fk0">
+          <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="1" />
+          <End Role="FaticalPhysicalPeoplePositions" Type="Self.FaticalPhysicalPeoplePositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhysicalPeople">
+              <PropertyRef Name="physical_people_id" />
+            </Principal>
+            <Dependent Role="FaticalPhysicalPeoplePositions">
+              <PropertyRef Name="physical_people_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FaticalPhysicalPeoplePositions_fk1">
+          <End Role="Organisations" Type="Self.Organisations" Multiplicity="1" />
+          <End Role="FaticalPhysicalPeoplePositions" Type="Self.FaticalPhysicalPeoplePositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisations">
+              <PropertyRef Name="organisation_id" />
+            </Principal>
+            <Dependent Role="FaticalPhysicalPeoplePositions">
+              <PropertyRef Name="organisation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FaticalPhysicalPeoplePositions_fk2">
+          <End Role="sp_PysicalPeoplePositions" Type="Self.sp_PysicalPeoplePositions" Multiplicity="1" />
+          <End Role="FaticalPhysicalPeoplePositions" Type="Self.FaticalPhysicalPeoplePositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_PysicalPeoplePositions">
+              <PropertyRef Name="physical_people_position_id" />
+            </Principal>
+            <Dependent Role="FaticalPhysicalPeoplePositions">
+              <PropertyRef Name="people_position_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModelElement_fk0">
+          <End Role="ModelType" Type="Self.ModelType" Multiplicity="1" />
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelType">
+              <PropertyRef Name="model_type_id" />
+            </Principal>
+            <Dependent Role="ModelElement">
+              <PropertyRef Name="model_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModelElement_fk1">
+          <End Role="sp_ReasonWriteOff" Type="Self.sp_ReasonWriteOff" Multiplicity="1" />
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ReasonWriteOff">
+              <PropertyRef Name="reason_write_off_id" />
+            </Principal>
+            <Dependent Role="ModelElement">
+              <PropertyRef Name="reason_write_off_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModelType_fk0">
+          <End Role="Organisations" Type="Self.Organisations" Multiplicity="1" />
+          <End Role="ModelType" Type="Self.ModelType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisations">
+              <PropertyRef Name="organisation_id" />
+            </Principal>
+            <Dependent Role="ModelType">
+              <PropertyRef Name="organisation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModelType_fk1">
+          <End Role="sp_FunctionalyUseModel" Type="Self.sp_FunctionalyUseModel" Multiplicity="1" />
+          <End Role="ModelType" Type="Self.ModelType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_FunctionalyUseModel">
+              <PropertyRef Name="functionaly_use_model_id" />
+            </Principal>
+            <Dependent Role="ModelType">
+              <PropertyRef Name="functionaly_use_model_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModelType_fk2">
+          <End Role="sp_ExpluatationRole" Type="Self.sp_ExpluatationRole" Multiplicity="1" />
+          <End Role="ModelType" Type="Self.ModelType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ExpluatationRole">
+              <PropertyRef Name="expluatation_role_id" />
+            </Principal>
+            <Dependent Role="ModelType">
+              <PropertyRef Name="expluatation_role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MOExpluatation_fk0">
+          <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="1" />
+          <End Role="MOExpluatation" Type="Self.MOExpluatation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhysicalPeople">
+              <PropertyRef Name="physical_people_id" />
+            </Principal>
+            <Dependent Role="MOExpluatation">
+              <PropertyRef Name="physical_people_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MOExpluatation_fk1">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="MOExpluatation" Type="Self.MOExpluatation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="MOExpluatation">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MOExpluatation_fk2">
+          <End Role="sp_ServiceOperationPersonalRole" Type="Self.sp_ServiceOperationPersonalRole" Multiplicity="1" />
+          <End Role="MOExpluatation" Type="Self.MOExpluatation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ServiceOperationPersonalRole">
+              <PropertyRef Name="service_operation_personal_role_id" />
+            </Principal>
+            <Dependent Role="MOExpluatation">
+              <PropertyRef Name="service_operation_personal_role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Organisations_fk0">
+          <End Role="sp_OrganisationType" Type="Self.sp_OrganisationType" Multiplicity="1" />
+          <End Role="Organisations" Type="Self.Organisations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_OrganisationType">
+              <PropertyRef Name="organisation_type_id" />
+            </Principal>
+            <Dependent Role="Organisations">
+              <PropertyRef Name="organisation_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Organisations_fk1">
+          <End Role="sp_CountryKey" Type="Self.sp_CountryKey" Multiplicity="1" />
+          <End Role="Organisations" Type="Self.Organisations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_CountryKey">
+              <PropertyRef Name="country_key_id" />
+            </Principal>
+            <Dependent Role="Organisations">
+              <PropertyRef Name="country_key_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalOnService_fk0">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="PersonalOnService" Type="Self.PersonalOnService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="PersonalOnService">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalOnService_fk1">
+          <End Role="sp_ServiceOperationType" Type="Self.sp_ServiceOperationType" Multiplicity="1" />
+          <End Role="PersonalOnService" Type="Self.PersonalOnService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ServiceOperationType">
+              <PropertyRef Name="service_operation_type_id" />
+            </Principal>
+            <Dependent Role="PersonalOnService">
+              <PropertyRef Name="service_operation_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalOnService_fk2">
+          <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="0..1" />
+          <End Role="PersonalOnService" Type="Self.PersonalOnService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhysicalPeople">
+              <PropertyRef Name="physical_people_id" />
+            </Principal>
+            <Dependent Role="PersonalOnService">
+              <PropertyRef Name="physical_people_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalOnService_fk3">
+          <End Role="sp_ServiceOperationPersonalRole" Type="Self.sp_ServiceOperationPersonalRole" Multiplicity="0..1" />
+          <End Role="PersonalOnService" Type="Self.PersonalOnService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ServiceOperationPersonalRole">
+              <PropertyRef Name="service_operation_personal_role_id" />
+            </Principal>
+            <Dependent Role="PersonalOnService">
+              <PropertyRef Name="service_operation_personal_role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalOnService_fk4">
+          <End Role="sp_ServiceType" Type="Self.sp_ServiceType" Multiplicity="0..1" />
+          <End Role="PersonalOnService" Type="Self.PersonalOnService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ServiceType">
+              <PropertyRef Name="service_type_id" />
+            </Principal>
+            <Dependent Role="PersonalOnService">
+              <PropertyRef Name="service_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PhysicalPeople_fk0">
+          <End Role="sp_OrganisationDepartment" Type="Self.sp_OrganisationDepartment" Multiplicity="1" />
+          <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_OrganisationDepartment">
+              <PropertyRef Name="organisation_department_id" />
+            </Principal>
+            <Dependent Role="PhysicalPeople">
+              <PropertyRef Name="organisation_department_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Purchase_fk0">
+          <End Role="sp_PurchaseType" Type="Self.sp_PurchaseType" Multiplicity="1" />
+          <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_PurchaseType">
+              <PropertyRef Name="purchase_type_id" />
+            </Principal>
+            <Dependent Role="Purchase">
+              <PropertyRef Name="purchase_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Purchase_fk1">
+          <End Role="Organisations" Type="Self.Organisations" Multiplicity="0..1" />
+          <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisations">
+              <PropertyRef Name="organisation_id" />
+            </Principal>
+            <Dependent Role="Purchase">
+              <PropertyRef Name="organisation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PurchaseElements_fk0">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="PurchaseElements" Type="Self.PurchaseElements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="PurchaseElements">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="sp_OrganisationDepartment_fk0">
+          <End Role="sp_Corpus" Type="Self.sp_Corpus" Multiplicity="1" />
+          <End Role="sp_OrganisationDepartment" Type="Self.sp_OrganisationDepartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_Corpus">
+              <PropertyRef Name="corpus_id" />
+            </Principal>
+            <Dependent Role="sp_OrganisationDepartment">
+              <PropertyRef Name="corpus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZIPPMDocumentsOnPurchase_fk0">
+          <End Role="sp_ZIP_AND_PM_Element" Type="Self.sp_ZIP_AND_PM_Element" Multiplicity="1" />
+          <End Role="ZIPPMDocumentsOnPurchase" Type="Self.ZIPPMDocumentsOnPurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ZIP_AND_PM_Element">
+              <PropertyRef Name="zipPM_element_id" />
+            </Principal>
+            <Dependent Role="ZIPPMDocumentsOnPurchase">
+              <PropertyRef Name="zipPM_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZIPPMMoves_fk0">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="ZIPPMMoves" Type="Self.ZIPPMMoves" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="ZIPPMMoves">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZIPPMMoves_fk1">
+          <End Role="sp_ZIP_AND_PM_Element" Type="Self.sp_ZIP_AND_PM_Element" Multiplicity="1" />
+          <End Role="ZIPPMMoves" Type="Self.ZIPPMMoves" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ZIP_AND_PM_Element">
+              <PropertyRef Name="zipPM_element_id" />
+            </Principal>
+            <Dependent Role="ZIPPMMoves">
+              <PropertyRef Name="zipPM_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZIPPMonStock_fk0">
+          <End Role="sp_ZIP_AND_PM_Element" Type="Self.sp_ZIP_AND_PM_Element" Multiplicity="1" />
+          <End Role="ZIPPMonStock" Type="Self.ZIPPMonStock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ZIP_AND_PM_Element">
+              <PropertyRef Name="zipPM_element_id" />
+            </Principal>
+            <Dependent Role="ZIPPMonStock">
+              <PropertyRef Name="zipPM_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище MainDatabaseModelContainer">
+          <EntitySet Name="BrokenRequest" EntityType="Self.BrokenRequest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElementsDragMetal" EntityType="Self.ElementsDragMetal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElementsPlaces" EntityType="Self.ElementsPlaces" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FaticalPhysicalPeoplePositions" EntityType="Self.FaticalPhysicalPeoplePositions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ModelElement" EntityType="Self.ModelElement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ModelType" EntityType="Self.ModelType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MOExpluatation" EntityType="Self.MOExpluatation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Organisations" EntityType="Self.Organisations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonalOnService" EntityType="Self.PersonalOnService" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhysicalPeople" EntityType="Self.PhysicalPeople" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_BrokenItem" EntityType="Self.S_BrokenItem" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_BrokenReason" EntityType="Self.S_BrokenReason" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_CansellerationReason" EntityType="Self.S_CansellerationReason" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_Corpus" EntityType="Self.S_Corpus" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_Country" EntityType="Self.S_Country" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_DisplacementCause" EntityType="Self.S_DisplacementCause" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_DragMetal" EntityType="Self.S_DragMetal" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_ExpluatationRole" EntityType="Self.S_ExpluatationRole" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_FunctionalPurpose" EntityType="Self.S_FunctionalPurpose" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_OrganisationType" EntityType="Self.S_OrganisationType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_OrganisationUnit" EntityType="Self.S_OrganisationUnit" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_PersonalRole" EntityType="Self.S_PersonalRole" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_PmElement" EntityType="Self.S_PmElement" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_Position" EntityType="Self.S_Position" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_PurchaseType" EntityType="Self.S_PurchaseType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_Service" EntityType="Self.S_Service" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_ServiceOperation" EntityType="Self.S_ServiceOperation" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="S_ZipElement" EntityType="Self.S_ZipElement" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ServiceMaintenance" EntityType="Self.ServiceMaintenance" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ServiceMaintenanceOperation" EntityType="Self.ServiceMaintenanceOperation" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Purchase" EntityType="Self.Purchase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PurchaseElements" EntityType="Self.PurchaseElements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_BrokenRequestReason" EntityType="Self.sp_BrokenRequestReason" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_Corpus" EntityType="Self.sp_Corpus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_CountryKey" EntityType="Self.sp_CountryKey" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_DragMetal" EntityType="Self.sp_DragMetal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_ExpluatationRole" EntityType="Self.sp_ExpluatationRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_FunctionalyUseModel" EntityType="Self.sp_FunctionalyUseModel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_MoveReason" EntityType="Self.sp_MoveReason" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_OrganisationDepartment" EntityType="Self.sp_OrganisationDepartment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_OrganisationType" EntityType="Self.sp_OrganisationType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_PurchaseType" EntityType="Self.sp_PurchaseType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_PysicalPeoplePositions" EntityType="Self.sp_PysicalPeoplePositions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_ReasonWriteOff" EntityType="Self.sp_ReasonWriteOff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_ServiceOperationPersonalRole" EntityType="Self.sp_ServiceOperationPersonalRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_ServiceOperationType" EntityType="Self.sp_ServiceOperationType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_ServiceType" EntityType="Self.sp_ServiceType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sp_ZIP_AND_PM_Element" EntityType="Self.sp_ZIP_AND_PM_Element" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZIPPMDocumentsOnPurchase" EntityType="Self.ZIPPMDocumentsOnPurchase" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZIPPMMoves" EntityType="Self.ZIPPMMoves" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZIPPMonStock" EntityType="Self.ZIPPMonStock" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="BrokenRequest_fk0" Association="Self.BrokenRequest_fk0">
+            <End Role="PhysicalPeople" EntitySet="PhysicalPeople" />
+            <End Role="BrokenRequest" EntitySet="BrokenRequest" />
+          </AssociationSet>
+          <AssociationSet Name="BrokenRequest_fk1" Association="Self.BrokenRequest_fk1">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="BrokenRequest" EntitySet="BrokenRequest" />
+          </AssociationSet>
+          <AssociationSet Name="BrokenRequest_fk2" Association="Self.BrokenRequest_fk2">
+            <End Role="sp_BrokenRequestReason" EntitySet="sp_BrokenRequestReason" />
+            <End Role="BrokenRequest" EntitySet="BrokenRequest" />
+          </AssociationSet>
+          <AssociationSet Name="ElementsDragMetal_fk0" Association="Self.ElementsDragMetal_fk0">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="ElementsDragMetal" EntitySet="ElementsDragMetal" />
+          </AssociationSet>
+          <AssociationSet Name="ElementsDragMetal_fk1" Association="Self.ElementsDragMetal_fk1">
+            <End Role="sp_DragMetal" EntitySet="sp_DragMetal" />
+            <End Role="ElementsDragMetal" EntitySet="ElementsDragMetal" />
+          </AssociationSet>
+          <AssociationSet Name="ElementsPlaces_fk0" Association="Self.ElementsPlaces_fk0">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="ElementsPlaces" EntitySet="ElementsPlaces" />
+          </AssociationSet>
+          <AssociationSet Name="ElementsPlaces_fk1" Association="Self.ElementsPlaces_fk1">
+            <End Role="sp_Corpus" EntitySet="sp_Corpus" />
+            <End Role="ElementsPlaces" EntitySet="ElementsPlaces" />
+          </AssociationSet>
+          <AssociationSet Name="ElementsPlaces_fk2" Association="Self.ElementsPlaces_fk2">
+            <End Role="sp_MoveReason" EntitySet="sp_MoveReason" />
+            <End Role="ElementsPlaces" EntitySet="ElementsPlaces" />
+          </AssociationSet>
+          <AssociationSet Name="FaticalPhysicalPeoplePositions_fk0" Association="Self.FaticalPhysicalPeoplePositions_fk0">
+            <End Role="PhysicalPeople" EntitySet="PhysicalPeople" />
+            <End Role="FaticalPhysicalPeoplePositions" EntitySet="FaticalPhysicalPeoplePositions" />
+          </AssociationSet>
+          <AssociationSet Name="FaticalPhysicalPeoplePositions_fk1" Association="Self.FaticalPhysicalPeoplePositions_fk1">
+            <End Role="Organisations" EntitySet="Organisations" />
+            <End Role="FaticalPhysicalPeoplePositions" EntitySet="FaticalPhysicalPeoplePositions" />
+          </AssociationSet>
+          <AssociationSet Name="FaticalPhysicalPeoplePositions_fk2" Association="Self.FaticalPhysicalPeoplePositions_fk2">
+            <End Role="sp_PysicalPeoplePositions" EntitySet="sp_PysicalPeoplePositions" />
+            <End Role="FaticalPhysicalPeoplePositions" EntitySet="FaticalPhysicalPeoplePositions" />
+          </AssociationSet>
+          <AssociationSet Name="ModelElement_fk0" Association="Self.ModelElement_fk0">
+            <End Role="ModelType" EntitySet="ModelType" />
+            <End Role="ModelElement" EntitySet="ModelElement" />
+          </AssociationSet>
+          <AssociationSet Name="ModelElement_fk1" Association="Self.ModelElement_fk1">
+            <End Role="sp_ReasonWriteOff" EntitySet="sp_ReasonWriteOff" />
+            <End Role="ModelElement" EntitySet="ModelElement" />
+          </AssociationSet>
+          <AssociationSet Name="ModelType_fk0" Association="Self.ModelType_fk0">
+            <End Role="Organisations" EntitySet="Organisations" />
+            <End Role="ModelType" EntitySet="ModelType" />
+          </AssociationSet>
+          <AssociationSet Name="ModelType_fk1" Association="Self.ModelType_fk1">
+            <End Role="sp_FunctionalyUseModel" EntitySet="sp_FunctionalyUseModel" />
+            <End Role="ModelType" EntitySet="ModelType" />
+          </AssociationSet>
+          <AssociationSet Name="ModelType_fk2" Association="Self.ModelType_fk2">
+            <End Role="sp_ExpluatationRole" EntitySet="sp_ExpluatationRole" />
+            <End Role="ModelType" EntitySet="ModelType" />
+          </AssociationSet>
+          <AssociationSet Name="MOExpluatation_fk0" Association="Self.MOExpluatation_fk0">
+            <End Role="PhysicalPeople" EntitySet="PhysicalPeople" />
+            <End Role="MOExpluatation" EntitySet="MOExpluatation" />
+          </AssociationSet>
+          <AssociationSet Name="MOExpluatation_fk1" Association="Self.MOExpluatation_fk1">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="MOExpluatation" EntitySet="MOExpluatation" />
+          </AssociationSet>
+          <AssociationSet Name="MOExpluatation_fk2" Association="Self.MOExpluatation_fk2">
+            <End Role="sp_ServiceOperationPersonalRole" EntitySet="sp_ServiceOperationPersonalRole" />
+            <End Role="MOExpluatation" EntitySet="MOExpluatation" />
+          </AssociationSet>
+          <AssociationSet Name="Organisations_fk0" Association="Self.Organisations_fk0">
+            <End Role="sp_OrganisationType" EntitySet="sp_OrganisationType" />
+            <End Role="Organisations" EntitySet="Organisations" />
+          </AssociationSet>
+          <AssociationSet Name="Organisations_fk1" Association="Self.Organisations_fk1">
+            <End Role="sp_CountryKey" EntitySet="sp_CountryKey" />
+            <End Role="Organisations" EntitySet="Organisations" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalOnService_fk0" Association="Self.PersonalOnService_fk0">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="PersonalOnService" EntitySet="PersonalOnService" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalOnService_fk1" Association="Self.PersonalOnService_fk1">
+            <End Role="sp_ServiceOperationType" EntitySet="sp_ServiceOperationType" />
+            <End Role="PersonalOnService" EntitySet="PersonalOnService" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalOnService_fk2" Association="Self.PersonalOnService_fk2">
+            <End Role="PhysicalPeople" EntitySet="PhysicalPeople" />
+            <End Role="PersonalOnService" EntitySet="PersonalOnService" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalOnService_fk3" Association="Self.PersonalOnService_fk3">
+            <End Role="sp_ServiceOperationPersonalRole" EntitySet="sp_ServiceOperationPersonalRole" />
+            <End Role="PersonalOnService" EntitySet="PersonalOnService" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalOnService_fk4" Association="Self.PersonalOnService_fk4">
+            <End Role="sp_ServiceType" EntitySet="sp_ServiceType" />
+            <End Role="PersonalOnService" EntitySet="PersonalOnService" />
+          </AssociationSet>
+          <AssociationSet Name="PhysicalPeople_fk0" Association="Self.PhysicalPeople_fk0">
+            <End Role="sp_OrganisationDepartment" EntitySet="sp_OrganisationDepartment" />
+            <End Role="PhysicalPeople" EntitySet="PhysicalPeople" />
+          </AssociationSet>
+          <AssociationSet Name="Purchase_fk0" Association="Self.Purchase_fk0">
+            <End Role="sp_PurchaseType" EntitySet="sp_PurchaseType" />
+            <End Role="Purchase" EntitySet="Purchase" />
+          </AssociationSet>
+          <AssociationSet Name="Purchase_fk1" Association="Self.Purchase_fk1">
+            <End Role="Organisations" EntitySet="Organisations" />
+            <End Role="Purchase" EntitySet="Purchase" />
+          </AssociationSet>
+          <AssociationSet Name="PurchaseElements_fk0" Association="Self.PurchaseElements_fk0">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="PurchaseElements" EntitySet="PurchaseElements" />
+          </AssociationSet>
+          <AssociationSet Name="sp_OrganisationDepartment_fk0" Association="Self.sp_OrganisationDepartment_fk0">
+            <End Role="sp_Corpus" EntitySet="sp_Corpus" />
+            <End Role="sp_OrganisationDepartment" EntitySet="sp_OrganisationDepartment" />
+          </AssociationSet>
+          <AssociationSet Name="ZIPPMDocumentsOnPurchase_fk0" Association="Self.ZIPPMDocumentsOnPurchase_fk0">
+            <End Role="sp_ZIP_AND_PM_Element" EntitySet="sp_ZIP_AND_PM_Element" />
+            <End Role="ZIPPMDocumentsOnPurchase" EntitySet="ZIPPMDocumentsOnPurchase" />
+          </AssociationSet>
+          <AssociationSet Name="ZIPPMMoves_fk0" Association="Self.ZIPPMMoves_fk0">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="ZIPPMMoves" EntitySet="ZIPPMMoves" />
+          </AssociationSet>
+          <AssociationSet Name="ZIPPMMoves_fk1" Association="Self.ZIPPMMoves_fk1">
+            <End Role="sp_ZIP_AND_PM_Element" EntitySet="sp_ZIP_AND_PM_Element" />
+            <End Role="ZIPPMMoves" EntitySet="ZIPPMMoves" />
+          </AssociationSet>
+          <AssociationSet Name="ZIPPMonStock_fk0" Association="Self.ZIPPMonStock_fk0">
+            <End Role="sp_ZIP_AND_PM_Element" EntitySet="sp_ZIP_AND_PM_Element" />
+            <End Role="ZIPPMonStock" EntitySet="ZIPPMonStock" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Corpus">
+      <Schema Namespace="MainDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BrokenRequest">
           <Key>
-            <PropertyRef Name="Corpus_id" />
+            <PropertyRef Name="broken_request_id" />
           </Key>
-          <Property Name="Corpus_id" Type="Int32" Nullable="false" />
-          <Property Name="Corpus_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="broken_request_id" Type="Int32" Nullable="false" />
+          <Property Name="physical_people_id" Type="Int32" Nullable="false" />
+          <Property Name="model_element_id" Type="Int32" Nullable="false" />
+          <Property Name="broken_request_reason_id" Type="Int32" Nullable="false" />
+          <Property Name="date_to_repair" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="isFinished" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PhysicalPeople" Relationship="Self.BrokenRequest_fk0" FromRole="BrokenRequest" ToRole="PhysicalPeople" />
+          <NavigationProperty Name="ModelElement" Relationship="Self.BrokenRequest_fk1" FromRole="BrokenRequest" ToRole="ModelElement" />
+          <NavigationProperty Name="sp_BrokenRequestReason" Relationship="Self.BrokenRequest_fk2" FromRole="BrokenRequest" ToRole="sp_BrokenRequestReason" />
         </EntityType>
-        <EntityType Name="DragMetalOnEquipment">
+        <EntityType Name="ElementsDragMetal">
           <Key>
-            <PropertyRef Name="Drag_metal_on_equipment_id" />
+            <PropertyRef Name="elements_drag_metal_id" />
           </Key>
-          <Property Name="Drag_metal_on_equipment_id" Type="Int32" Nullable="false" />
-          <Property Name="Equipment_object_id" Type="Int32" />
-          <Property Name="Drag_metal_id" Type="Int32" />
-          <Property Name="weight" Type="Double" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="elements_drag_metal_id" Type="Int32" Nullable="false" />
+          <Property Name="model_element_id" Type="Int32" Nullable="false" />
+          <Property Name="drag_metal_id" Type="Int32" Nullable="false" />
+          <Property Name="size" Type="Int32" />
+          <NavigationProperty Name="ModelElement" Relationship="Self.ElementsDragMetal_fk0" FromRole="ElementsDragMetal" ToRole="ModelElement" />
+          <NavigationProperty Name="sp_DragMetal" Relationship="Self.ElementsDragMetal_fk1" FromRole="ElementsDragMetal" ToRole="sp_DragMetal" />
         </EntityType>
-        <EntityType Name="EquipmentModel">
+        <EntityType Name="ElementsPlaces">
           <Key>
-            <PropertyRef Name="Equipment_model_id" />
+            <PropertyRef Name="element_place_id" />
           </Key>
-          <Property Name="Equipment_model_id" Type="Int32" Nullable="false" />
-          <Property Name="Company_manufactorer_id" Type="Int32" />
-          <Property Name="Functional_purpose_id" Type="Int32" />
-          <Property Name="Full_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Apend_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="element_place_id" Type="Int32" Nullable="false" />
+          <Property Name="model_element_id" Type="Int32" Nullable="false" />
+          <Property Name="corpus_id" Type="Int32" Nullable="false" />
+          <Property Name="floor" Type="Int32" Nullable="false" />
+          <Property Name="room" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="date_begin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="date_end" Type="DateTime" Precision="0" />
+          <Property Name="move_reason_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ModelElement" Relationship="Self.ElementsPlaces_fk0" FromRole="ElementsPlaces" ToRole="ModelElement" />
+          <NavigationProperty Name="sp_Corpus" Relationship="Self.ElementsPlaces_fk1" FromRole="ElementsPlaces" ToRole="sp_Corpus" />
+          <NavigationProperty Name="sp_MoveReason" Relationship="Self.ElementsPlaces_fk2" FromRole="ElementsPlaces" ToRole="sp_MoveReason" />
         </EntityType>
-        <EntityType Name="EquipmentObject">
+        <EntityType Name="FaticalPhysicalPeoplePositions">
           <Key>
-            <PropertyRef Name="Equipment_object_id" />
+            <PropertyRef Name="fatical_physical_people_position_id" />
           </Key>
-          <Property Name="Equipment_object_id" Type="Int32" Nullable="false" />
-          <Property Name="Equipment_model_id" Type="Int32" />
-          <Property Name="Inventory_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Date_manufacture" Type="DateTime" Precision="0" />
-          <Property Name="Port" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="Country_id" Type="Int32" />
-          <Property Name="Serial_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Date_expluatation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="In_Buhgaltery" Type="Int32" />
-          <Property Name="Date_debited" Type="DateTime" Precision="0" />
-          <Property Name="Reason_for_debited" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="OtherInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fatical_physical_people_position_id" Type="Int32" Nullable="false" />
+          <Property Name="physical_people_id" Type="Int32" Nullable="false" />
+          <Property Name="organisation_id" Type="Int32" Nullable="false" />
+          <Property Name="people_position_id" Type="Int32" Nullable="false" />
+          <Property Name="date_begin" Type="DateTime" Precision="0" />
+          <Property Name="date_end" Type="DateTime" Precision="0" />
+          <Property Name="salary" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PhysicalPeople" Relationship="Self.FaticalPhysicalPeoplePositions_fk0" FromRole="FaticalPhysicalPeoplePositions" ToRole="PhysicalPeople" />
+          <NavigationProperty Name="Organisations" Relationship="Self.FaticalPhysicalPeoplePositions_fk1" FromRole="FaticalPhysicalPeoplePositions" ToRole="Organisations" />
+          <NavigationProperty Name="sp_PysicalPeoplePositions" Relationship="Self.FaticalPhysicalPeoplePositions_fk2" FromRole="FaticalPhysicalPeoplePositions" ToRole="sp_PysicalPeoplePositions" />
         </EntityType>
-        <EntityType Name="EquipmentPlace">
+        <EntityType Name="ModelElement">
           <Key>
-            <PropertyRef Name="Equipment_place_id" />
+            <PropertyRef Name="model_element_id" />
           </Key>
-          <Property Name="Equipment_place_id" Type="Int32" Nullable="false" />
-          <Property Name="Equipment_id" Type="Int32" />
-          <Property Name="Organisation_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Organisation_unit_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Corpus_id" Type="Int32" />
-          <Property Name="Floor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Room" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Date_localization_begin" Type="DateTime" Precision="0" />
-          <Property Name="Date_localization_finish" Type="DateTime" Precision="0" />
-          <Property Name="Reason_to_move" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="model_element_id" Type="Int32" Nullable="false" />
+          <Property Name="inventory_number" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="model_type_id" Type="Int32" Nullable="false" />
+          <Property Name="date_creation" Type="DateTime" Precision="0" />
+          <Property Name="serial_number" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date_utilisation" Type="DateTime" Precision="0" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="reason_write_off_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BrokenRequest" Relationship="Self.BrokenRequest_fk1" FromRole="ModelElement" ToRole="BrokenRequest" />
+          <NavigationProperty Name="ElementsDragMetal" Relationship="Self.ElementsDragMetal_fk0" FromRole="ModelElement" ToRole="ElementsDragMetal" />
+          <NavigationProperty Name="ElementsPlaces" Relationship="Self.ElementsPlaces_fk0" FromRole="ModelElement" ToRole="ElementsPlaces" />
+          <NavigationProperty Name="ModelType" Relationship="Self.ModelElement_fk0" FromRole="ModelElement" ToRole="ModelType" />
+          <NavigationProperty Name="sp_ReasonWriteOff" Relationship="Self.ModelElement_fk1" FromRole="ModelElement" ToRole="sp_ReasonWriteOff" />
+          <NavigationProperty Name="MOExpluatation" Relationship="Self.MOExpluatation_fk1" FromRole="ModelElement" ToRole="MOExpluatation" />
+          <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk0" FromRole="ModelElement" ToRole="PersonalOnService" />
+          <NavigationProperty Name="PurchaseElements" Relationship="Self.PurchaseElements_fk0" FromRole="ModelElement" ToRole="PurchaseElements" />
+          <NavigationProperty Name="ZIPPMMoves" Relationship="Self.ZIPPMMoves_fk0" FromRole="ModelElement" ToRole="ZIPPMMoves" />
         </EntityType>
-        <EntityType Name="EquipmentsModel">
+        <EntityType Name="ModelType">
           <Key>
-            <PropertyRef Name="Equipment_model_id" />
+            <PropertyRef Name="model_type_id" />
           </Key>
-          <Property Name="Equipment_model_id" Type="Int32" Nullable="false" />
-          <Property Name="Company_manufactorer_id" Type="Int32" />
-          <Property Name="Functional_purpose_id" Type="Int32" />
-          <Property Name="Full_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Apend_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="model_type_id" Type="Int32" Nullable="false" />
+          <Property Name="model_type_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="organisation_id" Type="Int32" Nullable="false" />
+          <Property Name="functionaly_use_model_id" Type="Int32" Nullable="false" />
+          <Property Name="expluatation_role_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ModelElement" Relationship="Self.ModelElement_fk0" FromRole="ModelType" ToRole="ModelElement" />
+          <NavigationProperty Name="Organisations" Relationship="Self.ModelType_fk0" FromRole="ModelType" ToRole="Organisations" />
+          <NavigationProperty Name="sp_FunctionalyUseModel" Relationship="Self.ModelType_fk1" FromRole="ModelType" ToRole="sp_FunctionalyUseModel" />
+          <NavigationProperty Name="sp_ExpluatationRole" Relationship="Self.ModelType_fk2" FromRole="ModelType" ToRole="sp_ExpluatationRole" />
         </EntityType>
-        <EntityType Name="MOUser">
+        <EntityType Name="MOExpluatation">
           <Key>
-            <PropertyRef Name="MO_user_id" />
+            <PropertyRef Name="mo_expluatation_id" />
           </Key>
-          <Property Name="MO_user_id" Type="Int32" Nullable="false" />
-          <Property Name="Position_id" Type="Int32" />
-          <Property Name="Position_type_id" Type="Int32" />
-          <Property Name="Physical_people_id" Type="Int32" />
-          <Property Name="equipment_id" Type="Int32" />
-          <Property Name="Date_begin" Type="DateTime" Precision="0" />
-          <Property Name="Date_finish" Type="DateTime" Precision="0" />
-          <Property Name="Model_role_id" Type="Int32" />
+          <Property Name="mo_expluatation_id" Type="Int32" Nullable="false" />
+          <Property Name="physical_people_id" Type="Int32" Nullable="false" />
+          <Property Name="model_element_id" Type="Int32" Nullable="false" />
+          <Property Name="date_begin" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="date_end" Type="DateTime" Precision="0" />
+          <Property Name="service_operation_personal_role_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ModelElement" Relationship="Self.MOExpluatation_fk1" FromRole="MOExpluatation" ToRole="ModelElement" />
+          <NavigationProperty Name="PhysicalPeople" Relationship="Self.MOExpluatation_fk0" FromRole="MOExpluatation" ToRole="PhysicalPeople" />
+          <NavigationProperty Name="sp_ServiceOperationPersonalRole" Relationship="Self.MOExpluatation_fk2" FromRole="MOExpluatation" ToRole="sp_ServiceOperationPersonalRole" />
         </EntityType>
-        <EntityType Name="Organization">
+        <EntityType Name="Organisations">
           <Key>
-            <PropertyRef Name="Organisation_id" />
+            <PropertyRef Name="organisation_id" />
           </Key>
-          <Property Name="Organisation_id" Type="Int32" Nullable="false" />
-          <Property Name="Organization_type_id" Type="Int32" />
-          <Property Name="Full_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Short_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Legal_address_id" Type="Int32" />
-          <Property Name="Actual_address_id" Type="Int32" />
-          <Property Name="Contact_information" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Site" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Head_id" Type="Int32" />
-          <Property Name="Last_update" Type="DateTime" Precision="0" />
+          <Property Name="organisation_id" Type="Int32" Nullable="false" />
+          <Property Name="organisation_short_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="organisation_full_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="organisation_type_id" Type="Int32" Nullable="false" />
+          <Property Name="country_key_id" Type="Int32" Nullable="false" />
+          <Property Name="factic_address" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contacts" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="FaticalPhysicalPeoplePositions" Relationship="Self.FaticalPhysicalPeoplePositions_fk1" FromRole="Organisations" ToRole="FaticalPhysicalPeoplePositions" />
+          <NavigationProperty Name="ModelType" Relationship="Self.ModelType_fk0" FromRole="Organisations" ToRole="ModelType" />
+          <NavigationProperty Name="sp_OrganisationType" Relationship="Self.Organisations_fk0" FromRole="Organisations" ToRole="sp_OrganisationType" />
+          <NavigationProperty Name="sp_CountryKey" Relationship="Self.Organisations_fk1" FromRole="Organisations" ToRole="sp_CountryKey" />
+          <NavigationProperty Name="Purchase" Relationship="Self.Purchase_fk1" FromRole="Organisations" ToRole="Purchase" />
         </EntityType>
-        <EntityType Name="PeoplePosition">
+        <EntityType Name="PersonalOnService">
           <Key>
-            <PropertyRef Name="People_position_id" />
+            <PropertyRef Name="personal_on_service_id" />
           </Key>
-          <Property Name="People_position_id" Type="Int32" Nullable="false" />
-          <Property Name="Physical_people_id" Type="Int32" />
-          <Property Name="Organisation_id" Type="Int32" />
-          <Property Name="Position_id" Type="Int32" />
-          <Property Name="Position_type_id" Type="Int32" />
-          <Property Name="DateBegin" Type="DateTime" Precision="0" />
-          <Property Name="DateDelete" Type="DateTime" Precision="0" />
-          <Property Name="Salary" Type="Int32" />
-          <Property Name="Other_info" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="PersonalRole">
-          <Key>
-            <PropertyRef Name="Personal_role_id" />
-          </Key>
-          <Property Name="Personal_role_id" Type="Int32" Nullable="false" />
-          <Property Name="Personal_role_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="personal_on_service_id" Type="Int32" Nullable="false" />
+          <Property Name="model_element_id" Type="Int32" Nullable="false" />
+          <Property Name="service_operation_type_id" Type="Int32" Nullable="false" />
+          <Property Name="physical_people_id" Type="Int32" />
+          <Property Name="service_operation_personal_role_id" Type="Int32" />
+          <Property Name="service_type_id" Type="Int32" />
+          <NavigationProperty Name="ModelElement" Relationship="Self.PersonalOnService_fk0" FromRole="PersonalOnService" ToRole="ModelElement" />
+          <NavigationProperty Name="sp_ServiceOperationType" Relationship="Self.PersonalOnService_fk1" FromRole="PersonalOnService" ToRole="sp_ServiceOperationType" />
+          <NavigationProperty Name="PhysicalPeople" Relationship="Self.PersonalOnService_fk2" FromRole="PersonalOnService" ToRole="PhysicalPeople" />
+          <NavigationProperty Name="sp_ServiceOperationPersonalRole" Relationship="Self.PersonalOnService_fk3" FromRole="PersonalOnService" ToRole="sp_ServiceOperationPersonalRole" />
+          <NavigationProperty Name="sp_ServiceType" Relationship="Self.PersonalOnService_fk4" FromRole="PersonalOnService" ToRole="sp_ServiceType" />
         </EntityType>
         <EntityType Name="PhysicalPeople">
           <Key>
-            <PropertyRef Name="Physical_people_Id" />
+            <PropertyRef Name="physical_people_id" />
           </Key>
-          <Property Name="Physical_people_Id" Type="Int32" Nullable="false" />
-          <Property Name="Family" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Patronymic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="physical_people_id" Type="Int32" Nullable="false" />
+          <Property Name="family" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="patronumic" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
           <Property Name="Gender" Type="Int32" />
-          <Property Name="Contacts" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="contacts" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="organisation_department_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BrokenRequest" Relationship="Self.BrokenRequest_fk0" FromRole="PhysicalPeople" ToRole="BrokenRequest" />
+          <NavigationProperty Name="FaticalPhysicalPeoplePositions" Relationship="Self.FaticalPhysicalPeoplePositions_fk0" FromRole="PhysicalPeople" ToRole="FaticalPhysicalPeoplePositions" />
+          <NavigationProperty Name="MOExpluatation" Relationship="Self.MOExpluatation_fk0" FromRole="PhysicalPeople" ToRole="MOExpluatation" />
+          <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk2" FromRole="PhysicalPeople" ToRole="PersonalOnService" />
+          <NavigationProperty Name="sp_OrganisationDepartment" Relationship="Self.PhysicalPeople_fk0" FromRole="PhysicalPeople" ToRole="sp_OrganisationDepartment" />
         </EntityType>
-        <EntityType Name="S_BrokenItem">
+        <EntityType Name="Purchase">
           <Key>
-            <PropertyRef Name="Broken_item_id" />
+            <PropertyRef Name="purchase_id" />
           </Key>
-          <Property Name="Broken_item_id" Type="Int32" Nullable="false" />
-          <Property Name="Broken_item_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="purchase_id" Type="Int32" Nullable="false" />
+          <Property Name="purchase_type_id" Type="Int32" Nullable="false" />
+          <Property Name="purchase_document_number" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date_apply" Type="DateTime" Precision="0" />
+          <Property Name="organisation_id" Type="Int32" />
+          <NavigationProperty Name="Organisations" Relationship="Self.Purchase_fk1" FromRole="Purchase" ToRole="Organisations" />
+          <NavigationProperty Name="sp_PurchaseType" Relationship="Self.Purchase_fk0" FromRole="Purchase" ToRole="sp_PurchaseType" />
         </EntityType>
-        <EntityType Name="S_BrokenReason">
+        <EntityType Name="PurchaseElements">
           <Key>
-            <PropertyRef Name="Broken_reason_id" />
+            <PropertyRef Name="purchase_element_id" />
           </Key>
-          <Property Name="Broken_reason_id" Type="Int32" Nullable="false" />
-          <Property Name="Broken_reason_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="purchase_element_id" Type="Int32" Nullable="false" />
+          <Property Name="model_element_id" Type="Int32" Nullable="false" />
+          <Property Name="count" Type="Int32" Nullable="false" />
+          <Property Name="planned_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="target_info" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isPurchasing" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ModelElement" Relationship="Self.PurchaseElements_fk0" FromRole="PurchaseElements" ToRole="ModelElement" />
         </EntityType>
-        <EntityType Name="S_CansellerationReason">
+        <EntityType Name="sp_BrokenRequestReason">
           <Key>
-            <PropertyRef Name="Canselleration_reason_id" />
+            <PropertyRef Name="broken_request_reason_id" />
           </Key>
-          <Property Name="Canselleration_reason_id" Type="Int32" Nullable="false" />
-          <Property Name="Canselleration_reason_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="broken_request_reason_id" Type="Int32" Nullable="false" />
+          <Property Name="broken_request_reason_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="BrokenRequest" Relationship="Self.BrokenRequest_fk2" FromRole="sp_BrokenRequestReason" ToRole="BrokenRequest" />
         </EntityType>
-        <EntityType Name="S_Corpus">
+        <EntityType Name="sp_Corpus">
           <Key>
-            <PropertyRef Name="Corpus_id" />
+            <PropertyRef Name="corpus_id" />
           </Key>
-          <Property Name="Corpus_id" Type="Int32" Nullable="false" />
-          <Property Name="Corpus_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="corpus_id" Type="Int32" Nullable="false" />
+          <Property Name="corpus_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ElementsPlaces" Relationship="Self.ElementsPlaces_fk1" FromRole="sp_Corpus" ToRole="ElementsPlaces" />
+          <NavigationProperty Name="sp_OrganisationDepartment" Relationship="Self.sp_OrganisationDepartment_fk0" FromRole="sp_Corpus" ToRole="sp_OrganisationDepartment" />
         </EntityType>
-        <EntityType Name="S_Country">
+        <EntityType Name="sp_CountryKey">
           <Key>
-            <PropertyRef Name="Country_id" />
+            <PropertyRef Name="country_key_id" />
           </Key>
-          <Property Name="Country_id" Type="Int32" Nullable="false" />
-          <Property Name="Country_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="country_key_id" Type="Int32" Nullable="false" />
+          <Property Name="country_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Organisations" Relationship="Self.Organisations_fk1" FromRole="sp_CountryKey" ToRole="Organisations" />
         </EntityType>
-        <EntityType Name="S_DisplacementCause">
+        <EntityType Name="sp_DragMetal">
           <Key>
-            <PropertyRef Name="Displacement_cause_id" />
+            <PropertyRef Name="drag_metal_id" />
           </Key>
-          <Property Name="Displacement_cause_id" Type="Int32" Nullable="false" />
-          <Property Name="Displacement_cause_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="drag_metal_id" Type="Int32" Nullable="false" />
+          <Property Name="drag_metal_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ElementsDragMetal" Relationship="Self.ElementsDragMetal_fk1" FromRole="sp_DragMetal" ToRole="ElementsDragMetal" />
         </EntityType>
-        <EntityType Name="S_DragMetal">
+        <EntityType Name="sp_ExpluatationRole">
           <Key>
-            <PropertyRef Name="Drag_metal_id" />
+            <PropertyRef Name="expluatation_role_id" />
           </Key>
-          <Property Name="Drag_metal_id" Type="Int32" Nullable="false" />
-          <Property Name="Drag_metal_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="expluatation_role_id" Type="Int32" Nullable="false" />
+          <Property Name="expluatation_role_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ModelType" Relationship="Self.ModelType_fk2" FromRole="sp_ExpluatationRole" ToRole="ModelType" />
         </EntityType>
-        <EntityType Name="S_ExpluatationRole">
+        <EntityType Name="sp_FunctionalyUseModel">
           <Key>
-            <PropertyRef Name="Expluatation_role_id" />
+            <PropertyRef Name="functionaly_use_model_id" />
           </Key>
-          <Property Name="Expluatation_role_id" Type="Int32" Nullable="false" />
-          <Property Name="Expluatation_role_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="functionaly_use_model_id" Type="Int32" Nullable="false" />
+          <Property Name="functionaly_use_model_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ModelType" Relationship="Self.ModelType_fk1" FromRole="sp_FunctionalyUseModel" ToRole="ModelType" />
         </EntityType>
-        <EntityType Name="S_FunctionalPurpose">
+        <EntityType Name="sp_MoveReason">
           <Key>
-            <PropertyRef Name="Functional_purpose_id" />
+            <PropertyRef Name="move_reason_id" />
           </Key>
-          <Property Name="Functional_purpose_id" Type="Int32" Nullable="false" />
-          <Property Name="Functional_purpose_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="move_reason_id" Type="Int32" Nullable="false" />
+          <Property Name="move_reason_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ElementsPlaces" Relationship="Self.ElementsPlaces_fk2" FromRole="sp_MoveReason" ToRole="ElementsPlaces" />
         </EntityType>
-        <EntityType Name="S_OrganisationType">
+        <EntityType Name="sp_OrganisationDepartment">
           <Key>
-            <PropertyRef Name="Organisation_type_id" />
+            <PropertyRef Name="organisation_department_id" />
           </Key>
-          <Property Name="Organisation_type_id" Type="Int32" Nullable="false" />
-          <Property Name="Organisation_type_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="organisation_department_id" Type="Int32" Nullable="false" />
+          <Property Name="organisation_department_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="corpus_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PhysicalPeople" Relationship="Self.PhysicalPeople_fk0" FromRole="sp_OrganisationDepartment" ToRole="PhysicalPeople" />
+          <NavigationProperty Name="sp_Corpus" Relationship="Self.sp_OrganisationDepartment_fk0" FromRole="sp_OrganisationDepartment" ToRole="sp_Corpus" />
         </EntityType>
-        <EntityType Name="S_OrganisationUnit">
+        <EntityType Name="sp_OrganisationType">
           <Key>
-            <PropertyRef Name="Organisation_unit_id" />
+            <PropertyRef Name="organisation_type_id" />
           </Key>
-          <Property Name="Organisation_unit_id" Type="Int32" Nullable="false" />
-          <Property Name="Organisation_id" Type="Int32" />
-          <Property Name="Organisation_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Corpus_id" Type="Int32" />
-          <Property Name="Group_category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="organisation_type_id" Type="Int32" Nullable="false" />
+          <Property Name="organisation_type_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Organisations" Relationship="Self.Organisations_fk0" FromRole="sp_OrganisationType" ToRole="Organisations" />
         </EntityType>
-        <EntityType Name="S_PersonalRole">
+        <EntityType Name="sp_PurchaseType">
           <Key>
-            <PropertyRef Name="Personal_role_id" />
+            <PropertyRef Name="purchase_type_id" />
           </Key>
-          <Property Name="Personal_role_id" Type="Int32" Nullable="false" />
-          <Property Name="Personal_role_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="purchase_type_id" Type="Int32" Nullable="false" />
+          <Property Name="purchase_type_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Purchase" Relationship="Self.Purchase_fk0" FromRole="sp_PurchaseType" ToRole="Purchase" />
         </EntityType>
-        <EntityType Name="S_PmElement">
+        <EntityType Name="sp_PysicalPeoplePositions">
           <Key>
-            <PropertyRef Name="Pm_element_id" />
+            <PropertyRef Name="physical_people_position_id" />
           </Key>
-          <Property Name="Pm_element_id" Type="Int32" Nullable="false" />
-          <Property Name="Pm_element_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="physical_people_position_id" Type="Int32" Nullable="false" />
+          <Property Name="physical_people_position_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="FaticalPhysicalPeoplePositions" Relationship="Self.FaticalPhysicalPeoplePositions_fk2" FromRole="sp_PysicalPeoplePositions" ToRole="FaticalPhysicalPeoplePositions" />
         </EntityType>
-        <EntityType Name="S_Position">
+        <EntityType Name="sp_ReasonWriteOff">
           <Key>
-            <PropertyRef Name="Position_id" />
+            <PropertyRef Name="reason_write_off_id" />
           </Key>
-          <Property Name="Position_id" Type="Int32" Nullable="false" />
-          <Property Name="Position_type_id" Type="Int32" />
-          <Property Name="Position_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Bad_position" Type="Int32" />
+          <Property Name="reason_write_off_id" Type="Int32" Nullable="false" />
+          <Property Name="reason_write_off_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ModelElement" Relationship="Self.ModelElement_fk1" FromRole="sp_ReasonWriteOff" ToRole="ModelElement" />
         </EntityType>
-        <EntityType Name="S_PurchaseType">
+        <EntityType Name="sp_ServiceOperationPersonalRole">
           <Key>
-            <PropertyRef Name="Purchase_type_id" />
+            <PropertyRef Name="service_operation_personal_role_id" />
           </Key>
-          <Property Name="Purchase_type_id" Type="Int32" Nullable="false" />
-          <Property Name="Purchase_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="service_operation_personal_role_id" Type="Int32" Nullable="false" />
+          <Property Name="service_operation_personal_role_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="MOExpluatation" Relationship="Self.MOExpluatation_fk2" FromRole="sp_ServiceOperationPersonalRole" ToRole="MOExpluatation" />
+          <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk3" FromRole="sp_ServiceOperationPersonalRole" ToRole="PersonalOnService" />
         </EntityType>
-        <EntityType Name="S_Service">
+        <EntityType Name="sp_ServiceOperationType">
           <Key>
-            <PropertyRef Name="Service_id" />
+            <PropertyRef Name="service_operation_type_id" />
           </Key>
-          <Property Name="Service_id" Type="Int32" Nullable="false" />
-          <Property Name="Service_type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="service_operation_type_id" Type="Int32" Nullable="false" />
+          <Property Name="service_operation_type_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk1" FromRole="sp_ServiceOperationType" ToRole="PersonalOnService" />
         </EntityType>
-        <EntityType Name="S_ServiceOperation">
+        <EntityType Name="sp_ServiceType">
           <Key>
-            <PropertyRef Name="Service_operation_id" />
+            <PropertyRef Name="service_type_id" />
           </Key>
-          <Property Name="Service_operation_id" Type="Int32" Nullable="false" />
-          <Property Name="Service_operation_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="service_type_id" Type="Int32" Nullable="false" />
+          <Property Name="service_type_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk4" FromRole="sp_ServiceType" ToRole="PersonalOnService" />
         </EntityType>
-        <EntityType Name="S_ZipElement">
+        <EntityType Name="sp_ZIP_AND_PM_Element">
           <Key>
-            <PropertyRef Name="Zip_element_id" />
+            <PropertyRef Name="zipPM_element_id" />
           </Key>
-          <Property Name="Zip_element_id" Type="Int32" Nullable="false" />
-          <Property Name="Zip_element_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="zipPM_element_id" Type="Int32" Nullable="false" />
+          <Property Name="zipPM_element_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="isZIP" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ZIPPMDocumentsOnPurchase" Relationship="Self.ZIPPMDocumentsOnPurchase_fk0" FromRole="sp_ZIP_AND_PM_Element" ToRole="ZIPPMDocumentsOnPurchase" />
+          <NavigationProperty Name="ZIPPMMoves" Relationship="Self.ZIPPMMoves_fk1" FromRole="sp_ZIP_AND_PM_Element" ToRole="ZIPPMMoves" />
+          <NavigationProperty Name="ZIPPMonStock" Relationship="Self.ZIPPMonStock_fk0" FromRole="sp_ZIP_AND_PM_Element" ToRole="ZIPPMonStock" />
         </EntityType>
-        <EntityType Name="ServiceMaintenance">
+        <EntityType Name="ZIPPMDocumentsOnPurchase">
           <Key>
-            <PropertyRef Name="Service_maintenance_id" />
+            <PropertyRef Name="zipPM_documents_purchase_id" />
           </Key>
-          <Property Name="Service_maintenance_id" Type="Int32" Nullable="false" />
-          <Property Name="Functional_purpose_id" Type="Int32" />
-          <Property Name="Equipment_model_id" Type="Int32" />
-          <Property Name="Service_id" Type="Int32" />
-          <Property Name="Time_begin" Type="DateTime" Precision="3" />
-          <Property Name="Time_finish" Type="DateTime" Precision="3" />
-          <Property Name="Service_Result" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="zipPM_documents_purchase_id" Type="Int32" Nullable="false" />
+          <Property Name="zipPM_element_id" Type="Int32" Nullable="false" />
+          <Property Name="count" Type="Int32" Nullable="false" />
+          <Property Name="date_coming_in" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="date_to_end_possible_use" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="sp_ZIP_AND_PM_Element" Relationship="Self.ZIPPMDocumentsOnPurchase_fk0" FromRole="ZIPPMDocumentsOnPurchase" ToRole="sp_ZIP_AND_PM_Element" />
         </EntityType>
-        <EntityType Name="ServiceMaintenanceOperation">
+        <EntityType Name="ZIPPMMoves">
           <Key>
-            <PropertyRef Name="Service_maintenance_operation_id" />
+            <PropertyRef Name="zipPM_move_id" />
           </Key>
-          <Property Name="Service_maintenance_operation_id" Type="Int32" Nullable="false" />
-          <Property Name="Functional_purpose_id" Type="Int32" />
-          <Property Name="Equipment_object_id" Type="Int32" />
-          <Property Name="Service_maintenance_id" Type="Int32" />
-          <Property Name="Service_operation_id" Type="Int32" />
+          <Property Name="zipPM_move_id" Type="Int32" Nullable="false" />
+          <Property Name="date_move" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="model_element_id" Type="Int32" Nullable="false" />
+          <Property Name="zipPM_element_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ModelElement" Relationship="Self.ZIPPMMoves_fk0" FromRole="ZIPPMMoves" ToRole="ModelElement" />
+          <NavigationProperty Name="sp_ZIP_AND_PM_Element" Relationship="Self.ZIPPMMoves_fk1" FromRole="ZIPPMMoves" ToRole="sp_ZIP_AND_PM_Element" />
         </EntityType>
-        <EntityType Name="Table">
+        <EntityType Name="ZIPPMonStock">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="zipPM_on_stock_id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="zipPM_on_stock_id" Type="Int32" Nullable="false" />
+          <Property Name="zipPM_element_id" Type="Int32" Nullable="false" />
+          <Property Name="count" Type="Int32" Nullable="false" />
+          <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="sp_ZIP_AND_PM_Element" Relationship="Self.ZIPPMonStock_fk0" FromRole="ZIPPMonStock" ToRole="sp_ZIP_AND_PM_Element" />
         </EntityType>
-        <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Corpus" EntityType="Self.Corpus" />
-          <EntitySet Name="DragMetalOnEquipment" EntityType="Self.DragMetalOnEquipment" />
-          <EntitySet Name="EquipmentModel" EntityType="Self.EquipmentModel" />
-          <EntitySet Name="EquipmentObject" EntityType="Self.EquipmentObject" />
-          <EntitySet Name="EquipmentPlace" EntityType="Self.EquipmentPlace" />
-          <EntitySet Name="EquipmentsModel" EntityType="Self.EquipmentsModel" />
-          <EntitySet Name="MOUser" EntityType="Self.MOUser" />
-          <EntitySet Name="Organization" EntityType="Self.Organization" />
-          <EntitySet Name="PeoplePosition" EntityType="Self.PeoplePosition" />
-          <EntitySet Name="PersonalRole" EntityType="Self.PersonalRole" />
+        <Association Name="BrokenRequest_fk0">
+          <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="1" />
+          <End Role="BrokenRequest" Type="Self.BrokenRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhysicalPeople">
+              <PropertyRef Name="physical_people_id" />
+            </Principal>
+            <Dependent Role="BrokenRequest">
+              <PropertyRef Name="physical_people_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BrokenRequest_fk1">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="BrokenRequest" Type="Self.BrokenRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="BrokenRequest">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BrokenRequest_fk2">
+          <End Role="sp_BrokenRequestReason" Type="Self.sp_BrokenRequestReason" Multiplicity="1" />
+          <End Role="BrokenRequest" Type="Self.BrokenRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_BrokenRequestReason">
+              <PropertyRef Name="broken_request_reason_id" />
+            </Principal>
+            <Dependent Role="BrokenRequest">
+              <PropertyRef Name="broken_request_reason_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ElementsDragMetal_fk0">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="ElementsDragMetal" Type="Self.ElementsDragMetal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="ElementsDragMetal">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ElementsDragMetal_fk1">
+          <End Role="sp_DragMetal" Type="Self.sp_DragMetal" Multiplicity="1" />
+          <End Role="ElementsDragMetal" Type="Self.ElementsDragMetal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_DragMetal">
+              <PropertyRef Name="drag_metal_id" />
+            </Principal>
+            <Dependent Role="ElementsDragMetal">
+              <PropertyRef Name="drag_metal_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ElementsPlaces_fk0">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="ElementsPlaces" Type="Self.ElementsPlaces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="ElementsPlaces">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ElementsPlaces_fk1">
+          <End Role="sp_Corpus" Type="Self.sp_Corpus" Multiplicity="1" />
+          <End Role="ElementsPlaces" Type="Self.ElementsPlaces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_Corpus">
+              <PropertyRef Name="corpus_id" />
+            </Principal>
+            <Dependent Role="ElementsPlaces">
+              <PropertyRef Name="corpus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ElementsPlaces_fk2">
+          <End Role="sp_MoveReason" Type="Self.sp_MoveReason" Multiplicity="1" />
+          <End Role="ElementsPlaces" Type="Self.ElementsPlaces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_MoveReason">
+              <PropertyRef Name="move_reason_id" />
+            </Principal>
+            <Dependent Role="ElementsPlaces">
+              <PropertyRef Name="move_reason_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FaticalPhysicalPeoplePositions_fk0">
+          <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="1" />
+          <End Role="FaticalPhysicalPeoplePositions" Type="Self.FaticalPhysicalPeoplePositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhysicalPeople">
+              <PropertyRef Name="physical_people_id" />
+            </Principal>
+            <Dependent Role="FaticalPhysicalPeoplePositions">
+              <PropertyRef Name="physical_people_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FaticalPhysicalPeoplePositions_fk1">
+          <End Role="Organisations" Type="Self.Organisations" Multiplicity="1" />
+          <End Role="FaticalPhysicalPeoplePositions" Type="Self.FaticalPhysicalPeoplePositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisations">
+              <PropertyRef Name="organisation_id" />
+            </Principal>
+            <Dependent Role="FaticalPhysicalPeoplePositions">
+              <PropertyRef Name="organisation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FaticalPhysicalPeoplePositions_fk2">
+          <End Role="sp_PysicalPeoplePositions" Type="Self.sp_PysicalPeoplePositions" Multiplicity="1" />
+          <End Role="FaticalPhysicalPeoplePositions" Type="Self.FaticalPhysicalPeoplePositions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_PysicalPeoplePositions">
+              <PropertyRef Name="physical_people_position_id" />
+            </Principal>
+            <Dependent Role="FaticalPhysicalPeoplePositions">
+              <PropertyRef Name="people_position_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModelElement_fk0">
+          <End Role="ModelType" Type="Self.ModelType" Multiplicity="1" />
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelType">
+              <PropertyRef Name="model_type_id" />
+            </Principal>
+            <Dependent Role="ModelElement">
+              <PropertyRef Name="model_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModelElement_fk1">
+          <End Role="sp_ReasonWriteOff" Type="Self.sp_ReasonWriteOff" Multiplicity="1" />
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ReasonWriteOff">
+              <PropertyRef Name="reason_write_off_id" />
+            </Principal>
+            <Dependent Role="ModelElement">
+              <PropertyRef Name="reason_write_off_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MOExpluatation_fk1">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="MOExpluatation" Type="Self.MOExpluatation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="MOExpluatation">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalOnService_fk0">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="PersonalOnService" Type="Self.PersonalOnService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="PersonalOnService">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PurchaseElements_fk0">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="PurchaseElements" Type="Self.PurchaseElements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="PurchaseElements">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZIPPMMoves_fk0">
+          <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+          <End Role="ZIPPMMoves" Type="Self.ZIPPMMoves" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ModelElement">
+              <PropertyRef Name="model_element_id" />
+            </Principal>
+            <Dependent Role="ZIPPMMoves">
+              <PropertyRef Name="model_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModelType_fk0">
+          <End Role="Organisations" Type="Self.Organisations" Multiplicity="1" />
+          <End Role="ModelType" Type="Self.ModelType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisations">
+              <PropertyRef Name="organisation_id" />
+            </Principal>
+            <Dependent Role="ModelType">
+              <PropertyRef Name="organisation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModelType_fk1">
+          <End Role="sp_FunctionalyUseModel" Type="Self.sp_FunctionalyUseModel" Multiplicity="1" />
+          <End Role="ModelType" Type="Self.ModelType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_FunctionalyUseModel">
+              <PropertyRef Name="functionaly_use_model_id" />
+            </Principal>
+            <Dependent Role="ModelType">
+              <PropertyRef Name="functionaly_use_model_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ModelType_fk2">
+          <End Role="sp_ExpluatationRole" Type="Self.sp_ExpluatationRole" Multiplicity="1" />
+          <End Role="ModelType" Type="Self.ModelType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ExpluatationRole">
+              <PropertyRef Name="expluatation_role_id" />
+            </Principal>
+            <Dependent Role="ModelType">
+              <PropertyRef Name="expluatation_role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MOExpluatation_fk0">
+          <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="1" />
+          <End Role="MOExpluatation" Type="Self.MOExpluatation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhysicalPeople">
+              <PropertyRef Name="physical_people_id" />
+            </Principal>
+            <Dependent Role="MOExpluatation">
+              <PropertyRef Name="physical_people_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MOExpluatation_fk2">
+          <End Role="sp_ServiceOperationPersonalRole" Type="Self.sp_ServiceOperationPersonalRole" Multiplicity="1" />
+          <End Role="MOExpluatation" Type="Self.MOExpluatation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ServiceOperationPersonalRole">
+              <PropertyRef Name="service_operation_personal_role_id" />
+            </Principal>
+            <Dependent Role="MOExpluatation">
+              <PropertyRef Name="service_operation_personal_role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Organisations_fk0">
+          <End Role="sp_OrganisationType" Type="Self.sp_OrganisationType" Multiplicity="1" />
+          <End Role="Organisations" Type="Self.Organisations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_OrganisationType">
+              <PropertyRef Name="organisation_type_id" />
+            </Principal>
+            <Dependent Role="Organisations">
+              <PropertyRef Name="organisation_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Organisations_fk1">
+          <End Role="sp_CountryKey" Type="Self.sp_CountryKey" Multiplicity="1" />
+          <End Role="Organisations" Type="Self.Organisations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_CountryKey">
+              <PropertyRef Name="country_key_id" />
+            </Principal>
+            <Dependent Role="Organisations">
+              <PropertyRef Name="country_key_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Purchase_fk1">
+          <End Role="Organisations" Type="Self.Organisations" Multiplicity="0..1" />
+          <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisations">
+              <PropertyRef Name="organisation_id" />
+            </Principal>
+            <Dependent Role="Purchase">
+              <PropertyRef Name="organisation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalOnService_fk1">
+          <End Role="sp_ServiceOperationType" Type="Self.sp_ServiceOperationType" Multiplicity="1" />
+          <End Role="PersonalOnService" Type="Self.PersonalOnService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ServiceOperationType">
+              <PropertyRef Name="service_operation_type_id" />
+            </Principal>
+            <Dependent Role="PersonalOnService">
+              <PropertyRef Name="service_operation_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalOnService_fk2">
+          <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="0..1" />
+          <End Role="PersonalOnService" Type="Self.PersonalOnService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhysicalPeople">
+              <PropertyRef Name="physical_people_id" />
+            </Principal>
+            <Dependent Role="PersonalOnService">
+              <PropertyRef Name="physical_people_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalOnService_fk3">
+          <End Role="sp_ServiceOperationPersonalRole" Type="Self.sp_ServiceOperationPersonalRole" Multiplicity="0..1" />
+          <End Role="PersonalOnService" Type="Self.PersonalOnService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ServiceOperationPersonalRole">
+              <PropertyRef Name="service_operation_personal_role_id" />
+            </Principal>
+            <Dependent Role="PersonalOnService">
+              <PropertyRef Name="service_operation_personal_role_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonalOnService_fk4">
+          <End Role="sp_ServiceType" Type="Self.sp_ServiceType" Multiplicity="0..1" />
+          <End Role="PersonalOnService" Type="Self.PersonalOnService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ServiceType">
+              <PropertyRef Name="service_type_id" />
+            </Principal>
+            <Dependent Role="PersonalOnService">
+              <PropertyRef Name="service_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PhysicalPeople_fk0">
+          <End Role="sp_OrganisationDepartment" Type="Self.sp_OrganisationDepartment" Multiplicity="1" />
+          <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_OrganisationDepartment">
+              <PropertyRef Name="organisation_department_id" />
+            </Principal>
+            <Dependent Role="PhysicalPeople">
+              <PropertyRef Name="organisation_department_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Purchase_fk0">
+          <End Role="sp_PurchaseType" Type="Self.sp_PurchaseType" Multiplicity="1" />
+          <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_PurchaseType">
+              <PropertyRef Name="purchase_type_id" />
+            </Principal>
+            <Dependent Role="Purchase">
+              <PropertyRef Name="purchase_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="sp_OrganisationDepartment_fk0">
+          <End Role="sp_Corpus" Type="Self.sp_Corpus" Multiplicity="1" />
+          <End Role="sp_OrganisationDepartment" Type="Self.sp_OrganisationDepartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_Corpus">
+              <PropertyRef Name="corpus_id" />
+            </Principal>
+            <Dependent Role="sp_OrganisationDepartment">
+              <PropertyRef Name="corpus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZIPPMDocumentsOnPurchase_fk0">
+          <End Role="sp_ZIP_AND_PM_Element" Type="Self.sp_ZIP_AND_PM_Element" Multiplicity="1" />
+          <End Role="ZIPPMDocumentsOnPurchase" Type="Self.ZIPPMDocumentsOnPurchase" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ZIP_AND_PM_Element">
+              <PropertyRef Name="zipPM_element_id" />
+            </Principal>
+            <Dependent Role="ZIPPMDocumentsOnPurchase">
+              <PropertyRef Name="zipPM_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZIPPMMoves_fk1">
+          <End Role="sp_ZIP_AND_PM_Element" Type="Self.sp_ZIP_AND_PM_Element" Multiplicity="1" />
+          <End Role="ZIPPMMoves" Type="Self.ZIPPMMoves" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ZIP_AND_PM_Element">
+              <PropertyRef Name="zipPM_element_id" />
+            </Principal>
+            <Dependent Role="ZIPPMMoves">
+              <PropertyRef Name="zipPM_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZIPPMonStock_fk0">
+          <End Role="sp_ZIP_AND_PM_Element" Type="Self.sp_ZIP_AND_PM_Element" Multiplicity="1" />
+          <End Role="ZIPPMonStock" Type="Self.ZIPPMonStock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sp_ZIP_AND_PM_Element">
+              <PropertyRef Name="zipPM_element_id" />
+            </Principal>
+            <Dependent Role="ZIPPMonStock">
+              <PropertyRef Name="zipPM_element_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MainDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BrokenRequest" EntityType="Self.BrokenRequest" />
+          <EntitySet Name="ElementsDragMetal" EntityType="Self.ElementsDragMetal" />
+          <EntitySet Name="ElementsPlaces" EntityType="Self.ElementsPlaces" />
+          <EntitySet Name="FaticalPhysicalPeoplePositions" EntityType="Self.FaticalPhysicalPeoplePositions" />
+          <EntitySet Name="ModelElement" EntityType="Self.ModelElement" />
+          <EntitySet Name="ModelType" EntityType="Self.ModelType" />
+          <EntitySet Name="MOExpluatation" EntityType="Self.MOExpluatation" />
+          <EntitySet Name="Organisations" EntityType="Self.Organisations" />
+          <EntitySet Name="PersonalOnService" EntityType="Self.PersonalOnService" />
           <EntitySet Name="PhysicalPeople" EntityType="Self.PhysicalPeople" />
-          <EntitySet Name="S_BrokenItem" EntityType="Self.S_BrokenItem" />
-          <EntitySet Name="S_BrokenReason" EntityType="Self.S_BrokenReason" />
-          <EntitySet Name="S_CansellerationReason" EntityType="Self.S_CansellerationReason" />
-          <EntitySet Name="S_Corpus" EntityType="Self.S_Corpus" />
-          <EntitySet Name="S_Country" EntityType="Self.S_Country" />
-          <EntitySet Name="S_DisplacementCause" EntityType="Self.S_DisplacementCause" />
-          <EntitySet Name="S_DragMetal" EntityType="Self.S_DragMetal" />
-          <EntitySet Name="S_ExpluatationRole" EntityType="Self.S_ExpluatationRole" />
-          <EntitySet Name="S_FunctionalPurpose" EntityType="Self.S_FunctionalPurpose" />
-          <EntitySet Name="S_OrganisationType" EntityType="Self.S_OrganisationType" />
-          <EntitySet Name="S_OrganisationUnit" EntityType="Self.S_OrganisationUnit" />
-          <EntitySet Name="S_PersonalRole" EntityType="Self.S_PersonalRole" />
-          <EntitySet Name="S_PmElement" EntityType="Self.S_PmElement" />
-          <EntitySet Name="S_Position" EntityType="Self.S_Position" />
-          <EntitySet Name="S_PurchaseType" EntityType="Self.S_PurchaseType" />
-          <EntitySet Name="S_Service" EntityType="Self.S_Service" />
-          <EntitySet Name="S_ServiceOperation" EntityType="Self.S_ServiceOperation" />
-          <EntitySet Name="S_ZipElement" EntityType="Self.S_ZipElement" />
-          <EntitySet Name="ServiceMaintenance" EntityType="Self.ServiceMaintenance" />
-          <EntitySet Name="ServiceMaintenanceOperation" EntityType="Self.ServiceMaintenanceOperation" />
-          <EntitySet Name="Table" EntityType="Self.Table" />
+          <EntitySet Name="Purchase" EntityType="Self.Purchase" />
+          <EntitySet Name="PurchaseElements" EntityType="Self.PurchaseElements" />
+          <EntitySet Name="sp_BrokenRequestReason" EntityType="Self.sp_BrokenRequestReason" />
+          <EntitySet Name="sp_Corpus" EntityType="Self.sp_Corpus" />
+          <EntitySet Name="sp_CountryKey" EntityType="Self.sp_CountryKey" />
+          <EntitySet Name="sp_DragMetal" EntityType="Self.sp_DragMetal" />
+          <EntitySet Name="sp_ExpluatationRole" EntityType="Self.sp_ExpluatationRole" />
+          <EntitySet Name="sp_FunctionalyUseModel" EntityType="Self.sp_FunctionalyUseModel" />
+          <EntitySet Name="sp_MoveReason" EntityType="Self.sp_MoveReason" />
+          <EntitySet Name="sp_OrganisationDepartment" EntityType="Self.sp_OrganisationDepartment" />
+          <EntitySet Name="sp_OrganisationType" EntityType="Self.sp_OrganisationType" />
+          <EntitySet Name="sp_PurchaseType" EntityType="Self.sp_PurchaseType" />
+          <EntitySet Name="sp_PysicalPeoplePositions" EntityType="Self.sp_PysicalPeoplePositions" />
+          <EntitySet Name="sp_ReasonWriteOff" EntityType="Self.sp_ReasonWriteOff" />
+          <EntitySet Name="sp_ServiceOperationPersonalRole" EntityType="Self.sp_ServiceOperationPersonalRole" />
+          <EntitySet Name="sp_ServiceOperationType" EntityType="Self.sp_ServiceOperationType" />
+          <EntitySet Name="sp_ServiceType" EntityType="Self.sp_ServiceType" />
+          <EntitySet Name="sp_ZIP_AND_PM_Element" EntityType="Self.sp_ZIP_AND_PM_Element" />
+          <EntitySet Name="ZIPPMDocumentsOnPurchase" EntityType="Self.ZIPPMDocumentsOnPurchase" />
+          <EntitySet Name="ZIPPMMoves" EntityType="Self.ZIPPMMoves" />
+          <EntitySet Name="ZIPPMonStock" EntityType="Self.ZIPPMonStock" />
+          <AssociationSet Name="BrokenRequest_fk0" Association="Self.BrokenRequest_fk0">
+            <End Role="PhysicalPeople" EntitySet="PhysicalPeople" />
+            <End Role="BrokenRequest" EntitySet="BrokenRequest" />
+          </AssociationSet>
+          <AssociationSet Name="BrokenRequest_fk1" Association="Self.BrokenRequest_fk1">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="BrokenRequest" EntitySet="BrokenRequest" />
+          </AssociationSet>
+          <AssociationSet Name="BrokenRequest_fk2" Association="Self.BrokenRequest_fk2">
+            <End Role="sp_BrokenRequestReason" EntitySet="sp_BrokenRequestReason" />
+            <End Role="BrokenRequest" EntitySet="BrokenRequest" />
+          </AssociationSet>
+          <AssociationSet Name="ElementsDragMetal_fk0" Association="Self.ElementsDragMetal_fk0">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="ElementsDragMetal" EntitySet="ElementsDragMetal" />
+          </AssociationSet>
+          <AssociationSet Name="ElementsDragMetal_fk1" Association="Self.ElementsDragMetal_fk1">
+            <End Role="sp_DragMetal" EntitySet="sp_DragMetal" />
+            <End Role="ElementsDragMetal" EntitySet="ElementsDragMetal" />
+          </AssociationSet>
+          <AssociationSet Name="ElementsPlaces_fk0" Association="Self.ElementsPlaces_fk0">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="ElementsPlaces" EntitySet="ElementsPlaces" />
+          </AssociationSet>
+          <AssociationSet Name="ElementsPlaces_fk1" Association="Self.ElementsPlaces_fk1">
+            <End Role="sp_Corpus" EntitySet="sp_Corpus" />
+            <End Role="ElementsPlaces" EntitySet="ElementsPlaces" />
+          </AssociationSet>
+          <AssociationSet Name="ElementsPlaces_fk2" Association="Self.ElementsPlaces_fk2">
+            <End Role="sp_MoveReason" EntitySet="sp_MoveReason" />
+            <End Role="ElementsPlaces" EntitySet="ElementsPlaces" />
+          </AssociationSet>
+          <AssociationSet Name="FaticalPhysicalPeoplePositions_fk0" Association="Self.FaticalPhysicalPeoplePositions_fk0">
+            <End Role="PhysicalPeople" EntitySet="PhysicalPeople" />
+            <End Role="FaticalPhysicalPeoplePositions" EntitySet="FaticalPhysicalPeoplePositions" />
+          </AssociationSet>
+          <AssociationSet Name="FaticalPhysicalPeoplePositions_fk1" Association="Self.FaticalPhysicalPeoplePositions_fk1">
+            <End Role="Organisations" EntitySet="Organisations" />
+            <End Role="FaticalPhysicalPeoplePositions" EntitySet="FaticalPhysicalPeoplePositions" />
+          </AssociationSet>
+          <AssociationSet Name="FaticalPhysicalPeoplePositions_fk2" Association="Self.FaticalPhysicalPeoplePositions_fk2">
+            <End Role="sp_PysicalPeoplePositions" EntitySet="sp_PysicalPeoplePositions" />
+            <End Role="FaticalPhysicalPeoplePositions" EntitySet="FaticalPhysicalPeoplePositions" />
+          </AssociationSet>
+          <AssociationSet Name="ModelElement_fk0" Association="Self.ModelElement_fk0">
+            <End Role="ModelType" EntitySet="ModelType" />
+            <End Role="ModelElement" EntitySet="ModelElement" />
+          </AssociationSet>
+          <AssociationSet Name="ModelElement_fk1" Association="Self.ModelElement_fk1">
+            <End Role="sp_ReasonWriteOff" EntitySet="sp_ReasonWriteOff" />
+            <End Role="ModelElement" EntitySet="ModelElement" />
+          </AssociationSet>
+          <AssociationSet Name="MOExpluatation_fk1" Association="Self.MOExpluatation_fk1">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="MOExpluatation" EntitySet="MOExpluatation" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalOnService_fk0" Association="Self.PersonalOnService_fk0">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="PersonalOnService" EntitySet="PersonalOnService" />
+          </AssociationSet>
+          <AssociationSet Name="PurchaseElements_fk0" Association="Self.PurchaseElements_fk0">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="PurchaseElements" EntitySet="PurchaseElements" />
+          </AssociationSet>
+          <AssociationSet Name="ZIPPMMoves_fk0" Association="Self.ZIPPMMoves_fk0">
+            <End Role="ModelElement" EntitySet="ModelElement" />
+            <End Role="ZIPPMMoves" EntitySet="ZIPPMMoves" />
+          </AssociationSet>
+          <AssociationSet Name="ModelType_fk0" Association="Self.ModelType_fk0">
+            <End Role="Organisations" EntitySet="Organisations" />
+            <End Role="ModelType" EntitySet="ModelType" />
+          </AssociationSet>
+          <AssociationSet Name="ModelType_fk1" Association="Self.ModelType_fk1">
+            <End Role="sp_FunctionalyUseModel" EntitySet="sp_FunctionalyUseModel" />
+            <End Role="ModelType" EntitySet="ModelType" />
+          </AssociationSet>
+          <AssociationSet Name="ModelType_fk2" Association="Self.ModelType_fk2">
+            <End Role="sp_ExpluatationRole" EntitySet="sp_ExpluatationRole" />
+            <End Role="ModelType" EntitySet="ModelType" />
+          </AssociationSet>
+          <AssociationSet Name="MOExpluatation_fk0" Association="Self.MOExpluatation_fk0">
+            <End Role="PhysicalPeople" EntitySet="PhysicalPeople" />
+            <End Role="MOExpluatation" EntitySet="MOExpluatation" />
+          </AssociationSet>
+          <AssociationSet Name="MOExpluatation_fk2" Association="Self.MOExpluatation_fk2">
+            <End Role="sp_ServiceOperationPersonalRole" EntitySet="sp_ServiceOperationPersonalRole" />
+            <End Role="MOExpluatation" EntitySet="MOExpluatation" />
+          </AssociationSet>
+          <AssociationSet Name="Organisations_fk0" Association="Self.Organisations_fk0">
+            <End Role="sp_OrganisationType" EntitySet="sp_OrganisationType" />
+            <End Role="Organisations" EntitySet="Organisations" />
+          </AssociationSet>
+          <AssociationSet Name="Organisations_fk1" Association="Self.Organisations_fk1">
+            <End Role="sp_CountryKey" EntitySet="sp_CountryKey" />
+            <End Role="Organisations" EntitySet="Organisations" />
+          </AssociationSet>
+          <AssociationSet Name="Purchase_fk1" Association="Self.Purchase_fk1">
+            <End Role="Organisations" EntitySet="Organisations" />
+            <End Role="Purchase" EntitySet="Purchase" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalOnService_fk1" Association="Self.PersonalOnService_fk1">
+            <End Role="sp_ServiceOperationType" EntitySet="sp_ServiceOperationType" />
+            <End Role="PersonalOnService" EntitySet="PersonalOnService" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalOnService_fk2" Association="Self.PersonalOnService_fk2">
+            <End Role="PhysicalPeople" EntitySet="PhysicalPeople" />
+            <End Role="PersonalOnService" EntitySet="PersonalOnService" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalOnService_fk3" Association="Self.PersonalOnService_fk3">
+            <End Role="sp_ServiceOperationPersonalRole" EntitySet="sp_ServiceOperationPersonalRole" />
+            <End Role="PersonalOnService" EntitySet="PersonalOnService" />
+          </AssociationSet>
+          <AssociationSet Name="PersonalOnService_fk4" Association="Self.PersonalOnService_fk4">
+            <End Role="sp_ServiceType" EntitySet="sp_ServiceType" />
+            <End Role="PersonalOnService" EntitySet="PersonalOnService" />
+          </AssociationSet>
+          <AssociationSet Name="PhysicalPeople_fk0" Association="Self.PhysicalPeople_fk0">
+            <End Role="sp_OrganisationDepartment" EntitySet="sp_OrganisationDepartment" />
+            <End Role="PhysicalPeople" EntitySet="PhysicalPeople" />
+          </AssociationSet>
+          <AssociationSet Name="Purchase_fk0" Association="Self.Purchase_fk0">
+            <End Role="sp_PurchaseType" EntitySet="sp_PurchaseType" />
+            <End Role="Purchase" EntitySet="Purchase" />
+          </AssociationSet>
+          <AssociationSet Name="sp_OrganisationDepartment_fk0" Association="Self.sp_OrganisationDepartment_fk0">
+            <End Role="sp_Corpus" EntitySet="sp_Corpus" />
+            <End Role="sp_OrganisationDepartment" EntitySet="sp_OrganisationDepartment" />
+          </AssociationSet>
+          <AssociationSet Name="ZIPPMDocumentsOnPurchase_fk0" Association="Self.ZIPPMDocumentsOnPurchase_fk0">
+            <End Role="sp_ZIP_AND_PM_Element" EntitySet="sp_ZIP_AND_PM_Element" />
+            <End Role="ZIPPMDocumentsOnPurchase" EntitySet="ZIPPMDocumentsOnPurchase" />
+          </AssociationSet>
+          <AssociationSet Name="ZIPPMMoves_fk1" Association="Self.ZIPPMMoves_fk1">
+            <End Role="sp_ZIP_AND_PM_Element" EntitySet="sp_ZIP_AND_PM_Element" />
+            <End Role="ZIPPMMoves" EntitySet="ZIPPMMoves" />
+          </AssociationSet>
+          <AssociationSet Name="ZIPPMonStock_fk0" Association="Self.ZIPPMonStock_fk0">
+            <End Role="sp_ZIP_AND_PM_Element" EntitySet="sp_ZIP_AND_PM_Element" />
+            <End Role="ZIPPMonStock" EntitySet="ZIPPMonStock" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище DatabaseModelContainer" CdmEntityContainer="DatabaseEntities">
-          <EntitySetMapping Name="Corpus">
-            <EntityTypeMapping TypeName="DatabaseModel.Corpus">
-              <MappingFragment StoreEntitySet="Corpus">
-                <ScalarProperty Name="Corpus_id" ColumnName="Corpus_id" />
-                <ScalarProperty Name="Corpus_name" ColumnName="Corpus_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+        <EntityContainerMapping StorageEntityContainer="Хранилище MainDatabaseModelContainer" CdmEntityContainer="MainDatabaseEntities">
+          <EntitySetMapping Name="BrokenRequest">
+            <EntityTypeMapping TypeName="MainDatabaseModel.BrokenRequest">
+              <MappingFragment StoreEntitySet="BrokenRequest">
+                <ScalarProperty Name="broken_request_id" ColumnName="broken_request_id" />
+                <ScalarProperty Name="physical_people_id" ColumnName="physical_people_id" />
+                <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+                <ScalarProperty Name="broken_request_reason_id" ColumnName="broken_request_reason_id" />
+                <ScalarProperty Name="date_to_repair" ColumnName="date_to_repair" />
+                <ScalarProperty Name="isFinished" ColumnName="isFinished" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DragMetalOnEquipment">
-            <EntityTypeMapping TypeName="DatabaseModel.DragMetalOnEquipment">
-              <MappingFragment StoreEntitySet="DragMetalOnEquipment">
-                <ScalarProperty Name="Drag_metal_on_equipment_id" ColumnName="Drag_metal_on_equipment_id" />
-                <ScalarProperty Name="Equipment_object_id" ColumnName="Equipment_object_id" />
-                <ScalarProperty Name="Drag_metal_id" ColumnName="Drag_metal_id" />
-                <ScalarProperty Name="weight" ColumnName="weight" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="ElementsDragMetal">
+            <EntityTypeMapping TypeName="MainDatabaseModel.ElementsDragMetal">
+              <MappingFragment StoreEntitySet="ElementsDragMetal">
+                <ScalarProperty Name="elements_drag_metal_id" ColumnName="elements_drag_metal_id" />
+                <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+                <ScalarProperty Name="drag_metal_id" ColumnName="drag_metal_id" />
+                <ScalarProperty Name="size" ColumnName="size" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="EquipmentModel">
-            <EntityTypeMapping TypeName="DatabaseModel.EquipmentModel">
-              <MappingFragment StoreEntitySet="EquipmentModel">
-                <ScalarProperty Name="Equipment_model_id" ColumnName="Equipment_model_id" />
-                <ScalarProperty Name="Company_manufactorer_id" ColumnName="Company_manufactorer_id" />
-                <ScalarProperty Name="Functional_purpose_id" ColumnName="Functional_purpose_id" />
-                <ScalarProperty Name="Full_name" ColumnName="Full_name" />
-                <ScalarProperty Name="Apend_info" ColumnName="Apend_info" />
+          <EntitySetMapping Name="ElementsPlaces">
+            <EntityTypeMapping TypeName="MainDatabaseModel.ElementsPlaces">
+              <MappingFragment StoreEntitySet="ElementsPlaces">
+                <ScalarProperty Name="element_place_id" ColumnName="element_place_id" />
+                <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+                <ScalarProperty Name="corpus_id" ColumnName="corpus_id" />
+                <ScalarProperty Name="floor" ColumnName="floor" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="date_begin" ColumnName="date_begin" />
+                <ScalarProperty Name="date_end" ColumnName="date_end" />
+                <ScalarProperty Name="move_reason_id" ColumnName="move_reason_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="EquipmentObject">
-            <EntityTypeMapping TypeName="DatabaseModel.EquipmentObject">
-              <MappingFragment StoreEntitySet="EquipmentObject">
-                <ScalarProperty Name="Equipment_object_id" ColumnName="Equipment_object_id" />
-                <ScalarProperty Name="Equipment_model_id" ColumnName="Equipment_model_id" />
-                <ScalarProperty Name="Inventory_number" ColumnName="Inventory_number" />
-                <ScalarProperty Name="Date_manufacture" ColumnName="Date_manufacture" />
-                <ScalarProperty Name="Port" ColumnName="Port" />
-                <ScalarProperty Name="Country_id" ColumnName="Country_id" />
-                <ScalarProperty Name="Serial_number" ColumnName="Serial_number" />
-                <ScalarProperty Name="Date_expluatation" ColumnName="Date_expluatation" />
-                <ScalarProperty Name="In_Buhgaltery" ColumnName="In_Buhgaltery" />
-                <ScalarProperty Name="Date_debited" ColumnName="Date_debited" />
-                <ScalarProperty Name="Reason_for_debited" ColumnName="Reason_for_debited" />
-                <ScalarProperty Name="OtherInfo" ColumnName="OtherInfo" />
+          <EntitySetMapping Name="FaticalPhysicalPeoplePositions">
+            <EntityTypeMapping TypeName="MainDatabaseModel.FaticalPhysicalPeoplePositions">
+              <MappingFragment StoreEntitySet="FaticalPhysicalPeoplePositions">
+                <ScalarProperty Name="fatical_physical_people_position_id" ColumnName="fatical_physical_people_position_id" />
+                <ScalarProperty Name="physical_people_id" ColumnName="physical_people_id" />
+                <ScalarProperty Name="organisation_id" ColumnName="organisation_id" />
+                <ScalarProperty Name="people_position_id" ColumnName="people_position_id" />
+                <ScalarProperty Name="date_begin" ColumnName="date_begin" />
+                <ScalarProperty Name="date_end" ColumnName="date_end" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="EquipmentPlace">
-            <EntityTypeMapping TypeName="DatabaseModel.EquipmentPlace">
-              <MappingFragment StoreEntitySet="EquipmentPlace">
-                <ScalarProperty Name="Equipment_place_id" ColumnName="Equipment_place_id" />
-                <ScalarProperty Name="Equipment_id" ColumnName="Equipment_id" />
-                <ScalarProperty Name="Organisation_id" ColumnName="Organisation_id" />
-                <ScalarProperty Name="Organisation_unit_id" ColumnName="Organisation_unit_id" />
-                <ScalarProperty Name="Corpus_id" ColumnName="Corpus_id" />
-                <ScalarProperty Name="Floor" ColumnName="Floor" />
-                <ScalarProperty Name="Room" ColumnName="Room" />
-                <ScalarProperty Name="Date_localization_begin" ColumnName="Date_localization_begin" />
-                <ScalarProperty Name="Date_localization_finish" ColumnName="Date_localization_finish" />
-                <ScalarProperty Name="Reason_to_move" ColumnName="Reason_to_move" />
+          <EntitySetMapping Name="ModelElement">
+            <EntityTypeMapping TypeName="MainDatabaseModel.ModelElement">
+              <MappingFragment StoreEntitySet="ModelElement">
+                <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+                <ScalarProperty Name="inventory_number" ColumnName="inventory_number" />
+                <ScalarProperty Name="model_type_id" ColumnName="model_type_id" />
+                <ScalarProperty Name="date_creation" ColumnName="date_creation" />
+                <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+                <ScalarProperty Name="date_utilisation" ColumnName="date_utilisation" />
+                <ScalarProperty Name="other" ColumnName="other" />
+                <ScalarProperty Name="reason_write_off_id" ColumnName="reason_write_off_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="EquipmentsModel">
-            <EntityTypeMapping TypeName="DatabaseModel.EquipmentsModel">
-              <MappingFragment StoreEntitySet="EquipmentsModel">
-                <ScalarProperty Name="Equipment_model_id" ColumnName="Equipment_model_id" />
-                <ScalarProperty Name="Company_manufactorer_id" ColumnName="Company_manufactorer_id" />
-                <ScalarProperty Name="Functional_purpose_id" ColumnName="Functional_purpose_id" />
-                <ScalarProperty Name="Full_name" ColumnName="Full_name" />
-                <ScalarProperty Name="Apend_info" ColumnName="Apend_info" />
+          <EntitySetMapping Name="ModelType">
+            <EntityTypeMapping TypeName="MainDatabaseModel.ModelType">
+              <MappingFragment StoreEntitySet="ModelType">
+                <ScalarProperty Name="model_type_id" ColumnName="model_type_id" />
+                <ScalarProperty Name="model_type_name" ColumnName="model_type_name" />
+                <ScalarProperty Name="organisation_id" ColumnName="organisation_id" />
+                <ScalarProperty Name="functionaly_use_model_id" ColumnName="functionaly_use_model_id" />
+                <ScalarProperty Name="expluatation_role_id" ColumnName="expluatation_role_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MOUser">
-            <EntityTypeMapping TypeName="DatabaseModel.MOUser">
-              <MappingFragment StoreEntitySet="MOUser">
-                <ScalarProperty Name="MO_user_id" ColumnName="MO_user_id" />
-                <ScalarProperty Name="Position_id" ColumnName="Position_id" />
-                <ScalarProperty Name="Position_type_id" ColumnName="Position_type_id" />
-                <ScalarProperty Name="Physical_people_id" ColumnName="Physical_people_id" />
-                <ScalarProperty Name="equipment_id" ColumnName="equipment_id" />
-                <ScalarProperty Name="Date_begin" ColumnName="Date_begin" />
-                <ScalarProperty Name="Date_finish" ColumnName="Date_finish" />
-                <ScalarProperty Name="Model_role_id" ColumnName="Model_role_id" />
+          <EntitySetMapping Name="MOExpluatation">
+            <EntityTypeMapping TypeName="MainDatabaseModel.MOExpluatation">
+              <MappingFragment StoreEntitySet="MOExpluatation">
+                <ScalarProperty Name="mo_expluatation_id" ColumnName="mo_expluatation_id" />
+                <ScalarProperty Name="physical_people_id" ColumnName="physical_people_id" />
+                <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+                <ScalarProperty Name="date_begin" ColumnName="date_begin" />
+                <ScalarProperty Name="date_end" ColumnName="date_end" />
+                <ScalarProperty Name="service_operation_personal_role_id" ColumnName="service_operation_personal_role_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Organization">
-            <EntityTypeMapping TypeName="DatabaseModel.Organization">
-              <MappingFragment StoreEntitySet="Organization">
-                <ScalarProperty Name="Organisation_id" ColumnName="Organisation_id" />
-                <ScalarProperty Name="Organization_type_id" ColumnName="Organization_type_id" />
-                <ScalarProperty Name="Full_name" ColumnName="Full_name" />
-                <ScalarProperty Name="Short_name" ColumnName="Short_name" />
-                <ScalarProperty Name="Legal_address_id" ColumnName="Legal_address_id" />
-                <ScalarProperty Name="Actual_address_id" ColumnName="Actual_address_id" />
-                <ScalarProperty Name="Contact_information" ColumnName="Contact_information" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Site" ColumnName="Site" />
-                <ScalarProperty Name="Head_id" ColumnName="Head_id" />
-                <ScalarProperty Name="Last_update" ColumnName="Last_update" />
+          <EntitySetMapping Name="Organisations">
+            <EntityTypeMapping TypeName="MainDatabaseModel.Organisations">
+              <MappingFragment StoreEntitySet="Organisations">
+                <ScalarProperty Name="organisation_id" ColumnName="organisation_id" />
+                <ScalarProperty Name="organisation_short_name" ColumnName="organisation_short_name" />
+                <ScalarProperty Name="organisation_full_name" ColumnName="organisation_full_name" />
+                <ScalarProperty Name="organisation_type_id" ColumnName="organisation_type_id" />
+                <ScalarProperty Name="country_key_id" ColumnName="country_key_id" />
+                <ScalarProperty Name="factic_address" ColumnName="factic_address" />
+                <ScalarProperty Name="contacts" ColumnName="contacts" />
+                <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PeoplePosition">
-            <EntityTypeMapping TypeName="DatabaseModel.PeoplePosition">
-              <MappingFragment StoreEntitySet="PeoplePosition">
-                <ScalarProperty Name="People_position_id" ColumnName="People_position_id" />
-                <ScalarProperty Name="Physical_people_id" ColumnName="Physical_people_id" />
-                <ScalarProperty Name="Organisation_id" ColumnName="Organisation_id" />
-                <ScalarProperty Name="Position_id" ColumnName="Position_id" />
-                <ScalarProperty Name="Position_type_id" ColumnName="Position_type_id" />
-                <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
-                <ScalarProperty Name="DateDelete" ColumnName="DateDelete" />
-                <ScalarProperty Name="Salary" ColumnName="Salary" />
-                <ScalarProperty Name="Other_info" ColumnName="Other_info" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PersonalRole">
-            <EntityTypeMapping TypeName="DatabaseModel.PersonalRole">
-              <MappingFragment StoreEntitySet="PersonalRole">
-                <ScalarProperty Name="Personal_role_id" ColumnName="Personal_role_id" />
-                <ScalarProperty Name="Personal_role_name" ColumnName="Personal_role_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="PersonalOnService">
+            <EntityTypeMapping TypeName="MainDatabaseModel.PersonalOnService">
+              <MappingFragment StoreEntitySet="PersonalOnService">
+                <ScalarProperty Name="personal_on_service_id" ColumnName="personal_on_service_id" />
+                <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+                <ScalarProperty Name="service_operation_type_id" ColumnName="service_operation_type_id" />
+                <ScalarProperty Name="physical_people_id" ColumnName="physical_people_id" />
+                <ScalarProperty Name="service_operation_personal_role_id" ColumnName="service_operation_personal_role_id" />
+                <ScalarProperty Name="service_type_id" ColumnName="service_type_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="PhysicalPeople">
-            <EntityTypeMapping TypeName="DatabaseModel.PhysicalPeople">
+            <EntityTypeMapping TypeName="MainDatabaseModel.PhysicalPeople">
               <MappingFragment StoreEntitySet="PhysicalPeople">
-                <ScalarProperty Name="Physical_people_Id" ColumnName="Physical_people_Id" />
-                <ScalarProperty Name="Family" ColumnName="Family" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="physical_people_id" ColumnName="physical_people_id" />
+                <ScalarProperty Name="family" ColumnName="family" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="patronumic" ColumnName="patronumic" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Contacts" ColumnName="Contacts" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="contacts" ColumnName="contacts" />
+                <ScalarProperty Name="other" ColumnName="other" />
+                <ScalarProperty Name="organisation_department_id" ColumnName="organisation_department_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_BrokenItem">
-            <EntityTypeMapping TypeName="DatabaseModel.S_BrokenItem">
-              <MappingFragment StoreEntitySet="S_BrokenItem">
-                <ScalarProperty Name="Broken_item_id" ColumnName="Broken_item_id" />
-                <ScalarProperty Name="Broken_item_name" ColumnName="Broken_item_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="Purchase">
+            <EntityTypeMapping TypeName="MainDatabaseModel.Purchase">
+              <MappingFragment StoreEntitySet="Purchase">
+                <ScalarProperty Name="purchase_id" ColumnName="purchase_id" />
+                <ScalarProperty Name="purchase_type_id" ColumnName="purchase_type_id" />
+                <ScalarProperty Name="purchase_document_number" ColumnName="purchase_document_number" />
+                <ScalarProperty Name="date_apply" ColumnName="date_apply" />
+                <ScalarProperty Name="organisation_id" ColumnName="organisation_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_BrokenReason">
-            <EntityTypeMapping TypeName="DatabaseModel.S_BrokenReason">
-              <MappingFragment StoreEntitySet="S_BrokenReason">
-                <ScalarProperty Name="Broken_reason_id" ColumnName="Broken_reason_id" />
-                <ScalarProperty Name="Broken_reason_name" ColumnName="Broken_reason_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="PurchaseElements">
+            <EntityTypeMapping TypeName="MainDatabaseModel.PurchaseElements">
+              <MappingFragment StoreEntitySet="PurchaseElements">
+                <ScalarProperty Name="purchase_element_id" ColumnName="purchase_element_id" />
+                <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="planned_date" ColumnName="planned_date" />
+                <ScalarProperty Name="target_info" ColumnName="target_info" />
+                <ScalarProperty Name="isPurchasing" ColumnName="isPurchasing" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_CansellerationReason">
-            <EntityTypeMapping TypeName="DatabaseModel.S_CansellerationReason">
-              <MappingFragment StoreEntitySet="S_CansellerationReason">
-                <ScalarProperty Name="Canselleration_reason_id" ColumnName="Canselleration_reason_id" />
-                <ScalarProperty Name="Canselleration_reason_name" ColumnName="Canselleration_reason_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_BrokenRequestReason">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_BrokenRequestReason">
+              <MappingFragment StoreEntitySet="sp_BrokenRequestReason">
+                <ScalarProperty Name="broken_request_reason_id" ColumnName="broken_request_reason_id" />
+                <ScalarProperty Name="broken_request_reason_name" ColumnName="broken_request_reason_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_Corpus">
-            <EntityTypeMapping TypeName="DatabaseModel.S_Corpus">
-              <MappingFragment StoreEntitySet="S_Corpus">
-                <ScalarProperty Name="Corpus_id" ColumnName="Corpus_id" />
-                <ScalarProperty Name="Corpus_name" ColumnName="Corpus_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_Corpus">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_Corpus">
+              <MappingFragment StoreEntitySet="sp_Corpus">
+                <ScalarProperty Name="corpus_id" ColumnName="corpus_id" />
+                <ScalarProperty Name="corpus_name" ColumnName="corpus_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_Country">
-            <EntityTypeMapping TypeName="DatabaseModel.S_Country">
-              <MappingFragment StoreEntitySet="S_Country">
-                <ScalarProperty Name="Country_id" ColumnName="Country_id" />
-                <ScalarProperty Name="Country_name" ColumnName="Country_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_CountryKey">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_CountryKey">
+              <MappingFragment StoreEntitySet="sp_CountryKey">
+                <ScalarProperty Name="country_key_id" ColumnName="country_key_id" />
+                <ScalarProperty Name="country_name" ColumnName="country_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_DisplacementCause">
-            <EntityTypeMapping TypeName="DatabaseModel.S_DisplacementCause">
-              <MappingFragment StoreEntitySet="S_DisplacementCause">
-                <ScalarProperty Name="Displacement_cause_id" ColumnName="Displacement_cause_id" />
-                <ScalarProperty Name="Displacement_cause_name" ColumnName="Displacement_cause_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_DragMetal">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_DragMetal">
+              <MappingFragment StoreEntitySet="sp_DragMetal">
+                <ScalarProperty Name="drag_metal_id" ColumnName="drag_metal_id" />
+                <ScalarProperty Name="drag_metal_name" ColumnName="drag_metal_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_DragMetal">
-            <EntityTypeMapping TypeName="DatabaseModel.S_DragMetal">
-              <MappingFragment StoreEntitySet="S_DragMetal">
-                <ScalarProperty Name="Drag_metal_id" ColumnName="Drag_metal_id" />
-                <ScalarProperty Name="Drag_metal_name" ColumnName="Drag_metal_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_ExpluatationRole">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_ExpluatationRole">
+              <MappingFragment StoreEntitySet="sp_ExpluatationRole">
+                <ScalarProperty Name="expluatation_role_id" ColumnName="expluatation_role_id" />
+                <ScalarProperty Name="expluatation_role_name" ColumnName="expluatation_role_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_ExpluatationRole">
-            <EntityTypeMapping TypeName="DatabaseModel.S_ExpluatationRole">
-              <MappingFragment StoreEntitySet="S_ExpluatationRole">
-                <ScalarProperty Name="Expluatation_role_id" ColumnName="Expluatation_role_id" />
-                <ScalarProperty Name="Expluatation_role_name" ColumnName="Expluatation_role_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_FunctionalyUseModel">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_FunctionalyUseModel">
+              <MappingFragment StoreEntitySet="sp_FunctionalyUseModel">
+                <ScalarProperty Name="functionaly_use_model_id" ColumnName="functionaly_use_model_id" />
+                <ScalarProperty Name="functionaly_use_model_name" ColumnName="functionaly_use_model_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_FunctionalPurpose">
-            <EntityTypeMapping TypeName="DatabaseModel.S_FunctionalPurpose">
-              <MappingFragment StoreEntitySet="S_FunctionalPurpose">
-                <ScalarProperty Name="Functional_purpose_id" ColumnName="Functional_purpose_id" />
-                <ScalarProperty Name="Functional_purpose_name" ColumnName="Functional_purpose_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_MoveReason">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_MoveReason">
+              <MappingFragment StoreEntitySet="sp_MoveReason">
+                <ScalarProperty Name="move_reason_id" ColumnName="move_reason_id" />
+                <ScalarProperty Name="move_reason_name" ColumnName="move_reason_name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_OrganisationType">
-            <EntityTypeMapping TypeName="DatabaseModel.S_OrganisationType">
-              <MappingFragment StoreEntitySet="S_OrganisationType">
-                <ScalarProperty Name="Organisation_type_id" ColumnName="Organisation_type_id" />
-                <ScalarProperty Name="Organisation_type_name" ColumnName="Organisation_type_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_OrganisationDepartment">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_OrganisationDepartment">
+              <MappingFragment StoreEntitySet="sp_OrganisationDepartment">
+                <ScalarProperty Name="organisation_department_id" ColumnName="organisation_department_id" />
+                <ScalarProperty Name="organisation_department_name" ColumnName="organisation_department_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
+                <ScalarProperty Name="corpus_id" ColumnName="corpus_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_OrganisationUnit">
-            <EntityTypeMapping TypeName="DatabaseModel.S_OrganisationUnit">
-              <MappingFragment StoreEntitySet="S_OrganisationUnit">
-                <ScalarProperty Name="Organisation_unit_id" ColumnName="Organisation_unit_id" />
-                <ScalarProperty Name="Organisation_id" ColumnName="Organisation_id" />
-                <ScalarProperty Name="Organisation_name" ColumnName="Organisation_name" />
-                <ScalarProperty Name="Corpus_id" ColumnName="Corpus_id" />
-                <ScalarProperty Name="Group_category" ColumnName="Group_category" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_OrganisationType">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_OrganisationType">
+              <MappingFragment StoreEntitySet="sp_OrganisationType">
+                <ScalarProperty Name="organisation_type_id" ColumnName="organisation_type_id" />
+                <ScalarProperty Name="organisation_type_name" ColumnName="organisation_type_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_PersonalRole">
-            <EntityTypeMapping TypeName="DatabaseModel.S_PersonalRole">
-              <MappingFragment StoreEntitySet="S_PersonalRole">
-                <ScalarProperty Name="Personal_role_id" ColumnName="Personal_role_id" />
-                <ScalarProperty Name="Personal_role_name" ColumnName="Personal_role_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_PurchaseType">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_PurchaseType">
+              <MappingFragment StoreEntitySet="sp_PurchaseType">
+                <ScalarProperty Name="purchase_type_id" ColumnName="purchase_type_id" />
+                <ScalarProperty Name="purchase_type_name" ColumnName="purchase_type_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_PmElement">
-            <EntityTypeMapping TypeName="DatabaseModel.S_PmElement">
-              <MappingFragment StoreEntitySet="S_PmElement">
-                <ScalarProperty Name="Pm_element_id" ColumnName="Pm_element_id" />
-                <ScalarProperty Name="Pm_element_name" ColumnName="Pm_element_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_PysicalPeoplePositions">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_PysicalPeoplePositions">
+              <MappingFragment StoreEntitySet="sp_PysicalPeoplePositions">
+                <ScalarProperty Name="physical_people_position_id" ColumnName="physical_people_position_id" />
+                <ScalarProperty Name="physical_people_position_name" ColumnName="physical_people_position_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_Position">
-            <EntityTypeMapping TypeName="DatabaseModel.S_Position">
-              <MappingFragment StoreEntitySet="S_Position">
-                <ScalarProperty Name="Position_id" ColumnName="Position_id" />
-                <ScalarProperty Name="Position_type_id" ColumnName="Position_type_id" />
-                <ScalarProperty Name="Position_name" ColumnName="Position_name" />
-                <ScalarProperty Name="Bad_position" ColumnName="Bad_position" />
+          <EntitySetMapping Name="sp_ReasonWriteOff">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_ReasonWriteOff">
+              <MappingFragment StoreEntitySet="sp_ReasonWriteOff">
+                <ScalarProperty Name="reason_write_off_id" ColumnName="reason_write_off_id" />
+                <ScalarProperty Name="reason_write_off_name" ColumnName="reason_write_off_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_PurchaseType">
-            <EntityTypeMapping TypeName="DatabaseModel.S_PurchaseType">
-              <MappingFragment StoreEntitySet="S_PurchaseType">
-                <ScalarProperty Name="Purchase_type_id" ColumnName="Purchase_type_id" />
-                <ScalarProperty Name="Purchase_name" ColumnName="Purchase_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_ServiceOperationPersonalRole">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_ServiceOperationPersonalRole">
+              <MappingFragment StoreEntitySet="sp_ServiceOperationPersonalRole">
+                <ScalarProperty Name="service_operation_personal_role_id" ColumnName="service_operation_personal_role_id" />
+                <ScalarProperty Name="service_operation_personal_role_name" ColumnName="service_operation_personal_role_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_Service">
-            <EntityTypeMapping TypeName="DatabaseModel.S_Service">
-              <MappingFragment StoreEntitySet="S_Service">
-                <ScalarProperty Name="Service_id" ColumnName="Service_id" />
-                <ScalarProperty Name="Service_type" ColumnName="Service_type" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_ServiceOperationType">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_ServiceOperationType">
+              <MappingFragment StoreEntitySet="sp_ServiceOperationType">
+                <ScalarProperty Name="service_operation_type_id" ColumnName="service_operation_type_id" />
+                <ScalarProperty Name="service_operation_type_name" ColumnName="service_operation_type_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_ServiceOperation">
-            <EntityTypeMapping TypeName="DatabaseModel.S_ServiceOperation">
-              <MappingFragment StoreEntitySet="S_ServiceOperation">
-                <ScalarProperty Name="Service_operation_id" ColumnName="Service_operation_id" />
-                <ScalarProperty Name="Service_operation_name" ColumnName="Service_operation_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_ServiceType">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_ServiceType">
+              <MappingFragment StoreEntitySet="sp_ServiceType">
+                <ScalarProperty Name="service_type_id" ColumnName="service_type_id" />
+                <ScalarProperty Name="service_type_name" ColumnName="service_type_name" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="S_ZipElement">
-            <EntityTypeMapping TypeName="DatabaseModel.S_ZipElement">
-              <MappingFragment StoreEntitySet="S_ZipElement">
-                <ScalarProperty Name="Zip_element_id" ColumnName="Zip_element_id" />
-                <ScalarProperty Name="Zip_element_name" ColumnName="Zip_element_name" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="sp_ZIP_AND_PM_Element">
+            <EntityTypeMapping TypeName="MainDatabaseModel.sp_ZIP_AND_PM_Element">
+              <MappingFragment StoreEntitySet="sp_ZIP_AND_PM_Element">
+                <ScalarProperty Name="zipPM_element_id" ColumnName="zipPM_element_id" />
+                <ScalarProperty Name="zipPM_element_name" ColumnName="zipPM_element_name" />
+                <ScalarProperty Name="isZIP" ColumnName="isZIP" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ServiceMaintenance">
-            <EntityTypeMapping TypeName="DatabaseModel.ServiceMaintenance">
-              <MappingFragment StoreEntitySet="ServiceMaintenance">
-                <ScalarProperty Name="Service_maintenance_id" ColumnName="Service_maintenance_id" />
-                <ScalarProperty Name="Functional_purpose_id" ColumnName="Functional_purpose_id" />
-                <ScalarProperty Name="Equipment_model_id" ColumnName="Equipment_model_id" />
-                <ScalarProperty Name="Service_id" ColumnName="Service_id" />
-                <ScalarProperty Name="Time_begin" ColumnName="Time_begin" />
-                <ScalarProperty Name="Time_finish" ColumnName="Time_finish" />
-                <ScalarProperty Name="Service_Result" ColumnName="Service_Result" />
-                <ScalarProperty Name="Other" ColumnName="Other" />
+          <EntitySetMapping Name="ZIPPMDocumentsOnPurchase">
+            <EntityTypeMapping TypeName="MainDatabaseModel.ZIPPMDocumentsOnPurchase">
+              <MappingFragment StoreEntitySet="ZIPPMDocumentsOnPurchase">
+                <ScalarProperty Name="zipPM_documents_purchase_id" ColumnName="zipPM_documents_purchase_id" />
+                <ScalarProperty Name="zipPM_element_id" ColumnName="zipPM_element_id" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="date_coming_in" ColumnName="date_coming_in" />
+                <ScalarProperty Name="date_to_end_possible_use" ColumnName="date_to_end_possible_use" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ServiceMaintenanceOperation">
-            <EntityTypeMapping TypeName="DatabaseModel.ServiceMaintenanceOperation">
-              <MappingFragment StoreEntitySet="ServiceMaintenanceOperation">
-                <ScalarProperty Name="Service_maintenance_operation_id" ColumnName="Service_maintenance_operation_id" />
-                <ScalarProperty Name="Functional_purpose_id" ColumnName="Functional_purpose_id" />
-                <ScalarProperty Name="Equipment_object_id" ColumnName="Equipment_object_id" />
-                <ScalarProperty Name="Service_maintenance_id" ColumnName="Service_maintenance_id" />
-                <ScalarProperty Name="Service_operation_id" ColumnName="Service_operation_id" />
+          <EntitySetMapping Name="ZIPPMMoves">
+            <EntityTypeMapping TypeName="MainDatabaseModel.ZIPPMMoves">
+              <MappingFragment StoreEntitySet="ZIPPMMoves">
+                <ScalarProperty Name="zipPM_move_id" ColumnName="zipPM_move_id" />
+                <ScalarProperty Name="date_move" ColumnName="date_move" />
+                <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+                <ScalarProperty Name="zipPM_element_id" ColumnName="zipPM_element_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Table">
-            <EntityTypeMapping TypeName="DatabaseModel.Table">
-              <MappingFragment StoreEntitySet="Table">
-                <ScalarProperty Name="Id" ColumnName="Id" />
+          <EntitySetMapping Name="ZIPPMonStock">
+            <EntityTypeMapping TypeName="MainDatabaseModel.ZIPPMonStock">
+              <MappingFragment StoreEntitySet="ZIPPMonStock">
+                <ScalarProperty Name="zipPM_on_stock_id" ColumnName="zipPM_on_stock_id" />
+                <ScalarProperty Name="zipPM_element_id" ColumnName="zipPM_element_id" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="other" ColumnName="other" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

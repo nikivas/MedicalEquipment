@@ -14,12 +14,32 @@ namespace MedicalComponents.Models
     
     public partial class PhysicalPeople
     {
-        public int Physical_people_Id { get; set; }
-        public string Family { get; set; }
-        public string Name { get; set; }
-        public string Patronymic { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PhysicalPeople()
+        {
+            this.BrokenRequest = new HashSet<BrokenRequest>();
+            this.FaticalPhysicalPeoplePositions = new HashSet<FaticalPhysicalPeoplePositions>();
+            this.MOExpluatation = new HashSet<MOExpluatation>();
+            this.PersonalOnService = new HashSet<PersonalOnService>();
+        }
+    
+        public int physical_people_id { get; set; }
+        public string family { get; set; }
+        public string name { get; set; }
+        public string patronumic { get; set; }
         public Nullable<int> Gender { get; set; }
-        public string Contacts { get; set; }
-        public string Other { get; set; }
+        public string contacts { get; set; }
+        public string other { get; set; }
+        public int organisation_department_id { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BrokenRequest> BrokenRequest { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<FaticalPhysicalPeoplePositions> FaticalPhysicalPeoplePositions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MOExpluatation> MOExpluatation { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PersonalOnService> PersonalOnService { get; set; }
+        public virtual sp_OrganisationDepartment sp_OrganisationDepartment { get; set; }
     }
 }

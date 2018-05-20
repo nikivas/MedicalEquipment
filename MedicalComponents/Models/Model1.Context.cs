@@ -13,10 +13,10 @@ namespace MedicalComponents.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DatabaseEntities : DbContext
+    public partial class MainDatabaseEntities : DbContext
     {
-        public DatabaseEntities()
-            : base("name=DatabaseEntities")
+        public MainDatabaseEntities()
+            : base("name=MainDatabaseEntities")
         {
         }
     
@@ -25,37 +25,36 @@ namespace MedicalComponents.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Corpus> Corpus { get; set; }
-        public virtual DbSet<DragMetalOnEquipment> DragMetalOnEquipment { get; set; }
-        public virtual DbSet<EquipmentModel> EquipmentModel { get; set; }
-        public virtual DbSet<EquipmentObject> EquipmentObject { get; set; }
-        public virtual DbSet<EquipmentPlace> EquipmentPlace { get; set; }
-        public virtual DbSet<EquipmentsModel> EquipmentsModel { get; set; }
-        public virtual DbSet<MOUser> MOUser { get; set; }
-        public virtual DbSet<Organization> Organization { get; set; }
-        public virtual DbSet<PeoplePosition> PeoplePosition { get; set; }
-        public virtual DbSet<PersonalRole> PersonalRole { get; set; }
+        public virtual DbSet<BrokenRequest> BrokenRequest { get; set; }
+        public virtual DbSet<ElementsDragMetal> ElementsDragMetal { get; set; }
+        public virtual DbSet<ElementsPlaces> ElementsPlaces { get; set; }
+        public virtual DbSet<FaticalPhysicalPeoplePositions> FaticalPhysicalPeoplePositions { get; set; }
+        public virtual DbSet<ModelElement> ModelElement { get; set; }
+        public virtual DbSet<ModelType> ModelType { get; set; }
+        public virtual DbSet<MOExpluatation> MOExpluatation { get; set; }
+        public virtual DbSet<Organisations> Organisations { get; set; }
+        public virtual DbSet<PersonalOnService> PersonalOnService { get; set; }
         public virtual DbSet<PhysicalPeople> PhysicalPeople { get; set; }
-        public virtual DbSet<S_BrokenItem> S_BrokenItem { get; set; }
-        public virtual DbSet<S_BrokenReason> S_BrokenReason { get; set; }
-        public virtual DbSet<S_CansellerationReason> S_CansellerationReason { get; set; }
-        public virtual DbSet<S_Corpus> S_Corpus { get; set; }
-        public virtual DbSet<S_Country> S_Country { get; set; }
-        public virtual DbSet<S_DisplacementCause> S_DisplacementCause { get; set; }
-        public virtual DbSet<S_DragMetal> S_DragMetal { get; set; }
-        public virtual DbSet<S_ExpluatationRole> S_ExpluatationRole { get; set; }
-        public virtual DbSet<S_FunctionalPurpose> S_FunctionalPurpose { get; set; }
-        public virtual DbSet<S_OrganisationType> S_OrganisationType { get; set; }
-        public virtual DbSet<S_OrganisationUnit> S_OrganisationUnit { get; set; }
-        public virtual DbSet<S_PersonalRole> S_PersonalRole { get; set; }
-        public virtual DbSet<S_PmElement> S_PmElement { get; set; }
-        public virtual DbSet<S_Position> S_Position { get; set; }
-        public virtual DbSet<S_PurchaseType> S_PurchaseType { get; set; }
-        public virtual DbSet<S_Service> S_Service { get; set; }
-        public virtual DbSet<S_ServiceOperation> S_ServiceOperation { get; set; }
-        public virtual DbSet<S_ZipElement> S_ZipElement { get; set; }
-        public virtual DbSet<ServiceMaintenance> ServiceMaintenance { get; set; }
-        public virtual DbSet<ServiceMaintenanceOperation> ServiceMaintenanceOperation { get; set; }
-        public virtual DbSet<Table> Table { get; set; }
+        public virtual DbSet<Purchase> Purchase { get; set; }
+        public virtual DbSet<PurchaseElements> PurchaseElements { get; set; }
+        public virtual DbSet<sp_BrokenRequestReason> sp_BrokenRequestReason { get; set; }
+        public virtual DbSet<sp_Corpus> sp_Corpus { get; set; }
+        public virtual DbSet<sp_CountryKey> sp_CountryKey { get; set; }
+        public virtual DbSet<sp_DragMetal> sp_DragMetal { get; set; }
+        public virtual DbSet<sp_ExpluatationRole> sp_ExpluatationRole { get; set; }
+        public virtual DbSet<sp_FunctionalyUseModel> sp_FunctionalyUseModel { get; set; }
+        public virtual DbSet<sp_MoveReason> sp_MoveReason { get; set; }
+        public virtual DbSet<sp_OrganisationDepartment> sp_OrganisationDepartment { get; set; }
+        public virtual DbSet<sp_OrganisationType> sp_OrganisationType { get; set; }
+        public virtual DbSet<sp_PurchaseType> sp_PurchaseType { get; set; }
+        public virtual DbSet<sp_PysicalPeoplePositions> sp_PysicalPeoplePositions { get; set; }
+        public virtual DbSet<sp_ReasonWriteOff> sp_ReasonWriteOff { get; set; }
+        public virtual DbSet<sp_ServiceOperationPersonalRole> sp_ServiceOperationPersonalRole { get; set; }
+        public virtual DbSet<sp_ServiceOperationType> sp_ServiceOperationType { get; set; }
+        public virtual DbSet<sp_ServiceType> sp_ServiceType { get; set; }
+        public virtual DbSet<sp_ZIP_AND_PM_Element> sp_ZIP_AND_PM_Element { get; set; }
+        public virtual DbSet<ZIPPMDocumentsOnPurchase> ZIPPMDocumentsOnPurchase { get; set; }
+        public virtual DbSet<ZIPPMMoves> ZIPPMMoves { get; set; }
+        public virtual DbSet<ZIPPMonStock> ZIPPMonStock { get; set; }
     }
 }

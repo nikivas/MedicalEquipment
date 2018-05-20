@@ -10,14 +10,15 @@ namespace MedicalComponents.Models
 {
     class TablesModel
     {
-        public DatabaseEntities entities = new DatabaseEntities();
+        
+        public MainDatabaseEntities entities = new MainDatabaseEntities();
         public IEnumerable<object> FillOrganisation(DataGridView dataGridView)
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
 
-            var res = (from organisation in entities.Organization
-                      join organisationType in entities.S_OrganisationType on organisation.Organization_type_id equals organisationType.Organisation_type_id
-                      join headPeople in entities.PhysicalPeople on organisation.Head_id equals headPeople.Physical_people_Id
+            var res = (from organisation in entities.Organisations
+                      join organisationType in entities.sp_OrganisationType on organisation.organisation_type_id equals organisationType.organisation_type_id
+                       join headPeople in entities.PhysicalPeople on organisation. equals headPeople.Physical_people_Id
                       select new
                       {
                           organisation_id = organisation.Organisation_id,

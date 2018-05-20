@@ -4,39 +4,73 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="234d9ec43a0d4f1aa3967c4a56bbe3a3" Name="Diagram1">
-        <EntityTypeShape EntityType="DatabaseModel.Corpus" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.DragMetalOnEquipment" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.EquipmentModel" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.EquipmentObject" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.EquipmentPlace" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.EquipmentsModel" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.MOUser" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Organization" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.PeoplePosition" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.PersonalRole" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.PhysicalPeople" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_BrokenItem" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_BrokenReason" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_CansellerationReason" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_Corpus" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_Country" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_DisplacementCause" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_DragMetal" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_ExpluatationRole" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_FunctionalPurpose" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_OrganisationType" Width="1.5" PointX="3.5" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_OrganisationUnit" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_PersonalRole" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_PmElement" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_Position" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_PurchaseType" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_Service" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_ServiceOperation" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.S_ZipElement" Width="1.5" PointX="6.125" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.ServiceMaintenance" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.ServiceMaintenanceOperation" Width="1.5" PointX="3.125" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DatabaseModel.Table" Width="1.5" PointX="14.75" PointY="4.75" IsExpanded="true" />
+      <Diagram DiagramId="4089479fe62b4b2584ca0d7460c34907" Name="Diagram1">
+        <EntityTypeShape EntityType="MainDatabaseModel.BrokenRequest" Width="1.5" PointX="12.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.ElementsDragMetal" Width="1.5" PointX="15.75" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.ElementsPlaces" Width="1.5" PointX="12.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.FaticalPhysicalPeoplePositions" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.ModelElement" Width="1.5" PointX="10.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.ModelType" Width="1.5" PointX="8.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.MOExpluatation" Width="1.5" PointX="12.75" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.Organisations" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.PersonalOnService" Width="1.5" PointX="15.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.PhysicalPeople" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.Purchase" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.PurchaseElements" Width="1.5" PointX="12.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_BrokenRequestReason" Width="1.5" PointX="10.5" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_Corpus" Width="1.5" PointX="1.5" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_CountryKey" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_DragMetal" Width="1.5" PointX="13.5" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_ExpluatationRole" Width="1.5" PointX="6" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_FunctionalyUseModel" Width="1.5" PointX="6" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_MoveReason" Width="1.5" PointX="10.5" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_OrganisationDepartment" Width="1.5" PointX="0.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_OrganisationType" Width="1.5" PointX="0.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_PurchaseType" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_PysicalPeoplePositions" Width="2.25" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_ReasonWriteOff" Width="1.5" PointX="8.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_ServiceOperationPersonalRole" Width="1.5" PointX="13.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_ServiceOperationType" Width="1.5" PointX="13.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_ServiceType" Width="1.5" PointX="13.5" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.sp_ZIP_AND_PM_Element" Width="1.5" PointX="13.5" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.ZIPPMDocumentsOnPurchase" Width="1.5" PointX="15.75" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.ZIPPMMoves" Width="1.5" PointX="15.75" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDatabaseModel.ZIPPMonStock" Width="1.5" PointX="15.75" PointY="31.625" IsExpanded="true" />
+        <AssociationConnector Association="MainDatabaseModel.BrokenRequest_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.BrokenRequest_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.BrokenRequest_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ElementsDragMetal_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ElementsDragMetal_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ElementsPlaces_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ElementsPlaces_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ElementsPlaces_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.FaticalPhysicalPeoplePositions_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.FaticalPhysicalPeoplePositions_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.FaticalPhysicalPeoplePositions_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ModelElement_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ModelElement_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.MOExpluatation_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.PersonalOnService_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.PurchaseElements_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ZIPPMMoves_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ModelType_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ModelType_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ModelType_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.MOExpluatation_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.MOExpluatation_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.Organisations_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.Organisations_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.Purchase_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.PersonalOnService_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.PersonalOnService_fk2" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.PersonalOnService_fk3" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.PersonalOnService_fk4" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.PhysicalPeople_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.Purchase_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.sp_OrganisationDepartment_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ZIPPMDocumentsOnPurchase_fk0" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ZIPPMMoves_fk1" ManuallyRouted="false" />
+        <AssociationConnector Association="MainDatabaseModel.ZIPPMonStock_fk0" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
