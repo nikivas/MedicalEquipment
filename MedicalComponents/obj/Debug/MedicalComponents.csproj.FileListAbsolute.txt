@@ -27,10 +27,6 @@ C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\Medical
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\MedicalComponents.exe.config
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\MedicalComponents.exe
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\MedicalComponents.pdb
-C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\AppData\Database.mdf
-C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\AppData\Database_log.ldf
-C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\Database.mdf
-C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\Database_log.ldf
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\EntityFramework.dll
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\EntityFramework.SqlServer.dll
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\EntityFramework.xml
@@ -40,3 +36,7 @@ C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\Medical
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.csproj.CopyComplete
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingEquipmentObject.resources
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.GraphicsModels.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\AppData\MainDatabase.mdf
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\AppData\MainDatabase_log.ldf
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\MainDatabase.mdf
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\MainDatabase_log.ldf

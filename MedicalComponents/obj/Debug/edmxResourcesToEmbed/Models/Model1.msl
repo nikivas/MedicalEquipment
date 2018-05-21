@@ -1,345 +1,327 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище DatabaseModelContainer" CdmEntityContainer="DatabaseEntities">
-    <EntitySetMapping Name="Corpus">
-      <EntityTypeMapping TypeName="DatabaseModel.Corpus">
-        <MappingFragment StoreEntitySet="Corpus">
-          <ScalarProperty Name="Corpus_id" ColumnName="Corpus_id" />
-          <ScalarProperty Name="Corpus_name" ColumnName="Corpus_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+  <EntityContainerMapping StorageEntityContainer="Хранилище MainDatabaseModelContainer" CdmEntityContainer="MainDatabaseEntities1">
+    <EntitySetMapping Name="BrokenRequest">
+      <EntityTypeMapping TypeName="MainDatabaseModel.BrokenRequest">
+        <MappingFragment StoreEntitySet="BrokenRequest">
+          <ScalarProperty Name="broken_request_id" ColumnName="broken_request_id" />
+          <ScalarProperty Name="physical_people_id" ColumnName="physical_people_id" />
+          <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+          <ScalarProperty Name="broken_request_reason_id" ColumnName="broken_request_reason_id" />
+          <ScalarProperty Name="date_to_repair" ColumnName="date_to_repair" />
+          <ScalarProperty Name="isFinished" ColumnName="isFinished" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DragMetalOnEquipment">
-      <EntityTypeMapping TypeName="DatabaseModel.DragMetalOnEquipment">
-        <MappingFragment StoreEntitySet="DragMetalOnEquipment">
-          <ScalarProperty Name="Drag_metal_on_equipment_id" ColumnName="Drag_metal_on_equipment_id" />
-          <ScalarProperty Name="Equipment_object_id" ColumnName="Equipment_object_id" />
-          <ScalarProperty Name="Drag_metal_id" ColumnName="Drag_metal_id" />
-          <ScalarProperty Name="weight" ColumnName="weight" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="ElementsDragMetal">
+      <EntityTypeMapping TypeName="MainDatabaseModel.ElementsDragMetal">
+        <MappingFragment StoreEntitySet="ElementsDragMetal">
+          <ScalarProperty Name="elements_drag_metal_id" ColumnName="elements_drag_metal_id" />
+          <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+          <ScalarProperty Name="drag_metal_id" ColumnName="drag_metal_id" />
+          <ScalarProperty Name="size" ColumnName="size" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EquipmentModel">
-      <EntityTypeMapping TypeName="DatabaseModel.EquipmentModel">
-        <MappingFragment StoreEntitySet="EquipmentModel">
-          <ScalarProperty Name="Equipment_model_id" ColumnName="Equipment_model_id" />
-          <ScalarProperty Name="Company_manufactorer_id" ColumnName="Company_manufactorer_id" />
-          <ScalarProperty Name="Functional_purpose_id" ColumnName="Functional_purpose_id" />
-          <ScalarProperty Name="Full_name" ColumnName="Full_name" />
-          <ScalarProperty Name="Apend_info" ColumnName="Apend_info" />
+    <EntitySetMapping Name="ElementsPlaces">
+      <EntityTypeMapping TypeName="MainDatabaseModel.ElementsPlaces">
+        <MappingFragment StoreEntitySet="ElementsPlaces">
+          <ScalarProperty Name="element_place_id" ColumnName="element_place_id" />
+          <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+          <ScalarProperty Name="corpus_id" ColumnName="corpus_id" />
+          <ScalarProperty Name="floor" ColumnName="floor" />
+          <ScalarProperty Name="room" ColumnName="room" />
+          <ScalarProperty Name="date_begin" ColumnName="date_begin" />
+          <ScalarProperty Name="date_end" ColumnName="date_end" />
+          <ScalarProperty Name="move_reason_id" ColumnName="move_reason_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EquipmentObject">
-      <EntityTypeMapping TypeName="DatabaseModel.EquipmentObject">
-        <MappingFragment StoreEntitySet="EquipmentObject">
-          <ScalarProperty Name="Equipment_object_id" ColumnName="Equipment_object_id" />
-          <ScalarProperty Name="Equipment_model_id" ColumnName="Equipment_model_id" />
-          <ScalarProperty Name="Inventory_number" ColumnName="Inventory_number" />
-          <ScalarProperty Name="Date_manufacture" ColumnName="Date_manufacture" />
-          <ScalarProperty Name="Port" ColumnName="Port" />
-          <ScalarProperty Name="Country_id" ColumnName="Country_id" />
-          <ScalarProperty Name="Serial_number" ColumnName="Serial_number" />
-          <ScalarProperty Name="Date_expluatation" ColumnName="Date_expluatation" />
-          <ScalarProperty Name="In_Buhgaltery" ColumnName="In_Buhgaltery" />
-          <ScalarProperty Name="Date_debited" ColumnName="Date_debited" />
-          <ScalarProperty Name="Reason_for_debited" ColumnName="Reason_for_debited" />
-          <ScalarProperty Name="OtherInfo" ColumnName="OtherInfo" />
+    <EntitySetMapping Name="FaticalPhysicalPeoplePositions">
+      <EntityTypeMapping TypeName="MainDatabaseModel.FaticalPhysicalPeoplePositions">
+        <MappingFragment StoreEntitySet="FaticalPhysicalPeoplePositions">
+          <ScalarProperty Name="fatical_physical_people_position_id" ColumnName="fatical_physical_people_position_id" />
+          <ScalarProperty Name="physical_people_id" ColumnName="physical_people_id" />
+          <ScalarProperty Name="organisation_id" ColumnName="organisation_id" />
+          <ScalarProperty Name="people_position_id" ColumnName="people_position_id" />
+          <ScalarProperty Name="date_begin" ColumnName="date_begin" />
+          <ScalarProperty Name="date_end" ColumnName="date_end" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EquipmentPlace">
-      <EntityTypeMapping TypeName="DatabaseModel.EquipmentPlace">
-        <MappingFragment StoreEntitySet="EquipmentPlace">
-          <ScalarProperty Name="Equipment_place_id" ColumnName="Equipment_place_id" />
-          <ScalarProperty Name="Equipment_id" ColumnName="Equipment_id" />
-          <ScalarProperty Name="Organisation_id" ColumnName="Organisation_id" />
-          <ScalarProperty Name="Organisation_unit_id" ColumnName="Organisation_unit_id" />
-          <ScalarProperty Name="Corpus_id" ColumnName="Corpus_id" />
-          <ScalarProperty Name="Floor" ColumnName="Floor" />
-          <ScalarProperty Name="Room" ColumnName="Room" />
-          <ScalarProperty Name="Date_localization_begin" ColumnName="Date_localization_begin" />
-          <ScalarProperty Name="Date_localization_finish" ColumnName="Date_localization_finish" />
-          <ScalarProperty Name="Reason_to_move" ColumnName="Reason_to_move" />
+    <EntitySetMapping Name="ModelElement">
+      <EntityTypeMapping TypeName="MainDatabaseModel.ModelElement">
+        <MappingFragment StoreEntitySet="ModelElement">
+          <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+          <ScalarProperty Name="inventory_number" ColumnName="inventory_number" />
+          <ScalarProperty Name="model_type_id" ColumnName="model_type_id" />
+          <ScalarProperty Name="date_creation" ColumnName="date_creation" />
+          <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+          <ScalarProperty Name="date_utilisation" ColumnName="date_utilisation" />
+          <ScalarProperty Name="other" ColumnName="other" />
+          <ScalarProperty Name="reason_write_off_id" ColumnName="reason_write_off_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="EquipmentsModel">
-      <EntityTypeMapping TypeName="DatabaseModel.EquipmentsModel">
-        <MappingFragment StoreEntitySet="EquipmentsModel">
-          <ScalarProperty Name="Equipment_model_id" ColumnName="Equipment_model_id" />
-          <ScalarProperty Name="Company_manufactorer_id" ColumnName="Company_manufactorer_id" />
-          <ScalarProperty Name="Functional_purpose_id" ColumnName="Functional_purpose_id" />
-          <ScalarProperty Name="Full_name" ColumnName="Full_name" />
-          <ScalarProperty Name="Apend_info" ColumnName="Apend_info" />
+    <EntitySetMapping Name="ModelType">
+      <EntityTypeMapping TypeName="MainDatabaseModel.ModelType">
+        <MappingFragment StoreEntitySet="ModelType">
+          <ScalarProperty Name="model_type_id" ColumnName="model_type_id" />
+          <ScalarProperty Name="model_type_name" ColumnName="model_type_name" />
+          <ScalarProperty Name="organisation_id" ColumnName="organisation_id" />
+          <ScalarProperty Name="functionaly_use_model_id" ColumnName="functionaly_use_model_id" />
+          <ScalarProperty Name="expluatation_role_id" ColumnName="expluatation_role_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MOUser">
-      <EntityTypeMapping TypeName="DatabaseModel.MOUser">
-        <MappingFragment StoreEntitySet="MOUser">
-          <ScalarProperty Name="MO_user_id" ColumnName="MO_user_id" />
-          <ScalarProperty Name="Position_id" ColumnName="Position_id" />
-          <ScalarProperty Name="Position_type_id" ColumnName="Position_type_id" />
-          <ScalarProperty Name="Physical_people_id" ColumnName="Physical_people_id" />
-          <ScalarProperty Name="equipment_id" ColumnName="equipment_id" />
-          <ScalarProperty Name="Date_begin" ColumnName="Date_begin" />
-          <ScalarProperty Name="Date_finish" ColumnName="Date_finish" />
-          <ScalarProperty Name="Model_role_id" ColumnName="Model_role_id" />
+    <EntitySetMapping Name="MOExpluatation">
+      <EntityTypeMapping TypeName="MainDatabaseModel.MOExpluatation">
+        <MappingFragment StoreEntitySet="MOExpluatation">
+          <ScalarProperty Name="mo_expluatation_id" ColumnName="mo_expluatation_id" />
+          <ScalarProperty Name="physical_people_id" ColumnName="physical_people_id" />
+          <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+          <ScalarProperty Name="date_begin" ColumnName="date_begin" />
+          <ScalarProperty Name="date_end" ColumnName="date_end" />
+          <ScalarProperty Name="service_operation_personal_role_id" ColumnName="service_operation_personal_role_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Organization">
-      <EntityTypeMapping TypeName="DatabaseModel.Organization">
-        <MappingFragment StoreEntitySet="Organization">
-          <ScalarProperty Name="Organisation_id" ColumnName="Organisation_id" />
-          <ScalarProperty Name="Organization_type_id" ColumnName="Organization_type_id" />
-          <ScalarProperty Name="Full_name" ColumnName="Full_name" />
-          <ScalarProperty Name="Short_name" ColumnName="Short_name" />
-          <ScalarProperty Name="Legal_address_id" ColumnName="Legal_address_id" />
-          <ScalarProperty Name="Actual_address_id" ColumnName="Actual_address_id" />
-          <ScalarProperty Name="Contact_information" ColumnName="Contact_information" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Site" ColumnName="Site" />
-          <ScalarProperty Name="Head_id" ColumnName="Head_id" />
-          <ScalarProperty Name="Last_update" ColumnName="Last_update" />
+    <EntitySetMapping Name="Organisations">
+      <EntityTypeMapping TypeName="MainDatabaseModel.Organisations">
+        <MappingFragment StoreEntitySet="Organisations">
+          <ScalarProperty Name="organisation_id" ColumnName="organisation_id" />
+          <ScalarProperty Name="organisation_short_name" ColumnName="organisation_short_name" />
+          <ScalarProperty Name="organisation_full_name" ColumnName="organisation_full_name" />
+          <ScalarProperty Name="organisation_type_id" ColumnName="organisation_type_id" />
+          <ScalarProperty Name="country_key_id" ColumnName="country_key_id" />
+          <ScalarProperty Name="factic_address" ColumnName="factic_address" />
+          <ScalarProperty Name="contacts" ColumnName="contacts" />
+          <ScalarProperty Name="email" ColumnName="email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PeoplePosition">
-      <EntityTypeMapping TypeName="DatabaseModel.PeoplePosition">
-        <MappingFragment StoreEntitySet="PeoplePosition">
-          <ScalarProperty Name="People_position_id" ColumnName="People_position_id" />
-          <ScalarProperty Name="Physical_people_id" ColumnName="Physical_people_id" />
-          <ScalarProperty Name="Organisation_id" ColumnName="Organisation_id" />
-          <ScalarProperty Name="Position_id" ColumnName="Position_id" />
-          <ScalarProperty Name="Position_type_id" ColumnName="Position_type_id" />
-          <ScalarProperty Name="DateBegin" ColumnName="DateBegin" />
-          <ScalarProperty Name="DateDelete" ColumnName="DateDelete" />
-          <ScalarProperty Name="Salary" ColumnName="Salary" />
-          <ScalarProperty Name="Other_info" ColumnName="Other_info" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PersonalRole">
-      <EntityTypeMapping TypeName="DatabaseModel.PersonalRole">
-        <MappingFragment StoreEntitySet="PersonalRole">
-          <ScalarProperty Name="Personal_role_id" ColumnName="Personal_role_id" />
-          <ScalarProperty Name="Personal_role_name" ColumnName="Personal_role_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="PersonalOnService">
+      <EntityTypeMapping TypeName="MainDatabaseModel.PersonalOnService">
+        <MappingFragment StoreEntitySet="PersonalOnService">
+          <ScalarProperty Name="personal_on_service_id" ColumnName="personal_on_service_id" />
+          <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+          <ScalarProperty Name="service_operation_type_id" ColumnName="service_operation_type_id" />
+          <ScalarProperty Name="physical_people_id" ColumnName="physical_people_id" />
+          <ScalarProperty Name="service_operation_personal_role_id" ColumnName="service_operation_personal_role_id" />
+          <ScalarProperty Name="service_type_id" ColumnName="service_type_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="PhysicalPeople">
-      <EntityTypeMapping TypeName="DatabaseModel.PhysicalPeople">
+      <EntityTypeMapping TypeName="MainDatabaseModel.PhysicalPeople">
         <MappingFragment StoreEntitySet="PhysicalPeople">
-          <ScalarProperty Name="Physical_people_Id" ColumnName="Physical_people_Id" />
-          <ScalarProperty Name="Family" ColumnName="Family" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="physical_people_id" ColumnName="physical_people_id" />
+          <ScalarProperty Name="family" ColumnName="family" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="patronumic" ColumnName="patronumic" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Contacts" ColumnName="Contacts" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+          <ScalarProperty Name="contacts" ColumnName="contacts" />
+          <ScalarProperty Name="other" ColumnName="other" />
+          <ScalarProperty Name="organisation_department_id" ColumnName="organisation_department_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_BrokenItem">
-      <EntityTypeMapping TypeName="DatabaseModel.S_BrokenItem">
-        <MappingFragment StoreEntitySet="S_BrokenItem">
-          <ScalarProperty Name="Broken_item_id" ColumnName="Broken_item_id" />
-          <ScalarProperty Name="Broken_item_name" ColumnName="Broken_item_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="Purchase">
+      <EntityTypeMapping TypeName="MainDatabaseModel.Purchase">
+        <MappingFragment StoreEntitySet="Purchase">
+          <ScalarProperty Name="purchase_id" ColumnName="purchase_id" />
+          <ScalarProperty Name="purchase_type_id" ColumnName="purchase_type_id" />
+          <ScalarProperty Name="purchase_document_number" ColumnName="purchase_document_number" />
+          <ScalarProperty Name="date_apply" ColumnName="date_apply" />
+          <ScalarProperty Name="organisation_id" ColumnName="organisation_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_BrokenReason">
-      <EntityTypeMapping TypeName="DatabaseModel.S_BrokenReason">
-        <MappingFragment StoreEntitySet="S_BrokenReason">
-          <ScalarProperty Name="Broken_reason_id" ColumnName="Broken_reason_id" />
-          <ScalarProperty Name="Broken_reason_name" ColumnName="Broken_reason_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="PurchaseElements">
+      <EntityTypeMapping TypeName="MainDatabaseModel.PurchaseElements">
+        <MappingFragment StoreEntitySet="PurchaseElements">
+          <ScalarProperty Name="purchase_element_id" ColumnName="purchase_element_id" />
+          <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="planned_date" ColumnName="planned_date" />
+          <ScalarProperty Name="target_info" ColumnName="target_info" />
+          <ScalarProperty Name="isPurchasing" ColumnName="isPurchasing" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_CansellerationReason">
-      <EntityTypeMapping TypeName="DatabaseModel.S_CansellerationReason">
-        <MappingFragment StoreEntitySet="S_CansellerationReason">
-          <ScalarProperty Name="Canselleration_reason_id" ColumnName="Canselleration_reason_id" />
-          <ScalarProperty Name="Canselleration_reason_name" ColumnName="Canselleration_reason_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_BrokenRequestReason">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_BrokenRequestReason">
+        <MappingFragment StoreEntitySet="sp_BrokenRequestReason">
+          <ScalarProperty Name="broken_request_reason_id" ColumnName="broken_request_reason_id" />
+          <ScalarProperty Name="broken_request_reason_name" ColumnName="broken_request_reason_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_Corpus">
-      <EntityTypeMapping TypeName="DatabaseModel.S_Corpus">
-        <MappingFragment StoreEntitySet="S_Corpus">
-          <ScalarProperty Name="Corpus_id" ColumnName="Corpus_id" />
-          <ScalarProperty Name="Corpus_name" ColumnName="Corpus_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_Corpus">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_Corpus">
+        <MappingFragment StoreEntitySet="sp_Corpus">
+          <ScalarProperty Name="corpus_id" ColumnName="corpus_id" />
+          <ScalarProperty Name="corpus_name" ColumnName="corpus_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_Country">
-      <EntityTypeMapping TypeName="DatabaseModel.S_Country">
-        <MappingFragment StoreEntitySet="S_Country">
-          <ScalarProperty Name="Country_id" ColumnName="Country_id" />
-          <ScalarProperty Name="Country_name" ColumnName="Country_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_CountryKey">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_CountryKey">
+        <MappingFragment StoreEntitySet="sp_CountryKey">
+          <ScalarProperty Name="country_key_id" ColumnName="country_key_id" />
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_DisplacementCause">
-      <EntityTypeMapping TypeName="DatabaseModel.S_DisplacementCause">
-        <MappingFragment StoreEntitySet="S_DisplacementCause">
-          <ScalarProperty Name="Displacement_cause_id" ColumnName="Displacement_cause_id" />
-          <ScalarProperty Name="Displacement_cause_name" ColumnName="Displacement_cause_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_DragMetal">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_DragMetal">
+        <MappingFragment StoreEntitySet="sp_DragMetal">
+          <ScalarProperty Name="drag_metal_id" ColumnName="drag_metal_id" />
+          <ScalarProperty Name="drag_metal_name" ColumnName="drag_metal_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_DragMetal">
-      <EntityTypeMapping TypeName="DatabaseModel.S_DragMetal">
-        <MappingFragment StoreEntitySet="S_DragMetal">
-          <ScalarProperty Name="Drag_metal_id" ColumnName="Drag_metal_id" />
-          <ScalarProperty Name="Drag_metal_name" ColumnName="Drag_metal_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_ExpluatationRole">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_ExpluatationRole">
+        <MappingFragment StoreEntitySet="sp_ExpluatationRole">
+          <ScalarProperty Name="expluatation_role_id" ColumnName="expluatation_role_id" />
+          <ScalarProperty Name="expluatation_role_name" ColumnName="expluatation_role_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_ExpluatationRole">
-      <EntityTypeMapping TypeName="DatabaseModel.S_ExpluatationRole">
-        <MappingFragment StoreEntitySet="S_ExpluatationRole">
-          <ScalarProperty Name="Expluatation_role_id" ColumnName="Expluatation_role_id" />
-          <ScalarProperty Name="Expluatation_role_name" ColumnName="Expluatation_role_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_FunctionalyUseModel">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_FunctionalyUseModel">
+        <MappingFragment StoreEntitySet="sp_FunctionalyUseModel">
+          <ScalarProperty Name="functionaly_use_model_id" ColumnName="functionaly_use_model_id" />
+          <ScalarProperty Name="functionaly_use_model_name" ColumnName="functionaly_use_model_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_FunctionalPurpose">
-      <EntityTypeMapping TypeName="DatabaseModel.S_FunctionalPurpose">
-        <MappingFragment StoreEntitySet="S_FunctionalPurpose">
-          <ScalarProperty Name="Functional_purpose_id" ColumnName="Functional_purpose_id" />
-          <ScalarProperty Name="Functional_purpose_name" ColumnName="Functional_purpose_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_MoveReason">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_MoveReason">
+        <MappingFragment StoreEntitySet="sp_MoveReason">
+          <ScalarProperty Name="move_reason_id" ColumnName="move_reason_id" />
+          <ScalarProperty Name="move_reason_name" ColumnName="move_reason_name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_OrganisationType">
-      <EntityTypeMapping TypeName="DatabaseModel.S_OrganisationType">
-        <MappingFragment StoreEntitySet="S_OrganisationType">
-          <ScalarProperty Name="Organisation_type_id" ColumnName="Organisation_type_id" />
-          <ScalarProperty Name="Organisation_type_name" ColumnName="Organisation_type_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_OrganisationDepartment">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_OrganisationDepartment">
+        <MappingFragment StoreEntitySet="sp_OrganisationDepartment">
+          <ScalarProperty Name="organisation_department_id" ColumnName="organisation_department_id" />
+          <ScalarProperty Name="organisation_department_name" ColumnName="organisation_department_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
+          <ScalarProperty Name="corpus_id" ColumnName="corpus_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_OrganisationUnit">
-      <EntityTypeMapping TypeName="DatabaseModel.S_OrganisationUnit">
-        <MappingFragment StoreEntitySet="S_OrganisationUnit">
-          <ScalarProperty Name="Organisation_unit_id" ColumnName="Organisation_unit_id" />
-          <ScalarProperty Name="Organisation_id" ColumnName="Organisation_id" />
-          <ScalarProperty Name="Organisation_name" ColumnName="Organisation_name" />
-          <ScalarProperty Name="Corpus_id" ColumnName="Corpus_id" />
-          <ScalarProperty Name="Group_category" ColumnName="Group_category" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_OrganisationType">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_OrganisationType">
+        <MappingFragment StoreEntitySet="sp_OrganisationType">
+          <ScalarProperty Name="organisation_type_id" ColumnName="organisation_type_id" />
+          <ScalarProperty Name="organisation_type_name" ColumnName="organisation_type_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_PersonalRole">
-      <EntityTypeMapping TypeName="DatabaseModel.S_PersonalRole">
-        <MappingFragment StoreEntitySet="S_PersonalRole">
-          <ScalarProperty Name="Personal_role_id" ColumnName="Personal_role_id" />
-          <ScalarProperty Name="Personal_role_name" ColumnName="Personal_role_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_PurchaseType">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_PurchaseType">
+        <MappingFragment StoreEntitySet="sp_PurchaseType">
+          <ScalarProperty Name="purchase_type_id" ColumnName="purchase_type_id" />
+          <ScalarProperty Name="purchase_type_name" ColumnName="purchase_type_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_PmElement">
-      <EntityTypeMapping TypeName="DatabaseModel.S_PmElement">
-        <MappingFragment StoreEntitySet="S_PmElement">
-          <ScalarProperty Name="Pm_element_id" ColumnName="Pm_element_id" />
-          <ScalarProperty Name="Pm_element_name" ColumnName="Pm_element_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_PysicalPeoplePositions">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_PysicalPeoplePositions">
+        <MappingFragment StoreEntitySet="sp_PysicalPeoplePositions">
+          <ScalarProperty Name="physical_people_position_id" ColumnName="physical_people_position_id" />
+          <ScalarProperty Name="physical_people_position_name" ColumnName="physical_people_position_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_Position">
-      <EntityTypeMapping TypeName="DatabaseModel.S_Position">
-        <MappingFragment StoreEntitySet="S_Position">
-          <ScalarProperty Name="Position_id" ColumnName="Position_id" />
-          <ScalarProperty Name="Position_type_id" ColumnName="Position_type_id" />
-          <ScalarProperty Name="Position_name" ColumnName="Position_name" />
-          <ScalarProperty Name="Bad_position" ColumnName="Bad_position" />
+    <EntitySetMapping Name="sp_ReasonWriteOff">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_ReasonWriteOff">
+        <MappingFragment StoreEntitySet="sp_ReasonWriteOff">
+          <ScalarProperty Name="reason_write_off_id" ColumnName="reason_write_off_id" />
+          <ScalarProperty Name="reason_write_off_name" ColumnName="reason_write_off_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_PurchaseType">
-      <EntityTypeMapping TypeName="DatabaseModel.S_PurchaseType">
-        <MappingFragment StoreEntitySet="S_PurchaseType">
-          <ScalarProperty Name="Purchase_type_id" ColumnName="Purchase_type_id" />
-          <ScalarProperty Name="Purchase_name" ColumnName="Purchase_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_ServiceOperationPersonalRole">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_ServiceOperationPersonalRole">
+        <MappingFragment StoreEntitySet="sp_ServiceOperationPersonalRole">
+          <ScalarProperty Name="service_operation_personal_role_id" ColumnName="service_operation_personal_role_id" />
+          <ScalarProperty Name="service_operation_personal_role_name" ColumnName="service_operation_personal_role_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_Service">
-      <EntityTypeMapping TypeName="DatabaseModel.S_Service">
-        <MappingFragment StoreEntitySet="S_Service">
-          <ScalarProperty Name="Service_id" ColumnName="Service_id" />
-          <ScalarProperty Name="Service_type" ColumnName="Service_type" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_ServiceOperationType">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_ServiceOperationType">
+        <MappingFragment StoreEntitySet="sp_ServiceOperationType">
+          <ScalarProperty Name="service_operation_type_id" ColumnName="service_operation_type_id" />
+          <ScalarProperty Name="service_operation_type_name" ColumnName="service_operation_type_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_ServiceOperation">
-      <EntityTypeMapping TypeName="DatabaseModel.S_ServiceOperation">
-        <MappingFragment StoreEntitySet="S_ServiceOperation">
-          <ScalarProperty Name="Service_operation_id" ColumnName="Service_operation_id" />
-          <ScalarProperty Name="Service_operation_name" ColumnName="Service_operation_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_ServiceType">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_ServiceType">
+        <MappingFragment StoreEntitySet="sp_ServiceType">
+          <ScalarProperty Name="service_type_id" ColumnName="service_type_id" />
+          <ScalarProperty Name="service_type_name" ColumnName="service_type_name" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="S_ZipElement">
-      <EntityTypeMapping TypeName="DatabaseModel.S_ZipElement">
-        <MappingFragment StoreEntitySet="S_ZipElement">
-          <ScalarProperty Name="Zip_element_id" ColumnName="Zip_element_id" />
-          <ScalarProperty Name="Zip_element_name" ColumnName="Zip_element_name" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="sp_ZIP_AND_PM_Element">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_ZIP_AND_PM_Element">
+        <MappingFragment StoreEntitySet="sp_ZIP_AND_PM_Element">
+          <ScalarProperty Name="zipPM_element_id" ColumnName="zipPM_element_id" />
+          <ScalarProperty Name="zipPM_element_name" ColumnName="zipPM_element_name" />
+          <ScalarProperty Name="isZIP" ColumnName="isZIP" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ServiceMaintenance">
-      <EntityTypeMapping TypeName="DatabaseModel.ServiceMaintenance">
-        <MappingFragment StoreEntitySet="ServiceMaintenance">
-          <ScalarProperty Name="Service_maintenance_id" ColumnName="Service_maintenance_id" />
-          <ScalarProperty Name="Functional_purpose_id" ColumnName="Functional_purpose_id" />
-          <ScalarProperty Name="Equipment_model_id" ColumnName="Equipment_model_id" />
-          <ScalarProperty Name="Service_id" ColumnName="Service_id" />
-          <ScalarProperty Name="Time_begin" ColumnName="Time_begin" />
-          <ScalarProperty Name="Time_finish" ColumnName="Time_finish" />
-          <ScalarProperty Name="Service_Result" ColumnName="Service_Result" />
-          <ScalarProperty Name="Other" ColumnName="Other" />
+    <EntitySetMapping Name="ZIPPMDocumentsOnPurchase">
+      <EntityTypeMapping TypeName="MainDatabaseModel.ZIPPMDocumentsOnPurchase">
+        <MappingFragment StoreEntitySet="ZIPPMDocumentsOnPurchase">
+          <ScalarProperty Name="zipPM_documents_purchase_id" ColumnName="zipPM_documents_purchase_id" />
+          <ScalarProperty Name="zipPM_element_id" ColumnName="zipPM_element_id" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="date_coming_in" ColumnName="date_coming_in" />
+          <ScalarProperty Name="date_to_end_possible_use" ColumnName="date_to_end_possible_use" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ServiceMaintenanceOperation">
-      <EntityTypeMapping TypeName="DatabaseModel.ServiceMaintenanceOperation">
-        <MappingFragment StoreEntitySet="ServiceMaintenanceOperation">
-          <ScalarProperty Name="Service_maintenance_operation_id" ColumnName="Service_maintenance_operation_id" />
-          <ScalarProperty Name="Functional_purpose_id" ColumnName="Functional_purpose_id" />
-          <ScalarProperty Name="Equipment_object_id" ColumnName="Equipment_object_id" />
-          <ScalarProperty Name="Service_maintenance_id" ColumnName="Service_maintenance_id" />
-          <ScalarProperty Name="Service_operation_id" ColumnName="Service_operation_id" />
+    <EntitySetMapping Name="ZIPPMMoves">
+      <EntityTypeMapping TypeName="MainDatabaseModel.ZIPPMMoves">
+        <MappingFragment StoreEntitySet="ZIPPMMoves">
+          <ScalarProperty Name="zipPM_move_id" ColumnName="zipPM_move_id" />
+          <ScalarProperty Name="date_move" ColumnName="date_move" />
+          <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
+          <ScalarProperty Name="zipPM_element_id" ColumnName="zipPM_element_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Table">
-      <EntityTypeMapping TypeName="DatabaseModel.Table">
-        <MappingFragment StoreEntitySet="Table">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+    <EntitySetMapping Name="ZIPPMonStock">
+      <EntityTypeMapping TypeName="MainDatabaseModel.ZIPPMonStock">
+        <MappingFragment StoreEntitySet="ZIPPMonStock">
+          <ScalarProperty Name="zipPM_on_stock_id" ColumnName="zipPM_on_stock_id" />
+          <ScalarProperty Name="zipPM_element_id" ColumnName="zipPM_element_id" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="other" ColumnName="other" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

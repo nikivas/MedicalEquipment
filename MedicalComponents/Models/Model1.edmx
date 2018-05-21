@@ -1679,7 +1679,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MainDatabaseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MainDatabaseEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BrokenRequest" EntityType="Self.BrokenRequest" />
           <EntitySet Name="ElementsDragMetal" EntityType="Self.ElementsDragMetal" />
           <EntitySet Name="ElementsPlaces" EntityType="Self.ElementsPlaces" />
@@ -1857,7 +1857,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище MainDatabaseModelContainer" CdmEntityContainer="MainDatabaseEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище MainDatabaseModelContainer" CdmEntityContainer="MainDatabaseEntities1">
           <EntitySetMapping Name="BrokenRequest">
             <EntityTypeMapping TypeName="MainDatabaseModel.BrokenRequest">
               <MappingFragment StoreEntitySet="BrokenRequest">
