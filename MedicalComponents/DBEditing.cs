@@ -41,6 +41,34 @@ namespace MedicalComponents
             {
                 tablesModel.FillOrganisation(dataGridView1);
             }
+            else if(checkedListBox1.SelectedIndex == 1)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 2)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 3)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 4)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 5)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 6)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 7)
+            {
+
+            }
         }
     }
 }
