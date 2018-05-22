@@ -11,29 +11,28 @@ using System.Windows.Forms;
 
 namespace MedicalComponents.Editings.sp
 {
-    public partial class sp_ReasonWriteOffEdit : Form
+    public partial class sp_CorpusEdit : Form
     {
         public int id = -1;
-
-        public sp_ReasonWriteOffEdit()
+        public sp_CorpusEdit()
         {
             InitializeComponent();
         }
-        public sp_ReasonWriteOffEdit(int id)
+        public sp_CorpusEdit(int id )
         {
             this.id = id;
             InitializeComponent();
         }
 
-        private void sp_ReasonWriteOffEdit_Load(object sender, EventArgs e)
+        private void sp_CorpusEdit_Load(object sender, EventArgs e)
         {
             try
             {
                 if (id != -1)
                     this.textBox1.Text = TablesModel.entities
-                                                    .sp_ReasonWriteOff
-                                                    .Where(x => x.reason_write_off_id == id)
-                                                    .Select(x => x.reason_write_off_name)
+                                                    .sp_Corpus
+                                                    .Where(x => x.corpus_id == id)
+                                                    .Select(x => x.corpus_name)
                                                     .First();
             }
             catch (Exception)
@@ -49,18 +48,18 @@ namespace MedicalComponents.Editings.sp
             {
                 if (id == -1)
                 {
-                    int addId = TablesModel.entities.sp_ReasonWriteOff.Count() == 0 ? 0 : TablesModel.entities.sp_ReasonWriteOff.Max(x => x.reason_write_off_id) + 1;
-                    TablesModel.entities.sp_ReasonWriteOff.Add(new Models.sp_ReasonWriteOff()
+                    int addId = TablesModel.entities.sp_Corpus.Count() == 0 ? 0 : TablesModel.entities.sp_Corpus.Max(x => x.corpus_id) + 1;
+                    TablesModel.entities.sp_Corpus.Add(new Models.sp_Corpus()
                     {
-                        reason_write_off_id = addId,
-                        reason_write_off_name = textBox1.Text,
+                        corpus_id = addId,
+                        corpus_name = textBox1.Text,
                         other = "..."
                     });
                     TablesModel.entities.SaveChanges();
                 }
                 else
                 {
-                    TablesModel.entities.sp_ReasonWriteOff.Where(x => x.reason_write_off_id == id).First().reason_write_off_name = textBox1.Text;
+                    TablesModel.entities.sp_Corpus.Where(x => x.corpus_id == id).First().corpus_name = textBox1.Text;
                     TablesModel.entities.SaveChanges();
                 }
                 MessageBox.Show("изменения успешно приняты");

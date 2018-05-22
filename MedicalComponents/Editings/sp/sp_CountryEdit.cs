@@ -13,7 +13,7 @@ namespace MedicalComponents.Editings.sp
 {
     public partial class sp_CountryEdit : Form
     {
-        public int id;
+        public int id = -1;
 
         public sp_CountryEdit()
         {

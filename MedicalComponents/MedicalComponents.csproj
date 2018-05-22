@@ -88,6 +88,30 @@
     <Compile Include="Editings\EditingOrganisationsWindow.Designer.cs">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\sp\sp_CorpusEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_CorpusEdit.Designer.cs">
+      <DependentUpon>sp_CorpusEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\sp\sp_ExpluatationRoleEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_ExpluatationRoleEdit.Designer.cs">
+      <DependentUpon>sp_ExpluatationRoleEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\sp\sp_MoveReasonEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_MoveReasonEdit.Designer.cs">
+      <DependentUpon>sp_MoveReasonEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\sp\sp_OrganisationDepartmentEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_OrganisationDepartmentEdit.Designer.cs">
+      <DependentUpon>sp_OrganisationDepartmentEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\sp\sp_PhysicalPeoplePositionEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,11 +305,23 @@
     <EmbeddedResource Include="Editings\EditingOrganisationsWindow.resx">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_CorpusEdit.resx">
+      <DependentUpon>sp_CorpusEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editings\sp\sp_CountryEdit.resx">
       <DependentUpon>sp_CountryEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_ExpluatationRoleEdit.resx">
+      <DependentUpon>sp_ExpluatationRoleEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editings\sp\sp_FunctionalUseModelEdit.resx">
       <DependentUpon>sp_FunctionalUseModelEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_MoveReasonEdit.resx">
+      <DependentUpon>sp_MoveReasonEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_OrganisationDepartmentEdit.resx">
+      <DependentUpon>sp_OrganisationDepartmentEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\sp\sp_OrganisationTypeEdit.resx">
       <DependentUpon>sp_OrganisationTypeEdit.cs</DependentUpon>

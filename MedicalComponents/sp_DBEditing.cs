@@ -120,19 +120,19 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 5)
             {
-
+                new sp_ExpluatationRoleEdit().Show();
             }
             else if (checkedListBox1.SelectedIndex == 6)
             {
-
+                new sp_OrganisationDepartmentEdit().Show();
             }
             else if (checkedListBox1.SelectedIndex == 7)
             {
-
+                new sp_CorpusEdit().Show();
             }
             else if (checkedListBox1.SelectedIndex == 8)
             {
-
+                new sp_MoveReasonEdit().Show();
             }
             else if (checkedListBox1.SelectedIndex == 9)
             {
@@ -193,19 +193,19 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 5)
             {
-
+                new sp_ExpluatationRoleEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 6)
             {
-
+                new sp_OrganisationDepartmentEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 7)
             {
-
+                new sp_CorpusEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 8)
             {
-
+                new sp_MoveReasonEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 9)
             {

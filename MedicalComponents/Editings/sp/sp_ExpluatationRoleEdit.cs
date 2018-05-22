@@ -11,39 +11,37 @@ using System.Windows.Forms;
 
 namespace MedicalComponents.Editings.sp
 {
-    public partial class sp_FunctionalUseModelEdit : Form
+    public partial class sp_ExpluatationRoleEdit : Form
     {
         public int id = -1;
-        public sp_FunctionalUseModelEdit()
+        public sp_ExpluatationRoleEdit()
         {
             InitializeComponent();
         }
-        public sp_FunctionalUseModelEdit(int id)
+        public sp_ExpluatationRoleEdit(int id)
         {
             this.id = id;
             InitializeComponent();
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
                 if (id == -1)
                 {
-                    int addId = TablesModel.entities.sp_FunctionalyUseModel.Count() == 0 ? 
-                        0 : TablesModel.entities
-                                       .sp_FunctionalyUseModel
-                                       .Max(x => x.functionaly_use_model_id) + 1;
-                    TablesModel.entities.sp_FunctionalyUseModel.Add(new Models.sp_FunctionalyUseModel()
+                    int addId = TablesModel.entities.sp_ExpluatationRole.Count() == 0 ? 0 : TablesModel.entities.sp_ExpluatationRole.Max(x => x.expluatation_role_id) + 1;
+                    TablesModel.entities.sp_ExpluatationRole.Add(new Models.sp_ExpluatationRole()
                     {
-                        functionaly_use_model_id= addId,
-                        functionaly_use_model_name = textBox1.Text,
-                        other = "..."
+                        expluatation_role_id = addId,
+                        expluatation_role_name = textBox1.Text,
+                        other = ".."
                     });
                     TablesModel.entities.SaveChanges();
                 }
                 else
                 {
-                    TablesModel.entities.sp_FunctionalyUseModel.Where(x => x.functionaly_use_model_id== id).First().functionaly_use_model_name= textBox1.Text;
+                    TablesModel.entities.sp_ExpluatationRole.Where(x => x.expluatation_role_id == id).First().expluatation_role_name = textBox1.Text;
                     TablesModel.entities.SaveChanges();
                 }
                 MessageBox.Show("изменения успешно приняты");
@@ -55,15 +53,15 @@ namespace MedicalComponents.Editings.sp
             }
         }
 
-        private void sp_FunctionalUseModel_Load(object sender, EventArgs e)
+        private void sp_ExpluatationRoleEdit_Load(object sender, EventArgs e)
         {
             try
             {
                 if (id != -1)
                     this.textBox1.Text = TablesModel.entities
-                                                    .sp_FunctionalyUseModel
-                                                    .Where(x => x.functionaly_use_model_id== id)
-                                                    .Select(x => x.functionaly_use_model_name)
+                                                    .sp_ExpluatationRole
+                                                    .Where(x => x.expluatation_role_id == id)
+                                                    .Select(x => x.expluatation_role_name)
                                                     .First();
             }
             catch (Exception)

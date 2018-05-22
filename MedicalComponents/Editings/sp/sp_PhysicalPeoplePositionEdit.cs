@@ -13,7 +13,7 @@ namespace MedicalComponents.Editings.sp
 {
     public partial class sp_PhysicalPeoplePositionEdit : Form
     {
-        public int id;
+        public int id = -1;
 
         public sp_PhysicalPeoplePositionEdit()
         {
