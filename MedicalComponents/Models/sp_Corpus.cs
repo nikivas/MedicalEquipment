@@ -18,7 +18,6 @@ namespace MedicalComponents.Models
         public sp_Corpus()
         {
             this.ElementsPlaces = new HashSet<ElementsPlaces>();
-            this.sp_OrganisationDepartment = new HashSet<sp_OrganisationDepartment>();
         }
     
         public int corpus_id { get; set; }
@@ -27,7 +26,5 @@ namespace MedicalComponents.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ElementsPlaces> ElementsPlaces { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<sp_OrganisationDepartment> sp_OrganisationDepartment { get; set; }
     }
 }

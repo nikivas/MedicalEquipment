@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище MainDatabaseModelContainer" CdmEntityContainer="MainDatabaseEntities1">
+  <EntityContainerMapping StorageEntityContainer="Хранилище MainDatabaseModelContainer" CdmEntityContainer="MainDatabaseEntities2">
     <EntitySetMapping Name="BrokenRequest">
       <EntityTypeMapping TypeName="MainDatabaseModel.BrokenRequest">
         <MappingFragment StoreEntitySet="BrokenRequest">
@@ -218,7 +218,6 @@
           <ScalarProperty Name="organisation_department_id" ColumnName="organisation_department_id" />
           <ScalarProperty Name="organisation_department_name" ColumnName="organisation_department_name" />
           <ScalarProperty Name="other" ColumnName="other" />
-          <ScalarProperty Name="corpus_id" ColumnName="corpus_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

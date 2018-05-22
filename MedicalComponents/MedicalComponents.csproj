@@ -88,6 +88,12 @@
     <Compile Include="Editings\EditingOrganisationsWindow.Designer.cs">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\sp\sp_OrganisationTypeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_OrganisationTypeEdit.Designer.cs">
+      <DependentUpon>sp_OrganisationTypeEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="GraphicsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,12 @@
     <Compile Include="ReportsForm.Designer.cs">
       <DependentUpon>ReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="sp_DBEditing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sp_DBEditing.Designer.cs">
+      <DependentUpon>sp_DBEditing.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DBEditing.resx">
       <DependentUpon>DBEditing.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingOrganisationsWindow.resx">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_OrganisationTypeEdit.resx">
+      <DependentUpon>sp_OrganisationTypeEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GraphicsForm.resx">
       <DependentUpon>GraphicsForm.cs</DependentUpon>
@@ -272,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sp_DBEditing.resx">
+      <DependentUpon>sp_DBEditing.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

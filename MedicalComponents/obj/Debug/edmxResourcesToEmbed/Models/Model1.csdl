@@ -33,7 +33,7 @@
     <Property Name="model_element_id" Type="Int32" Nullable="false" />
     <Property Name="corpus_id" Type="Int32" Nullable="false" />
     <Property Name="floor" Type="Int32" Nullable="false" />
-    <Property Name="room" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="room" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="date_begin" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="date_end" Type="DateTime" Precision="0" />
     <Property Name="move_reason_id" Type="Int32" Nullable="false" />
@@ -61,12 +61,12 @@
       <PropertyRef Name="model_element_id" />
     </Key>
     <Property Name="model_element_id" Type="Int32" Nullable="false" />
-    <Property Name="inventory_number" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="inventory_number" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="model_type_id" Type="Int32" Nullable="false" />
     <Property Name="date_creation" Type="DateTime" Precision="0" />
-    <Property Name="serial_number" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="serial_number" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="date_utilisation" Type="DateTime" Precision="0" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="reason_write_off_id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="BrokenRequest" Relationship="Self.BrokenRequest_fk1" FromRole="ModelElement" ToRole="BrokenRequest" />
     <NavigationProperty Name="ElementsDragMetal" Relationship="Self.ElementsDragMetal_fk0" FromRole="ModelElement" ToRole="ElementsDragMetal" />
@@ -83,7 +83,7 @@
       <PropertyRef Name="model_type_id" />
     </Key>
     <Property Name="model_type_id" Type="Int32" Nullable="false" />
-    <Property Name="model_type_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="model_type_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="organisation_id" Type="Int32" Nullable="false" />
     <Property Name="functionaly_use_model_id" Type="Int32" Nullable="false" />
     <Property Name="expluatation_role_id" Type="Int32" Nullable="false" />
@@ -111,13 +111,13 @@
       <PropertyRef Name="organisation_id" />
     </Key>
     <Property Name="organisation_id" Type="Int32" Nullable="false" />
-    <Property Name="organisation_short_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="organisation_full_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="organisation_short_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="organisation_full_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="organisation_type_id" Type="Int32" Nullable="false" />
     <Property Name="country_key_id" Type="Int32" Nullable="false" />
-    <Property Name="factic_address" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="contacts" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="email" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="factic_address" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="contacts" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="FaticalPhysicalPeoplePositions" Relationship="Self.FaticalPhysicalPeoplePositions_fk1" FromRole="Organisations" ToRole="FaticalPhysicalPeoplePositions" />
     <NavigationProperty Name="ModelType" Relationship="Self.ModelType_fk0" FromRole="Organisations" ToRole="ModelType" />
     <NavigationProperty Name="sp_OrganisationType" Relationship="Self.Organisations_fk0" FromRole="Organisations" ToRole="sp_OrganisationType" />
@@ -145,12 +145,12 @@
       <PropertyRef Name="physical_people_id" />
     </Key>
     <Property Name="physical_people_id" Type="Int32" Nullable="false" />
-    <Property Name="family" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-    <Property Name="name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-    <Property Name="patronumic" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="family" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="patronumic" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="Gender" Type="Int32" />
-    <Property Name="contacts" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="contacts" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="organisation_department_id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="BrokenRequest" Relationship="Self.BrokenRequest_fk0" FromRole="PhysicalPeople" ToRole="BrokenRequest" />
     <NavigationProperty Name="FaticalPhysicalPeoplePositions" Relationship="Self.FaticalPhysicalPeoplePositions_fk0" FromRole="PhysicalPeople" ToRole="FaticalPhysicalPeoplePositions" />
@@ -164,7 +164,7 @@
     </Key>
     <Property Name="purchase_id" Type="Int32" Nullable="false" />
     <Property Name="purchase_type_id" Type="Int32" Nullable="false" />
-    <Property Name="purchase_document_number" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="purchase_document_number" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="date_apply" Type="DateTime" Precision="0" />
     <Property Name="organisation_id" Type="Int32" />
     <NavigationProperty Name="Organisations" Relationship="Self.Purchase_fk1" FromRole="Purchase" ToRole="Organisations" />
@@ -178,7 +178,7 @@
     <Property Name="model_element_id" Type="Int32" Nullable="false" />
     <Property Name="count" Type="Int32" Nullable="false" />
     <Property Name="planned_date" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="target_info" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="target_info" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="isPurchasing" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ModelElement" Relationship="Self.PurchaseElements_fk0" FromRole="PurchaseElements" ToRole="ModelElement" />
   </EntityType>
@@ -187,8 +187,8 @@
       <PropertyRef Name="broken_request_reason_id" />
     </Key>
     <Property Name="broken_request_reason_id" Type="Int32" Nullable="false" />
-    <Property Name="broken_request_reason_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="broken_request_reason_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="BrokenRequest" Relationship="Self.BrokenRequest_fk2" FromRole="sp_BrokenRequestReason" ToRole="BrokenRequest" />
   </EntityType>
   <EntityType Name="sp_Corpus">
@@ -196,18 +196,17 @@
       <PropertyRef Name="corpus_id" />
     </Key>
     <Property Name="corpus_id" Type="Int32" Nullable="false" />
-    <Property Name="corpus_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="corpus_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ElementsPlaces" Relationship="Self.ElementsPlaces_fk1" FromRole="sp_Corpus" ToRole="ElementsPlaces" />
-    <NavigationProperty Name="sp_OrganisationDepartment" Relationship="Self.sp_OrganisationDepartment_fk0" FromRole="sp_Corpus" ToRole="sp_OrganisationDepartment" />
   </EntityType>
   <EntityType Name="sp_CountryKey">
     <Key>
       <PropertyRef Name="country_key_id" />
     </Key>
     <Property Name="country_key_id" Type="Int32" Nullable="false" />
-    <Property Name="country_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="country_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Organisations" Relationship="Self.Organisations_fk1" FromRole="sp_CountryKey" ToRole="Organisations" />
   </EntityType>
   <EntityType Name="sp_DragMetal">
@@ -215,8 +214,8 @@
       <PropertyRef Name="drag_metal_id" />
     </Key>
     <Property Name="drag_metal_id" Type="Int32" Nullable="false" />
-    <Property Name="drag_metal_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="drag_metal_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ElementsDragMetal" Relationship="Self.ElementsDragMetal_fk1" FromRole="sp_DragMetal" ToRole="ElementsDragMetal" />
   </EntityType>
   <EntityType Name="sp_ExpluatationRole">
@@ -224,8 +223,8 @@
       <PropertyRef Name="expluatation_role_id" />
     </Key>
     <Property Name="expluatation_role_id" Type="Int32" Nullable="false" />
-    <Property Name="expluatation_role_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="expluatation_role_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ModelType" Relationship="Self.ModelType_fk2" FromRole="sp_ExpluatationRole" ToRole="ModelType" />
   </EntityType>
   <EntityType Name="sp_FunctionalyUseModel">
@@ -233,8 +232,8 @@
       <PropertyRef Name="functionaly_use_model_id" />
     </Key>
     <Property Name="functionaly_use_model_id" Type="Int32" Nullable="false" />
-    <Property Name="functionaly_use_model_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="functionaly_use_model_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ModelType" Relationship="Self.ModelType_fk1" FromRole="sp_FunctionalyUseModel" ToRole="ModelType" />
   </EntityType>
   <EntityType Name="sp_MoveReason">
@@ -242,7 +241,7 @@
       <PropertyRef Name="move_reason_id" />
     </Key>
     <Property Name="move_reason_id" Type="Int32" Nullable="false" />
-    <Property Name="move_reason_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="move_reason_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ElementsPlaces" Relationship="Self.ElementsPlaces_fk2" FromRole="sp_MoveReason" ToRole="ElementsPlaces" />
   </EntityType>
   <EntityType Name="sp_OrganisationDepartment">
@@ -250,19 +249,17 @@
       <PropertyRef Name="organisation_department_id" />
     </Key>
     <Property Name="organisation_department_id" Type="Int32" Nullable="false" />
-    <Property Name="organisation_department_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="corpus_id" Type="Int32" Nullable="false" />
+    <Property Name="organisation_department_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="PhysicalPeople" Relationship="Self.PhysicalPeople_fk0" FromRole="sp_OrganisationDepartment" ToRole="PhysicalPeople" />
-    <NavigationProperty Name="sp_Corpus" Relationship="Self.sp_OrganisationDepartment_fk0" FromRole="sp_OrganisationDepartment" ToRole="sp_Corpus" />
   </EntityType>
   <EntityType Name="sp_OrganisationType">
     <Key>
       <PropertyRef Name="organisation_type_id" />
     </Key>
     <Property Name="organisation_type_id" Type="Int32" Nullable="false" />
-    <Property Name="organisation_type_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="organisation_type_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Organisations" Relationship="Self.Organisations_fk0" FromRole="sp_OrganisationType" ToRole="Organisations" />
   </EntityType>
   <EntityType Name="sp_PurchaseType">
@@ -270,8 +267,8 @@
       <PropertyRef Name="purchase_type_id" />
     </Key>
     <Property Name="purchase_type_id" Type="Int32" Nullable="false" />
-    <Property Name="purchase_type_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="purchase_type_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Purchase" Relationship="Self.Purchase_fk0" FromRole="sp_PurchaseType" ToRole="Purchase" />
   </EntityType>
   <EntityType Name="sp_PysicalPeoplePositions">
@@ -279,8 +276,8 @@
       <PropertyRef Name="physical_people_position_id" />
     </Key>
     <Property Name="physical_people_position_id" Type="Int32" Nullable="false" />
-    <Property Name="physical_people_position_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="physical_people_position_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="FaticalPhysicalPeoplePositions" Relationship="Self.FaticalPhysicalPeoplePositions_fk2" FromRole="sp_PysicalPeoplePositions" ToRole="FaticalPhysicalPeoplePositions" />
   </EntityType>
   <EntityType Name="sp_ReasonWriteOff">
@@ -288,8 +285,8 @@
       <PropertyRef Name="reason_write_off_id" />
     </Key>
     <Property Name="reason_write_off_id" Type="Int32" Nullable="false" />
-    <Property Name="reason_write_off_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="reason_write_off_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ModelElement" Relationship="Self.ModelElement_fk1" FromRole="sp_ReasonWriteOff" ToRole="ModelElement" />
   </EntityType>
   <EntityType Name="sp_ServiceOperationPersonalRole">
@@ -297,8 +294,8 @@
       <PropertyRef Name="service_operation_personal_role_id" />
     </Key>
     <Property Name="service_operation_personal_role_id" Type="Int32" Nullable="false" />
-    <Property Name="service_operation_personal_role_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="service_operation_personal_role_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="MOExpluatation" Relationship="Self.MOExpluatation_fk2" FromRole="sp_ServiceOperationPersonalRole" ToRole="MOExpluatation" />
     <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk3" FromRole="sp_ServiceOperationPersonalRole" ToRole="PersonalOnService" />
   </EntityType>
@@ -307,8 +304,8 @@
       <PropertyRef Name="service_operation_type_id" />
     </Key>
     <Property Name="service_operation_type_id" Type="Int32" Nullable="false" />
-    <Property Name="service_operation_type_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="service_operation_type_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk1" FromRole="sp_ServiceOperationType" ToRole="PersonalOnService" />
   </EntityType>
   <EntityType Name="sp_ServiceType">
@@ -316,8 +313,8 @@
       <PropertyRef Name="service_type_id" />
     </Key>
     <Property Name="service_type_id" Type="Int32" Nullable="false" />
-    <Property Name="service_type_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="service_type_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk4" FromRole="sp_ServiceType" ToRole="PersonalOnService" />
   </EntityType>
   <EntityType Name="sp_ZIP_AND_PM_Element">
@@ -325,7 +322,7 @@
       <PropertyRef Name="zipPM_element_id" />
     </Key>
     <Property Name="zipPM_element_id" Type="Int32" Nullable="false" />
-    <Property Name="zipPM_element_name" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="zipPM_element_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="isZIP" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ZIPPMDocumentsOnPurchase" Relationship="Self.ZIPPMDocumentsOnPurchase_fk0" FromRole="sp_ZIP_AND_PM_Element" ToRole="ZIPPMDocumentsOnPurchase" />
     <NavigationProperty Name="ZIPPMMoves" Relationship="Self.ZIPPMMoves_fk1" FromRole="sp_ZIP_AND_PM_Element" ToRole="ZIPPMMoves" />
@@ -360,7 +357,7 @@
     <Property Name="zipPM_on_stock_id" Type="Int32" Nullable="false" />
     <Property Name="zipPM_element_id" Type="Int32" Nullable="false" />
     <Property Name="count" Type="Int32" Nullable="false" />
-    <Property Name="other" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="sp_ZIP_AND_PM_Element" Relationship="Self.ZIPPMonStock_fk0" FromRole="ZIPPMonStock" ToRole="sp_ZIP_AND_PM_Element" />
   </EntityType>
   <Association Name="BrokenRequest_fk0">
@@ -735,18 +732,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="sp_OrganisationDepartment_fk0">
-    <End Role="sp_Corpus" Type="Self.sp_Corpus" Multiplicity="1" />
-    <End Role="sp_OrganisationDepartment" Type="Self.sp_OrganisationDepartment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="sp_Corpus">
-        <PropertyRef Name="corpus_id" />
-      </Principal>
-      <Dependent Role="sp_OrganisationDepartment">
-        <PropertyRef Name="corpus_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="ZIPPMDocumentsOnPurchase_fk0">
     <End Role="sp_ZIP_AND_PM_Element" Type="Self.sp_ZIP_AND_PM_Element" Multiplicity="1" />
     <End Role="ZIPPMDocumentsOnPurchase" Type="Self.ZIPPMDocumentsOnPurchase" Multiplicity="*" />
@@ -783,7 +768,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="MainDatabaseEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="MainDatabaseEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BrokenRequest" EntityType="Self.BrokenRequest" />
     <EntitySet Name="ElementsDragMetal" EntityType="Self.ElementsDragMetal" />
     <EntitySet Name="ElementsPlaces" EntityType="Self.ElementsPlaces" />
@@ -938,10 +923,6 @@
     <AssociationSet Name="Purchase_fk0" Association="Self.Purchase_fk0">
       <End Role="sp_PurchaseType" EntitySet="sp_PurchaseType" />
       <End Role="Purchase" EntitySet="Purchase" />
-    </AssociationSet>
-    <AssociationSet Name="sp_OrganisationDepartment_fk0" Association="Self.sp_OrganisationDepartment_fk0">
-      <End Role="sp_Corpus" EntitySet="sp_Corpus" />
-      <End Role="sp_OrganisationDepartment" EntitySet="sp_OrganisationDepartment" />
     </AssociationSet>
     <AssociationSet Name="ZIPPMDocumentsOnPurchase_fk0" Association="Self.ZIPPMDocumentsOnPurchase_fk0">
       <End Role="sp_ZIP_AND_PM_Element" EntitySet="sp_ZIP_AND_PM_Element" />

@@ -28,7 +28,7 @@
     <Property Name="model_element_id" Type="int" Nullable="false" />
     <Property Name="corpus_id" Type="int" Nullable="false" />
     <Property Name="floor" Type="int" Nullable="false" />
-    <Property Name="room" Type="nvarchar" MaxLength="1" />
+    <Property Name="room" Type="nvarchar" MaxLength="1000" />
     <Property Name="date_begin" Type="date" Nullable="false" />
     <Property Name="date_end" Type="date" />
     <Property Name="move_reason_id" Type="int" Nullable="false" />
@@ -50,12 +50,12 @@
       <PropertyRef Name="model_element_id" />
     </Key>
     <Property Name="model_element_id" Type="int" Nullable="false" />
-    <Property Name="inventory_number" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="inventory_number" Type="nvarchar" MaxLength="1000" Nullable="false" />
     <Property Name="model_type_id" Type="int" Nullable="false" />
     <Property Name="date_creation" Type="date" />
-    <Property Name="serial_number" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="serial_number" Type="nvarchar" MaxLength="1000" Nullable="false" />
     <Property Name="date_utilisation" Type="date" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" />
     <Property Name="reason_write_off_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ModelType">
@@ -63,7 +63,7 @@
       <PropertyRef Name="model_type_id" />
     </Key>
     <Property Name="model_type_id" Type="int" Nullable="false" />
-    <Property Name="model_type_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="model_type_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
     <Property Name="organisation_id" Type="int" Nullable="false" />
     <Property Name="functionaly_use_model_id" Type="int" Nullable="false" />
     <Property Name="expluatation_role_id" Type="int" Nullable="false" />
@@ -84,13 +84,13 @@
       <PropertyRef Name="organisation_id" />
     </Key>
     <Property Name="organisation_id" Type="int" Nullable="false" />
-    <Property Name="organisation_short_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="organisation_full_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="organisation_short_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="organisation_full_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
     <Property Name="organisation_type_id" Type="int" Nullable="false" />
     <Property Name="country_key_id" Type="int" Nullable="false" />
-    <Property Name="factic_address" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="contacts" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="email" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="factic_address" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="contacts" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="PersonalOnService">
     <Key>
@@ -108,12 +108,12 @@
       <PropertyRef Name="physical_people_id" />
     </Key>
     <Property Name="physical_people_id" Type="int" Nullable="false" />
-    <Property Name="family" Type="nvarchar" MaxLength="1" />
-    <Property Name="name" Type="nvarchar" MaxLength="1" />
-    <Property Name="patronumic" Type="nvarchar" MaxLength="1" />
+    <Property Name="family" Type="nvarchar" MaxLength="1000" />
+    <Property Name="name" Type="nvarchar" MaxLength="1000" />
+    <Property Name="patronumic" Type="nvarchar" MaxLength="1000" />
     <Property Name="Gender" Type="int" />
-    <Property Name="contacts" Type="nvarchar" MaxLength="1" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" />
+    <Property Name="contacts" Type="nvarchar" MaxLength="1000" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" />
     <Property Name="organisation_department_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Purchase">
@@ -122,7 +122,7 @@
     </Key>
     <Property Name="purchase_id" Type="int" Nullable="false" />
     <Property Name="purchase_type_id" Type="int" Nullable="false" />
-    <Property Name="purchase_document_number" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="purchase_document_number" Type="nvarchar" MaxLength="1000" Nullable="false" />
     <Property Name="date_apply" Type="date" />
     <Property Name="organisation_id" Type="int" />
   </EntityType>
@@ -134,7 +134,7 @@
     <Property Name="model_element_id" Type="int" Nullable="false" />
     <Property Name="count" Type="int" Nullable="false" />
     <Property Name="planned_date" Type="date" Nullable="false" />
-    <Property Name="target_info" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="target_info" Type="nvarchar" MaxLength="1000" Nullable="false" />
     <Property Name="isPurchasing" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_BrokenRequestReason">
@@ -142,127 +142,126 @@
       <PropertyRef Name="broken_request_reason_id" />
     </Key>
     <Property Name="broken_request_reason_id" Type="int" Nullable="false" />
-    <Property Name="broken_request_reason_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="broken_request_reason_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_Corpus">
     <Key>
       <PropertyRef Name="corpus_id" />
     </Key>
     <Property Name="corpus_id" Type="int" Nullable="false" />
-    <Property Name="corpus_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="corpus_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_CountryKey">
     <Key>
       <PropertyRef Name="country_key_id" />
     </Key>
     <Property Name="country_key_id" Type="int" Nullable="false" />
-    <Property Name="country_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="country_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_DragMetal">
     <Key>
       <PropertyRef Name="drag_metal_id" />
     </Key>
     <Property Name="drag_metal_id" Type="int" Nullable="false" />
-    <Property Name="drag_metal_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" />
+    <Property Name="drag_metal_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="sp_ExpluatationRole">
     <Key>
       <PropertyRef Name="expluatation_role_id" />
     </Key>
     <Property Name="expluatation_role_id" Type="int" Nullable="false" />
-    <Property Name="expluatation_role_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="expluatation_role_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_FunctionalyUseModel">
     <Key>
       <PropertyRef Name="functionaly_use_model_id" />
     </Key>
     <Property Name="functionaly_use_model_id" Type="int" Nullable="false" />
-    <Property Name="functionaly_use_model_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="functionaly_use_model_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_MoveReason">
     <Key>
       <PropertyRef Name="move_reason_id" />
     </Key>
     <Property Name="move_reason_id" Type="int" Nullable="false" />
-    <Property Name="move_reason_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="move_reason_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_OrganisationDepartment">
     <Key>
       <PropertyRef Name="organisation_department_id" />
     </Key>
     <Property Name="organisation_department_id" Type="int" Nullable="false" />
-    <Property Name="organisation_department_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="corpus_id" Type="int" Nullable="false" />
+    <Property Name="organisation_department_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_OrganisationType">
     <Key>
       <PropertyRef Name="organisation_type_id" />
     </Key>
     <Property Name="organisation_type_id" Type="int" Nullable="false" />
-    <Property Name="organisation_type_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="organisation_type_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_PurchaseType">
     <Key>
       <PropertyRef Name="purchase_type_id" />
     </Key>
     <Property Name="purchase_type_id" Type="int" Nullable="false" />
-    <Property Name="purchase_type_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="purchase_type_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_PysicalPeoplePositions">
     <Key>
       <PropertyRef Name="physical_people_position_id" />
     </Key>
     <Property Name="physical_people_position_id" Type="int" Nullable="false" />
-    <Property Name="physical_people_position_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="physical_people_position_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_ReasonWriteOff">
     <Key>
       <PropertyRef Name="reason_write_off_id" />
     </Key>
     <Property Name="reason_write_off_id" Type="int" Nullable="false" />
-    <Property Name="reason_write_off_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="reason_write_off_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_ServiceOperationPersonalRole">
     <Key>
       <PropertyRef Name="service_operation_personal_role_id" />
     </Key>
     <Property Name="service_operation_personal_role_id" Type="int" Nullable="false" />
-    <Property Name="service_operation_personal_role_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="service_operation_personal_role_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_ServiceOperationType">
     <Key>
       <PropertyRef Name="service_operation_type_id" />
     </Key>
     <Property Name="service_operation_type_id" Type="int" Nullable="false" />
-    <Property Name="service_operation_type_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" />
+    <Property Name="service_operation_type_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="sp_ServiceType">
     <Key>
       <PropertyRef Name="service_type_id" />
     </Key>
     <Property Name="service_type_id" Type="int" Nullable="false" />
-    <Property Name="service_type_name" Type="nvarchar" MaxLength="1" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" />
+    <Property Name="service_type_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="sp_ZIP_AND_PM_Element">
     <Key>
       <PropertyRef Name="zipPM_element_id" />
     </Key>
     <Property Name="zipPM_element_id" Type="int" Nullable="false" />
-    <Property Name="zipPM_element_name" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="zipPM_element_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
     <Property Name="isZIP" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ZIPPMDocumentsOnPurchase">
@@ -291,7 +290,7 @@
     <Property Name="zipPM_on_stock_id" Type="int" Nullable="false" />
     <Property Name="zipPM_element_id" Type="int" Nullable="false" />
     <Property Name="count" Type="int" Nullable="false" />
-    <Property Name="other" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="other" Type="nvarchar" MaxLength="1000" Nullable="false" />
   </EntityType>
   <Association Name="BrokenRequest_fk0">
     <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="1" />
@@ -653,18 +652,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="sp_OrganisationDepartment_fk0">
-    <End Role="sp_Corpus" Type="Self.sp_Corpus" Multiplicity="1" />
-    <End Role="sp_OrganisationDepartment" Type="Self.sp_OrganisationDepartment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="sp_Corpus">
-        <PropertyRef Name="corpus_id" />
-      </Principal>
-      <Dependent Role="sp_OrganisationDepartment">
-        <PropertyRef Name="corpus_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="ZIPPMDocumentsOnPurchase_fk0">
     <End Role="sp_ZIP_AND_PM_Element" Type="Self.sp_ZIP_AND_PM_Element" Multiplicity="1" />
     <End Role="ZIPPMDocumentsOnPurchase" Type="Self.ZIPPMDocumentsOnPurchase" Multiplicity="*" />
@@ -864,10 +851,6 @@
     <AssociationSet Name="PurchaseElements_fk0" Association="Self.PurchaseElements_fk0">
       <End Role="ModelElement" EntitySet="ModelElement" />
       <End Role="PurchaseElements" EntitySet="PurchaseElements" />
-    </AssociationSet>
-    <AssociationSet Name="sp_OrganisationDepartment_fk0" Association="Self.sp_OrganisationDepartment_fk0">
-      <End Role="sp_Corpus" EntitySet="sp_Corpus" />
-      <End Role="sp_OrganisationDepartment" EntitySet="sp_OrganisationDepartment" />
     </AssociationSet>
     <AssociationSet Name="ZIPPMDocumentsOnPurchase_fk0" Association="Self.ZIPPMDocumentsOnPurchase_fk0">
       <End Role="sp_ZIP_AND_PM_Element" EntitySet="sp_ZIP_AND_PM_Element" />

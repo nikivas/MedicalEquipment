@@ -43,19 +43,19 @@ namespace MedicalComponents
             }
             else if(checkedListBox1.SelectedIndex == 1)
             {
-
+                tablesModel.FillModelTypes(dataGridView1);
             }
             else if (checkedListBox1.SelectedIndex == 2)
             {
-
+                tablesModel.FillModelElement(dataGridView1);
             }
             else if (checkedListBox1.SelectedIndex == 3)
             {
-
+                tablesModel.FillPhysicalPeople(dataGridView1);
             }
             else if (checkedListBox1.SelectedIndex == 4)
             {
-
+                tablesModel.FillMOExpluatation(dataGridView1);
             }
             else if (checkedListBox1.SelectedIndex == 5)
             {

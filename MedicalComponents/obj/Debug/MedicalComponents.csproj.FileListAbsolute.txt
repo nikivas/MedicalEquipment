@@ -38,5 +38,5 @@ C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\Medical
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.GraphicsModels.resources
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\AppData\MainDatabase.mdf
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\AppData\MainDatabase_log.ldf
-C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\MainDatabase.mdf
-C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\bin\Debug\MainDatabase_log.ldf
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.sp.sp_OrganisationTypeEdit.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.sp_DBEditing.resources

@@ -24,7 +24,7 @@ namespace MedicalComponents
 
         private void buttonHelpTableEditing_Click(object sender, EventArgs e)
         {
-            new DBEditing().Show();
+            new sp_DBEditing().Show();
         }
 
         private void buttonReports_Click(object sender, EventArgs e)
