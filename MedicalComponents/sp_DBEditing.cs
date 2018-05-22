@@ -100,6 +100,63 @@ namespace MedicalComponents
             else if(checkedListBox1.SelectedIndex == 0)
             {
                 new sp_OrganisationTypeEdit().Show();
+
+            }
+            else if (checkedListBox1.SelectedIndex == 1)
+            {
+                new sp_CountryEdit().Show();
+            }
+            else if (checkedListBox1.SelectedIndex == 2)
+            {
+                new sp_FunctionalUseModelEdit().Show();
+            }
+            else if (checkedListBox1.SelectedIndex == 3)
+            {
+                new sp_ReasonWriteOffEdit().Show();
+            }
+            else if (checkedListBox1.SelectedIndex == 4)
+            {
+                new sp_PhysicalPeoplePositionEdit().Show();
+            }
+            else if (checkedListBox1.SelectedIndex == 5)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 6)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 7)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 8)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 9)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 10)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 11)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 12)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 13)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 14)
+            {
+
             }
         }
 
@@ -120,19 +177,19 @@ namespace MedicalComponents
             }
             else if(checkedListBox1.SelectedIndex == 1)
             {
-
+                new sp_CountryEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 2)
             {
-
+                new sp_FunctionalUseModelEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 3)
             {
-
+                new sp_ReasonWriteOffEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 4)
             {
-
+                new sp_PhysicalPeoplePositionEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 5)
             {

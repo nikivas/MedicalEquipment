@@ -88,11 +88,35 @@
     <Compile Include="Editings\EditingOrganisationsWindow.Designer.cs">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\sp\sp_PhysicalPeoplePositionEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_PhysicalPeoplePositionEdit.Designer.cs">
+      <DependentUpon>sp_PhysicalPeoplePositionEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\sp\sp_CountryEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_CountryEdit.Designer.cs">
+      <DependentUpon>sp_CountryEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\sp\sp_FunctionalUseModelEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_FunctionalUseModelEdit.Designer.cs">
+      <DependentUpon>sp_FunctionalUseModelEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\sp\sp_OrganisationTypeEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Editings\sp\sp_OrganisationTypeEdit.Designer.cs">
       <DependentUpon>sp_OrganisationTypeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\sp\sp_ReasonWriteOffEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_ReasonWriteOffEdit.Designer.cs">
+      <DependentUpon>sp_ReasonWriteOffEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicsForm.cs">
       <SubType>Form</SubType>
@@ -257,8 +281,20 @@
     <EmbeddedResource Include="Editings\EditingOrganisationsWindow.resx">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_CountryEdit.resx">
+      <DependentUpon>sp_CountryEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_FunctionalUseModelEdit.resx">
+      <DependentUpon>sp_FunctionalUseModelEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editings\sp\sp_OrganisationTypeEdit.resx">
       <DependentUpon>sp_OrganisationTypeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_PhysicalPeoplePositionEdit.resx">
+      <DependentUpon>sp_PhysicalPeoplePositionEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_ReasonWriteOffEdit.resx">
+      <DependentUpon>sp_ReasonWriteOffEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GraphicsForm.resx">
       <DependentUpon>GraphicsForm.cs</DependentUpon>

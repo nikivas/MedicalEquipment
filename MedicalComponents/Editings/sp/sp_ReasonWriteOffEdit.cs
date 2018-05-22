@@ -11,28 +11,29 @@ using System.Windows.Forms;
 
 namespace MedicalComponents.Editings.sp
 {
-    public partial class sp_OrganisationTypeEdit : Form
+    public partial class sp_ReasonWriteOffEdit : Form
     {
-        int id = -1;
-        public sp_OrganisationTypeEdit()
+        public int id;
+
+        public sp_ReasonWriteOffEdit()
         {
             InitializeComponent();
         }
-        public sp_OrganisationTypeEdit(int id)
+        public sp_ReasonWriteOffEdit(int id)
         {
             this.id = id;
             InitializeComponent();
         }
 
-        private void sp_OrganisationType_Load(object sender, EventArgs e)
+        private void sp_ReasonWriteOffEdit_Load(object sender, EventArgs e)
         {
             try
             {
                 if (id != -1)
                     this.textBox1.Text = TablesModel.entities
-                                                    .sp_OrganisationType
-                                                    .Where(x => x.organisation_type_id == id)
-                                                    .Select(x => x.organisation_type_name)
+                                                    .sp_ReasonWriteOff
+                                                    .Where(x => x.reason_write_off_id == id)
+                                                    .Select(x => x.reason_write_off_name)
                                                     .First();
             }
             catch (Exception)
@@ -44,26 +45,28 @@ namespace MedicalComponents.Editings.sp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try { 
-                if(id == -1)
+            try
+            {
+                if (id == -1)
                 {
-                    int addId = TablesModel.entities.sp_OrganisationType.Count() == 0 ? 0 : TablesModel.entities.sp_OrganisationType.Max(x => x.organisation_type_id) + 1;
-                    TablesModel.entities.sp_OrganisationType.Add(new Models.sp_OrganisationType()
+                    int addId = TablesModel.entities.sp_ReasonWriteOff.Count() == 0 ? 0 : TablesModel.entities.sp_ReasonWriteOff.Max(x => x.reason_write_off_id) + 1;
+                    TablesModel.entities.sp_ReasonWriteOff.Add(new Models.sp_ReasonWriteOff()
                     {
-                        organisation_type_id = addId,
-                        organisation_type_name = textBox1.Text,
+                        reason_write_off_id = addId,
+                        reason_write_off_name = textBox1.Text,
                         other = "..."
                     });
                     TablesModel.entities.SaveChanges();
                 }
                 else
                 {
-                    TablesModel.entities.sp_OrganisationType.Where(x => x.organisation_type_id == id).First().organisation_type_name = textBox1.Text;
+                    TablesModel.entities.sp_ReasonWriteOff.Where(x => x.reason_write_off_id == id).First().reason_write_off_name = textBox1.Text;
                     TablesModel.entities.SaveChanges();
                 }
                 MessageBox.Show("изменения успешно приняты");
                 this.Close();
-            } catch(Exception ee)
+            }
+            catch (Exception ee)
             {
                 MessageBox.Show("Введены некорректные данные");
             }
