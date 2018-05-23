@@ -410,7 +410,81 @@ namespace MedicalComponents.Models
             return res;
         }
 
+        public IEnumerable<object> FillZIPDocumentsOnPurchase(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
 
+            var res = (from el in entities.ZIPPMDocumentsOnPurchase
+                       where el.sp_ZIP_AND_PM_Element.isZIP == 1
+                       select new
+                       {
+                           el.zipPM_documents_purchase_id,
+                           el.sp_ZIP_AND_PM_Element.zipPM_element_name,
+                           el.count,
+                           el.date_coming_in,
+                           el.date_to_end_possible_use
+                       }).ToList();
+
+
+            dic.Add("zipPM_documents_purchase_id", "id записи");
+            dic.Add("zipPM_element_name", "Название PM");
+            dic.Add("count", "количество");
+            dic.Add("date_coming_in", "Планируемая дата поставки");
+            dic.Add("date_to_end_possible_use", "Фактическая дата поставки");
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+            return res;
+        }
+
+        public IEnumerable<object> FillPMDocumentsOnPurchase(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+
+            var res = (from el in entities.ZIPPMDocumentsOnPurchase
+                       where el.sp_ZIP_AND_PM_Element.isZIP != 1
+                       select new
+                       {
+                           el.zipPM_documents_purchase_id,
+                           el.sp_ZIP_AND_PM_Element.zipPM_element_name,
+                           el.count,
+                           el.date_coming_in,
+                           el.date_to_end_possible_use
+                       }).ToList();
+
+
+            dic.Add("zipPM_documents_purchase_id", "id записи");
+            dic.Add("zipPM_element_name", "Название PM");
+            dic.Add("count", "количество");
+            dic.Add("date_coming_in", "Планируемая дата поставки");
+            dic.Add("date_to_end_possible_use", "Фактическая дата поставки");
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+            return res;
+        }
+
+        public IEnumerable<object> FillPurchaseElement(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+
+            var res = (from el in entities.PurchaseElements
+                       select new
+                       {
+                           el.purchase_element_id,
+                           el.ModelElement.ModelType.model_type_name,
+                           el.count,
+                           el.planned_date,
+                           el.target_info,
+                           isPurchasing = el.isPurchasing == 0 ? "Нет " : "Да"
+                       }).ToList();
+
+
+            dic.Add("purchase_element_id", "id записи");
+            dic.Add("model_type_name", "Название типа модели");
+            dic.Add("count", "количество");
+            dic.Add("planned_date", "Дата поставки");
+            dic.Add("target_info", "Цель приобретения");
+            dic.Add("isPurchasing", "Уже куплено");
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+            return res;
+        }
 
 
 

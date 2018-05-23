@@ -82,6 +82,12 @@
     <Compile Include="Editings\EditingEquipmentObject.Designer.cs">
       <DependentUpon>EditingEquipmentObject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\EditingModelType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingModelType.Designer.cs">
+      <DependentUpon>EditingModelType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\EditingOrganisationsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,7 @@
     <Compile Include="Models\BrokenRequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ComboBoxWorker.cs" />
     <Compile Include="Models\DataGridWorker.cs" />
     <Compile Include="Models\ElementsDragMetal.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -352,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingEquipmentObject.resx">
       <DependentUpon>EditingEquipmentObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingModelType.resx">
+      <DependentUpon>EditingModelType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingOrganisationsWindow.resx">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>

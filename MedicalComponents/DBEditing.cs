@@ -91,15 +91,15 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 13)
             {
-
+                tablesModel.FillPurchaseElement(dataGridView1);
             }
             else if (checkedListBox1.SelectedIndex == 14)
             {
-
+                tablesModel.FillZIPDocumentsOnPurchase(dataGridView1);
             }
             else if (checkedListBox1.SelectedIndex == 15)
             {
-
+                tablesModel.FillPMDocumentsOnPurchase(dataGridView1);
             }
         }
     }
