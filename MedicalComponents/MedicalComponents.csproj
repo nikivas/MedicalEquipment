@@ -76,6 +76,12 @@
     <Compile Include="DBEditing.Designer.cs">
       <DependentUpon>DBEditing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\EditingDragMetal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingDragMetal.Designer.cs">
+      <DependentUpon>EditingDragMetal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\EditingEquipmentObject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,11 +94,23 @@
     <Compile Include="Editings\EditingModelType.Designer.cs">
       <DependentUpon>EditingModelType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\EditingMOExpluatants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingMOExpluatants.Designer.cs">
+      <DependentUpon>EditingMOExpluatants.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\EditingOrganisationsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Editings\EditingOrganisationsWindow.Designer.cs">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\EditingPersonalOnService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingPersonalOnService.Designer.cs">
+      <DependentUpon>EditingPersonalOnService.cs</DependentUpon>
     </Compile>
     <Compile Include="Editings\EditingPhysicalPeople.cs">
       <SubType>Form</SubType>
@@ -369,14 +387,23 @@
     <EmbeddedResource Include="DBEditing.resx">
       <DependentUpon>DBEditing.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingDragMetal.resx">
+      <DependentUpon>EditingDragMetal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingEquipmentObject.resx">
       <DependentUpon>EditingEquipmentObject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingModelType.resx">
       <DependentUpon>EditingModelType.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingMOExpluatants.resx">
+      <DependentUpon>EditingMOExpluatants.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingOrganisationsWindow.resx">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingPersonalOnService.resx">
+      <DependentUpon>EditingPersonalOnService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingPhysicalPeople.resx">
       <DependentUpon>EditingPhysicalPeople.cs</DependentUpon>

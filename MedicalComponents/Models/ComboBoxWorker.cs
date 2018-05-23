@@ -159,9 +159,80 @@ namespace MedicalComponents.Models
                 cmb.SelectedIndex = 0;
         }
 
+        public static void initModelElement(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.ModelElement
+                      select new
+                      {
+                          id = el.model_element_id,
+                          value = el.inventory_number
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
 
+        public static void initServiceOperationRole(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.sp_ServiceOperationPersonalRole
+                      select new
+                      {
+                          id = el.service_operation_personal_role_id,
+                          value = el.service_operation_personal_role_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
 
+        public static void initDragMetal(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.sp_DragMetal
+                      select new
+                      {
+                          id = el.drag_metal_id,
+                          value = el.drag_metal_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
 
+        public static void initServiceType(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.sp_ServiceType
+                      select new
+                      {
+                          id = el.service_type_id,
+                          value = el.service_type_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
+
+        public static void initServiceOperation(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.sp_ServiceOperationType
+                      select new
+                      {
+                          id = el.service_operation_type_id,
+                          value = el.service_operation_type_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
 
 
     }

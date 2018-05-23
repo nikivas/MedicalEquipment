@@ -46,15 +46,15 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 5)
             {
-                
+                new EditingMOExpluatants().Show();
             }
             else if (checkedListBox1.SelectedIndex == 6)
             {
-
+                new EditingDragMetal().Show();
             }
             else if (checkedListBox1.SelectedIndex == 7)
             {
-
+                new EditingPersonalOnService().Show();
             }
             else if (checkedListBox1.SelectedIndex == 8)
             {
@@ -107,15 +107,15 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 5)
             {
-
+                new EditingMOExpluatants(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 6)
             {
-
+                new EditingDragMetal(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 7)
             {
-
+                new EditingPersonalOnService(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 8)
             {
