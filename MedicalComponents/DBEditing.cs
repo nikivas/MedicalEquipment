@@ -58,11 +58,11 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 8)
             {
-
+                new EditingPurchase().Show();
             }
             else if (checkedListBox1.SelectedIndex == 9)
             {
-
+                new EditingZipPmOnStock().Show();
             }
             else if (checkedListBox1.SelectedIndex == 10)
             {
@@ -119,11 +119,11 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 8)
             {
-
+                new EditingPurchase(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 9)
             {
-
+                new EditingZipPmOnStock(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 10)
             {

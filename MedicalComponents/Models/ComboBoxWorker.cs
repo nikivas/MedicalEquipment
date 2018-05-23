@@ -234,6 +234,34 @@ namespace MedicalComponents.Models
                 cmb.SelectedIndex = 0;
         }
 
+        public static void initPurchase(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.sp_PurchaseType
+                      select new
+                      {
+                          id = el.purchase_type_id,
+                          value = el.purchase_type_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
 
+        public static void initZIPMElement(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.sp_ZIP_AND_PM_Element
+                      select new
+                      {
+                          id = el.zipPM_element_id,
+                          value = el.zipPM_element_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
     }
 }
