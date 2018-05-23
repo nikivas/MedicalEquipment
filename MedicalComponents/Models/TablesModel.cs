@@ -83,7 +83,7 @@ namespace MedicalComponents.Models
                            model.serial_number,
                            model.sp_ReasonWriteOff.reason_write_off_name,
                            model.ModelToPurchase.Where(x=>x.model_element_id == model.model_element_id)
-                                                .First()
+                                                .FirstOrDefault()
                                                 .Purchase
                                                 .purchase_document_number
                            

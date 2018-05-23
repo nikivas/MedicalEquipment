@@ -21,6 +21,13 @@ namespace MedicalComponents
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                if (i == checkedListBox1.SelectedIndex)
+                    continue;
+                checkedListBox1.SetItemCheckState(i,CheckState.Unchecked);
+            }
             TablesModel tablesModel = new TablesModel();
 
             if (checkedListBox1.SelectedIndex == 0)

@@ -100,6 +100,12 @@
     <Compile Include="Editings\EditingPhysicalPeople.Designer.cs">
       <DependentUpon>EditingPhysicalPeople.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\EditingPhysicalPeoplePosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingPhysicalPeoplePosition.Designer.cs">
+      <DependentUpon>EditingPhysicalPeoplePosition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\sp\sp_BrokenRequestReasonEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingPhysicalPeople.resx">
       <DependentUpon>EditingPhysicalPeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingPhysicalPeoplePosition.resx">
+      <DependentUpon>EditingPhysicalPeoplePosition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\sp\sp_BrokenRequestReasonEdit.resx">
       <DependentUpon>sp_BrokenRequestReasonEdit.cs</DependentUpon>

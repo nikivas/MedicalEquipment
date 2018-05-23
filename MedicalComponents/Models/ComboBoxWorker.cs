@@ -128,5 +128,41 @@ namespace MedicalComponents.Models
             if (res.Count() > 0)
                 cmb.SelectedIndex = 0;
         }
+
+        public static void initFIO(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.PhysicalPeople
+                      select new
+                      {
+                          id = el.physical_people_id,
+                          value = el.name+" "+el.family+" "+el.patronumic
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
+
+        public static void initPeoplePosition(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.sp_PysicalPeoplePositions
+                      select new
+                      {
+                          id = el.physical_people_position_id,
+                          value = el.physical_people_position_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
+
+
+
+
+
+
     }
 }
