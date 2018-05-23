@@ -94,6 +94,12 @@
     <Compile Include="Editings\sp\sp_CorpusEdit.Designer.cs">
       <DependentUpon>sp_CorpusEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\sp\sp_DragMetalEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_DragMetalEdit.Designer.cs">
+      <DependentUpon>sp_DragMetalEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\sp\sp_ExpluatationRoleEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,11 +142,35 @@
     <Compile Include="Editings\sp\sp_OrganisationTypeEdit.Designer.cs">
       <DependentUpon>sp_OrganisationTypeEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\sp\sp_PurchaseTypeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_PurchaseTypeEdit.Designer.cs">
+      <DependentUpon>sp_PurchaseTypeEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\sp\sp_ReasonWriteOffEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Editings\sp\sp_ReasonWriteOffEdit.Designer.cs">
       <DependentUpon>sp_ReasonWriteOffEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\sp\sp_ServiceOperationPersonalRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_ServiceOperationPersonalRole.Designer.cs">
+      <DependentUpon>sp_ServiceOperationPersonalRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\sp\sp_ServiceOperationTypeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_ServiceOperationTypeEdit.Designer.cs">
+      <DependentUpon>sp_ServiceOperationTypeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\sp\sp_ServiceTypeEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_ServiceTypeEdit.Designer.cs">
+      <DependentUpon>sp_ServiceTypeEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicsForm.cs">
       <SubType>Form</SubType>
@@ -311,6 +341,9 @@
     <EmbeddedResource Include="Editings\sp\sp_CountryEdit.resx">
       <DependentUpon>sp_CountryEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_DragMetalEdit.resx">
+      <DependentUpon>sp_DragMetalEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editings\sp\sp_ExpluatationRoleEdit.resx">
       <DependentUpon>sp_ExpluatationRoleEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,8 +362,20 @@
     <EmbeddedResource Include="Editings\sp\sp_PhysicalPeoplePositionEdit.resx">
       <DependentUpon>sp_PhysicalPeoplePositionEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_PurchaseTypeEdit.resx">
+      <DependentUpon>sp_PurchaseTypeEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editings\sp\sp_ReasonWriteOffEdit.resx">
       <DependentUpon>sp_ReasonWriteOffEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_ServiceOperationPersonalRole.resx">
+      <DependentUpon>sp_ServiceOperationPersonalRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_ServiceOperationTypeEdit.resx">
+      <DependentUpon>sp_ServiceOperationTypeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_ServiceTypeEdit.resx">
+      <DependentUpon>sp_ServiceTypeEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GraphicsForm.resx">
       <DependentUpon>GraphicsForm.cs</DependentUpon>

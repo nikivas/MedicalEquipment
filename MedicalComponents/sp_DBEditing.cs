@@ -136,27 +136,35 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 9)
             {
-
+                new sp_DragMetalEdit().Show();
             }
             else if (checkedListBox1.SelectedIndex == 10)
             {
-
+                new sp_ServiceTypeEdit().Show();
             }
             else if (checkedListBox1.SelectedIndex == 11)
             {
-
+                new sp_ServiceOperationTypeEdit().Show();
             }
             else if (checkedListBox1.SelectedIndex == 12)
             {
-
+                new sp_ServiceOperationPersonalRoleEdit().Show();
             }
             else if (checkedListBox1.SelectedIndex == 13)
             {
-
+                new sp_PurchaseTypeEdit().Show();
             }
             else if (checkedListBox1.SelectedIndex == 14)
             {
-
+                new sp_ZIPEdit().Show();
+            }
+            else if (checkedListBox1.SelectedIndex == 15)
+            {
+                new sp_PMEdit().Show();
+            }
+            else if (checkedListBox1.SelectedIndex == 16)
+            {
+                new sp_BrokenRequestReasonEdit().Show();
             }
         }
 
@@ -209,35 +217,35 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 9)
             {
-
+                new sp_DragMetalEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 10)
             {
-
+                new sp_ServiceTypeEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 11)
             {
-
+                new sp_ServiceOperationTypeEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 12)
             {
-
+                new sp_ServiceOperationPersonalRoleEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 13)
             {
-
+                new sp_PurchaseTypeEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 14)
             {
-
+                new sp_ZIPEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 15)
             {
-
+                new sp_PMEdit(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 16)
             {
-
+                new sp_BrokenRequestReasonEdit(selectedId).Show();
             }
         }
 
@@ -322,7 +330,8 @@ namespace MedicalComponents
                     TablesModel.entities.sp_BrokenRequestReason.Remove(TablesModel.entities.sp_BrokenRequestReason.Where(x => x.broken_request_reason_id == selectedId).First());
                 }
                 TablesModel.entities.SaveChanges();
-
+                MessageBox.Show("Успешно удалено");
+                checkedListBox1_SelectedIndexChanged(sender, e);
             }
             catch (Exception)
             {
