@@ -55,3 +55,6 @@ C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\Medical
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.sp.sp_ServiceOperationPersonalRoleEdit.resources
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.sp.sp_ServiceOperationTypeEdit.resources
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.sp.sp_ServiceTypeEdit.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.sp.sp_BrokenRequestReasonEdit.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.sp.sp_PMEdit.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.sp.sp_ZIPEdit.resources

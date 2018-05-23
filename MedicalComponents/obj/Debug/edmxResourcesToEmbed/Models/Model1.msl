@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище MainDatabaseModelContainer" CdmEntityContainer="MainDatabaseEntities2">
+  <EntityContainerMapping StorageEntityContainer="Хранилище MainDatabaseModelContainer" CdmEntityContainer="MainDatabaseEntities3">
     <EntitySetMapping Name="BrokenRequest">
       <EntityTypeMapping TypeName="MainDatabaseModel.BrokenRequest">
         <MappingFragment StoreEntitySet="BrokenRequest">
@@ -61,6 +61,15 @@
           <ScalarProperty Name="date_utilisation" ColumnName="date_utilisation" />
           <ScalarProperty Name="other" ColumnName="other" />
           <ScalarProperty Name="reason_write_off_id" ColumnName="reason_write_off_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModelToPurchase">
+      <EntityTypeMapping TypeName="MainDatabaseModel.ModelToPurchase">
+        <MappingFragment StoreEntitySet="ModelToPurchase">
+          <ScalarProperty Name="model_purchase_id" ColumnName="model_purchase_id" />
+          <ScalarProperty Name="purchase_id" ColumnName="purchase_id" />
+          <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -134,7 +143,6 @@
           <ScalarProperty Name="purchase_type_id" ColumnName="purchase_type_id" />
           <ScalarProperty Name="purchase_document_number" ColumnName="purchase_document_number" />
           <ScalarProperty Name="date_apply" ColumnName="date_apply" />
-          <ScalarProperty Name="organisation_id" ColumnName="organisation_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

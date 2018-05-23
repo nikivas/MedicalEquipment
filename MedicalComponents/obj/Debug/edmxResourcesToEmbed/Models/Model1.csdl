@@ -73,10 +73,21 @@
     <NavigationProperty Name="ElementsPlaces" Relationship="Self.ElementsPlaces_fk0" FromRole="ModelElement" ToRole="ElementsPlaces" />
     <NavigationProperty Name="ModelType" Relationship="Self.ModelElement_fk0" FromRole="ModelElement" ToRole="ModelType" />
     <NavigationProperty Name="sp_ReasonWriteOff" Relationship="Self.ModelElement_fk1" FromRole="ModelElement" ToRole="sp_ReasonWriteOff" />
+    <NavigationProperty Name="ModelToPurchase" Relationship="Self.ModelToPurchase_fk1" FromRole="ModelElement" ToRole="ModelToPurchase" />
     <NavigationProperty Name="MOExpluatation" Relationship="Self.MOExpluatation_fk1" FromRole="ModelElement" ToRole="MOExpluatation" />
     <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk0" FromRole="ModelElement" ToRole="PersonalOnService" />
     <NavigationProperty Name="PurchaseElements" Relationship="Self.PurchaseElements_fk0" FromRole="ModelElement" ToRole="PurchaseElements" />
     <NavigationProperty Name="ZIPPMMoves" Relationship="Self.ZIPPMMoves_fk0" FromRole="ModelElement" ToRole="ZIPPMMoves" />
+  </EntityType>
+  <EntityType Name="ModelToPurchase">
+    <Key>
+      <PropertyRef Name="model_purchase_id" />
+    </Key>
+    <Property Name="model_purchase_id" Type="Int32" Nullable="false" />
+    <Property Name="purchase_id" Type="Int32" Nullable="false" />
+    <Property Name="model_element_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ModelElement" Relationship="Self.ModelToPurchase_fk1" FromRole="ModelToPurchase" ToRole="ModelElement" />
+    <NavigationProperty Name="Purchase" Relationship="Self.ModelToPurchase_fk0" FromRole="ModelToPurchase" ToRole="Purchase" />
   </EntityType>
   <EntityType Name="ModelType">
     <Key>
@@ -122,7 +133,6 @@
     <NavigationProperty Name="ModelType" Relationship="Self.ModelType_fk0" FromRole="Organisations" ToRole="ModelType" />
     <NavigationProperty Name="sp_OrganisationType" Relationship="Self.Organisations_fk0" FromRole="Organisations" ToRole="sp_OrganisationType" />
     <NavigationProperty Name="sp_CountryKey" Relationship="Self.Organisations_fk1" FromRole="Organisations" ToRole="sp_CountryKey" />
-    <NavigationProperty Name="Purchase" Relationship="Self.Purchase_fk1" FromRole="Organisations" ToRole="Purchase" />
   </EntityType>
   <EntityType Name="PersonalOnService">
     <Key>
@@ -166,8 +176,7 @@
     <Property Name="purchase_type_id" Type="Int32" Nullable="false" />
     <Property Name="purchase_document_number" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="date_apply" Type="DateTime" Precision="0" />
-    <Property Name="organisation_id" Type="Int32" />
-    <NavigationProperty Name="Organisations" Relationship="Self.Purchase_fk1" FromRole="Purchase" ToRole="Organisations" />
+    <NavigationProperty Name="ModelToPurchase" Relationship="Self.ModelToPurchase_fk0" FromRole="Purchase" ToRole="ModelToPurchase" />
     <NavigationProperty Name="sp_PurchaseType" Relationship="Self.Purchase_fk0" FromRole="Purchase" ToRole="sp_PurchaseType" />
   </EntityType>
   <EntityType Name="PurchaseElements">
@@ -516,6 +525,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="ModelToPurchase_fk1">
+    <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
+    <End Role="ModelToPurchase" Type="Self.ModelToPurchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModelElement">
+        <PropertyRef Name="model_element_id" />
+      </Principal>
+      <Dependent Role="ModelToPurchase">
+        <PropertyRef Name="model_element_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="MOExpluatation_fk1">
     <End Role="ModelElement" Type="Self.ModelElement" Multiplicity="1" />
     <End Role="MOExpluatation" Type="Self.MOExpluatation" Multiplicity="*" />
@@ -561,6 +582,18 @@
       </Principal>
       <Dependent Role="ZIPPMMoves">
         <PropertyRef Name="model_element_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ModelToPurchase_fk0">
+    <End Role="Purchase" Type="Self.Purchase" Multiplicity="1" />
+    <End Role="ModelToPurchase" Type="Self.ModelToPurchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase">
+        <PropertyRef Name="purchase_id" />
+      </Principal>
+      <Dependent Role="ModelToPurchase">
+        <PropertyRef Name="purchase_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -645,18 +678,6 @@
       </Principal>
       <Dependent Role="Organisations">
         <PropertyRef Name="country_key_id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="Purchase_fk1">
-    <End Role="Organisations" Type="Self.Organisations" Multiplicity="0..1" />
-    <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Organisations">
-        <PropertyRef Name="organisation_id" />
-      </Principal>
-      <Dependent Role="Purchase">
-        <PropertyRef Name="organisation_id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -768,12 +789,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="MainDatabaseEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="MainDatabaseEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BrokenRequest" EntityType="Self.BrokenRequest" />
     <EntitySet Name="ElementsDragMetal" EntityType="Self.ElementsDragMetal" />
     <EntitySet Name="ElementsPlaces" EntityType="Self.ElementsPlaces" />
     <EntitySet Name="FaticalPhysicalPeoplePositions" EntityType="Self.FaticalPhysicalPeoplePositions" />
     <EntitySet Name="ModelElement" EntityType="Self.ModelElement" />
+    <EntitySet Name="ModelToPurchase" EntityType="Self.ModelToPurchase" />
     <EntitySet Name="ModelType" EntityType="Self.ModelType" />
     <EntitySet Name="MOExpluatation" EntityType="Self.MOExpluatation" />
     <EntitySet Name="Organisations" EntityType="Self.Organisations" />
@@ -852,6 +874,10 @@
       <End Role="sp_ReasonWriteOff" EntitySet="sp_ReasonWriteOff" />
       <End Role="ModelElement" EntitySet="ModelElement" />
     </AssociationSet>
+    <AssociationSet Name="ModelToPurchase_fk1" Association="Self.ModelToPurchase_fk1">
+      <End Role="ModelElement" EntitySet="ModelElement" />
+      <End Role="ModelToPurchase" EntitySet="ModelToPurchase" />
+    </AssociationSet>
     <AssociationSet Name="MOExpluatation_fk1" Association="Self.MOExpluatation_fk1">
       <End Role="ModelElement" EntitySet="ModelElement" />
       <End Role="MOExpluatation" EntitySet="MOExpluatation" />
@@ -867,6 +893,10 @@
     <AssociationSet Name="ZIPPMMoves_fk0" Association="Self.ZIPPMMoves_fk0">
       <End Role="ModelElement" EntitySet="ModelElement" />
       <End Role="ZIPPMMoves" EntitySet="ZIPPMMoves" />
+    </AssociationSet>
+    <AssociationSet Name="ModelToPurchase_fk0" Association="Self.ModelToPurchase_fk0">
+      <End Role="Purchase" EntitySet="Purchase" />
+      <End Role="ModelToPurchase" EntitySet="ModelToPurchase" />
     </AssociationSet>
     <AssociationSet Name="ModelType_fk0" Association="Self.ModelType_fk0">
       <End Role="Organisations" EntitySet="Organisations" />
@@ -895,10 +925,6 @@
     <AssociationSet Name="Organisations_fk1" Association="Self.Organisations_fk1">
       <End Role="sp_CountryKey" EntitySet="sp_CountryKey" />
       <End Role="Organisations" EntitySet="Organisations" />
-    </AssociationSet>
-    <AssociationSet Name="Purchase_fk1" Association="Self.Purchase_fk1">
-      <End Role="Organisations" EntitySet="Organisations" />
-      <End Role="Purchase" EntitySet="Purchase" />
     </AssociationSet>
     <AssociationSet Name="PersonalOnService_fk1" Association="Self.PersonalOnService_fk1">
       <End Role="sp_ServiceOperationType" EntitySet="sp_ServiceOperationType" />

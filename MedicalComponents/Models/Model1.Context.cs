@@ -13,10 +13,10 @@ namespace MedicalComponents.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MainDatabaseEntities2 : DbContext
+    public partial class MainDatabaseEntities3 : DbContext
     {
-        public MainDatabaseEntities2()
-            : base("name=MainDatabaseEntities2")
+        public MainDatabaseEntities3()
+            : base("name=MainDatabaseEntities3")
         {
         }
     
@@ -30,6 +30,7 @@ namespace MedicalComponents.Models
         public virtual DbSet<ElementsPlaces> ElementsPlaces { get; set; }
         public virtual DbSet<FaticalPhysicalPeoplePositions> FaticalPhysicalPeoplePositions { get; set; }
         public virtual DbSet<ModelElement> ModelElement { get; set; }
+        public virtual DbSet<ModelToPurchase> ModelToPurchase { get; set; }
         public virtual DbSet<ModelType> ModelType { get; set; }
         public virtual DbSet<MOExpluatation> MOExpluatation { get; set; }
         public virtual DbSet<Organisations> Organisations { get; set; }

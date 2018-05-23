@@ -14,13 +14,19 @@ namespace MedicalComponents.Models
     
     public partial class Purchase
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Purchase()
+        {
+            this.ModelToPurchase = new HashSet<ModelToPurchase>();
+        }
+    
         public int purchase_id { get; set; }
         public int purchase_type_id { get; set; }
         public string purchase_document_number { get; set; }
         public Nullable<System.DateTime> date_apply { get; set; }
-        public Nullable<int> organisation_id { get; set; }
     
-        public virtual Organisations Organisations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ModelToPurchase> ModelToPurchase { get; set; }
         public virtual sp_PurchaseType sp_PurchaseType { get; set; }
     }
 }

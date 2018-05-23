@@ -55,17 +55,49 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 4)
             {
-                tablesModel.FillMOExpluatation(dataGridView1);
+                tablesModel.FillPhysicalPeoplePositions(dataGridView1);
             }
             else if (checkedListBox1.SelectedIndex == 5)
             {
-
+                tablesModel.FillMOExpluatation(dataGridView1);
             }
             else if (checkedListBox1.SelectedIndex == 6)
             {
-
+                tablesModel.FillElementsDragMetal(dataGridView1);
             }
             else if (checkedListBox1.SelectedIndex == 7)
+            {
+                tablesModel.FillPersonalOnService(dataGridView1);
+            }
+            else if (checkedListBox1.SelectedIndex == 8)
+            {
+                tablesModel.FillPurchase(dataGridView1);
+            }
+            else if (checkedListBox1.SelectedIndex == 9)
+            {
+                tablesModel.FillZipOnStock(dataGridView1);
+            }
+            else if (checkedListBox1.SelectedIndex == 10)
+            {
+                tablesModel.FillZIPMoves(dataGridView1);
+            }
+            else if (checkedListBox1.SelectedIndex == 11)
+            {
+                tablesModel.FillPMOnStock(dataGridView1);
+            }
+            else if (checkedListBox1.SelectedIndex == 12)
+            {
+                tablesModel.FillPMMoves(dataGridView1);
+            }
+            else if (checkedListBox1.SelectedIndex == 13)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 14)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 15)
             {
 
             }

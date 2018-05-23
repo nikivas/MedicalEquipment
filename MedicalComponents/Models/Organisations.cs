@@ -19,7 +19,6 @@ namespace MedicalComponents.Models
         {
             this.FaticalPhysicalPeoplePositions = new HashSet<FaticalPhysicalPeoplePositions>();
             this.ModelType = new HashSet<ModelType>();
-            this.Purchase = new HashSet<Purchase>();
         }
     
         public int organisation_id { get; set; }
@@ -37,7 +36,5 @@ namespace MedicalComponents.Models
         public virtual ICollection<ModelType> ModelType { get; set; }
         public virtual sp_OrganisationType sp_OrganisationType { get; set; }
         public virtual sp_CountryKey sp_CountryKey { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Purchase> Purchase { get; set; }
     }
 }

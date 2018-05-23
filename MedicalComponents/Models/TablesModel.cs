@@ -11,7 +11,7 @@ namespace MedicalComponents.Models
     class TablesModel
     {
         
-        public static MainDatabaseEntities2 entities = new MainDatabaseEntities2();
+        public static MainDatabaseEntities3 entities = new MainDatabaseEntities3();
         public IEnumerable<object> FillOrganisation(DataGridView dataGridView)
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();
@@ -81,7 +81,11 @@ namespace MedicalComponents.Models
                            model.date_creation,
                            model.date_utilisation,
                            model.serial_number,
-                           model.sp_ReasonWriteOff.reason_write_off_name
+                           model.sp_ReasonWriteOff.reason_write_off_name,
+                           model.ModelToPurchase.Where(x=>x.model_element_id == model.model_element_id)
+                                                .First()
+                                                .Purchase
+                                                .purchase_document_number
                            
                        }).ToList();
 
@@ -216,6 +220,200 @@ namespace MedicalComponents.Models
 
             return res;
         }
+
+        public IEnumerable<object> FillPersonalOnService(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+
+            var res = (from el in entities.PersonalOnService
+                       select new
+                       {
+                           el.personal_on_service_id,
+                           el.ModelElement.ModelType.model_type_name,
+                           el.ModelElement.inventory_number,
+                           fio = el.PhysicalPeople.name+" "+el.PhysicalPeople.family+" "+el.PhysicalPeople.patronumic,
+                           el.sp_ServiceOperationType.service_operation_type_name,
+                           el.sp_ServiceOperationPersonalRole.service_operation_personal_role_name
+
+                       }).ToList();
+
+
+            dic.Add("personal_on_service_id", "id записи");
+            dic.Add("model_type_name", "Тип модели");
+            dic.Add("inventory_number", "Инвентарный номер");
+            dic.Add("fio", "ФИО");
+            dic.Add("service_operation_type_name", "Тип операции");
+            dic.Add("service_operation_personal_role_name", "Роль эксплуатации");
+
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+
+            return res;
+        }
+
+        public IEnumerable<object> FillPurchase(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+
+            var res = (from el in entities.Purchase
+                       select new
+                       {
+                           el.purchase_id,
+                           el.sp_PurchaseType.purchase_type_name,
+                           el.purchase_document_number,
+                           el.date_apply
+                       }).ToList();
+
+
+            dic.Add("purchase_id", "id записи");
+            dic.Add("purchase_type_name", "Тип закупки");
+            dic.Add("purchase_document_number", "Номер документа");
+            dic.Add("date_apply", "Дата приобритения");
+            
+
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+
+            return res;
+        }
+
+        public IEnumerable<object> FillZipOnStock(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+
+            var res = (from el in entities.ZIPPMonStock
+                       where el.sp_ZIP_AND_PM_Element.isZIP == 1
+                       select new
+                       {
+                           el.zipPM_on_stock_id,
+                           el.sp_ZIP_AND_PM_Element.zipPM_element_name,
+                           el.count
+                       }).ToList();
+
+
+            dic.Add("zipPM_on_stock_id", "id записи");
+            dic.Add("zipPM_element_name", "Название ЗИП");
+            dic.Add("count", "количество");
+
+
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+
+            return res;
+        }
+
+        public IEnumerable<object> FillPMOnStock(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+
+            var res = (from el in entities.ZIPPMonStock
+                       where el.sp_ZIP_AND_PM_Element.isZIP != 1
+                       select new
+                       {
+                           el.zipPM_on_stock_id,
+                           el.sp_ZIP_AND_PM_Element.zipPM_element_name,
+                           el.count
+                       }).ToList();
+
+
+            dic.Add("zipPM_on_stock_id", "id записи");
+            dic.Add("zipPM_element_name", "Название PM");
+            dic.Add("count", "количество");
+
+
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+
+            return res;
+        }
+
+        public IEnumerable<object> FillZIPMoves(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+
+            var res = (from el in entities.ZIPPMMoves
+                       where el.sp_ZIP_AND_PM_Element.isZIP == 1
+                       select new
+                       {
+                           el.zipPM_move_id,
+                           el.sp_ZIP_AND_PM_Element.zipPM_element_name,
+                           el.date_move,
+                           el.ModelElement.ModelType.model_type_name,
+                           el.ModelElement.inventory_number
+                       }).ToList();
+
+
+            dic.Add("zipPM_on_stock_id", "id записи");
+            dic.Add("zipPM_element_name", "Название ZIP ");
+            dic.Add("date_move", "Дата перемещения со склада");
+            dic.Add("model_type_name", "Тип модели");
+            dic.Add("inventory_number", "инвентарный номер");
+
+
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+
+            return res;
+        }
+
+        public IEnumerable<object> FillPMMoves(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+
+            var res = (from el in entities.ZIPPMMoves
+                       where el.sp_ZIP_AND_PM_Element.isZIP != 1
+                       select new
+                       {
+                           el.zipPM_move_id,
+                           el.sp_ZIP_AND_PM_Element.zipPM_element_name,
+                           el.date_move,
+                           el.ModelElement.ModelType.model_type_name,
+                           el.ModelElement.inventory_number
+                       }).ToList();
+
+
+            dic.Add("zipPM_on_stock_id", "id записи");
+            dic.Add("zipPM_element_name", "Название PM");
+            dic.Add("date_move", "Дата перемещения со склада");
+            dic.Add("model_type_name", "Тип модели");
+            dic.Add("inventory_number", "инвентарный номер");
+
+
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+
+            return res;
+        }
+
+        public IEnumerable<object> FillBrokenRequest(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+
+            var res = (from el in entities.BrokenRequest
+                       select new
+                       {
+                           el.broken_request_id,
+                           el.sp_BrokenRequestReason.broken_request_reason_name,
+                           fio = el.PhysicalPeople.name+" "+el.PhysicalPeople.family+" "+el.PhysicalPeople.patronumic,
+                           el.ModelElement.ModelType.model_type_name,
+                           el.ModelElement.inventory_number,
+                           el.date_to_repair,
+                           isFinished = el.isFinished == 0 ? "Нет" : "Да"
+                       }).ToList();
+
+
+            dic.Add("broken_request_id", "id записи");
+            dic.Add("broken_request_reason_name", "Название ZIP / PM");
+            dic.Add("fio", "ФИО человека оставившего заявку");
+            dic.Add("model_type_name", "Тип модели");
+            dic.Add("inventory_number", "инвентарный номер");
+            dic.Add("date_to_repair", "Дата подачи");
+            dic.Add("isFinished", "Неполадка устранена?");
+            
+
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+
+            return res;
+        }
+
+
+
+
+
 
         public IEnumerable<object> Fillsp_OrganisationType(DataGridView dataGridView)
         {
@@ -532,7 +730,6 @@ namespace MedicalComponents.Models
 
             return res;
         }
-
 
         public IEnumerable<object> Fillsp_BrokenRequestReason(DataGridView dataGridView)
         {

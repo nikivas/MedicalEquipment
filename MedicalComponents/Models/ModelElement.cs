@@ -20,6 +20,7 @@ namespace MedicalComponents.Models
             this.BrokenRequest = new HashSet<BrokenRequest>();
             this.ElementsDragMetal = new HashSet<ElementsDragMetal>();
             this.ElementsPlaces = new HashSet<ElementsPlaces>();
+            this.ModelToPurchase = new HashSet<ModelToPurchase>();
             this.MOExpluatation = new HashSet<MOExpluatation>();
             this.PersonalOnService = new HashSet<PersonalOnService>();
             this.PurchaseElements = new HashSet<PurchaseElements>();
@@ -43,6 +44,8 @@ namespace MedicalComponents.Models
         public virtual ICollection<ElementsPlaces> ElementsPlaces { get; set; }
         public virtual ModelType ModelType { get; set; }
         public virtual sp_ReasonWriteOff sp_ReasonWriteOff { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ModelToPurchase> ModelToPurchase { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MOExpluatation> MOExpluatation { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
