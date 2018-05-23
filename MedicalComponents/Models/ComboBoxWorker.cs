@@ -98,5 +98,35 @@ namespace MedicalComponents.Models
             if (res.Count() > 0)
                 cmb.SelectedIndex = 0;
         }
+
+        public static void initOrganisationType(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.sp_OrganisationType
+                      select new
+                      {
+                          id = el.organisation_type_id,
+                          value = el.organisation_type_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
+
+        public static void initDepartment(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.sp_OrganisationDepartment
+                      select new
+                      {
+                          id = el.organisation_department_id,
+                          value = el.organisation_department_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
     }
 }

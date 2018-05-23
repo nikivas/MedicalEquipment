@@ -94,6 +94,12 @@
     <Compile Include="Editings\EditingOrganisationsWindow.Designer.cs">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\EditingPhysicalPeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingPhysicalPeople.Designer.cs">
+      <DependentUpon>EditingPhysicalPeople.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\sp\sp_BrokenRequestReasonEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingOrganisationsWindow.resx">
       <DependentUpon>EditingOrganisationsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingPhysicalPeople.resx">
+      <DependentUpon>EditingPhysicalPeople.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\sp\sp_BrokenRequestReasonEdit.resx">
       <DependentUpon>sp_BrokenRequestReasonEdit.cs</DependentUpon>
