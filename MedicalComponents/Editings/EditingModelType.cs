@@ -38,19 +38,19 @@ namespace MedicalComponents.Editings
                     for (int i = 0; i < comboBoxExpluatation.Items.Count; i++)
                     {
                         var cmbEl = comboBoxExpluatation.Items[i] as dynamic;
-                        if (cmbEl.value == el.expluatation_role_id)
+                        if (cmbEl.id == el.expluatation_role_id)
                             comboBoxExpluatation.SelectedIndex = i;
                     }
                     for (int i = 0; i < comboBoxFunc.Items.Count; i++)
                     {
                         var cmbEl = comboBoxFunc.Items[i] as dynamic;
-                        if (cmbEl.value == el.functionaly_use_model_id)
+                        if (cmbEl.id == el.functionaly_use_model_id)
                             comboBoxFunc.SelectedIndex = i;
                     }
                     for (int i = 0; i < comboBoxOrganisation.Items.Count; i++)
                     {
                         var cmbEl = comboBoxOrganisation.Items[i] as dynamic;
-                        if (cmbEl.value == el.organisation_id)
+                        if (cmbEl.id == el.organisation_id)
                             comboBoxOrganisation.SelectedIndex = i;
                     }
 

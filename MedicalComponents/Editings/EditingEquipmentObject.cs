@@ -42,7 +42,7 @@ namespace MedicalComponents.Editings
                     for (int i = 0; i < comboBoxModelType.Items.Count; i++)
                     {
                         var cmbEl = comboBoxModelType.Items[i] as dynamic;
-                        if (cmbEl.value == el.model_type_id)
+                        if (cmbEl.id == el.model_type_id)
                             comboBoxModelType.SelectedIndex = i;
                     }
                     dateTimePickerCreated.Value = el.date_creation.Value;

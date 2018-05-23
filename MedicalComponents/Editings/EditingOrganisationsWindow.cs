@@ -46,13 +46,13 @@ namespace MedicalComponents
                     for (int i = 0; i < comboBoxCountr.Items.Count; i++)
                     {
                         var cmbEl = comboBoxCountr.Items[i] as dynamic;
-                        if (cmbEl.value == el.country_key_id)
+                        if (cmbEl.id == el.country_key_id)
                             comboBoxCountr.SelectedIndex = i;
                     }
                     for (int i = 0; i < comboBoxOrgType.Items.Count; i++)
                     {
                         var cmbEl = comboBoxOrgType.Items[i] as dynamic;
-                        if (cmbEl.value == el.organisation_type_id)
+                        if (cmbEl.id == el.organisation_type_id)
                             comboBoxOrgType.SelectedIndex = i;
                     }
                 }

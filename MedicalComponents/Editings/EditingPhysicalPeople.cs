@@ -40,7 +40,7 @@ namespace MedicalComponents.Editings
                     for (int i = 0; i < comboBoxDep.Items.Count; i++)
                     {
                         var cmbEl = comboBoxDep.Items[i] as dynamic;
-                        if (cmbEl.value == el.organisation_department_id)
+                        if (cmbEl.id == el.organisation_department_id)
                             comboBoxDep.SelectedIndex = i;
                     }
                     comboBoxGender.SelectedIndex = el.Gender == 1 ? 1 : 0;
