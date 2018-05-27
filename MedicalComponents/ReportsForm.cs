@@ -27,5 +27,18 @@ namespace MedicalComponents
         {
             new ExcelController().GenerateModelElementsExample(null);
         }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < checkedListBox1.Items.Count; i++)
+            {
+                if (i == checkedListBox1.SelectedIndex)
+                {
+                    checkedListBox1.SetItemCheckState(i, CheckState.Checked);
+                    continue;
+                }
+                checkedListBox1.SetItemCheckState(i, CheckState.Unchecked);
+            }
+        }
     }
 }
