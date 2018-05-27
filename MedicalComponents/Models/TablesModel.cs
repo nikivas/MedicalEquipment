@@ -97,6 +97,7 @@ namespace MedicalComponents.Models
             dic.Add("date_utilisation", "Дата утилизации");
             dic.Add("serial_number", "Серийный номер");
             dic.Add("reason_write_off_name", "Причина списания");
+            dic.Add("purchase_document_number", "Номер документа-поставки");
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 

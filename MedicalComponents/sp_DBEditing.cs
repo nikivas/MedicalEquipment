@@ -25,7 +25,10 @@ namespace MedicalComponents
             for (int i = 0; i < checkedListBox1.Items.Count; i++)
             {
                 if (i == checkedListBox1.SelectedIndex)
+                {
+                    checkedListBox1.SetItemCheckState(i, CheckState.Checked);
                     continue;
+                }
                 checkedListBox1.SetItemCheckState(i,CheckState.Unchecked);
             }
             TablesModel tablesModel = new TablesModel();

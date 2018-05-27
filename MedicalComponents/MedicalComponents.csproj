@@ -76,6 +76,12 @@
     <Compile Include="DBEditing.Designer.cs">
       <DependentUpon>DBEditing.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\EditingBrokenRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingBrokenRequest.Designer.cs">
+      <DependentUpon>EditingBrokenRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\EditingDragMetal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,30 @@
     </Compile>
     <Compile Include="Editings\EditingPhysicalPeoplePosition.Designer.cs">
       <DependentUpon>EditingPhysicalPeoplePosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\EditingPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingPurchase.Designer.cs">
+      <DependentUpon>EditingPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\EditingPurchaseElement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingPurchaseElement.Designer.cs">
+      <DependentUpon>EditingPurchaseElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\EditingZipPmMoves.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingZipPmMoves.Designer.cs">
+      <DependentUpon>EditingZipPmMoves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\EditingZipPmOnStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingZipPmOnStock.Designer.cs">
+      <DependentUpon>EditingZipPmOnStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Editings\sp\sp_BrokenRequestReasonEdit.cs">
       <SubType>Form</SubType>
@@ -255,6 +285,7 @@
     <Compile Include="Models\ElementsPlaces.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ExcelController.cs" />
     <Compile Include="Models\FaticalPhysicalPeoplePositions.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -387,6 +418,9 @@
     <EmbeddedResource Include="DBEditing.resx">
       <DependentUpon>DBEditing.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingBrokenRequest.resx">
+      <DependentUpon>EditingBrokenRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingDragMetal.resx">
       <DependentUpon>EditingDragMetal.cs</DependentUpon>
     </EmbeddedResource>
@@ -410,6 +444,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingPhysicalPeoplePosition.resx">
       <DependentUpon>EditingPhysicalPeoplePosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingPurchase.resx">
+      <DependentUpon>EditingPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingPurchaseElement.resx">
+      <DependentUpon>EditingPurchaseElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingZipPmMoves.resx">
+      <DependentUpon>EditingZipPmMoves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingZipPmOnStock.resx">
+      <DependentUpon>EditingZipPmOnStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\sp\sp_BrokenRequestReasonEdit.resx">
       <DependentUpon>sp_BrokenRequestReasonEdit.cs</DependentUpon>
@@ -557,6 +603,35 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

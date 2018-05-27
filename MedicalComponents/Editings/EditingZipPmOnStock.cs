@@ -14,13 +14,16 @@ namespace MedicalComponents.Editings
     public partial class EditingZipPmOnStock : Form
     {
         public int id = -1;
-        public EditingZipPmOnStock()
+        private int isZIP;
+        public EditingZipPmOnStock(int isZIP)
         {
+            this.isZIP = isZIP;
             InitializeComponent();
         }
 
-        public EditingZipPmOnStock(int id)
+        public EditingZipPmOnStock(int id , int isZIP)
         {
+            this.isZIP = isZIP;
             this.id = id;
             InitializeComponent();
         }
@@ -52,7 +55,7 @@ namespace MedicalComponents.Editings
 
         private void initComboBoxes()
         {
-            ComboBoxWorker.initZIPMElement(comboBoxZIPPM);
+            ComboBoxWorker.initZIPMElement(comboBoxZIPPM, isZIP);
         }
 
         private void button2_Click(object sender, EventArgs e)

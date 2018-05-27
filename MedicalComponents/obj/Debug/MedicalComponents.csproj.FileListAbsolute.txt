@@ -61,3 +61,12 @@ C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\Medical
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingModelType.resources
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingPhysicalPeople.resources
 C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingPhysicalPeoplePosition.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingDragMetal.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingMOExpluatants.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingPersonalOnService.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingPurchase.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingZipPmOnStock.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.csproj.ResolveComReference.cache
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingBrokenRequest.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingPurchaseElement.resources
+C:\учеба\C# MVC\DIPLOM\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingZipPmMoves.resources

@@ -44,7 +44,7 @@
             this.buttonTableEditing.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTableEditing.Location = new System.Drawing.Point(12, 164);
             this.buttonTableEditing.Name = "buttonTableEditing";
-            this.buttonTableEditing.Size = new System.Drawing.Size(213, 88);
+            this.buttonTableEditing.Size = new System.Drawing.Size(223, 88);
             this.buttonTableEditing.TabIndex = 0;
             this.buttonTableEditing.Text = "Просмотр и корректировка таблиц";
             this.buttonTableEditing.UseVisualStyleBackColor = false;
@@ -78,7 +78,7 @@
             // 
             this.buttonPurchasePlan.BackColor = System.Drawing.Color.Turquoise;
             this.buttonPurchasePlan.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPurchasePlan.Location = new System.Drawing.Point(12, 446);
+            this.buttonPurchasePlan.Location = new System.Drawing.Point(414, 164);
             this.buttonPurchasePlan.Name = "buttonPurchasePlan";
             this.buttonPurchasePlan.Size = new System.Drawing.Size(223, 88);
             this.buttonPurchasePlan.TabIndex = 3;
@@ -90,18 +90,18 @@
             // 
             this.buttonSPPRAdministration.BackColor = System.Drawing.Color.Turquoise;
             this.buttonSPPRAdministration.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSPPRAdministration.Location = new System.Drawing.Point(414, 446);
+            this.buttonSPPRAdministration.Location = new System.Drawing.Point(12, 446);
             this.buttonSPPRAdministration.Name = "buttonSPPRAdministration";
             this.buttonSPPRAdministration.Size = new System.Drawing.Size(223, 88);
             this.buttonSPPRAdministration.TabIndex = 4;
-            this.buttonSPPRAdministration.Text = "Администрирование базы данных СППР";
+            this.buttonSPPRAdministration.Text = "Графики";
             this.buttonSPPRAdministration.UseVisualStyleBackColor = false;
             // 
             // buttonAbout
             // 
             this.buttonAbout.BackColor = System.Drawing.Color.Turquoise;
             this.buttonAbout.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAbout.Location = new System.Drawing.Point(414, 164);
+            this.buttonAbout.Location = new System.Drawing.Point(414, 446);
             this.buttonAbout.Name = "buttonAbout";
             this.buttonAbout.Size = new System.Drawing.Size(223, 88);
             this.buttonAbout.TabIndex = 5;
@@ -116,7 +116,7 @@
             this.buttonSPPRInformation.Name = "buttonSPPRInformation";
             this.buttonSPPRInformation.Size = new System.Drawing.Size(223, 88);
             this.buttonSPPRInformation.TabIndex = 6;
-            this.buttonSPPRInformation.Text = "Состав информации в СППР и размещении его в таблицах";
+            this.buttonSPPRInformation.Text = "Потребность по стандартам оснащения отделений мед учреждения";
             this.buttonSPPRInformation.UseVisualStyleBackColor = false;
             this.buttonSPPRInformation.Click += new System.EventHandler(this.buttonSPPRInformation_Click);
             // 

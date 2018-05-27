@@ -30,7 +30,7 @@ namespace MedicalComponents
         private void buttonReports_Click(object sender, EventArgs e)
         {
             new ReportsForm().Show();
-            new ReportFormController().Show();
+            //new ReportFormController().Show();
             new ReportFormRM().Show();
         }
 

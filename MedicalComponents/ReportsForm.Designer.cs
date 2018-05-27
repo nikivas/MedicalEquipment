@@ -36,13 +36,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxModel = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCorpus = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -61,11 +61,7 @@
             "Перемещенные/переданные единицы медицинского оборудования",
             "Выведенные из эксплуатации единицы медицинского оборудования",
             "Списанные единицы медицинского оборудования",
-            "Единицы медицинского оборудования, подвергавшиеся ТО",
-            "Единицы медицинского оборудования, подвергавшиеся ремонту",
-            "Единицы медицинского оборудования, прошедшие метрологическую поверку",
-            "Единицы медицинского оборудования, не прошедшие метрологическую поверку",
-            "Единицы медицинского оборудования, которым необходима метрологическая поверка"});
+            "Единицы медицинского оборудования, подвергавшиеся ремонту"});
             this.checkedListBox1.Location = new System.Drawing.Point(15, 58);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(720, 193);
@@ -100,6 +96,7 @@
             this.button1.TabIndex = 19;
             this.button1.Text = "Просмотреть статистику";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -115,13 +112,13 @@
             // 
             this.groupBox1.Controls.Add(this.comboBox3);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboBoxModel);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBoxCorpus);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
@@ -154,16 +151,16 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "Отделение :";
             // 
-            // comboBox2
+            // comboBoxModel
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxModel.FormattingEnabled = true;
+            this.comboBoxModel.Items.AddRange(new object[] {
             "Дефибриллятор"});
-            this.comboBox2.Location = new System.Drawing.Point(202, 154);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(277, 28);
-            this.comboBox2.TabIndex = 12;
-            this.comboBox2.Text = "все";
+            this.comboBoxModel.Location = new System.Drawing.Point(202, 154);
+            this.comboBoxModel.Name = "comboBoxModel";
+            this.comboBoxModel.Size = new System.Drawing.Size(277, 28);
+            this.comboBoxModel.TabIndex = 12;
+            this.comboBoxModel.Text = "все";
             // 
             // label8
             // 
@@ -214,14 +211,14 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Калькулятор драгоценных металлов :";
             // 
-            // comboBox1
+            // comboBoxCorpus
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(262, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(341, 28);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.Text = "отделения хирургической помощи";
+            this.comboBoxCorpus.FormattingEnabled = true;
+            this.comboBoxCorpus.Location = new System.Drawing.Point(262, 75);
+            this.comboBoxCorpus.Name = "comboBoxCorpus";
+            this.comboBoxCorpus.Size = new System.Drawing.Size(341, 28);
+            this.comboBoxCorpus.TabIndex = 6;
+            this.comboBoxCorpus.Text = "отделения хирургической помощи";
             // 
             // label6
             // 
@@ -302,13 +299,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxModel;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxCorpus;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;

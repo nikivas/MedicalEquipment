@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedicalComponents.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace MedicalComponents
         public ReportFormRM()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new ExcelController().GeneratePMExample(null);
         }
     }
 }

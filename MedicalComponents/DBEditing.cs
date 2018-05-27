@@ -62,15 +62,15 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 9)
             {
-                new EditingZipPmOnStock().Show();
+                new EditingZipPmOnStock(1).Show(); // zip
             }
             else if (checkedListBox1.SelectedIndex == 10)
             {
-
+                
             }
             else if (checkedListBox1.SelectedIndex == 11)
             {
-
+                new EditingZipPmOnStock(0).Show(); // pm
             }
         }
 
@@ -123,11 +123,19 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 9)
             {
-                new EditingZipPmOnStock(selectedId).Show();
+                new EditingZipPmOnStock(selectedId, 1).Show(); // isZIp = 1 => zip
             }
             else if (checkedListBox1.SelectedIndex == 10)
             {
-
+                new EditingZipPmMoves(1).Show(); // 1 -> zip
+            }
+            else if (checkedListBox1.SelectedIndex == 11)
+            {
+                new EditingZipPmOnStock(selectedId, 0).Show(); //pm
+            }
+            else if (checkedListBox1.SelectedIndex == 12)
+            {
+                new EditingZipPmMoves(0).Show(); // 0 -> pm
             }
         }
 
@@ -141,7 +149,10 @@ namespace MedicalComponents
             for (int i = 0; i < checkedListBox1.Items.Count; i++)
             {
                 if (i == checkedListBox1.SelectedIndex)
+                {
+                    checkedListBox1.SetItemCheckState(i, CheckState.Checked);
                     continue;
+                }
                 checkedListBox1.SetItemCheckState(i, CheckState.Unchecked);
             }
             TablesModel tablesModel = new TablesModel();
