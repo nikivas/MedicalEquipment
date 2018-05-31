@@ -13,10 +13,10 @@ namespace MedicalComponents.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MainDatabaseEntities3 : DbContext
+    public partial class MainDatabaseEntities4 : DbContext
     {
-        public MainDatabaseEntities3()
-            : base("name=MainDatabaseEntities3")
+        public MainDatabaseEntities4()
+            : base("name=MainDatabaseEntities4")
         {
         }
     
