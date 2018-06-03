@@ -20,6 +20,7 @@ namespace MedicalComponents.Models
         public System.DateTime planned_date { get; set; }
         public string target_info { get; set; }
         public int isPurchasing { get; set; }
+        public Nullable<int> money { get; set; }
     
         public virtual ModelElement ModelElement { get; set; }
     }

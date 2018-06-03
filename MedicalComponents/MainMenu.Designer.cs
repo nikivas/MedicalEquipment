@@ -96,6 +96,7 @@
             this.buttonSPPRAdministration.TabIndex = 4;
             this.buttonSPPRAdministration.Text = "Графики";
             this.buttonSPPRAdministration.UseVisualStyleBackColor = false;
+            this.buttonSPPRAdministration.Click += new System.EventHandler(this.buttonSPPRAdministration_Click);
             // 
             // buttonAbout
             // 

@@ -10,7 +10,7 @@ namespace MedicalComponents.Models
 {
     class ExcelController
     {
-        public void GenerateModelElementsExample(IEnumerable<object> obj, string header = "Информация о мед оборудовании")
+        public void GenerateModelElementsExample(IEnumerable<Dictionary<string,string>> dic, string header = "Информация о мед оборудовании")
         {
             var app = new Excel.Application();
 
@@ -30,14 +30,22 @@ namespace MedicalComponents.Models
             ((Excel.Range)workSheet.Cells[2, "A"]).Font.Name = "Times New Roman";
             ((Excel.Range)workSheet.Cells[2, "A"]).Font.Size = 20;
 
-            workSheet.Cells[3, "A"] = "Наименование МО";
-            workSheet.Cells[3, "B"] = "Наименование изделия";
-            workSheet.Cells[3, "C"] = "Модель";
-            workSheet.Cells[3, "D"] = "Программа закупки";
-            workSheet.Cells[3, "E"] = "Балансовая стоимость";
-            workSheet.Cells[3, "F"] = "Количство(?)";
+            workSheet.Cells[3, "A"] = "Наименование изделия";
+            workSheet.Cells[3, "B"] = "Модель";
+            workSheet.Cells[3, "D"] = "Балансовая стоимость";
+            workSheet.Cells[3, "E"] = "Поставщик";
 
             int rowIdx = 4;
+            foreach (var el in dic)
+            {
+                workSheet.Cells[rowIdx, "A"] = el["Наименование изделия"];
+                workSheet.Cells[rowIdx, "B"] = el["Модель"];
+                workSheet.Cells[rowIdx, "D"] = el["Балансовая стоимость"];
+                workSheet.Cells[rowIdx, "E"] = el["Поставщик"];
+                rowIdx++;
+            }
+
+            
             //TODO reports
 
             rowIdx += 2;
@@ -81,7 +89,7 @@ namespace MedicalComponents.Models
         }
 
 
-        public void GeneratePMExample(IEnumerable<object> obj, string header = "Информация о расходном материале")
+        public void GeneratePMExample(IEnumerable<Dictionary<string,string>> dic, string header = "Информация о расходном материале")
         {
             var app = new Excel.Application();
 
@@ -104,12 +112,17 @@ namespace MedicalComponents.Models
             workSheet.Cells[3, "A"] = "Наименование расходного материала";
             workSheet.Cells[3, "B"] = "На складе: ";
             workSheet.Cells[3, "C"] = "Модель";
-            workSheet.Cells[3, "D"] = "Программа закупки";
             workSheet.Cells[3, "E"] = "Балансовая стоимость";
-            workSheet.Cells[3, "F"] = "Количство(?)";
 
             int rowIdx = 4;
-            //TODO reports
+            foreach (var el in dic)
+            {
+                workSheet.Cells[rowIdx, "A"] = el["Наименование расходного материала"];
+                workSheet.Cells[rowIdx, "B"] = el["На складе: "];
+                workSheet.Cells[rowIdx, "D"] = el["Модель"];
+                workSheet.Cells[rowIdx, "E"] = el["Балансовая стоимость"];
+                rowIdx++;
+            }
 
             rowIdx += 2;
             workSheet.Cells[rowIdx, "C"] = "Руководитель: ";

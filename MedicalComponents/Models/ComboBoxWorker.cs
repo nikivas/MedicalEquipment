@@ -9,6 +9,21 @@ namespace MedicalComponents.Models
 {
     public class ComboBoxWorker
     {
+        public static void initCorpus(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.sp_Corpus
+                      select new
+                      {
+                          id = el.corpus_id,
+                          value = el.corpus_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
+
         public static void initCountry(ComboBox cmb)
         {
             var res = from el in TablesModel.entities.sp_CountryKey

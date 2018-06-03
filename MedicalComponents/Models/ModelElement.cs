@@ -35,6 +35,9 @@ namespace MedicalComponents.Models
         public Nullable<System.DateTime> date_utilisation { get; set; }
         public string other { get; set; }
         public int reason_write_off_id { get; set; }
+        public Nullable<int> is_mo { get; set; }
+        public Nullable<System.DateTime> date_mo { get; set; }
+        public Nullable<System.DateTime> date_to { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BrokenRequest> BrokenRequest { get; set; }

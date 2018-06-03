@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище MainDatabaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище MainDatabaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BrokenRequest">
           <Key>
             <PropertyRef Name="broken_request_id" />
@@ -62,6 +62,9 @@
           <Property Name="date_utilisation" Type="date" />
           <Property Name="other" Type="nvarchar" MaxLength="1000" />
           <Property Name="reason_write_off_id" Type="int" Nullable="false" />
+          <Property Name="is_mo" Type="int" />
+          <Property Name="date_mo" Type="date" />
+          <Property Name="date_to" Type="date" />
         </EntityType>
         <EntityType Name="ModelToPurchase">
           <Key>
@@ -148,6 +151,7 @@
           <Property Name="planned_date" Type="date" Nullable="false" />
           <Property Name="target_info" Type="nvarchar" MaxLength="1000" Nullable="false" />
           <Property Name="isPurchasing" Type="int" Nullable="false" />
+          <Property Name="money" Type="int" />
         </EntityType>
         <EntityType Name="sp_BrokenRequestReason">
           <Key>
@@ -898,8 +902,7 @@
             <End Role="ZIPPMonStock" EntitySet="ZIPPMonStock" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MainDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -981,6 +984,9 @@
           <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk0" FromRole="ModelElement" ToRole="PersonalOnService" />
           <NavigationProperty Name="PurchaseElements" Relationship="Self.PurchaseElements_fk0" FromRole="ModelElement" ToRole="PurchaseElements" />
           <NavigationProperty Name="ZIPPMMoves" Relationship="Self.ZIPPMMoves_fk0" FromRole="ModelElement" ToRole="ZIPPMMoves" />
+          <Property Name="is_mo" Type="Int32" />
+          <Property Name="date_mo" Type="DateTime" Precision="0" />
+          <Property Name="date_to" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="ModelToPurchase">
           <Key>
@@ -1093,6 +1099,7 @@
           <Property Name="target_info" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="isPurchasing" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ModelElement" Relationship="Self.PurchaseElements_fk0" FromRole="PurchaseElements" ToRole="ModelElement" />
+          <Property Name="money" Type="Int32" />
         </EntityType>
         <EntityType Name="sp_BrokenRequestReason">
           <Key>
@@ -1924,6 +1931,9 @@
           <EntitySetMapping Name="ModelElement">
             <EntityTypeMapping TypeName="MainDatabaseModel.ModelElement">
               <MappingFragment StoreEntitySet="ModelElement">
+                <ScalarProperty Name="date_to" ColumnName="date_to" />
+                <ScalarProperty Name="date_mo" ColumnName="date_mo" />
+                <ScalarProperty Name="is_mo" ColumnName="is_mo" />
                 <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
                 <ScalarProperty Name="inventory_number" ColumnName="inventory_number" />
                 <ScalarProperty Name="model_type_id" ColumnName="model_type_id" />
@@ -2020,6 +2030,7 @@
           <EntitySetMapping Name="PurchaseElements">
             <EntityTypeMapping TypeName="MainDatabaseModel.PurchaseElements">
               <MappingFragment StoreEntitySet="PurchaseElements">
+                <ScalarProperty Name="money" ColumnName="money" />
                 <ScalarProperty Name="purchase_element_id" ColumnName="purchase_element_id" />
                 <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
                 <ScalarProperty Name="count" ColumnName="count" />

@@ -31,7 +31,6 @@ namespace MedicalComponents
         {
             new ReportsForm().Show();
             //new ReportFormController().Show();
-            new ReportFormRM().Show();
         }
 
         private void buttonPurchasePlan_Click(object sender, EventArgs e)
@@ -48,6 +47,11 @@ namespace MedicalComponents
         {
             new GraphicsForm().Show();
             new GraphicsModels().Show();
+        }
+
+        private void buttonSPPRAdministration_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
