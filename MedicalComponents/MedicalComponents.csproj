@@ -400,12 +400,6 @@
     <Compile Include="ReportFormController.Designer.cs">
       <DependentUpon>ReportFormController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportFormRM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportFormRM.Designer.cs">
-      <DependentUpon>ReportFormRM.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -532,9 +526,6 @@
     </Compile>
     <EmbeddedResource Include="ReportFormController.resx">
       <DependentUpon>ReportFormController.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReportFormRM.resx">
-      <DependentUpon>ReportFormRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>
