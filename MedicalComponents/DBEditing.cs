@@ -141,7 +141,14 @@ namespace MedicalComponents
 
         private void DBEditing_Load(object sender, EventArgs e)
         {
+            frm = this;
             checkedListBox1.SelectionMode = SelectionMode.One;
+        }
+        private static DBEditing frm;
+
+        public static DBEditing getInstanceDB()
+        {
+            return frm;
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -155,13 +162,19 @@ namespace MedicalComponents
                 }
                 checkedListBox1.SetItemCheckState(i, CheckState.Unchecked);
             }
+            UPdateDB();
+        }
+
+
+        public void UPdateDB()
+        {
             TablesModel tablesModel = new TablesModel();
 
-            if(checkedListBox1.SelectedIndex == 0)
+            if (checkedListBox1.SelectedIndex == 0)
             {
                 tablesModel.FillOrganisation(dataGridView1);
             }
-            else if(checkedListBox1.SelectedIndex == 1)
+            else if (checkedListBox1.SelectedIndex == 1)
             {
                 tablesModel.FillModelTypes(dataGridView1);
             }
@@ -222,7 +235,6 @@ namespace MedicalComponents
                 tablesModel.FillPMDocumentsOnPurchase(dataGridView1);
             }
         }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)

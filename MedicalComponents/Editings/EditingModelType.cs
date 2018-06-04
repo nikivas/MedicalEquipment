@@ -97,6 +97,9 @@ namespace MedicalComponents.Editings
                     el.expluatation_role_id = (int)comboBoxExpluatation.SelectedValue;
                     TablesModel.entities.SaveChanges();
                 }
+                var frm = DBEditing.getInstanceDB();
+                if(frm != null)
+                    frm.UPdateDB();
                 MessageBox.Show("изменения успешно приняты");
                 this.Close();
             }

@@ -48,6 +48,11 @@ namespace MedicalComponents.Editings
                     dateTimePickerCreated.Value = el.date_creation.Value;
                     dateTimePickerWriteOff.Value = el.date_utilisation.Value;
 
+                    dateTimePickerMO.Value = el.date_mo ?? DateTime.Now;
+                    dateTimePickerTO.Value = el.date_to ?? DateTime.Now;
+
+                    checkBox1.Checked = el.is_mo == 1;
+
                 }
             }
             catch (Exception)
@@ -79,7 +84,10 @@ namespace MedicalComponents.Editings
                         date_utilisation = dateTimePickerWriteOff.Value,
                         model_type_id = (int) comboBoxModelType.SelectedValue,
                         reason_write_off_id = (int) comboBoxWriteOffReason.SelectedValue,
-                        other = "..."
+                        other = "...",
+                        is_mo = checkBox1.Checked ? 1 : 0,
+                        date_mo = dateTimePickerMO.Value,
+                        date_to = dateTimePickerTO.Value
                     });
                     TablesModel.entities.SaveChanges();
                 }
@@ -94,6 +102,9 @@ namespace MedicalComponents.Editings
                     el.reason_write_off_id = (int)comboBoxWriteOffReason.SelectedValue;
                     TablesModel.entities.SaveChanges();
                 }
+                var frm = DBEditing.getInstanceDB();
+                if (frm != null)
+                    frm.UPdateDB();
                 MessageBox.Show("изменения успешно приняты");
                 this.Close();
             }

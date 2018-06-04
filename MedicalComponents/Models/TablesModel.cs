@@ -25,7 +25,7 @@ namespace MedicalComponents.Models
                           organisation_type = organisation.sp_OrganisationType.organisation_type_name,
                           contact_information = organisation.contacts,
                           email = organisation.email
-                      }).ToList().OrderBy(x=>x.organisation_name);
+                      }).ToList();
 
 
             dic.Add("organisation_id", "Идентификатор Организации");
@@ -54,7 +54,7 @@ namespace MedicalComponents.Models
                            functionaly_use_model = modelType.sp_FunctionalyUseModel.functionaly_use_model_name,
                            expluatation_role = modelType.sp_ExpluatationRole.expluatation_role_name
 
-                       }).ToList().OrderBy(x=>x.model_type_name);
+                       }).ToList();
 
 
             dic.Add("model_type_id", "id записи");
@@ -87,7 +87,7 @@ namespace MedicalComponents.Models
                                                 .Purchase
                                                 .purchase_document_number
                            
-                       }).ToList().OrderBy(x=>x.inventory_number);
+                       }).ToList();
 
 
             dic.Add("model_element_id", "id записи");
@@ -118,7 +118,7 @@ namespace MedicalComponents.Models
                            gender = people.Gender.Value == 1 ? "муж" : "жен",
                            people.contacts,
                            people.sp_OrganisationDepartment.organisation_department_name
-                       }).ToList().OrderBy(x=>x.family);
+                       }).ToList();
 
 
             dic.Add("physical_people_id", "id записи");
@@ -148,7 +148,7 @@ namespace MedicalComponents.Models
                            people_pos.salary
                            
 
-                       }).ToList().OrderBy(x=>x.physical_people_position_name);
+                       }).ToList();
 
 
             dic.Add("people_position_id", "id записи");
@@ -178,7 +178,7 @@ namespace MedicalComponents.Models
                            mo_exxpluatation.date_end
 
 
-                       }).ToList().OrderBy(x=>x.model_type_name);
+                       }).ToList();
 
 
             dic.Add("mo_expluatation_id", "id записи");
@@ -208,7 +208,7 @@ namespace MedicalComponents.Models
                            drags.size
 
 
-                       }).ToList().OrderBy(x=>x.model_type_name);
+                       }).ToList();
 
 
             dic.Add("elements_drag_metal_id", "id записи");
@@ -236,7 +236,7 @@ namespace MedicalComponents.Models
                            el.sp_ServiceOperationType.service_operation_type_name,
                            el.sp_ServiceOperationPersonalRole.service_operation_personal_role_name
 
-                       }).ToList().OrderBy(x=>x.fio);
+                       }).ToList();
 
 
             dic.Add("personal_on_service_id", "id записи");
@@ -262,7 +262,7 @@ namespace MedicalComponents.Models
                            el.sp_PurchaseType.purchase_type_name,
                            el.purchase_document_number,
                            el.date_apply
-                       }).ToList().OrderByDescending(x=>x.date_apply);
+                       }).ToList();
 
 
             dic.Add("purchase_id", "id записи");
@@ -287,7 +287,7 @@ namespace MedicalComponents.Models
                            el.zipPM_on_stock_id,
                            el.sp_ZIP_AND_PM_Element.zipPM_element_name,
                            el.count
-                       }).ToList().OrderBy(x=>x.zipPM_element_name);
+                       }).ToList();
 
 
             dic.Add("zipPM_on_stock_id", "id записи");
@@ -311,7 +311,7 @@ namespace MedicalComponents.Models
                            el.zipPM_on_stock_id,
                            el.sp_ZIP_AND_PM_Element.zipPM_element_name,
                            el.count
-                       }).ToList().OrderBy(x=>x.zipPM_element_name);
+                       }).ToList();
 
 
             dic.Add("zipPM_on_stock_id", "id записи");
@@ -337,7 +337,7 @@ namespace MedicalComponents.Models
                            el.date_move,
                            el.ModelElement.ModelType.model_type_name,
                            el.ModelElement.inventory_number
-                       }).ToList().OrderBy(x=>x.zipPM_element_name);
+                       }).ToList();
 
 
             dic.Add("zipPM_on_stock_id", "id записи");
@@ -365,7 +365,7 @@ namespace MedicalComponents.Models
                            el.date_move,
                            el.ModelElement.ModelType.model_type_name,
                            el.ModelElement.inventory_number
-                       }).ToList().OrderBy(x=>x.zipPM_element_name);
+                       }).ToList();
 
 
             dic.Add("zipPM_on_stock_id", "id записи");
@@ -394,7 +394,7 @@ namespace MedicalComponents.Models
                            el.ModelElement.inventory_number,
                            el.date_to_repair,
                            isFinished = el.isFinished == 0 ? "Нет" : "Да"
-                       }).ToList().OrderBy(x=>x.model_type_name);
+                       }).ToList();
 
 
             dic.Add("broken_request_id", "id записи");
@@ -424,7 +424,7 @@ namespace MedicalComponents.Models
                            el.count,
                            el.date_coming_in,
                            el.date_to_end_possible_use
-                       }).ToList().OrderBy(x=>x.zipPM_element_name);
+                       }).ToList();
 
 
             dic.Add("zipPM_documents_purchase_id", "id записи");
@@ -449,7 +449,7 @@ namespace MedicalComponents.Models
                            el.count,
                            el.date_coming_in,
                            el.date_to_end_possible_use
-                       }).ToList().OrderBy(x=>x.zipPM_element_name);
+                       }).ToList();
 
 
             dic.Add("zipPM_documents_purchase_id", "id записи");
@@ -474,7 +474,7 @@ namespace MedicalComponents.Models
                            el.planned_date,
                            el.target_info,
                            isPurchasing = el.isPurchasing == 0 ? "Нет " : "Да"
-                       }).ToList().OrderBy(x=>x.model_type_name);
+                       }).ToList();
 
 
             dic.Add("purchase_element_id", "id записи");
@@ -500,7 +500,7 @@ namespace MedicalComponents.Models
                            org.organisation_type_id,
                            org.organisation_type_name
 
-                       }).ToList().OrderBy(x=>x.organisation_type_name);
+                       }).ToList();
 
 
             dic.Add("organisation_type_id", "id записи");
@@ -522,7 +522,7 @@ namespace MedicalComponents.Models
                            el.country_name
                            
 
-                       }).ToList().OrderBy(x=>x.country_name);
+                       }).ToList();
 
 
             dic.Add("country_key_id", "id записи");
@@ -544,7 +544,7 @@ namespace MedicalComponents.Models
                            el.functionaly_use_model_name
 
 
-                       }).ToList().OrderBy(x=>x.functionaly_use_model_name);
+                       }).ToList();
 
 
             dic.Add("functionaly_use_model_id", "id записи");
@@ -564,7 +564,7 @@ namespace MedicalComponents.Models
                        {
                            el.reason_write_off_id,
                            el.reason_write_off_name
-                       }).ToList().OrderBy(x=>x.reason_write_off_name);
+                       }).ToList();
 
 
             dic.Add("reason_write_off_id", "id записи");
@@ -584,7 +584,7 @@ namespace MedicalComponents.Models
                        {
                            el.physical_people_position_id,
                            el.physical_people_position_name
-                       }).ToList().OrderBy(x=>x.physical_people_position_name);
+                       }).ToList();
 
 
             dic.Add("physical_people_position_id", "id записи");
@@ -604,7 +604,7 @@ namespace MedicalComponents.Models
                        {
                            el.expluatation_role_id,
                            el.expluatation_role_name
-                       }).ToList().OrderBy(x=>x.expluatation_role_name);
+                       }).ToList();
 
             dic.Add("expluatation_role_id", "id записи");
             dic.Add("expluatation_role_name", "Роль в отношении эксплуатации");
@@ -623,7 +623,7 @@ namespace MedicalComponents.Models
                        {
                            el.organisation_department_id ,
                            el.organisation_department_name
-                       }).ToList().OrderBy(x=>x.organisation_department_name);
+                       }).ToList();
 
             dic.Add("organisation_department_id", "id записи");
             dic.Add("organisation_department_name", "Подразделение организации");
@@ -642,7 +642,7 @@ namespace MedicalComponents.Models
                        {
                            el.corpus_id,
                            el.corpus_name
-                       }).ToList().OrderBy(x=>x.corpus_name);
+                       }).ToList();
 
             dic.Add("organisation_department_id", "id записи");
             dic.Add("corpus_name", "Название корпуса");
@@ -661,7 +661,7 @@ namespace MedicalComponents.Models
                        {
                            el.move_reason_id,
                            el.move_reason_name
-                       }).ToList().OrderBy(x=>x.move_reason_name);
+                       }).ToList();
 
             dic.Add("move_reason_id", "id записи");
             dic.Add("move_reason_name", "Причина перемещения");
@@ -680,7 +680,7 @@ namespace MedicalComponents.Models
                        {
                            el.drag_metal_id,
                            el.drag_metal_name
-                       }).ToList().OrderBy(x=>x.drag_metal_name);
+                       }).ToList();
 
             dic.Add("drag_metal_id", "id записи");
             dic.Add("drag_metal_name", "Вид драгоценного металла");
@@ -699,7 +699,7 @@ namespace MedicalComponents.Models
                        {
                            el.service_type_id,
                            el.service_type_name
-                       }).ToList().OrderBy(x=>x.service_type_name);
+                       }).ToList();
 
             dic.Add("service_type_id", "id записи");
             dic.Add("service_type_name", "Вид сервисного обслуживания");
@@ -718,7 +718,7 @@ namespace MedicalComponents.Models
                        {
                            el.service_operation_type_id,
                            el.service_operation_type_name
-                       }).ToList().OrderBy(x=>x.service_operation_type_name);
+                       }).ToList();
 
             dic.Add("service_operation_type_id", "id записи");
             dic.Add("service_operation_type_name", "Вид  операции при сервисном обслуживании");
@@ -737,7 +737,7 @@ namespace MedicalComponents.Models
                        {
                            el.service_operation_personal_role_id,
                            el.service_operation_personal_role_name
-                       }).ToList().OrderBy(x=>x.service_operation_personal_role_name);
+                       }).ToList();
 
             dic.Add("service_operation_personal_role_id", "id записи");
             dic.Add("service_operation_personal_role_name", "Вид  операции при сервисном обслуживании");
@@ -756,7 +756,7 @@ namespace MedicalComponents.Models
                        {
                            el.purchase_type_id,
                            el.purchase_type_name
-                       }).ToList().OrderBy(x=>x.purchase_type_name);
+                       }).ToList();
 
             dic.Add("purchase_type_id", "id записи");
             dic.Add("purchase_type_name", "Вид закупки");
@@ -776,7 +776,7 @@ namespace MedicalComponents.Models
                        {
                            el.zipPM_element_id,
                            el.zipPM_element_name,
-                       }).ToList().OrderBy(x=>x.zipPM_element_name);
+                       }).ToList();
 
             dic.Add("zipPM_element_id", "id записи");
             dic.Add("zipPM_element_name", "Название ЗИП");
@@ -796,7 +796,7 @@ namespace MedicalComponents.Models
                        {
                            el.zipPM_element_id,
                            el.zipPM_element_name,
-                       }).ToList().OrderBy(x=>x.zipPM_element_name);
+                       }).ToList();
 
             dic.Add("zipPM_element_id", "id записи");
             dic.Add("zipPM_element_name", "Название PM");
@@ -815,7 +815,7 @@ namespace MedicalComponents.Models
                        {
                            el.broken_request_reason_id,
                            el.broken_request_reason_name,
-                       }).ToList().OrderBy(x=>x.broken_request_reason_name);
+                       }).ToList();
 
             dic.Add("broken_request_reason_id", "id записи");
             dic.Add("broken_request_reason_name", "Причина подачи заявки на ремонт");

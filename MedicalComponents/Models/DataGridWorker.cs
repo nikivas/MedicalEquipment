@@ -20,7 +20,8 @@ namespace MedicalComponents.Models
                 if (replaceCollumns.Keys.Contains(headerCollumnName))
                     dataGridView.Columns[i].HeaderText = replaceCollumns[headerCollumnName];
             }
-            dataGridView.Columns[0].Visible = false; // to hide the main ID
+            if(dataGridView.Columns.Count > 0)
+                dataGridView.Columns[0].Visible = false; // to hide the main ID
 
         }
     }

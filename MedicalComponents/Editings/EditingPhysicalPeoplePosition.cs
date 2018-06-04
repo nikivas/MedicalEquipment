@@ -109,6 +109,9 @@ namespace MedicalComponents.Editings
 
                     TablesModel.entities.SaveChanges();
                 }
+                var frm = DBEditing.getInstanceDB();
+                if (frm != null)
+                    frm.UPdateDB();
                 MessageBox.Show("изменения успешно приняты");
                 this.Close();
             }

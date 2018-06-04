@@ -42,6 +42,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBoxModelType = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dateTimePickerMO = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePickerTO = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxInventaryNumber
@@ -165,11 +170,58 @@
             this.comboBoxModelType.TabIndex = 19;
             this.comboBoxModelType.Text = "Моральное устаревание";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(454, 122);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(231, 17);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "Нуждается в метрологическом осмотре";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerMO
+            // 
+            this.dateTimePickerMO.Location = new System.Drawing.Point(513, 145);
+            this.dateTimePickerMO.Name = "dateTimePickerMO";
+            this.dateTimePickerMO.Size = new System.Drawing.Size(215, 20);
+            this.dateTimePickerMO.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(377, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Дата МО";
+            // 
+            // dateTimePickerTO
+            // 
+            this.dateTimePickerTO.Location = new System.Drawing.Point(513, 171);
+            this.dateTimePickerTO.Name = "dateTimePickerTO";
+            this.dateTimePickerTO.Size = new System.Drawing.Size(215, 20);
+            this.dateTimePickerTO.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(377, 171);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Дата ТО";
+            // 
             // EditingEquipmentObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 269);
+            this.Controls.Add(this.dateTimePickerTO);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dateTimePickerMO);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboBoxModelType);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -208,5 +260,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBoxModelType;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerMO;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTO;
+        private System.Windows.Forms.Label label6;
     }
 }
