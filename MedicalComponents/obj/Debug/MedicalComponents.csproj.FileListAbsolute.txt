@@ -178,7 +178,6 @@ C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\D
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.MainMenu.resources
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Properties.Resources.resources
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.ReportFormController.resources
-C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.ReportFormRM.resources
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.ReportsForm.resources
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.sp_DBEditing.resources
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.csproj.GenerateResource.cache

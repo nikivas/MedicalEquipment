@@ -78,6 +78,9 @@
     <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk0" FromRole="ModelElement" ToRole="PersonalOnService" />
     <NavigationProperty Name="PurchaseElements" Relationship="Self.PurchaseElements_fk0" FromRole="ModelElement" ToRole="PurchaseElements" />
     <NavigationProperty Name="ZIPPMMoves" Relationship="Self.ZIPPMMoves_fk0" FromRole="ModelElement" ToRole="ZIPPMMoves" />
+    <Property Name="is_mo" Type="Int32" />
+    <Property Name="date_mo" Type="DateTime" Precision="0" />
+    <Property Name="date_to" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="ModelToPurchase">
     <Key>
@@ -190,6 +193,7 @@
     <Property Name="target_info" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="isPurchasing" Type="Int32" Nullable="false" />
     <NavigationProperty Name="ModelElement" Relationship="Self.PurchaseElements_fk0" FromRole="PurchaseElements" ToRole="ModelElement" />
+    <Property Name="money" Type="Int32" />
   </EntityType>
   <EntityType Name="sp_BrokenRequestReason">
     <Key>

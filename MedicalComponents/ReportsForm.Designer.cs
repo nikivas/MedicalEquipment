@@ -30,8 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxAllCorpus = new System.Windows.Forms.CheckBox();
             this.comboBoxCorpus2 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxModel = new System.Windows.Forms.ComboBox();
@@ -52,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.checkedListBoxRm = new System.Windows.Forms.CheckedListBox();
@@ -75,11 +76,10 @@
             this.label20 = new System.Windows.Forms.Label();
             this.buttonInstructionRM = new System.Windows.Forms.Button();
             this.buttonStatisticRM = new System.Windows.Forms.Button();
-            this.checkBoxAllCorpus = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,22 +110,6 @@
             this.tabPage1.Text = "Мед оборудование";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.checkedListBoxRm);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.buttonInstructionRM);
-            this.tabPage2.Controls.Add(this.buttonStatisticRM);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(755, 607);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Расходники";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.checkBoxAllCorpus);
@@ -151,6 +135,16 @@
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Фильтры";
+            // 
+            // checkBoxAllCorpus
+            // 
+            this.checkBoxAllCorpus.AutoSize = true;
+            this.checkBoxAllCorpus.Location = new System.Drawing.Point(632, 79);
+            this.checkBoxAllCorpus.Name = "checkBoxAllCorpus";
+            this.checkBoxAllCorpus.Size = new System.Drawing.Size(54, 24);
+            this.checkBoxAllCorpus.TabIndex = 15;
+            this.checkBoxAllCorpus.Text = "все";
+            this.checkBoxAllCorpus.UseVisualStyleBackColor = true;
             // 
             // comboBoxCorpus2
             // 
@@ -303,6 +297,7 @@
             this.button2.TabIndex = 26;
             this.button2.Text = "Инструкция";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 
@@ -353,6 +348,23 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(720, 193);
             this.checkedListBox1.TabIndex = 22;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged_1);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.checkedListBoxRm);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.buttonInstructionRM);
+            this.tabPage2.Controls.Add(this.buttonStatisticRM);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(755, 607);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Расходники";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -596,16 +608,6 @@
             this.buttonStatisticRM.UseVisualStyleBackColor = true;
             this.buttonStatisticRM.Click += new System.EventHandler(this.buttonStatisticRM_Click);
             // 
-            // checkBoxAllCorpus
-            // 
-            this.checkBoxAllCorpus.AutoSize = true;
-            this.checkBoxAllCorpus.Location = new System.Drawing.Point(632, 79);
-            this.checkBoxAllCorpus.Name = "checkBoxAllCorpus";
-            this.checkBoxAllCorpus.Size = new System.Drawing.Size(54, 24);
-            this.checkBoxAllCorpus.TabIndex = 15;
-            this.checkBoxAllCorpus.Text = "все";
-            this.checkBoxAllCorpus.UseVisualStyleBackColor = true;
-            // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,10 +620,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);

@@ -57,6 +57,9 @@
     <Property Name="date_utilisation" Type="date" />
     <Property Name="other" Type="nvarchar" MaxLength="1000" />
     <Property Name="reason_write_off_id" Type="int" Nullable="false" />
+    <Property Name="is_mo" Type="int" />
+    <Property Name="date_mo" Type="date" />
+    <Property Name="date_to" Type="date" />
   </EntityType>
   <EntityType Name="ModelToPurchase">
     <Key>
@@ -143,6 +146,7 @@
     <Property Name="planned_date" Type="date" Nullable="false" />
     <Property Name="target_info" Type="nvarchar" MaxLength="1000" Nullable="false" />
     <Property Name="isPurchasing" Type="int" Nullable="false" />
+    <Property Name="money" Type="int" />
   </EntityType>
   <EntityType Name="sp_BrokenRequestReason">
     <Key>

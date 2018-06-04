@@ -111,7 +111,6 @@ namespace MedicalComponents.Models
 
             workSheet.Cells[3, "A"] = "Наименование расходного материала";
             workSheet.Cells[3, "B"] = "На складе: ";
-            workSheet.Cells[3, "C"] = "Модель";
             workSheet.Cells[3, "E"] = "Балансовая стоимость";
 
             int rowIdx = 4;
@@ -119,7 +118,6 @@ namespace MedicalComponents.Models
             {
                 workSheet.Cells[rowIdx, "A"] = el["Наименование расходного материала"];
                 workSheet.Cells[rowIdx, "B"] = el["На складе: "];
-                workSheet.Cells[rowIdx, "D"] = el["Модель"];
                 workSheet.Cells[rowIdx, "E"] = el["Балансовая стоимость"];
                 rowIdx++;
             }

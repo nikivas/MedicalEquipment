@@ -17,7 +17,7 @@ namespace MedicalComponents.Models
                           id = el.corpus_id,
                           value = el.corpus_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x=>x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -32,7 +32,7 @@ namespace MedicalComponents.Models
                           id = el.country_key_id,
                           value = el.country_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -47,7 +47,7 @@ namespace MedicalComponents.Models
                           id = el.reason_write_off_id,
                           value = el.reason_write_off_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -62,7 +62,7 @@ namespace MedicalComponents.Models
                           id = el.model_type_id,
                           value = el.model_type_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -77,7 +77,7 @@ namespace MedicalComponents.Models
                           id = el.organisation_id,
                           value = el.organisation_full_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -92,7 +92,7 @@ namespace MedicalComponents.Models
                           id = el.functionaly_use_model_id,
                           value = el.functionaly_use_model_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -107,7 +107,7 @@ namespace MedicalComponents.Models
                           id = el.expluatation_role_id,
                           value = el.expluatation_role_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -122,7 +122,7 @@ namespace MedicalComponents.Models
                           id = el.organisation_type_id,
                           value = el.organisation_type_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -137,7 +137,7 @@ namespace MedicalComponents.Models
                           id = el.organisation_department_id,
                           value = el.organisation_department_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -152,7 +152,7 @@ namespace MedicalComponents.Models
                           id = el.physical_people_id,
                           value = el.name+" "+el.family+" "+el.patronumic
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -167,7 +167,7 @@ namespace MedicalComponents.Models
                           id = el.physical_people_position_id,
                           value = el.physical_people_position_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -182,7 +182,7 @@ namespace MedicalComponents.Models
                           id = el.model_element_id,
                           value = el.inventory_number
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -197,7 +197,7 @@ namespace MedicalComponents.Models
                           id = el.service_operation_personal_role_id,
                           value = el.service_operation_personal_role_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -212,7 +212,7 @@ namespace MedicalComponents.Models
                           id = el.drag_metal_id,
                           value = el.drag_metal_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -227,7 +227,7 @@ namespace MedicalComponents.Models
                           id = el.service_type_id,
                           value = el.service_type_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -242,7 +242,7 @@ namespace MedicalComponents.Models
                           id = el.service_operation_type_id,
                           value = el.service_operation_type_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -257,7 +257,7 @@ namespace MedicalComponents.Models
                           id = el.purchase_type_id,
                           value = el.purchase_type_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -273,7 +273,7 @@ namespace MedicalComponents.Models
                           id = el.zipPM_element_id,
                           value = el.zipPM_element_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)
@@ -288,7 +288,7 @@ namespace MedicalComponents.Models
                           id = el.broken_request_reason_id,
                           value = el.broken_request_reason_name
                       };
-            cmb.DataSource = res.ToList();
+            cmb.DataSource = res.ToList().OrderBy(x => x.value);
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
             if (res.Count() > 0)

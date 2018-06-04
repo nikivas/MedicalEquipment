@@ -53,6 +53,9 @@
     <EntitySetMapping Name="ModelElement">
       <EntityTypeMapping TypeName="MainDatabaseModel.ModelElement">
         <MappingFragment StoreEntitySet="ModelElement">
+          <ScalarProperty Name="date_to" ColumnName="date_to" />
+          <ScalarProperty Name="date_mo" ColumnName="date_mo" />
+          <ScalarProperty Name="is_mo" ColumnName="is_mo" />
           <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
           <ScalarProperty Name="inventory_number" ColumnName="inventory_number" />
           <ScalarProperty Name="model_type_id" ColumnName="model_type_id" />
@@ -149,6 +152,7 @@
     <EntitySetMapping Name="PurchaseElements">
       <EntityTypeMapping TypeName="MainDatabaseModel.PurchaseElements">
         <MappingFragment StoreEntitySet="PurchaseElements">
+          <ScalarProperty Name="money" ColumnName="money" />
           <ScalarProperty Name="purchase_element_id" ColumnName="purchase_element_id" />
           <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
           <ScalarProperty Name="count" ColumnName="count" />
