@@ -62,7 +62,7 @@ namespace MedicalComponents
                                     x.model_element_id,
                                     x.inventory_number,
                                     x.ModelType.model_type_name,
-                                    x.ModelType.Organisations.organisation_short_name,
+                                    x.ModelType.Organisations.organisation_full_name,
                                     money = x.PurchaseElements.Where(o => o.model_element_id == x.model_element_id).Sum(o => o.money),
                                     x.reason_write_off_id,
                                     broken_count = x.BrokenRequest.Count,
@@ -95,8 +95,8 @@ namespace MedicalComponents
                 dic.Add("reason_write_off", el.reason_write_off_id.ToString());
                 dic.Add("Наименование изделия", el.inventory_number);
                 dic.Add("Модель", el.model_type_name);
-                dic.Add("Балансовая стоимость", el.organisation_short_name);
-                dic.Add("Поставщик", el.money.ToString());
+                dic.Add("Поставщик", el.organisation_full_name);
+                dic.Add("Балансовая стоимость", el.money.ToString());
                 listDictionary.Add(dic);
             }
 

@@ -271,6 +271,12 @@
     <Compile Include="GraphicsModels.Designer.cs">
       <DependentUpon>GraphicsModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="GraphsWithStandarts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphsWithStandarts.Designer.cs">
+      <DependentUpon>GraphsWithStandarts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Instruction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -516,6 +522,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GraphicsModels.resx">
       <DependentUpon>GraphicsModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphsWithStandarts.resx">
+      <DependentUpon>GraphsWithStandarts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instruction.resx">
       <DependentUpon>Instruction.cs</DependentUpon>
