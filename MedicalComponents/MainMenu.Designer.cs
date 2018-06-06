@@ -44,7 +44,7 @@
             // 
             this.buttonTableEditing.BackColor = System.Drawing.SystemColors.Control;
             this.buttonTableEditing.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonTableEditing.Location = new System.Drawing.Point(12, 248);
+            this.buttonTableEditing.Location = new System.Drawing.Point(12, 342);
             this.buttonTableEditing.Name = "buttonTableEditing";
             this.buttonTableEditing.Size = new System.Drawing.Size(223, 88);
             this.buttonTableEditing.TabIndex = 0;
@@ -56,7 +56,7 @@
             // 
             this.buttonHelpTableEditing.BackColor = System.Drawing.SystemColors.Control;
             this.buttonHelpTableEditing.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonHelpTableEditing.Location = new System.Drawing.Point(414, 248);
+            this.buttonHelpTableEditing.Location = new System.Drawing.Point(12, 248);
             this.buttonHelpTableEditing.Name = "buttonHelpTableEditing";
             this.buttonHelpTableEditing.Size = new System.Drawing.Size(223, 88);
             this.buttonHelpTableEditing.TabIndex = 1;
@@ -68,7 +68,7 @@
             // 
             this.buttonReports.BackColor = System.Drawing.SystemColors.Control;
             this.buttonReports.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonReports.Location = new System.Drawing.Point(12, 342);
+            this.buttonReports.Location = new System.Drawing.Point(12, 436);
             this.buttonReports.Name = "buttonReports";
             this.buttonReports.Size = new System.Drawing.Size(223, 88);
             this.buttonReports.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             this.buttonSPPRAdministration.BackColor = System.Drawing.SystemColors.Control;
             this.buttonSPPRAdministration.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSPPRAdministration.Location = new System.Drawing.Point(12, 436);
+            this.buttonSPPRAdministration.Location = new System.Drawing.Point(414, 248);
             this.buttonSPPRAdministration.Name = "buttonSPPRAdministration";
             this.buttonSPPRAdministration.Size = new System.Drawing.Size(223, 88);
             this.buttonSPPRAdministration.TabIndex = 4;
