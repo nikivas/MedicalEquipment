@@ -76,6 +76,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.buttonInstructionRM = new System.Windows.Forms.Button();
             this.buttonStatisticRM = new System.Windows.Forms.Button();
+            this.checkBoxRM = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -139,6 +140,8 @@
             // checkBoxAllCorpus
             // 
             this.checkBoxAllCorpus.AutoSize = true;
+            this.checkBoxAllCorpus.Checked = true;
+            this.checkBoxAllCorpus.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxAllCorpus.Location = new System.Drawing.Point(632, 79);
             this.checkBoxAllCorpus.Name = "checkBoxAllCorpus";
             this.checkBoxAllCorpus.Size = new System.Drawing.Size(54, 24);
@@ -403,6 +406,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBoxRM);
             this.groupBox2.Controls.Add(this.comboBoxNameRM);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.comboBoxFunctionalityRM);
@@ -608,6 +612,18 @@
             this.buttonStatisticRM.UseVisualStyleBackColor = true;
             this.buttonStatisticRM.Click += new System.EventHandler(this.buttonStatisticRM_Click);
             // 
+            // checkBoxRM
+            // 
+            this.checkBoxRM.AutoSize = true;
+            this.checkBoxRM.Checked = true;
+            this.checkBoxRM.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxRM.Location = new System.Drawing.Point(629, 79);
+            this.checkBoxRM.Name = "checkBoxRM";
+            this.checkBoxRM.Size = new System.Drawing.Size(54, 24);
+            this.checkBoxRM.TabIndex = 19;
+            this.checkBoxRM.Text = "все";
+            this.checkBoxRM.UseVisualStyleBackColor = true;
+            // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -680,5 +696,6 @@
         private System.Windows.Forms.Button buttonInstructionRM;
         private System.Windows.Forms.Button buttonStatisticRM;
         private System.Windows.Forms.CheckBox checkBoxAllCorpus;
+        private System.Windows.Forms.CheckBox checkBoxRM;
     }
 }

@@ -187,3 +187,5 @@ C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\D
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.pdb
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Instruction.resources
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.GraphsWithStandarts.resources
+C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.GraphsWithTimeModelType.resources
+C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.GraphsWithCorpuses.resources

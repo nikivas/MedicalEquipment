@@ -35,7 +35,8 @@ namespace MedicalComponents
 
         private void buttonPurchasePlan_Click(object sender, EventArgs e)
         {
-            new EditingOrganisationsWindow().Show();
+            new GraphsWithTimeModelType().Show();
+            //new EditingOrganisationsWindow().Show();
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace MedicalComponents
 
         private void buttonSPPRAdministration_Click(object sender, EventArgs e)
         {
-
+            new GraphsWithCorpuses().Show();
         }
     }
 }

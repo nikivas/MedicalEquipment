@@ -271,11 +271,23 @@
     <Compile Include="GraphicsModels.Designer.cs">
       <DependentUpon>GraphicsModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="GraphsWithCorpuses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphsWithCorpuses.Designer.cs">
+      <DependentUpon>GraphsWithCorpuses.cs</DependentUpon>
+    </Compile>
     <Compile Include="GraphsWithStandarts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GraphsWithStandarts.Designer.cs">
       <DependentUpon>GraphsWithStandarts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphsWithTimeModelType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphsWithTimeModelType.Designer.cs">
+      <DependentUpon>GraphsWithTimeModelType.cs</DependentUpon>
     </Compile>
     <Compile Include="Instruction.cs">
       <SubType>Form</SubType>
@@ -292,6 +304,7 @@
     <Compile Include="Models\BrokenRequest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CheckedListBoxWorker.cs" />
     <Compile Include="Models\ComboBoxWorker.cs" />
     <Compile Include="Models\DataGridWorker.cs" />
     <Compile Include="Models\ElementsDragMetal.cs">
@@ -523,8 +536,14 @@
     <EmbeddedResource Include="GraphicsModels.resx">
       <DependentUpon>GraphicsModels.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GraphsWithCorpuses.resx">
+      <DependentUpon>GraphsWithCorpuses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GraphsWithStandarts.resx">
       <DependentUpon>GraphsWithStandarts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphsWithTimeModelType.resx">
+      <DependentUpon>GraphsWithTimeModelType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Instruction.resx">
       <DependentUpon>Instruction.cs</DependentUpon>

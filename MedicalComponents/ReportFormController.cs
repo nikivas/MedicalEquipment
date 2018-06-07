@@ -21,5 +21,10 @@ namespace MedicalComponents
         {
             checkedListBox1.SelectionMode = SelectionMode.One;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

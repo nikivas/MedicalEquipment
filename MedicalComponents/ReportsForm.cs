@@ -21,7 +21,8 @@ namespace MedicalComponents
 
         private void ReportsForm_Load(object sender, EventArgs e)
         {
-            ComboBoxWorker.initModelType(comboBoxModel);
+            //ComboBoxWorker.initModelType(comboBoxModel);
+            InitCombobBoxes();
         }
 
         public void InitCombobBoxes()
@@ -29,6 +30,7 @@ namespace MedicalComponents
             ComboBoxWorker.initModelType(comboBoxModel);
             ComboBoxWorker.initModelType(comboBoxModelRM);
             ComboBoxWorker.initCorpus(comboBoxCorpus);
+            ComboBoxWorker.initCorpus(comboBoxCorpusRM);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -99,7 +101,7 @@ namespace MedicalComponents
                 dic.Add("Балансовая стоимость", el.money.ToString());
                 listDictionary.Add(dic);
             }
-
+            var listEl = elements.ToList();
 
             textBoxDragMetal.Text = elements.Count() > 0 ? elements.Sum(x => x.size_drag_metal).ToString() + " гр." : "0.0 гр.";
 
@@ -165,6 +167,7 @@ namespace MedicalComponents
 
         private void buttonStatisticRM_Click(object sender, EventArgs e)
         {
+            ExcelController excel = new ExcelController();
             var list = UpdateRM();
             if(checkedListBoxRm.SelectedIndex < 0)
             {
@@ -173,24 +176,72 @@ namespace MedicalComponents
 
             if(checkedListBoxRm.SelectedIndex == 0)
             {
-                //list = list.Where(x=>x.)
+                excel.GeneratePMExample(list);
             }
             else if (checkedListBoxRm.SelectedIndex == 1)
             {
+                var linqResult = new List<Dictionary<string, string>>();
 
+                var list1 = from el in TablesModel.entities.ZIPPMDocumentsOnPurchase
+                       where el.date_coming_in >= dateTimePickerbeforeRM.Value && el.date_coming_in <= dateTimePickerAfterRM.Value
+                       select new
+                       {
+                           el.sp_ZIP_AND_PM_Element.zipPM_element_name,
+                           el.count,
+                           el.sp_ZIP_AND_PM_Element
+                       };
+                foreach (var el in list1)
+                {
+                    Dictionary<string, string> dic = new Dictionary<string, string>();
+                    dic.Add("Наименование изделия", el.zipPM_element_name);
+                    dic.Add("Модель", el.count.ToString());
+                    linqResult.Add(dic);
+                }
+                excel.GeneratePMExample(linqResult);
             }
             else if (checkedListBoxRm.SelectedIndex == 2)
             {
+                var linqResult = new List<Dictionary<string, string>>();
+                var list1 = from el in TablesModel.entities.ZIPPMMoves
+                            where el.date_move >= dateTimePickerbeforeRM.Value && el.date_move <= dateTimePickerAfterRM.Value
+                            select new
+                            {
+                                el.sp_ZIP_AND_PM_Element.zipPM_element_name,
+                                count = 1,
+                                el.sp_ZIP_AND_PM_Element
+                            };
+                foreach (var el in list1)
+                {
+                    Dictionary<string, string> dic = new Dictionary<string, string>();
+                    dic.Add("Наименование изделия", el.zipPM_element_name);
+                    dic.Add("Модель", el.count.ToString());
+                    linqResult.Add(dic);
+                }
 
+                excel.GeneratePMExample(linqResult);
             }
             else if (checkedListBoxRm.SelectedIndex == 3)
             {
+                var linqResult = new List<Dictionary<string, string>>();
+                var list1 = from el in TablesModel.entities.ZIPPMMoves
+                            where el.date_move >= dateTimePickerbeforeRM.Value && el.date_move <= dateTimePickerAfterRM.Value
+                            select new
+                            {
+                                el.sp_ZIP_AND_PM_Element.zipPM_element_name,
+                                count = 1,
+                                el.sp_ZIP_AND_PM_Element
+                            };
+                foreach (var el in list1)
+                {
+                    Dictionary<string, string> dic = new Dictionary<string, string>();
+                    dic.Add("Наименование изделия", el.zipPM_element_name);
+                    dic.Add("Модель", el.count.ToString());
+                    linqResult.Add(dic);
+                }
 
+                excel.GeneratePMExample(linqResult);
             }
-            else if (checkedListBoxRm.SelectedIndex == 4)
-            {
-
-            }
+            
             //new ExcelController().GeneratePMExample(null);
         }
 
@@ -307,42 +358,79 @@ namespace MedicalComponents
             //int start_idx = TablesModel.entities.ModelElement.Count() > 0 ? TablesModel.entities.ModelElement.Max(x => x.model_element_id) + 1 : 0;
             //foreach (var el in lst)
             //{
-            //    int value = rnd.Next(5, 40);
-            //    var random_to = DateTime.Parse("01.01.2017");
-            //    random_to.AddDays(rnd.Next(3,20));
-            //    random_to.AddMonths(rnd.Next(0, 10));
-            //    var rnd_mo = rnd.Next(0, 1);
-            //    var random_mo = DateTime.Parse("01.01.2017");
-            //    random_mo.AddDays(rnd.Next(3, 20));
-            //    random_mo.AddMonths(rnd.Next(0, 10));
-
-
-            //    var create = DateTime.Parse("01.01.2010");
-            //    var util = DateTime.Parse("01.01.2025");
-
-            //    var rnd_expl = rnd.Next(0, 4);
-            //    var rnd_ser = rnd.Next(1000, 9999).ToString();
-            //    var rnd_number = rnd.Next(1000000, 1999999).ToString();
-            //    var obj = new ModelElement()
+            //    for (int i = 0; i < rnd.Next(10, 30); i++)
             //    {
-            //        model_element_id = start_idx,
-            //        date_to = random_to,
-            //        is_mo = rnd_mo,
-            //        date_mo = random_mo,
-            //        inventory_number = rnd_number,
-            //        date_creation = create,
-            //        date_utilisation = util,
-            //        reason_write_off_id = rnd_expl,
-            //        serial_number = rnd_ser,
-            //        model_type_id = el,
-            //        other = ".."
-            //    };
-            //    start_idx++;
-            //    TablesModel.entities.ModelElement.Add(obj);
-            //    TablesModel.entities.SaveChanges();
+            //        int value = rnd.Next(5, 40);
+            //        var random_to = DateTime.Parse("01.01.2017");
+            //        random_to = DateTime.Parse(rnd.Next(2, 28).ToString().PadLeft(2, '0') + "." + rnd.Next(1, 12).ToString().PadLeft(2, '0') + "." + rnd.Next(2015, 2017).ToString().PadLeft(4, '0'));
+            //        var rnd_mo = rnd.Next(0, 1);
+            //        var random_mo = DateTime.Parse(rnd.Next(2, 28).ToString().PadLeft(2, '0') + "." + rnd.Next(1, 12).ToString().PadLeft(2, '0') + "." + rnd.Next(2015, 2017).ToString().PadLeft(4, '0'));
 
+            //        var create = DateTime.Parse(rnd.Next(2, 28).ToString().PadLeft(2, '0') + "." + rnd.Next(1, 12).ToString().PadLeft(2, '0') + "." + rnd.Next(2008, 2012).ToString().PadLeft(4, '0'));
+            //        DateTime util;
+            //        if(rnd.Next(1,3) < 3)
+            //        {
+            //            util = DateTime.Parse(rnd.Next(2, 28).ToString().PadLeft(2, '0') + "." + rnd.Next(1, 6).ToString().PadLeft(2, '0') + ".2018"); ;
+            //        }
+            //        else
+            //        {
+            //            util = DateTime.Parse(rnd.Next(2, 28).ToString().PadLeft(2, '0') + "." + rnd.Next(5, 12).ToString().PadLeft(2, '0') + ".2017"); ;
+            //        }
+
+            //        var rnd_expl = rnd.Next(0, 4);
+            //        var rnd_ser = rnd.Next(1000, 9999).ToString();
+            //        var rnd_number = rnd.Next(1000000, 1999999).ToString();
+            //        var obj = new ModelElement()
+            //        {
+            //            model_element_id = start_idx,
+            //            date_to = random_to,
+            //            is_mo = rnd_mo,
+            //            date_mo = random_mo,
+            //            inventory_number = rnd_number,
+            //            date_creation = create,
+            //            date_utilisation = util,
+            //            reason_write_off_id = rnd_expl,
+            //            serial_number = rnd_ser,
+            //            model_type_id = el,
+            //            other = ".."
+            //        };
+            //        start_idx++;
+            //        TablesModel.entities.ModelElement.Add(obj);
+
+
+            //    }
+            //    TablesModel.entities.SaveChanges();
             //}
-            //MessageBox.Show("done");
+
+            var listElements = TablesModel.entities.ModelElement.Select(x => x);
+            var id = TablesModel.entities.ElementsPlaces.Count() > 0 ? TablesModel.entities.ElementsPlaces.Max(x => x.element_place_id)+1 : 0;
+            Random rnd = new Random();
+            List<ElementsPlaces> lst = new List<ElementsPlaces>();
+            foreach (var el in listElements)
+            {
+                int corp_id = rnd.Next(1, 8);
+                var begin = el.date_creation.Value;
+                
+                var place = new ElementsPlaces()
+                {
+                    element_place_id = id,
+                    corpus_id = corp_id,
+                    date_begin = begin,
+                    date_end = el.date_utilisation,
+                    floor = 0,
+                    room = "0",
+                    move_reason_id = 0,
+                    model_element_id = el.model_element_id
+                };
+                id++;
+                lst.Add(place);
+                
+            }
+            TablesModel.entities.ElementsPlaces.AddRange(lst);
+            TablesModel.entities.SaveChanges();
+
+
+            MessageBox.Show("done");
         }
     }
 }
