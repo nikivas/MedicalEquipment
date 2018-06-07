@@ -104,7 +104,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxZIPPM);
             this.Name = "EditingZipPmOnStock";
-            this.Text = "EditingZipPmOnStock";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.EditingZipPmOnStock_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

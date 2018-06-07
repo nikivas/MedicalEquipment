@@ -81,7 +81,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "sp_PMEdit";
-            this.Text = "sp_PMEdit";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.sp_PMEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

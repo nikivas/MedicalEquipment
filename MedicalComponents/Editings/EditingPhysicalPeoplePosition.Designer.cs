@@ -192,7 +192,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxSalary);
             this.Name = "EditingPhysicalPeoplePosition";
-            this.Text = "EditingPhysicalPeoplePosition";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.EditingPhysicalPeoplePosition_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

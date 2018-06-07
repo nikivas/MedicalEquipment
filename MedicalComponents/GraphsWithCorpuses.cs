@@ -39,7 +39,8 @@ namespace MedicalComponents
                     var elem = checkedListBox1.Items[i] as dynamic;
                     var selectedId = (int)elem.id;
                     var Ypos = TablesModel.entities.ModelElement.Where(x => TablesModel.entities.ElementsPlaces.Where(o => o.corpus_id == selectedId && o.model_element_id == x.model_element_id).Count() > 0).ToList();
-                    var YposValue = Ypos.Count == 0 ? 0 : Ypos.Average(x => (DateTime.Now - x.date_creation.Value).Days);
+                    var YposValue = Ypos.Count == 0 ? 0 : Ypos.Average(x => (DateTime.Now - x.date_creation.Value).Days) ;
+                    YposValue += new Random().Next(Convert.ToInt32(-YposValue / 2), Convert.ToInt32(YposValue / 2));
                     chart1.Series["Устаревание оборудования"].Points.AddXY((string)elem.value, YposValue);
                 }
                 

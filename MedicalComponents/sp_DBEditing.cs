@@ -31,6 +31,10 @@ namespace MedicalComponents
                 }
                 checkedListBox1.SetItemCheckState(i,CheckState.Unchecked);
             }
+            updateAll();
+        }
+        private void updateAll()
+        {
             TablesModel tablesModel = new TablesModel();
 
             if (checkedListBox1.SelectedIndex == 0)
@@ -102,7 +106,6 @@ namespace MedicalComponents
                 tablesModel.Fillsp_BrokenRequestReason(dataGridView1);
             }
         }
-
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             if (checkedListBox1.SelectedIndex == -1)
@@ -348,6 +351,11 @@ namespace MedicalComponents
                 MessageBox.Show("непредвиденная ситуация, база данных выполняет другую операцию, дождитесь ее окончания и попробуйте позже");
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            updateAll();
         }
     }
 }

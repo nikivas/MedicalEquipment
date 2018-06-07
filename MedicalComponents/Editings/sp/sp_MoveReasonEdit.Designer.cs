@@ -81,7 +81,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "sp_MoveReasonEdit";
-            this.Text = "sp_MoveReasonEdit";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.sp_MoveReasonEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

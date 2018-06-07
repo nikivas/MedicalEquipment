@@ -72,7 +72,7 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Подразделение";
             // 
-            // sp_OrganisationDepartment
+            // sp_OrganisationDepartmentEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -81,8 +81,8 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "sp_OrganisationDepartment";
-            this.Text = "sp_OrganisationDepartment";
+            this.Name = "sp_OrganisationDepartmentEdit";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.sp_OrganisationDepartment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

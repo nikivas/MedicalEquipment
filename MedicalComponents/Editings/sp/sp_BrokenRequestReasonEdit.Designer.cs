@@ -66,11 +66,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(114, 27);
+            this.label1.Location = new System.Drawing.Point(56, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 21);
+            this.label1.Size = new System.Drawing.Size(283, 21);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Название страны";
+            this.label1.Text = "причина подачи заявки на ремонт";
             // 
             // sp_BrokenRequestReasonEdit
             // 
@@ -82,7 +82,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "sp_BrokenRequestReasonEdit";
-            this.Text = "sp_BrokenRequestReasonEdit";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.sp_BrokenRequestReasonEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

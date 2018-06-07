@@ -82,7 +82,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "sp_ServiceTypeEdit";
-            this.Text = "sp_ServiceTypeEdit";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.sp_ServiceTypeEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

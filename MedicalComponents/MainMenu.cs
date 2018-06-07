@@ -54,5 +54,15 @@ namespace MedicalComponents
         {
             new GraphsWithCorpuses().Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Instruction().Show();
+        }
+
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            new About().Show();
+        }
     }
 }

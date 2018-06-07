@@ -181,7 +181,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxFIO);
             this.Name = "EditingPersonalOnService";
-            this.Text = "EditingPersonalOnService";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.EditingPersonalOnService_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

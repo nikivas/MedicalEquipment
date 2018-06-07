@@ -172,7 +172,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxFIO);
             this.Name = "EditingMOExpluatants";
-            this.Text = "EditingMOExpluatants";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.EditingMOExpluatants_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

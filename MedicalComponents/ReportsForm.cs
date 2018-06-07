@@ -78,7 +78,7 @@ namespace MedicalComponents
             {
                 if(comboBoxCorpus.SelectedIndex >= 0)
                 {
-                    int value = int.Parse((string)comboBoxCorpus.SelectedValue);
+                    int value = (int)comboBoxCorpus.SelectedValue;
                     elements = elements.Where(x => TablesModel.entities.ElementsPlaces.Where(o => o.model_element_id == x.model_element_id).Count() > 0
                                         && TablesModel.entities.ElementsPlaces.Where(o => o.model_element_id == x.model_element_id && o.corpus_id == value).Count() > 0);
                 }
@@ -352,10 +352,33 @@ namespace MedicalComponents
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+
+            //var id = 0;
+            //List<ModelType> ModelList = new List<ModelType>();
+            //foreach (var el in lst)
+            //{
+            //    var expl = 0;
+            //    var org_id = new Random().Next(0, 5);
+            //    var elm = new ModelType()
+            //    {
+            //        model_type_id = id,
+            //        expluatation_role_id = 0,
+            //        model_type_name = el,
+            //        organisation_id = org_id,
+            //        functionaly_use_model_id = 0
+            //    };
+            //    id++;
+            //    ModelList.Add(elm);
+            //}
+            //TablesModel.entities.ModelType.AddRange(ModelList);
+            //TablesModel.entities.SaveChanges();
+
             //var lst = TablesModel.entities.ModelType.Select(x => x.model_type_id).ToList();
 
             //Random rnd = new Random();
+            //List<ModelElement> lsss = new List<ModelElement>();
             //int start_idx = TablesModel.entities.ModelElement.Count() > 0 ? TablesModel.entities.ModelElement.Max(x => x.model_element_id) + 1 : 0;
+            //int qwe = start_idx;
             //foreach (var el in lst)
             //{
             //    for (int i = 0; i < rnd.Next(10, 30); i++)
@@ -366,9 +389,15 @@ namespace MedicalComponents
             //        var rnd_mo = rnd.Next(0, 1);
             //        var random_mo = DateTime.Parse(rnd.Next(2, 28).ToString().PadLeft(2, '0') + "." + rnd.Next(1, 12).ToString().PadLeft(2, '0') + "." + rnd.Next(2015, 2017).ToString().PadLeft(4, '0'));
 
-            //        var create = DateTime.Parse(rnd.Next(2, 28).ToString().PadLeft(2, '0') + "." + rnd.Next(1, 12).ToString().PadLeft(2, '0') + "." + rnd.Next(2008, 2012).ToString().PadLeft(4, '0'));
+            //        int datec;
+            //        if (qwe < 900)
+            //            datec = rnd.Next(2008, 2011);
+            //        else
+            //            datec = rnd.Next(2005, 2007);
+
+            //        var create = DateTime.Parse(rnd.Next(2, 28).ToString().PadLeft(2, '0') + "." + rnd.Next(1, 12).ToString().PadLeft(2, '0') + "." + rnd.Next(datec, 2012).ToString().PadLeft(4, '0'));
             //        DateTime util;
-            //        if(rnd.Next(1,3) < 3)
+            //        if (rnd.Next(1, 3) < 3)
             //        {
             //            util = DateTime.Parse(rnd.Next(2, 28).ToString().PadLeft(2, '0') + "." + rnd.Next(1, 6).ToString().PadLeft(2, '0') + ".2018"); ;
             //        }
@@ -395,22 +424,25 @@ namespace MedicalComponents
             //            other = ".."
             //        };
             //        start_idx++;
-            //        TablesModel.entities.ModelElement.Add(obj);
+            //        lsss.Add(obj);
+
 
 
             //    }
-            //    TablesModel.entities.SaveChanges();
+
             //}
+            //TablesModel.entities.ModelElement.AddRange(lsss);
+            //TablesModel.entities.SaveChanges();
 
             var listElements = TablesModel.entities.ModelElement.Select(x => x);
-            var id = TablesModel.entities.ElementsPlaces.Count() > 0 ? TablesModel.entities.ElementsPlaces.Max(x => x.element_place_id)+1 : 0;
+            var id = TablesModel.entities.ElementsPlaces.Count() > 0 ? TablesModel.entities.ElementsPlaces.Max(x => x.element_place_id) + 1 : 0;
             Random rnd = new Random();
             List<ElementsPlaces> lst = new List<ElementsPlaces>();
             foreach (var el in listElements)
             {
                 int corp_id = rnd.Next(1, 8);
                 var begin = el.date_creation.Value;
-                
+
                 var place = new ElementsPlaces()
                 {
                     element_place_id = id,
@@ -424,7 +456,7 @@ namespace MedicalComponents
                 };
                 id++;
                 lst.Add(place);
-                
+
             }
             TablesModel.entities.ElementsPlaces.AddRange(lst);
             TablesModel.entities.SaveChanges();

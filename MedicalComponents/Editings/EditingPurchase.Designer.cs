@@ -121,7 +121,7 @@
             this.Controls.Add(this.dateTimePickerCreated);
             this.Controls.Add(this.label2);
             this.Name = "EditingPurchase";
-            this.Text = "EditingPurchase";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.EditingPurchase_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

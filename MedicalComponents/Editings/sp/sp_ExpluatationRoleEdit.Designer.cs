@@ -82,7 +82,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "sp_ExpluatationRoleEdit";
-            this.Text = "sp_ExpluatationRoleEdit";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.sp_ExpluatationRoleEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

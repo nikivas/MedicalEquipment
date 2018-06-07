@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 31);
+            this.label1.Location = new System.Drawing.Point(15, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 4;
@@ -55,7 +55,7 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(220, 28);
+            this.textBoxName.Location = new System.Drawing.Point(220, 81);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(244, 20);
             this.textBoxName.TabIndex = 3;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 79);
+            this.label2.Location = new System.Drawing.Point(15, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 6;
@@ -71,7 +71,7 @@
             // 
             // textBoxFam
             // 
-            this.textBoxFam.Location = new System.Drawing.Point(220, 76);
+            this.textBoxFam.Location = new System.Drawing.Point(220, 37);
             this.textBoxFam.Name = "textBoxFam";
             this.textBoxFam.Size = new System.Drawing.Size(244, 20);
             this.textBoxFam.TabIndex = 5;
@@ -81,9 +81,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 125);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 8;
-            this.label3.Text = "отчество";
+            this.label3.Text = "Отчество";
             // 
             // textBoxPatr
             // 
@@ -185,7 +185,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxName);
             this.Name = "EditingPhysicalPeople";
-            this.Text = "EditingPhysicalPeople";
+            this.Text = "изменение данных";
             this.Load += new System.EventHandler(this.EditingPhysicalPeople_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
