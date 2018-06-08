@@ -57,6 +57,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.checkedListBoxRm = new System.Windows.Forms.CheckedListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBoxRM = new System.Windows.Forms.CheckBox();
             this.comboBoxNameRM = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBoxFunctionalityRM = new System.Windows.Forms.ComboBox();
@@ -76,7 +77,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.buttonInstructionRM = new System.Windows.Forms.Button();
             this.buttonStatisticRM = new System.Windows.Forms.Button();
-            this.checkBoxRM = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -157,6 +157,7 @@
             this.comboBoxCorpus2.Size = new System.Drawing.Size(341, 28);
             this.comboBoxCorpus2.TabIndex = 14;
             this.comboBoxCorpus2.Text = "хирургическое торакальное отделение";
+            this.comboBoxCorpus2.Visible = false;
             this.comboBoxCorpus2.SelectedIndexChanged += new System.EventHandler(this.comboBoxCorpus2_SelectedIndexChanged);
             // 
             // label9
@@ -167,6 +168,7 @@
             this.label9.Size = new System.Drawing.Size(104, 20);
             this.label9.TabIndex = 13;
             this.label9.Text = "Отделение :";
+            this.label9.Visible = false;
             // 
             // comboBoxModel
             // 
@@ -178,6 +180,7 @@
             this.comboBoxModel.Size = new System.Drawing.Size(277, 28);
             this.comboBoxModel.TabIndex = 12;
             this.comboBoxModel.Text = "все";
+            this.comboBoxModel.Visible = false;
             this.comboBoxModel.SelectedIndexChanged += new System.EventHandler(this.comboBoxModel_SelectedIndexChanged);
             // 
             // label8
@@ -188,6 +191,7 @@
             this.label8.Size = new System.Drawing.Size(190, 20);
             this.label8.TabIndex = 11;
             this.label8.Text = "Модель оборудования :";
+            this.label8.Visible = false;
             // 
             // radioButton2
             // 
@@ -300,6 +304,7 @@
             this.button2.TabIndex = 26;
             this.button2.Text = "Инструкция";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
@@ -431,6 +436,18 @@
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Фильтры";
+            // 
+            // checkBoxRM
+            // 
+            this.checkBoxRM.AutoSize = true;
+            this.checkBoxRM.Checked = true;
+            this.checkBoxRM.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxRM.Location = new System.Drawing.Point(629, 79);
+            this.checkBoxRM.Name = "checkBoxRM";
+            this.checkBoxRM.Size = new System.Drawing.Size(54, 24);
+            this.checkBoxRM.TabIndex = 19;
+            this.checkBoxRM.Text = "все";
+            this.checkBoxRM.UseVisualStyleBackColor = true;
             // 
             // comboBoxNameRM
             // 
@@ -611,18 +628,6 @@
             this.buttonStatisticRM.Text = "Просмотреть статистику";
             this.buttonStatisticRM.UseVisualStyleBackColor = true;
             this.buttonStatisticRM.Click += new System.EventHandler(this.buttonStatisticRM_Click);
-            // 
-            // checkBoxRM
-            // 
-            this.checkBoxRM.AutoSize = true;
-            this.checkBoxRM.Checked = true;
-            this.checkBoxRM.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxRM.Location = new System.Drawing.Point(629, 79);
-            this.checkBoxRM.Name = "checkBoxRM";
-            this.checkBoxRM.Size = new System.Drawing.Size(54, 24);
-            this.checkBoxRM.TabIndex = 19;
-            this.checkBoxRM.Text = "все";
-            this.checkBoxRM.UseVisualStyleBackColor = true;
             // 
             // ReportsForm
             // 
