@@ -17,7 +17,7 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sp_BrokenRequestReason()
         {
-            this.BrokenRequest = new HashSet<BrokenRequest>();
+            this.BrokenRequests = new HashSet<BrokenRequest>();
         }
     
         public int broken_request_reason_id { get; set; }
@@ -25,6 +25,6 @@ namespace MedicalComponents.Models
         public string other { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BrokenRequest> BrokenRequest { get; set; }
+        public virtual ICollection<BrokenRequest> BrokenRequests { get; set; }
     }
 }

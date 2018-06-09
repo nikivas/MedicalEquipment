@@ -17,7 +17,8 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ModelType()
         {
-            this.ModelElement = new HashSet<ModelElement>();
+            this.ModelElements = new HashSet<ModelElement>();
+            this.sp_Standarts = new HashSet<sp_Standarts>();
         }
     
         public int model_type_id { get; set; }
@@ -27,9 +28,11 @@ namespace MedicalComponents.Models
         public int expluatation_role_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ModelElement> ModelElement { get; set; }
-        public virtual Organisations Organisations { get; set; }
+        public virtual ICollection<ModelElement> ModelElements { get; set; }
+        public virtual Organisation Organisation { get; set; }
         public virtual sp_FunctionalyUseModel sp_FunctionalyUseModel { get; set; }
         public virtual sp_ExpluatationRole sp_ExpluatationRole { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<sp_Standarts> sp_Standarts { get; set; }
     }
 }

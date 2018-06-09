@@ -17,8 +17,8 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sp_ServiceOperationPersonalRole()
         {
-            this.MOExpluatation = new HashSet<MOExpluatation>();
-            this.PersonalOnService = new HashSet<PersonalOnService>();
+            this.MOExpluatations = new HashSet<MOExpluatation>();
+            this.PersonalOnServices = new HashSet<PersonalOnService>();
         }
     
         public int service_operation_personal_role_id { get; set; }
@@ -26,8 +26,8 @@ namespace MedicalComponents.Models
         public string other { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MOExpluatation> MOExpluatation { get; set; }
+        public virtual ICollection<MOExpluatation> MOExpluatations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PersonalOnService> PersonalOnService { get; set; }
+        public virtual ICollection<PersonalOnService> PersonalOnServices { get; set; }
     }
 }

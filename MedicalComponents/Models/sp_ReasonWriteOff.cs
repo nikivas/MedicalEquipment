@@ -17,7 +17,7 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sp_ReasonWriteOff()
         {
-            this.ModelElement = new HashSet<ModelElement>();
+            this.ModelElements = new HashSet<ModelElement>();
         }
     
         public int reason_write_off_id { get; set; }
@@ -25,6 +25,6 @@ namespace MedicalComponents.Models
         public string other { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ModelElement> ModelElement { get; set; }
+        public virtual ICollection<ModelElement> ModelElements { get; set; }
     }
 }

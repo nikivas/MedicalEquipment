@@ -105,6 +105,10 @@ namespace MedicalComponents
             {
                 tablesModel.Fillsp_BrokenRequestReason(dataGridView1);
             }
+            else if(checkedListBox1.SelectedIndex == 17)
+            {
+                tablesModel.Fillsp_Standarts(dataGridView1);
+            }
         }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -179,6 +183,10 @@ namespace MedicalComponents
             {
                 new sp_BrokenRequestReasonEdit().Show();
             }
+            else if(checkedListBox1.SelectedIndex == 17)
+            {
+                new sp_StandartsEdit().Show();
+            }
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
@@ -196,7 +204,7 @@ namespace MedicalComponents
             {
                 new sp_OrganisationTypeEdit(selectedId).Show();
             }
-            else if(checkedListBox1.SelectedIndex == 1)
+            else if (checkedListBox1.SelectedIndex == 1)
             {
                 new sp_CountryEdit(selectedId).Show();
             }
@@ -260,8 +268,11 @@ namespace MedicalComponents
             {
                 new sp_BrokenRequestReasonEdit(selectedId).Show();
             }
+            else if (checkedListBox1.SelectedIndex == 17)
+            {
+                new sp_StandartsEdit(selectedId).Show();
+            }
         }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 0)
@@ -341,6 +352,10 @@ namespace MedicalComponents
                 else if (checkedListBox1.SelectedIndex == 16)
                 {
                     TablesModel.entities.sp_BrokenRequestReason.Remove(TablesModel.entities.sp_BrokenRequestReason.Where(x => x.broken_request_reason_id == selectedId).First());
+                }
+                else if(checkedListBox1.SelectedIndex == 17)
+                {
+                    TablesModel.entities.sp_Standarts.Remove(TablesModel.entities.sp_Standarts.Where(x => x.broken_request_reason_id == selectedId).First())
                 }
                 TablesModel.entities.SaveChanges();
                 MessageBox.Show("Успешно удалено");

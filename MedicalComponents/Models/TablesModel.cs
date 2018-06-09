@@ -825,7 +825,29 @@ namespace MedicalComponents.Models
             return res;
         }
 
+        //Fillsp_Standarts
+        public IEnumerable<object> Fillsp_Standarts(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
 
+            var res = (from el in entities.sp_Standarts
+                       select new
+                       {
+                           el.standart_id,
+                           el.sp_Corpus.corpus_name,
+                           el.ModelType.model_type_name,
+                           el.count
+                       }).ToList();
+
+            dic.Add("standart_id", "id записи");
+            dic.Add("corpus_name", "Причина подачи заявки на ремонт");
+            dic.Add("model_type_name", "Причина подачи заявки на ремонт");
+            dic.Add("count", "Причина подачи заявки на ремонт");
+
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+
+            return res;
+        }
 
 
 

@@ -60,7 +60,8 @@
             "Тип закупки",
             "Единицы ЗИП",
             "Единицы РМ",
-            "Причина подачи заявки на ремонт"});
+            "Причина подачи заявки на ремонт",
+            "Стандарты"});
             this.checkedListBox1.Location = new System.Drawing.Point(12, 76);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(323, 394);

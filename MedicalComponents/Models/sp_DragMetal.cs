@@ -17,7 +17,7 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sp_DragMetal()
         {
-            this.ElementsDragMetal = new HashSet<ElementsDragMetal>();
+            this.ElementsDragMetals = new HashSet<ElementsDragMetal>();
         }
     
         public int drag_metal_id { get; set; }
@@ -25,6 +25,6 @@ namespace MedicalComponents.Models
         public string other { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ElementsDragMetal> ElementsDragMetal { get; set; }
+        public virtual ICollection<ElementsDragMetal> ElementsDragMetals { get; set; }
     }
 }

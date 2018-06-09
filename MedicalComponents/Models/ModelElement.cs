@@ -17,14 +17,14 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ModelElement()
         {
-            this.BrokenRequest = new HashSet<BrokenRequest>();
-            this.ElementsDragMetal = new HashSet<ElementsDragMetal>();
-            this.ElementsPlaces = new HashSet<ElementsPlaces>();
-            this.ModelToPurchase = new HashSet<ModelToPurchase>();
-            this.MOExpluatation = new HashSet<MOExpluatation>();
-            this.PersonalOnService = new HashSet<PersonalOnService>();
-            this.PurchaseElements = new HashSet<PurchaseElements>();
-            this.ZIPPMMoves = new HashSet<ZIPPMMoves>();
+            this.BrokenRequests = new HashSet<BrokenRequest>();
+            this.ElementsDragMetals = new HashSet<ElementsDragMetal>();
+            this.ElementsPlaces = new HashSet<ElementsPlace>();
+            this.ModelToPurchases = new HashSet<ModelToPurchase>();
+            this.MOExpluatations = new HashSet<MOExpluatation>();
+            this.PersonalOnServices = new HashSet<PersonalOnService>();
+            this.PurchaseElements = new HashSet<PurchaseElement>();
+            this.ZIPPMMoves = new HashSet<ZIPPMMove>();
         }
     
         public int model_element_id { get; set; }
@@ -35,27 +35,24 @@ namespace MedicalComponents.Models
         public Nullable<System.DateTime> date_utilisation { get; set; }
         public string other { get; set; }
         public int reason_write_off_id { get; set; }
-        public Nullable<int> is_mo { get; set; }
-        public Nullable<System.DateTime> date_mo { get; set; }
-        public Nullable<System.DateTime> date_to { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BrokenRequest> BrokenRequest { get; set; }
+        public virtual ICollection<BrokenRequest> BrokenRequests { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ElementsDragMetal> ElementsDragMetal { get; set; }
+        public virtual ICollection<ElementsDragMetal> ElementsDragMetals { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ElementsPlaces> ElementsPlaces { get; set; }
+        public virtual ICollection<ElementsPlace> ElementsPlaces { get; set; }
         public virtual ModelType ModelType { get; set; }
         public virtual sp_ReasonWriteOff sp_ReasonWriteOff { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ModelToPurchase> ModelToPurchase { get; set; }
+        public virtual ICollection<ModelToPurchase> ModelToPurchases { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MOExpluatation> MOExpluatation { get; set; }
+        public virtual ICollection<MOExpluatation> MOExpluatations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PersonalOnService> PersonalOnService { get; set; }
+        public virtual ICollection<PersonalOnService> PersonalOnServices { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PurchaseElements> PurchaseElements { get; set; }
+        public virtual ICollection<PurchaseElement> PurchaseElements { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ZIPPMMoves> ZIPPMMoves { get; set; }
+        public virtual ICollection<ZIPPMMove> ZIPPMMoves { get; set; }
     }
 }

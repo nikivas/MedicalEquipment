@@ -17,7 +17,7 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Purchase()
         {
-            this.ModelToPurchase = new HashSet<ModelToPurchase>();
+            this.ModelToPurchases = new HashSet<ModelToPurchase>();
         }
     
         public int purchase_id { get; set; }
@@ -26,7 +26,7 @@ namespace MedicalComponents.Models
         public Nullable<System.DateTime> date_apply { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ModelToPurchase> ModelToPurchase { get; set; }
+        public virtual ICollection<ModelToPurchase> ModelToPurchases { get; set; }
         public virtual sp_PurchaseType sp_PurchaseType { get; set; }
     }
 }

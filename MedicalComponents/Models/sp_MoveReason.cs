@@ -17,13 +17,13 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sp_MoveReason()
         {
-            this.ElementsPlaces = new HashSet<ElementsPlaces>();
+            this.ElementsPlaces = new HashSet<ElementsPlace>();
         }
     
         public int move_reason_id { get; set; }
         public string move_reason_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ElementsPlaces> ElementsPlaces { get; set; }
+        public virtual ICollection<ElementsPlace> ElementsPlaces { get; set; }
     }
 }
