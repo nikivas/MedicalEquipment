@@ -17,7 +17,7 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sp_PysicalPeoplePositions()
         {
-            this.FaticalPhysicalPeoplePositions = new HashSet<FaticalPhysicalPeoplePosition>();
+            this.FaticalPhysicalPeoplePositions = new HashSet<FaticalPhysicalPeoplePositions>();
         }
     
         public int physical_people_position_id { get; set; }
@@ -25,6 +25,6 @@ namespace MedicalComponents.Models
         public string other { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<FaticalPhysicalPeoplePosition> FaticalPhysicalPeoplePositions { get; set; }
+        public virtual ICollection<FaticalPhysicalPeoplePositions> FaticalPhysicalPeoplePositions { get; set; }
     }
 }

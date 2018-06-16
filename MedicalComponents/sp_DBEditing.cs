@@ -355,7 +355,7 @@ namespace MedicalComponents
                 }
                 else if(checkedListBox1.SelectedIndex == 17)
                 {
-                    TablesModel.entities.sp_Standarts.Remove(TablesModel.entities.sp_Standarts.Where(x => x.broken_request_reason_id == selectedId).First())
+                    TablesModel.entities.sp_Standarts.Remove(TablesModel.entities.sp_Standarts.Where(x => x.standart_id == selectedId).First());
                 }
                 TablesModel.entities.SaveChanges();
                 MessageBox.Show("Успешно удалено");

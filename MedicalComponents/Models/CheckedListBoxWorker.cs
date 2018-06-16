@@ -35,7 +35,7 @@ namespace MedicalComponents.Models
                           id = el.corpus_id,
                           value = el.corpus_name
                       };
-
+            int help = TablesModel.entities.sp_Corpus.Count();
             cmb.DataSource = res.ToList().Where(x => Regex.IsMatch(x.value, maskValue)).ToList();
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";

@@ -58,8 +58,8 @@
     <Property Name="other" Type="nvarchar" MaxLength="1000" />
     <Property Name="reason_write_off_id" Type="int" Nullable="false" />
     <Property Name="is_mo" Type="int" />
-    <Property Name="date_mo" Type="date" />
     <Property Name="date_to" Type="date" />
+    <Property Name="date_mo" Type="date" />
   </EntityType>
   <EntityType Name="ModelToPurchase">
     <Key>
@@ -266,6 +266,15 @@
     <Property Name="service_type_id" Type="int" Nullable="false" />
     <Property Name="service_type_name" Type="nvarchar" MaxLength="1000" Nullable="false" />
     <Property Name="other" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="sp_Standarts">
+    <Key>
+      <PropertyRef Name="standart_id" />
+    </Key>
+    <Property Name="standart_id" Type="int" Nullable="false" />
+    <Property Name="corpus_id" Type="int" Nullable="false" />
+    <Property Name="count" Type="int" Nullable="false" />
+    <Property Name="model_type_id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="sp_ZIP_AND_PM_Element">
     <Key>
@@ -675,6 +684,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="sp_Standarts_fk0">
+    <End Role="sp_Corpus" Type="Self.sp_Corpus" Multiplicity="1" />
+    <End Role="sp_Standarts" Type="Self.sp_Standarts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sp_Corpus">
+        <PropertyRef Name="corpus_id" />
+      </Principal>
+      <Dependent Role="sp_Standarts">
+        <PropertyRef Name="corpus_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="sp_Standarts_fk1">
+    <End Role="ModelType" Type="Self.ModelType" Multiplicity="1" />
+    <End Role="sp_Standarts" Type="Self.sp_Standarts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModelType">
+        <PropertyRef Name="model_type_id" />
+      </Principal>
+      <Dependent Role="sp_Standarts">
+        <PropertyRef Name="model_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="ZIPPMDocumentsOnPurchase_fk0">
     <End Role="sp_ZIP_AND_PM_Element" Type="Self.sp_ZIP_AND_PM_Element" Multiplicity="1" />
     <End Role="ZIPPMDocumentsOnPurchase" Type="Self.ZIPPMDocumentsOnPurchase" Multiplicity="*" />
@@ -752,6 +785,7 @@
     <EntitySet Name="sp_ServiceOperationPersonalRole" EntityType="Self.sp_ServiceOperationPersonalRole" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sp_ServiceOperationType" EntityType="Self.sp_ServiceOperationType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sp_ServiceType" EntityType="Self.sp_ServiceType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sp_Standarts" EntityType="Self.sp_Standarts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sp_ZIP_AND_PM_Element" EntityType="Self.sp_ZIP_AND_PM_Element" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ZIPPMDocumentsOnPurchase" EntityType="Self.ZIPPMDocumentsOnPurchase" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ZIPPMMoves" EntityType="Self.ZIPPMMoves" Schema="dbo" store:Type="Tables" />
@@ -879,6 +913,14 @@
     <AssociationSet Name="PurchaseElements_fk0" Association="Self.PurchaseElements_fk0">
       <End Role="ModelElement" EntitySet="ModelElement" />
       <End Role="PurchaseElements" EntitySet="PurchaseElements" />
+    </AssociationSet>
+    <AssociationSet Name="sp_Standarts_fk0" Association="Self.sp_Standarts_fk0">
+      <End Role="sp_Corpus" EntitySet="sp_Corpus" />
+      <End Role="sp_Standarts" EntitySet="sp_Standarts" />
+    </AssociationSet>
+    <AssociationSet Name="sp_Standarts_fk1" Association="Self.sp_Standarts_fk1">
+      <End Role="ModelType" EntitySet="ModelType" />
+      <End Role="sp_Standarts" EntitySet="sp_Standarts" />
     </AssociationSet>
     <AssociationSet Name="ZIPPMDocumentsOnPurchase_fk0" Association="Self.ZIPPMDocumentsOnPurchase_fk0">
       <End Role="sp_ZIP_AND_PM_Element" EntitySet="sp_ZIP_AND_PM_Element" />

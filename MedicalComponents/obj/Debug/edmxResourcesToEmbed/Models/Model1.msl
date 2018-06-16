@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище MainDatabaseModelContainer" CdmEntityContainer="MainDatabaseEntities4">
+  <EntityContainerMapping StorageEntityContainer="Хранилище MainDatabaseModelContainer" CdmEntityContainer="MainDatabaseEntities6">
     <EntitySetMapping Name="BrokenRequest">
       <EntityTypeMapping TypeName="MainDatabaseModel.BrokenRequest">
         <MappingFragment StoreEntitySet="BrokenRequest">
@@ -53,8 +53,8 @@
     <EntitySetMapping Name="ModelElement">
       <EntityTypeMapping TypeName="MainDatabaseModel.ModelElement">
         <MappingFragment StoreEntitySet="ModelElement">
-          <ScalarProperty Name="date_to" ColumnName="date_to" />
           <ScalarProperty Name="date_mo" ColumnName="date_mo" />
+          <ScalarProperty Name="date_to" ColumnName="date_to" />
           <ScalarProperty Name="is_mo" ColumnName="is_mo" />
           <ScalarProperty Name="model_element_id" ColumnName="model_element_id" />
           <ScalarProperty Name="inventory_number" ColumnName="inventory_number" />
@@ -293,6 +293,16 @@
           <ScalarProperty Name="service_type_id" ColumnName="service_type_id" />
           <ScalarProperty Name="service_type_name" ColumnName="service_type_name" />
           <ScalarProperty Name="other" ColumnName="other" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sp_Standarts">
+      <EntityTypeMapping TypeName="MainDatabaseModel.sp_Standarts">
+        <MappingFragment StoreEntitySet="sp_Standarts">
+          <ScalarProperty Name="standart_id" ColumnName="standart_id" />
+          <ScalarProperty Name="corpus_id" ColumnName="corpus_id" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="model_type_id" ColumnName="model_type_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

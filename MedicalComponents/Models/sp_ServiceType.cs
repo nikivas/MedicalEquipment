@@ -17,7 +17,7 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sp_ServiceType()
         {
-            this.PersonalOnServices = new HashSet<PersonalOnService>();
+            this.PersonalOnService = new HashSet<PersonalOnService>();
         }
     
         public int service_type_id { get; set; }
@@ -25,6 +25,6 @@ namespace MedicalComponents.Models
         public string other { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PersonalOnService> PersonalOnServices { get; set; }
+        public virtual ICollection<PersonalOnService> PersonalOnService { get; set; }
     }
 }

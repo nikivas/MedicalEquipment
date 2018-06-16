@@ -17,9 +17,9 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sp_ZIP_AND_PM_Element()
         {
-            this.ZIPPMDocumentsOnPurchases = new HashSet<ZIPPMDocumentsOnPurchase>();
-            this.ZIPPMMoves = new HashSet<ZIPPMMove>();
-            this.ZIPPMonStocks = new HashSet<ZIPPMonStock>();
+            this.ZIPPMDocumentsOnPurchase = new HashSet<ZIPPMDocumentsOnPurchase>();
+            this.ZIPPMMoves = new HashSet<ZIPPMMoves>();
+            this.ZIPPMonStock = new HashSet<ZIPPMonStock>();
         }
     
         public int zipPM_element_id { get; set; }
@@ -27,10 +27,10 @@ namespace MedicalComponents.Models
         public int isZIP { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ZIPPMDocumentsOnPurchase> ZIPPMDocumentsOnPurchases { get; set; }
+        public virtual ICollection<ZIPPMDocumentsOnPurchase> ZIPPMDocumentsOnPurchase { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ZIPPMMove> ZIPPMMoves { get; set; }
+        public virtual ICollection<ZIPPMMoves> ZIPPMMoves { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ZIPPMonStock> ZIPPMonStocks { get; set; }
+        public virtual ICollection<ZIPPMonStock> ZIPPMonStock { get; set; }
     }
 }

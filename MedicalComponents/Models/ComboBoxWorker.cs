@@ -296,5 +296,21 @@ namespace MedicalComponents.Models
         }
 
 
+        public static void initModelTypeByCorpusId(ComboBox cmb, int id)
+        {
+            var res = from el in TablesModel.entities.sp_Standarts
+                      where el.corpus_id == id
+                      select new
+                      {
+                          id = el.ModelType.model_type_id,
+                          value = el.ModelType.model_type_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
+
     }
 }

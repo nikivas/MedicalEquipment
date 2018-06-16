@@ -13,10 +13,10 @@ namespace MedicalComponents.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MainDatabaseEntities5 : DbContext
+    public partial class MainDatabaseEntities6 : DbContext
     {
-        public MainDatabaseEntities5()
-            : base("name=MainDatabaseEntities5")
+        public MainDatabaseEntities6()
+            : base("name=MainDatabaseEntities6")
         {
         }
     
@@ -25,19 +25,19 @@ namespace MedicalComponents.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BrokenRequest> BrokenRequests { get; set; }
-        public virtual DbSet<ElementsDragMetal> ElementsDragMetals { get; set; }
-        public virtual DbSet<ElementsPlace> ElementsPlaces { get; set; }
-        public virtual DbSet<FaticalPhysicalPeoplePosition> FaticalPhysicalPeoplePositions { get; set; }
-        public virtual DbSet<ModelElement> ModelElements { get; set; }
-        public virtual DbSet<ModelToPurchase> ModelToPurchases { get; set; }
-        public virtual DbSet<ModelType> ModelTypes { get; set; }
-        public virtual DbSet<MOExpluatation> MOExpluatations { get; set; }
-        public virtual DbSet<Organisation> Organisations { get; set; }
-        public virtual DbSet<PersonalOnService> PersonalOnServices { get; set; }
-        public virtual DbSet<PhysicalPeople> PhysicalPeoples { get; set; }
-        public virtual DbSet<Purchase> Purchases { get; set; }
-        public virtual DbSet<PurchaseElement> PurchaseElements { get; set; }
+        public virtual DbSet<BrokenRequest> BrokenRequest { get; set; }
+        public virtual DbSet<ElementsDragMetal> ElementsDragMetal { get; set; }
+        public virtual DbSet<ElementsPlaces> ElementsPlaces { get; set; }
+        public virtual DbSet<FaticalPhysicalPeoplePositions> FaticalPhysicalPeoplePositions { get; set; }
+        public virtual DbSet<ModelElement> ModelElement { get; set; }
+        public virtual DbSet<ModelToPurchase> ModelToPurchase { get; set; }
+        public virtual DbSet<ModelType> ModelType { get; set; }
+        public virtual DbSet<MOExpluatation> MOExpluatation { get; set; }
+        public virtual DbSet<Organisations> Organisations { get; set; }
+        public virtual DbSet<PersonalOnService> PersonalOnService { get; set; }
+        public virtual DbSet<PhysicalPeople> PhysicalPeople { get; set; }
+        public virtual DbSet<Purchase> Purchase { get; set; }
+        public virtual DbSet<PurchaseElements> PurchaseElements { get; set; }
         public virtual DbSet<sp_BrokenRequestReason> sp_BrokenRequestReason { get; set; }
         public virtual DbSet<sp_Corpus> sp_Corpus { get; set; }
         public virtual DbSet<sp_CountryKey> sp_CountryKey { get; set; }
@@ -55,8 +55,8 @@ namespace MedicalComponents.Models
         public virtual DbSet<sp_ServiceType> sp_ServiceType { get; set; }
         public virtual DbSet<sp_Standarts> sp_Standarts { get; set; }
         public virtual DbSet<sp_ZIP_AND_PM_Element> sp_ZIP_AND_PM_Element { get; set; }
-        public virtual DbSet<ZIPPMDocumentsOnPurchase> ZIPPMDocumentsOnPurchases { get; set; }
-        public virtual DbSet<ZIPPMMove> ZIPPMMoves { get; set; }
-        public virtual DbSet<ZIPPMonStock> ZIPPMonStocks { get; set; }
+        public virtual DbSet<ZIPPMDocumentsOnPurchase> ZIPPMDocumentsOnPurchase { get; set; }
+        public virtual DbSet<ZIPPMMoves> ZIPPMMoves { get; set; }
+        public virtual DbSet<ZIPPMonStock> ZIPPMonStock { get; set; }
     }
 }

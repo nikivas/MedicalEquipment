@@ -17,7 +17,7 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sp_FunctionalyUseModel()
         {
-            this.ModelTypes = new HashSet<ModelType>();
+            this.ModelType = new HashSet<ModelType>();
         }
     
         public int functionaly_use_model_id { get; set; }
@@ -25,6 +25,6 @@ namespace MedicalComponents.Models
         public string other { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ModelType> ModelTypes { get; set; }
+        public virtual ICollection<ModelType> ModelType { get; set; }
     }
 }

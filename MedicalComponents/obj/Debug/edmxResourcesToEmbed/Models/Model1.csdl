@@ -79,8 +79,8 @@
     <NavigationProperty Name="PurchaseElements" Relationship="Self.PurchaseElements_fk0" FromRole="ModelElement" ToRole="PurchaseElements" />
     <NavigationProperty Name="ZIPPMMoves" Relationship="Self.ZIPPMMoves_fk0" FromRole="ModelElement" ToRole="ZIPPMMoves" />
     <Property Name="is_mo" Type="Int32" />
-    <Property Name="date_mo" Type="DateTime" Precision="0" />
     <Property Name="date_to" Type="DateTime" Precision="0" />
+    <Property Name="date_mo" Type="DateTime" Precision="0" />
   </EntityType>
   <EntityType Name="ModelToPurchase">
     <Key>
@@ -105,6 +105,7 @@
     <NavigationProperty Name="Organisations" Relationship="Self.ModelType_fk0" FromRole="ModelType" ToRole="Organisations" />
     <NavigationProperty Name="sp_FunctionalyUseModel" Relationship="Self.ModelType_fk1" FromRole="ModelType" ToRole="sp_FunctionalyUseModel" />
     <NavigationProperty Name="sp_ExpluatationRole" Relationship="Self.ModelType_fk2" FromRole="ModelType" ToRole="sp_ExpluatationRole" />
+    <NavigationProperty Name="sp_Standarts" Relationship="Self.sp_Standarts_fk1" FromRole="ModelType" ToRole="sp_Standarts" />
   </EntityType>
   <EntityType Name="MOExpluatation">
     <Key>
@@ -212,6 +213,7 @@
     <Property Name="corpus_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ElementsPlaces" Relationship="Self.ElementsPlaces_fk1" FromRole="sp_Corpus" ToRole="ElementsPlaces" />
+    <NavigationProperty Name="sp_Standarts" Relationship="Self.sp_Standarts_fk0" FromRole="sp_Corpus" ToRole="sp_Standarts" />
   </EntityType>
   <EntityType Name="sp_CountryKey">
     <Key>
@@ -329,6 +331,17 @@
     <Property Name="service_type_name" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="other" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="PersonalOnService" Relationship="Self.PersonalOnService_fk4" FromRole="sp_ServiceType" ToRole="PersonalOnService" />
+  </EntityType>
+  <EntityType Name="sp_Standarts">
+    <Key>
+      <PropertyRef Name="standart_id" />
+    </Key>
+    <Property Name="standart_id" Type="Int32" Nullable="false" />
+    <Property Name="corpus_id" Type="Int32" Nullable="false" />
+    <Property Name="count" Type="Int32" Nullable="false" />
+    <Property Name="model_type_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ModelType" Relationship="Self.sp_Standarts_fk1" FromRole="sp_Standarts" ToRole="ModelType" />
+    <NavigationProperty Name="sp_Corpus" Relationship="Self.sp_Standarts_fk0" FromRole="sp_Standarts" ToRole="sp_Corpus" />
   </EntityType>
   <EntityType Name="sp_ZIP_AND_PM_Element">
     <Key>
@@ -637,6 +650,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="sp_Standarts_fk1">
+    <End Role="ModelType" Type="Self.ModelType" Multiplicity="1" />
+    <End Role="sp_Standarts" Type="Self.sp_Standarts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModelType">
+        <PropertyRef Name="model_type_id" />
+      </Principal>
+      <Dependent Role="sp_Standarts">
+        <PropertyRef Name="model_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="MOExpluatation_fk0">
     <End Role="PhysicalPeople" Type="Self.PhysicalPeople" Multiplicity="1" />
     <End Role="MOExpluatation" Type="Self.MOExpluatation" Multiplicity="*" />
@@ -757,6 +782,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="sp_Standarts_fk0">
+    <End Role="sp_Corpus" Type="Self.sp_Corpus" Multiplicity="1" />
+    <End Role="sp_Standarts" Type="Self.sp_Standarts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sp_Corpus">
+        <PropertyRef Name="corpus_id" />
+      </Principal>
+      <Dependent Role="sp_Standarts">
+        <PropertyRef Name="corpus_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="ZIPPMDocumentsOnPurchase_fk0">
     <End Role="sp_ZIP_AND_PM_Element" Type="Self.sp_ZIP_AND_PM_Element" Multiplicity="1" />
     <End Role="ZIPPMDocumentsOnPurchase" Type="Self.ZIPPMDocumentsOnPurchase" Multiplicity="*" />
@@ -793,7 +830,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="MainDatabaseEntities4" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="MainDatabaseEntities6" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BrokenRequest" EntityType="Self.BrokenRequest" />
     <EntitySet Name="ElementsDragMetal" EntityType="Self.ElementsDragMetal" />
     <EntitySet Name="ElementsPlaces" EntityType="Self.ElementsPlaces" />
@@ -822,6 +859,7 @@
     <EntitySet Name="sp_ServiceOperationPersonalRole" EntityType="Self.sp_ServiceOperationPersonalRole" />
     <EntitySet Name="sp_ServiceOperationType" EntityType="Self.sp_ServiceOperationType" />
     <EntitySet Name="sp_ServiceType" EntityType="Self.sp_ServiceType" />
+    <EntitySet Name="sp_Standarts" EntityType="Self.sp_Standarts" />
     <EntitySet Name="sp_ZIP_AND_PM_Element" EntityType="Self.sp_ZIP_AND_PM_Element" />
     <EntitySet Name="ZIPPMDocumentsOnPurchase" EntityType="Self.ZIPPMDocumentsOnPurchase" />
     <EntitySet Name="ZIPPMMoves" EntityType="Self.ZIPPMMoves" />
@@ -914,6 +952,10 @@
       <End Role="sp_ExpluatationRole" EntitySet="sp_ExpluatationRole" />
       <End Role="ModelType" EntitySet="ModelType" />
     </AssociationSet>
+    <AssociationSet Name="sp_Standarts_fk1" Association="Self.sp_Standarts_fk1">
+      <End Role="ModelType" EntitySet="ModelType" />
+      <End Role="sp_Standarts" EntitySet="sp_Standarts" />
+    </AssociationSet>
     <AssociationSet Name="MOExpluatation_fk0" Association="Self.MOExpluatation_fk0">
       <End Role="PhysicalPeople" EntitySet="PhysicalPeople" />
       <End Role="MOExpluatation" EntitySet="MOExpluatation" />
@@ -953,6 +995,10 @@
     <AssociationSet Name="Purchase_fk0" Association="Self.Purchase_fk0">
       <End Role="sp_PurchaseType" EntitySet="sp_PurchaseType" />
       <End Role="Purchase" EntitySet="Purchase" />
+    </AssociationSet>
+    <AssociationSet Name="sp_Standarts_fk0" Association="Self.sp_Standarts_fk0">
+      <End Role="sp_Corpus" EntitySet="sp_Corpus" />
+      <End Role="sp_Standarts" EntitySet="sp_Standarts" />
     </AssociationSet>
     <AssociationSet Name="ZIPPMDocumentsOnPurchase_fk0" Association="Self.ZIPPMDocumentsOnPurchase_fk0">
       <End Role="sp_ZIP_AND_PM_Element" EntitySet="sp_ZIP_AND_PM_Element" />

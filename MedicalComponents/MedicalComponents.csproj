@@ -259,6 +259,12 @@
     <Compile Include="Editings\sp\sp_ServiceTypeEdit.Designer.cs">
       <DependentUpon>sp_ServiceTypeEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\sp\sp_StandartsEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\sp\sp_StandartsEdit.Designer.cs">
+      <DependentUpon>sp_StandartsEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\sp\sp_ZIPEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -323,6 +329,7 @@
     <Compile Include="Models\FaticalPhysicalPeoplePositions.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LIstBoxWorker.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -410,6 +417,9 @@
     <Compile Include="Models\sp_ServiceType.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_Standarts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_ZIP_AND_PM_Element.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -422,6 +432,12 @@
     </Compile>
     <Compile Include="Models\ZIPPMonStock.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Plans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plans.Designer.cs">
+      <DependentUpon>Plans.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -442,6 +458,12 @@
     </Compile>
     <Compile Include="sp_DBEditing.Designer.cs">
       <DependentUpon>sp_DBEditing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StandartsAdding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StandartsAdding.Designer.cs">
+      <DependentUpon>StandartsAdding.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -536,6 +558,9 @@
     <EmbeddedResource Include="Editings\sp\sp_ServiceTypeEdit.resx">
       <DependentUpon>sp_ServiceTypeEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editings\sp\sp_StandartsEdit.resx">
+      <DependentUpon>sp_StandartsEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editings\sp\sp_ZIPEdit.resx">
       <DependentUpon>sp_ZIPEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -560,6 +585,9 @@
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Plans.resx">
+      <DependentUpon>Plans.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -578,6 +606,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="sp_DBEditing.resx">
       <DependentUpon>sp_DBEditing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StandartsAdding.resx">
+      <DependentUpon>StandartsAdding.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Models\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

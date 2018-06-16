@@ -17,7 +17,7 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sp_OrganisationDepartment()
         {
-            this.PhysicalPeoples = new HashSet<PhysicalPeople>();
+            this.PhysicalPeople = new HashSet<PhysicalPeople>();
         }
     
         public int organisation_department_id { get; set; }
@@ -25,6 +25,6 @@ namespace MedicalComponents.Models
         public string other { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhysicalPeople> PhysicalPeoples { get; set; }
+        public virtual ICollection<PhysicalPeople> PhysicalPeople { get; set; }
     }
 }

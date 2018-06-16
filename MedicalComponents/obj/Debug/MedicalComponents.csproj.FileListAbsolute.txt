@@ -190,3 +190,6 @@ C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\D
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.GraphsWithTimeModelType.resources
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.GraphsWithCorpuses.resources
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.About.resources
+C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.sp.sp_StandartsEdit.resources
+C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Plans.resources
+C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.StandartsAdding.resources

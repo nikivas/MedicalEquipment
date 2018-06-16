@@ -11,7 +11,7 @@ namespace MedicalComponents.Models
     class TablesModel
     {
         
-        public static MainDatabaseEntities4 entities = new MainDatabaseEntities4();
+        public static MainDatabaseEntities6 entities = new MainDatabaseEntities6();
         public IEnumerable<object> FillOrganisation(DataGridView dataGridView)
         {
             Dictionary<string, string> dic = new Dictionary<string, string>();

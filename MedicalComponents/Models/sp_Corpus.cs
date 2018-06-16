@@ -17,7 +17,7 @@ namespace MedicalComponents.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public sp_Corpus()
         {
-            this.ElementsPlaces = new HashSet<ElementsPlace>();
+            this.ElementsPlaces = new HashSet<ElementsPlaces>();
             this.sp_Standarts = new HashSet<sp_Standarts>();
         }
     
@@ -26,7 +26,7 @@ namespace MedicalComponents.Models
         public string other { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ElementsPlace> ElementsPlaces { get; set; }
+        public virtual ICollection<ElementsPlaces> ElementsPlaces { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<sp_Standarts> sp_Standarts { get; set; }
     }
