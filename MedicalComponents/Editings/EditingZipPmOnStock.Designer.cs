@@ -68,9 +68,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(25, 79);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.Size = new System.Drawing.Size(66, 13);
             this.label5.TabIndex = 30;
-            this.label5.Text = "к-во";
+            this.label5.Text = "Количество";
             // 
             // button2
             // 

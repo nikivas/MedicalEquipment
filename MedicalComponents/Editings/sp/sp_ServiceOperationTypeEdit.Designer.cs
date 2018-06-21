@@ -42,6 +42,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -65,11 +66,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(102, 29);
+            this.label1.Location = new System.Drawing.Point(98, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 21);
+            this.label1.Size = new System.Drawing.Size(213, 21);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Тип Сервисной операции";
+            this.label1.Text = "Вид сервисной операции";
             // 
             // sp_ServiceOperationTypeEdit
             // 

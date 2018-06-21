@@ -42,7 +42,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(328, 257);
+            this.button2.Location = new System.Drawing.Point(328, 104);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 29);
             this.button2.TabIndex = 37;
@@ -52,7 +52,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(22, 257);
+            this.button1.Location = new System.Drawing.Point(22, 104);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 29);
             this.button1.TabIndex = 36;
@@ -63,25 +63,27 @@
             // comboBoxExpluatation
             // 
             this.comboBoxExpluatation.FormattingEnabled = true;
-            this.comboBoxExpluatation.Location = new System.Drawing.Point(227, 188);
+            this.comboBoxExpluatation.Location = new System.Drawing.Point(227, 139);
             this.comboBoxExpluatation.Name = "comboBoxExpluatation";
             this.comboBoxExpluatation.Size = new System.Drawing.Size(215, 21);
             this.comboBoxExpluatation.TabIndex = 35;
             this.comboBoxExpluatation.Text = "Моральное устаревание";
+            this.comboBoxExpluatation.Visible = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 191);
+            this.label8.Location = new System.Drawing.Point(12, 142);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(180, 13);
             this.label8.TabIndex = 34;
             this.label8.Text = "Роль Эксплуатации оборудования";
+            this.label8.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 142);
+            this.label5.Location = new System.Drawing.Point(12, 64);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(198, 13);
             this.label5.TabIndex = 27;
@@ -90,20 +92,22 @@
             // comboBoxOrganisation
             // 
             this.comboBoxOrganisation.FormattingEnabled = true;
-            this.comboBoxOrganisation.Location = new System.Drawing.Point(227, 81);
+            this.comboBoxOrganisation.Location = new System.Drawing.Point(227, 166);
             this.comboBoxOrganisation.Name = "comboBoxOrganisation";
             this.comboBoxOrganisation.Size = new System.Drawing.Size(215, 21);
             this.comboBoxOrganisation.TabIndex = 26;
             this.comboBoxOrganisation.Text = "Россия";
+            this.comboBoxOrganisation.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 84);
+            this.label4.Location = new System.Drawing.Point(12, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 13);
             this.label4.TabIndex = 25;
             this.label4.Text = "Название Организации";
+            this.label4.Visible = false;
             // 
             // label1
             // 
@@ -124,7 +128,7 @@
             // comboBoxFunc
             // 
             this.comboBoxFunc.FormattingEnabled = true;
-            this.comboBoxFunc.Location = new System.Drawing.Point(227, 139);
+            this.comboBoxFunc.Location = new System.Drawing.Point(227, 61);
             this.comboBoxFunc.Name = "comboBoxFunc";
             this.comboBoxFunc.Size = new System.Drawing.Size(215, 21);
             this.comboBoxFunc.TabIndex = 38;
@@ -134,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 326);
+            this.ClientSize = new System.Drawing.Size(478, 199);
             this.Controls.Add(this.comboBoxFunc);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

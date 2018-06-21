@@ -74,23 +74,27 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 12)
             {
-                new EditingZipPmMoves(1).Show(); //pm
+                new EditingZipPmMoves(0).Show(); //pm
             }
             else if (checkedListBox1.SelectedIndex == 13)
             {
-
+                new EditingBrokenRequest().Show();
             }
             else if (checkedListBox1.SelectedIndex == 14)
             {
-
+                new EditingPurchaseElement().Show();
             }
             else if (checkedListBox1.SelectedIndex == 15)
             {
-
+                new EditingZIPDocumentsPurchase().Show();
             }
             else if (checkedListBox1.SelectedIndex == 16)
             {
-
+                new EditingPMDocumentsPurchase().Show();
+            }
+            else if (checkedListBox1.SelectedIndex == 17)
+            {
+                new EditingElementsPlaces().Show();
             }
         }
 
@@ -155,23 +159,27 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 12)
             {
-                new EditingZipPmMoves(0).Show(); // 0 -> pm
+                new EditingZipPmMoves(isZIP: 0).Show(); // 0 -> pm
             }
             else if(checkedListBox1.SelectedIndex == 13)
             {
-
+                new EditingBrokenRequest(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 14)
             {
-
+                new EditingPurchaseElement(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 15)
             {
-
+                new EditingZIPDocumentsPurchase(selectedId).Show();
             }
             else if (checkedListBox1.SelectedIndex == 16)
             {
-
+                new EditingPMDocumentsPurchase(selectedId).Show();
+            }
+            else if (checkedListBox1.SelectedIndex == 17)
+            {
+                new EditingElementsPlaces(selectedId).Show();
             }
         }
 
@@ -274,7 +282,11 @@ namespace MedicalComponents
             {
                 tablesModel.FillPMDocumentsOnPurchase(dataGridView1);
             }
-            
+            else if (checkedListBox1.SelectedIndex == 17)
+            {
+                tablesModel.FillElementsPlaces(dataGridView1) ;
+            }
+
         }
         private void buttonDelete_Click(object sender, EventArgs e)
         {
@@ -350,9 +362,17 @@ namespace MedicalComponents
                 }
                 else if (checkedListBox1.SelectedIndex == 15)
                 {
+                    
+                }
+                else if (checkedListBox1.SelectedIndex == 16)
+                {
                     TablesModel.entities.ZIPPMDocumentsOnPurchase.Remove(TablesModel.entities.ZIPPMDocumentsOnPurchase.Where(x => x.zipPM_documents_purchase_id == selectedId).First());
                 }
-                
+                else if (checkedListBox1.SelectedIndex == 16)
+                {
+                    TablesModel.entities.ElementsPlaces.Remove(TablesModel.entities.ElementsPlaces.Where(x => x.element_place_id == selectedId).First());
+                }
+
                 TablesModel.entities.SaveChanges();
                 MessageBox.Show("Успешно удалено");
                 checkedListBox1_SelectedIndexChanged(sender, e);
@@ -361,6 +381,11 @@ namespace MedicalComponents
             {
                 MessageBox.Show("непредвиденная ситуация, база данных выполняет другую операцию, дождитесь ее окончания и попробуйте позже");
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

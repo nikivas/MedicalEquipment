@@ -97,6 +97,12 @@
     <Compile Include="Editings\EditingDragMetal.Designer.cs">
       <DependentUpon>EditingDragMetal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\EditingElementsPlaces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingElementsPlaces.Designer.cs">
+      <DependentUpon>EditingElementsPlaces.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\EditingEquipmentObject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,12 @@
     <Compile Include="Editings\EditingPhysicalPeoplePosition.Designer.cs">
       <DependentUpon>EditingPhysicalPeoplePosition.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editings\EditingPMDocumentsPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingPMDocumentsPurchase.designer.cs">
+      <DependentUpon>EditingPMDocumentsPurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Editings\EditingPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +162,12 @@
     </Compile>
     <Compile Include="Editings\EditingPurchaseElement.Designer.cs">
       <DependentUpon>EditingPurchaseElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editings\EditingZIPDocumentsPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editings\EditingZIPDocumentsPurchase.designer.cs">
+      <DependentUpon>EditingZIPDocumentsPurchase.cs</DependentUpon>
     </Compile>
     <Compile Include="Editings\EditingZipPmMoves.cs">
       <SubType>Form</SubType>
@@ -478,6 +496,9 @@
     <EmbeddedResource Include="Editings\EditingDragMetal.resx">
       <DependentUpon>EditingDragMetal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingElementsPlaces.resx">
+      <DependentUpon>EditingElementsPlaces.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingEquipmentObject.resx">
       <DependentUpon>EditingEquipmentObject.cs</DependentUpon>
     </EmbeddedResource>
@@ -499,11 +520,17 @@
     <EmbeddedResource Include="Editings\EditingPhysicalPeoplePosition.resx">
       <DependentUpon>EditingPhysicalPeoplePosition.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingPMDocumentsPurchase.resx">
+      <DependentUpon>EditingPMDocumentsPurchase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingPurchase.resx">
       <DependentUpon>EditingPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingPurchaseElement.resx">
       <DependentUpon>EditingPurchaseElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editings\EditingZIPDocumentsPurchase.resx">
+      <DependentUpon>EditingZIPDocumentsPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editings\EditingZipPmMoves.resx">
       <DependentUpon>EditingZipPmMoves.cs</DependentUpon>

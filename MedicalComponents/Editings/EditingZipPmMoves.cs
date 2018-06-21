@@ -65,7 +65,7 @@ namespace MedicalComponents.Editings
         private void initComboBoxes()
         {
             ComboBoxWorker.initModelElement(comboBoxModel);
-            ComboBoxWorker.initZIPMElement(comboBoxZIPPm,isZIP);
+            ComboBoxWorker.initZIPMElementWithCountNotNull(comboBoxZIPPm,isZIP);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,16 +83,14 @@ namespace MedicalComponents.Editings
                         model_element_id = (int)comboBoxModel.SelectedValue
                     };
                     TablesModel.entities.ZIPPMMoves.Add(el);
+                    TablesModel.entities.SaveChanges();
+                    var element_ZIPPM = TablesModel.entities.ZIPPMonStock.Where(x => x.sp_ZIP_AND_PM_Element.zipPM_element_id == el.zipPM_element_id).FirstOrDefault();
+                    if (element_ZIPPM.count <= 0)
+                        throw new ArgumentException();
+                    else
+                        element_ZIPPM.count -= 1;
 
-                    foreach (var el2 in el.sp_ZIP_AND_PM_Element.ZIPPMonStock)
-                    {
-                        if (el2.count <= 0)
-                            throw new ArgumentException();
-                        else
-                            el2.count -= 1;
-
-                    }
-
+                    TablesModel.entities.SaveChanges();
 
 
 

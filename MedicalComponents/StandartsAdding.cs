@@ -49,7 +49,7 @@ namespace MedicalComponents
                 if (checkedListBox1.GetItemCheckState(i) == CheckState.Checked)
                 {
                     var buf = checkedListBox1.Items[i] as dynamic;
-                    selected.Add(buf.id);
+                    selected.Add((int) buf.id);
                 }
             }
 
@@ -59,7 +59,33 @@ namespace MedicalComponents
         private void button1_Click(object sender, EventArgs e)
         {
             List<Dictionary<string, string>> answer = new List<Dictionary<string, string>>();
-            //var selectedId = selectedValues();
+            var selectedIdCorpuses = selectedValues();
+
+            foreach (var corpusId in selectedIdCorpuses)
+            {
+                var result = TablesModel.entities
+                                        .sp_Standarts
+                                        .Where(x => x.corpus_id == corpusId)
+                                        .Select(x => x.model_type_id).ToList();
+                foreach (var modeltypes in result)
+                {
+                    var count = TablesModel.entities
+                                           .ElementsPlaces
+                                           .Where(x => x.corpus_id == corpusId && x.ModelElement.model_type_id == modeltypes)
+                                           .Count();
+                    Dictionary<string, string> buf = new Dictionary<string, string>();
+                    buf.Add("Наименование модели", TablesModel.entities.ModelType.Where(x => x.model_type_id == modeltypes).Select(x => x.model_type_name).First());
+                    buf.Add("Фактическое количество в отделении", count.ToString());
+                    buf.Add("Необходимое дооснащение", Math.Abs(TablesModel.entities.sp_Standarts.Where(x => x.model_type_id == modeltypes && x.corpus_id == corpusId).Select(x => x.count - count).First()).ToString());
+                    buf.Add("Отделение", TablesModel.entities.sp_Corpus.Where(x => x.corpus_id == corpusId).Select(x => x.corpus_name).First());
+                    buf.Add("Требуемое количество по стандарту", TablesModel.entities.sp_Standarts.Where(x => x.model_type_id == modeltypes && x.corpus_id == corpusId).Select(x => x.count).First().ToString());
+                    answer.Add(buf);
+                    //Отделение
+                }
+
+
+            }
+
             //int selectedValue = selectedId.First();
             //var result = TablesModel.entities.sp_Standarts.Where(x => x.corpus_id == selectedValue).Select(x=> x.model_type_id ).ToList();
             //foreach (var el in result)

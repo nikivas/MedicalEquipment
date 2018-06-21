@@ -35,6 +35,7 @@ namespace MedicalComponents
             {
                 if (checkedListBox1.GetItemChecked(i) == true)
                 {
+                    //TODO: 
                     checkedListBox1.SetItemCheckState(i, CheckState.Checked);
                     var elem = checkedListBox1.Items[i] as dynamic;
                     var selectedId = (int)elem.id;

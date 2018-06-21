@@ -42,11 +42,12 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(368, 75);
+            this.dataGridView1.Location = new System.Drawing.Point(368, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(847, 311);
+            this.dataGridView1.Size = new System.Drawing.Size(847, 308);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -108,7 +109,7 @@
             "Модели оборудования",
             "Единицы оборудования",
             "Физические лица",
-            "Фактические должности физических лиц",
+            "Фактические должности физических лиц<-del",
             "Эксплуатанты единиц медицинского оборудования",
             "Драгоценные металлы",
             "Сервисное обслуживание медицинского оборудования",
@@ -120,7 +121,8 @@
             "Заявки на ремонт",
             "Планы приобретения оборудования",
             "Планы приобретения ЗИП",
-            "Планы приобретения РМ"});
+            "Планы приобретения РМ",
+            "Расположение оборудования"});
             this.checkedListBox1.Location = new System.Drawing.Point(10, 78);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(323, 394);

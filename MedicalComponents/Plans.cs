@@ -211,6 +211,7 @@ namespace MedicalComponents
             chart1.Series[1].Points.AddXY(x[11], y[11]);
             double x_val = 13;
             var y_val = Interpolation.InterpolateLagrangePolynomial(x_val, x, y, 13);
+            y_val = Math.Abs(y_val);
             chart1.Series[1].Points.AddXY(13, y_val);
 
         }

@@ -185,9 +185,10 @@ namespace MedicalComponents.Models
 
             workSheet.Cells[3, "A"] = "№ п/п";
             workSheet.Cells[3, "B"] = "Наименование модели";
-            workSheet.Cells[3, "C"] = "Количество в отделении";
-            workSheet.Cells[3, "D"] = "Недостающее";
-            workSheet.Cells[3, "E"] = "Отделение";
+            workSheet.Cells[3, "C"] = "Требуемое количество по стандарту";
+            workSheet.Cells[3, "D"] = "Фактическое количество в отделении";
+            workSheet.Cells[3, "E"] = "Необходимое дооснащение";
+            workSheet.Cells[3, "F"] = "Отделение";
 
 
             int rowIdx = 4;
@@ -195,9 +196,10 @@ namespace MedicalComponents.Models
             {
                 workSheet.Cells[rowIdx, "A"] = rowIdx - 3;
                 workSheet.Cells[rowIdx, "B"] = el["Наименование модели"];
-                workSheet.Cells[rowIdx, "C"] = el["Количество в отделении"];
-                workSheet.Cells[rowIdx, "D"] = el["Недостающее"];
-                workSheet.Cells[3, "E"] = el["Отделение"];
+                workSheet.Cells[rowIdx, "C"] = el["Требуемое количество по стандарту"];
+                workSheet.Cells[rowIdx, "D"] = el["Фактическое количество в отделении"];
+                workSheet.Cells[rowIdx, "E"] = el["Необходимое дооснащение"];
+                workSheet.Cells[rowIdx, "F"] = el["Отделение"];
                 rowIdx++;
             }
 

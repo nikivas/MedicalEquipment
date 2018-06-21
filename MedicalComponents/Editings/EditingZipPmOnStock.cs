@@ -31,6 +31,7 @@ namespace MedicalComponents.Editings
 
         private void EditingZipPmOnStock_Load(object sender, EventArgs e)
         {
+            initComboBoxes();
             try
             {
                 if (id != -1)
@@ -74,7 +75,8 @@ namespace MedicalComponents.Editings
                     {
                         zipPM_on_stock_id = addId,
                         count = int.Parse(textBoxSize.Text),
-                        zipPM_element_id = (int)comboBoxZIPPM.SelectedValue
+                        zipPM_element_id = (int)comboBoxZIPPM.SelectedValue,
+                        other = ".."
                     });
 
                 }

@@ -189,6 +189,8 @@ namespace MedicalComponents.Models
                 cmb.SelectedIndex = 0;
         }
 
+
+
         public static void initServiceOperationRole(ComboBox cmb)
         {
             var res = from el in TablesModel.entities.sp_ServiceOperationPersonalRole
@@ -280,6 +282,22 @@ namespace MedicalComponents.Models
                 cmb.SelectedIndex = 0;
         }
 
+        public static void initZIPMElementWithCountNotNull(ComboBox cmb, int isZIP)
+        {
+            var res = from el in TablesModel.entities.sp_ZIP_AND_PM_Element
+                      where el.isZIP == isZIP && el.ZIPPMonStock.FirstOrDefault().count > 0
+                      select new
+                      {
+                          id = el.zipPM_element_id,
+                          value = el.zipPM_element_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
+
         public static void initBroken(ComboBox cmb)
         {
             var res = from el in TablesModel.entities.sp_BrokenRequestReason
@@ -304,6 +322,21 @@ namespace MedicalComponents.Models
                       {
                           id = el.ModelType.model_type_id,
                           value = el.ModelType.model_type_name
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
+
+        public static void initMoveReason(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.sp_MoveReason
+                      select new
+                      {
+                          id = el.move_reason_id,
+                          value = el.move_reason_name
                       };
             cmb.DataSource = res.ToList();
             cmb.DisplayMember = "value";

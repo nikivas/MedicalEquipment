@@ -20,21 +20,23 @@ namespace MedicalComponents.Models
                       select new
                       {
                           organisation_id = organisation.organisation_id,
+                          organisation_type = organisation.sp_OrganisationType.organisation_type_name,
                           organisation_name = organisation.organisation_full_name,
                           organisation_short_name = organisation.organisation_short_name,
-                          organisation_type = organisation.sp_OrganisationType.organisation_type_name,
+                          address = organisation.factic_address,
                           contact_information = organisation.contacts,
                           email = organisation.email
                       }).ToList();
 
 
             dic.Add("organisation_id", "Идентификатор Организации");
-            dic.Add("organisation_name", "Полное название");
-            dic.Add("organisation_short_name", "Короткое название");
+            dic.Add("organisation_name", "Название организации");
+            dic.Add("organisation_short_name", "ИНН");
             dic.Add("organisation_type", "Тип организации");
             dic.Add("contact_information", "Контакты");
             dic.Add("email", "email");
-
+            dic.Add("address", "Адрес");
+            
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
             return res;
@@ -50,14 +52,13 @@ namespace MedicalComponents.Models
                        {
                            model_type_id = modelType.model_type_id,
                            model_type_name = modelType.model_type_name,
-                           organisation_name = modelType.Organisations.organisation_full_name,
                            functionaly_use_model = modelType.sp_FunctionalyUseModel.functionaly_use_model_name,
-                           expluatation_role = modelType.sp_ExpluatationRole.expluatation_role_name
+                           expluatation_role = modelType.sp_ExpluatationRole.expluatation_role_name,
+
                        }).ToList();
 
             dic.Add("model_type_id", "id записи");
-            dic.Add("model_type_name", "Тип модели");
-            dic.Add("organisation_name", "Название организации");
+            dic.Add("model_type_name", "Название модели");
             dic.Add("functionaly_use_model", "Функциональное назначение модели");
             dic.Add("expluatation_role", "Роль эксплуатации");
 
@@ -74,29 +75,36 @@ namespace MedicalComponents.Models
                        select new
                        {
                            model.model_element_id,
-                           model.inventory_number,
                            model.ModelType.model_type_name,
+                           //TODO: наим (снизу)
+                           model.inventory_number,                           
                            model.date_creation,
-                           model.date_utilisation,
+                           model.ModelType.Organisations.sp_CountryKey.country_name,                           
                            model.serial_number,
-                           model.sp_ReasonWriteOff.reason_write_off_name,
-                           model.ModelToPurchase.Where(x=>x.model_element_id == model.model_element_id)
+                           model.ModelToPurchase.Where(x => x.model_element_id == model.model_element_id)
                                                 .FirstOrDefault()
                                                 .Purchase
-                                                .purchase_document_number
-                           
+                                                .date_apply,
+
+                           model.date_utilisation,
+                           model.sp_ReasonWriteOff.reason_write_off_name,
+                           // TODO: сверху списание  , тут нужна утилизаиця
                        }).ToList();
 
 
             dic.Add("model_element_id", "id записи");
+            // TODO: НАИМЕНОВАНИЕ ЕДИНИЦЫ ОБОРУДОВАНИЯ
             dic.Add("inventory_number", "Инвентарный номер");
             dic.Add("model_type_name", "Тип модели");
-            dic.Add("date_creation", "Дата создания");
-            dic.Add("date_utilisation", "Дата утилизации");
+            dic.Add("date_creation", "Дата производства");
+            dic.Add("date_utilisation", "Дата списания");
             dic.Add("serial_number", "Серийный номер");
             dic.Add("reason_write_off_name", "Причина списания");
             dic.Add("purchase_document_number", "Номер документа-поставки");
-
+            dic.Add("date_apply", "Дата ввода в эксплуатацию");
+            dic.Add("country_name", "Cтрана производитель");
+            
+            //date_apply
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
             return res;
@@ -113,9 +121,9 @@ namespace MedicalComponents.Models
                            people.name,
                            people.family,
                            people.patronumic,
-                           gender = people.Gender.Value == 1 ? "муж" : "жен",
+                           gender = people.Gender.Value == 1 ? "муж" : "жен", // TODO: ДОлжности вместо пола
+                           people.sp_OrganisationDepartment.organisation_department_name, // не отдел а организация
                            people.contacts,
-                           people.sp_OrganisationDepartment.organisation_department_name
                        }).ToList();
 
 
@@ -170,7 +178,7 @@ namespace MedicalComponents.Models
                            mo_exxpluatation.mo_expluatation_id,
                            fio = mo_exxpluatation.PhysicalPeople.name+" "+mo_exxpluatation.PhysicalPeople.family,
                            mo_exxpluatation.sp_ServiceOperationPersonalRole.service_operation_personal_role_name,
-                           mo_exxpluatation.ModelElement.ModelType.model_type_name,
+                           mo_exxpluatation.ModelElement.ModelType.model_type_name, //TODO: НАЗВАНИЕ ЕДИНИЦЫ ОБОРУДОВАНИЯ
                            mo_exxpluatation.ModelElement.inventory_number,
                            mo_exxpluatation.date_begin,
                            mo_exxpluatation.date_end
@@ -210,7 +218,7 @@ namespace MedicalComponents.Models
 
 
             dic.Add("elements_drag_metal_id", "id записи");
-            dic.Add("model_type_name", "Тип модели");
+            dic.Add("model_type_name", "Тип модели"); //TODO: НАИМЕНОВАНИЕ ЕДИНИЦЫ
             dic.Add("inventory_number", "Инвентарный номер");
             dic.Add("drag_metal_name", "драгоценный металл");
             dic.Add("size", "вес (гр.)");
@@ -229,11 +237,15 @@ namespace MedicalComponents.Models
                        {
                            el.personal_on_service_id,
                            el.ModelElement.ModelType.model_type_name,
+                           // TODO: НАИМЕНОВАНИЕ ЕДИНИЦЫ ОБОРУДОВАНИЯ
                            el.ModelElement.inventory_number,
-                           fio = el.PhysicalPeople.name+" "+el.PhysicalPeople.family+" "+el.PhysicalPeople.patronumic,
                            el.sp_ServiceOperationType.service_operation_type_name,
-                           el.sp_ServiceOperationPersonalRole.service_operation_personal_role_name
-
+                           // TODO: ДАТА СЕРВИСНОГО ОБСЛУЖИВАНИЯ (КОГДА, 1 ДЕНЬ)
+                           // TODO: РЕЗУЛЬТАТ ОБСЛУЖИВАНИЯ
+                           fio = el.PhysicalPeople.name+" "+el.PhysicalPeople.family+" "+el.PhysicalPeople.patronumic,
+                           el.sp_ServiceOperationPersonalRole.service_operation_personal_role_name,
+                           el.PhysicalPeople.sp_OrganisationDepartment.organisation_department_name
+                           
                        }).ToList();
 
 
@@ -260,13 +272,15 @@ namespace MedicalComponents.Models
                            el.sp_PurchaseType.purchase_type_name,
                            el.purchase_document_number,
                            el.date_apply
+                           //TODO: ДАТА ПОСТАВКИ\ВЫПОЛНЕНИЕ РАБОТ
+                           //TODO: НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ
                        }).ToList();
 
 
             dic.Add("purchase_id", "id записи");
             dic.Add("purchase_type_name", "Тип закупки");
-            dic.Add("purchase_document_number", "Номер документа");
-            dic.Add("date_apply", "Дата приобритения");
+            dic.Add("purchase_document_number", "Номер договора");
+            dic.Add("date_apply", "Дата заключения договора");
             
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
@@ -290,7 +304,7 @@ namespace MedicalComponents.Models
 
             dic.Add("zipPM_on_stock_id", "id записи");
             dic.Add("zipPM_element_name", "Название ЗИП");
-            dic.Add("count", "количество");
+            dic.Add("count", "Количество");
 
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
@@ -314,7 +328,7 @@ namespace MedicalComponents.Models
 
             dic.Add("zipPM_on_stock_id", "id записи");
             dic.Add("zipPM_element_name", "Название PM");
-            dic.Add("count", "количество");
+            dic.Add("count", "Количество");
 
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
@@ -341,8 +355,8 @@ namespace MedicalComponents.Models
             dic.Add("zipPM_on_stock_id", "id записи");
             dic.Add("zipPM_element_name", "Название ZIP ");
             dic.Add("date_move", "Дата перемещения со склада");
-            dic.Add("model_type_name", "Тип модели");
-            dic.Add("inventory_number", "инвентарный номер");
+            dic.Add("model_type_name", "Тип модели"); //TODO: НАЗВАНИЕ ЕДИНИЦЫ
+            dic.Add("inventory_number", "Инвентарный номер");
 
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
@@ -369,8 +383,8 @@ namespace MedicalComponents.Models
             dic.Add("zipPM_on_stock_id", "id записи");
             dic.Add("zipPM_element_name", "Название PM");
             dic.Add("date_move", "Дата перемещения со склада");
-            dic.Add("model_type_name", "Тип модели");
-            dic.Add("inventory_number", "инвентарный номер");
+            dic.Add("model_type_name", "Тип модели"); //TODO: НАЗВАНИЕ ЕДИНИЦЫ
+            dic.Add("inventory_number", "Инвентарный номер");
 
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
@@ -386,22 +400,27 @@ namespace MedicalComponents.Models
                        select new
                        {
                            el.broken_request_id,
-                           el.sp_BrokenRequestReason.broken_request_reason_name,
-                           fio = el.PhysicalPeople.name+" "+el.PhysicalPeople.family+" "+el.PhysicalPeople.patronumic,
-                           el.ModelElement.ModelType.model_type_name,
-                           el.ModelElement.inventory_number,
+                           el.ModelElement.ElementsPlaces.FirstOrDefault().sp_Corpus.corpus_name,
+                           fio = el.PhysicalPeople.name + " " + el.PhysicalPeople.family + " " + el.PhysicalPeople.patronumic,
+                           el.ModelElement.ModelType.model_type_name, // TODO: НАЗВАНИЕ ЕДИНИЦЫ
+                           el.ModelElement.inventory_number,                           
                            el.date_to_repair,
+                           el.sp_BrokenRequestReason.broken_request_reason_name,
                            isFinished = el.isFinished == 0 ? "Нет" : "Да"
+                           // TODO: Дата выполнения
+                           // TODO: Примечание
                        }).ToList();
 
 
             dic.Add("broken_request_id", "id записи");
             dic.Add("broken_request_reason_name", "описание проблемы");
-            dic.Add("fio", "ФИО человека оставившего заявку");
+            dic.Add("fio", "ФИО");
             dic.Add("model_type_name", "Название единицы оборудования"); //here
-            dic.Add("inventory_number", "инвентарный номер");
+            dic.Add("inventory_number", "Инвентарный номер");
             dic.Add("date_to_repair", "Дата подачи");
             dic.Add("isFinished", "Неполадка устранена?");
+            dic.Add("corpus_name", "Наименование отделения");
+
             
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
@@ -427,7 +446,7 @@ namespace MedicalComponents.Models
 
             dic.Add("zipPM_documents_purchase_id", "id записи");
             dic.Add("zipPM_element_name", "Название PM");
-            dic.Add("count", "количество");
+            dic.Add("count", "Количество");
             dic.Add("date_coming_in", "Планируемая дата поставки");
             dic.Add("date_to_end_possible_use", "Фактическая дата поставки");
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
@@ -838,9 +857,38 @@ namespace MedicalComponents.Models
                        }).ToList();
 
             dic.Add("standart_id", "id записи");
-            dic.Add("corpus_name", "Причина подачи заявки на ремонт");
-            dic.Add("model_type_name", "Причина подачи заявки на ремонт");
-            dic.Add("count", "Причина подачи заявки на ремонт");
+            dic.Add("corpus_name", "Название отделения");
+            dic.Add("model_type_name", "Тип модели");
+            dic.Add("count", "Количество по стандарту");
+
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+
+            return res;
+        }
+
+
+        public IEnumerable<object> FillElementsPlaces(DataGridView dataGridView)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+
+            var res = (from el in entities.ElementsPlaces
+                       select new
+                       {
+                           el.element_place_id,
+                           el.sp_Corpus.corpus_name,
+                           el.ModelElement.ModelType.model_type_name,
+                           el.ModelElement.inventory_number,
+                           el.date_begin,
+                           el.sp_MoveReason.move_reason_name
+                       }).ToList();
+
+            dic.Add("standart_id", "id записи");
+            dic.Add("corpus_name", "Название отделения");
+            dic.Add("model_type_name", "Тип модели"); // TODO: НАЗВАНИЕ ЕДИНИЦЫ ОБОРУДОВАНИЯ
+            dic.Add("date_begin", "Дата перемещения");
+            dic.Add("move_reason_name", "Причина перемещения");
+            dic.Add("inventory_number", "Инвентарный номер");
+            
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
