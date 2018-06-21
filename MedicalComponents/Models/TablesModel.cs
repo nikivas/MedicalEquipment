@@ -398,9 +398,9 @@ namespace MedicalComponents.Models
 
 
             dic.Add("broken_request_id", "id записи");
-            dic.Add("broken_request_reason_name", "Название ZIP / PM");
+            dic.Add("broken_request_reason_name", "описание проблемы");
             dic.Add("fio", "ФИО человека оставившего заявку");
-            dic.Add("model_type_name", "Тип модели");
+            dic.Add("model_type_name", "Название единицы оборудования"); //here
             dic.Add("inventory_number", "инвентарный номер");
             dic.Add("date_to_repair", "Дата подачи");
             dic.Add("isFinished", "Неполадка устранена?");

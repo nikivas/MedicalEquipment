@@ -222,15 +222,20 @@ namespace MedicalComponents
             {
                 tablesModel.FillPMMoves(dataGridView1);
             }
-            else if (checkedListBox1.SelectedIndex == 13)
+            else if (checkedListBox1.SelectedIndex == 13) // broken
             {
-                tablesModel.FillPurchaseElement(dataGridView1);
+                tablesModel.FillBrokenRequest(dataGridView1);
             }
             else if (checkedListBox1.SelectedIndex == 14)
             {
-                tablesModel.FillZIPDocumentsOnPurchase(dataGridView1);
+                tablesModel.FillPurchaseElement(dataGridView1);
+                
             }
             else if (checkedListBox1.SelectedIndex == 15)
+            {
+                tablesModel.FillZIPDocumentsOnPurchase(dataGridView1);
+            }
+            else if (checkedListBox1.SelectedIndex == 16)
             {
                 tablesModel.FillPMDocumentsOnPurchase(dataGridView1);
             }
