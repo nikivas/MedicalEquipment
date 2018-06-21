@@ -66,11 +66,31 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 10)
             {
-                
+                new EditingZipPmMoves(1).Show(); // zip
             }
             else if (checkedListBox1.SelectedIndex == 11)
             {
                 new EditingZipPmOnStock(0).Show(); // pm
+            }
+            else if (checkedListBox1.SelectedIndex == 12)
+            {
+                new EditingZipPmMoves(1).Show(); //pm
+            }
+            else if (checkedListBox1.SelectedIndex == 13)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 14)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 15)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 16)
+            {
+
             }
         }
 
@@ -136,6 +156,22 @@ namespace MedicalComponents
             else if (checkedListBox1.SelectedIndex == 12)
             {
                 new EditingZipPmMoves(0).Show(); // 0 -> pm
+            }
+            else if(checkedListBox1.SelectedIndex == 13)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 14)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 15)
+            {
+
+            }
+            else if (checkedListBox1.SelectedIndex == 16)
+            {
+
             }
         }
 
@@ -229,7 +265,6 @@ namespace MedicalComponents
             else if (checkedListBox1.SelectedIndex == 14)
             {
                 tablesModel.FillPurchaseElement(dataGridView1);
-                
             }
             else if (checkedListBox1.SelectedIndex == 15)
             {
@@ -239,6 +274,7 @@ namespace MedicalComponents
             {
                 tablesModel.FillPMDocumentsOnPurchase(dataGridView1);
             }
+            
         }
         private void buttonDelete_Click(object sender, EventArgs e)
         {

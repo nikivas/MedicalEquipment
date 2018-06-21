@@ -329,6 +329,7 @@
     <Compile Include="Models\FaticalPhysicalPeoplePositions.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Interpolation.cs" />
     <Compile Include="Models\LIstBoxWorker.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>

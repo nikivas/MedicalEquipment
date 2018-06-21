@@ -53,9 +53,7 @@ namespace MedicalComponents.Models
                            organisation_name = modelType.Organisations.organisation_full_name,
                            functionaly_use_model = modelType.sp_FunctionalyUseModel.functionaly_use_model_name,
                            expluatation_role = modelType.sp_ExpluatationRole.expluatation_role_name
-
                        }).ToList();
-
 
             dic.Add("model_type_id", "id записи");
             dic.Add("model_type_name", "Тип модели");
@@ -849,7 +847,42 @@ namespace MedicalComponents.Models
             return res;
         }
 
+        public IEnumerable<object> FillModelElementByModelType(DataGridView dataGridView, int modelTypeId)
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
 
+            var res = (from model in entities.ModelElement
+                       where model.model_type_id == modelTypeId
+                       select new
+                       {
+                           model.model_element_id,
+                           model.inventory_number,
+                           model.ModelType.model_type_name,
+                           model.date_creation,
+                           model.date_utilisation,
+                           model.serial_number,
+                           model.sp_ReasonWriteOff.reason_write_off_name,
+                           model.ModelToPurchase.Where(x => x.model_element_id == model.model_element_id)
+                                                .FirstOrDefault()
+                                                .Purchase
+                                                .purchase_document_number
+
+                       }).ToList();
+
+
+            dic.Add("model_element_id", "id записи");
+            dic.Add("inventory_number", "Инвентарный номер");
+            dic.Add("model_type_name", "Тип модели");
+            dic.Add("date_creation", "Дата создания");
+            dic.Add("date_utilisation", "Дата утилизации");
+            dic.Add("serial_number", "Серийный номер");
+            dic.Add("reason_write_off_name", "Причина списания");
+            dic.Add("purchase_document_number", "Номер документа-поставки");
+
+            DataGridWorker.FillDataGrid(dataGridView, res, dic);
+
+            return res;
+        }
 
     }
 }
