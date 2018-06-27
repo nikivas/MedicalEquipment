@@ -62,6 +62,8 @@ namespace MedicalComponents.Editings
         {
             ComboBoxWorker.initModelElement(comboBoxModel);
             ComboBoxWorker.initDragMetal(comboBoxDragMetal);
+            ComboBoxWorker.initModelType(comboBoxModelType);
+            ComboBoxWorker.initElementsModelName(comboBoxElement);
         }
 
         private void button1_Click(object sender, EventArgs e)

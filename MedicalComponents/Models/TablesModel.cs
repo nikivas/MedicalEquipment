@@ -53,14 +53,14 @@ namespace MedicalComponents.Models
                            model_type_id = modelType.model_type_id,
                            model_type_name = modelType.model_type_name,
                            functionaly_use_model = modelType.sp_FunctionalyUseModel.functionaly_use_model_name,
-                           expluatation_role = modelType.sp_ExpluatationRole.expluatation_role_name,
+                           //expluatation_role = modelType.sp_ExpluatationRole.expluatation_role_name,
 
                        }).ToList();
 
             dic.Add("model_type_id", "id записи");
             dic.Add("model_type_name", "Название модели");
             dic.Add("functionaly_use_model", "Функциональное назначение модели");
-            dic.Add("expluatation_role", "Роль эксплуатации");
+            //dic.Add("expluatation_role", "Роль эксплуатации");
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
@@ -118,10 +118,10 @@ namespace MedicalComponents.Models
                        select new
                        {
                            people.physical_people_id,
-                           people.name,
                            people.family,
+                           people.name,
                            people.patronumic,
-                           gender = people.Gender.Value == 1 ? "муж" : "жен", // TODO: ДОлжности вместо пола
+                          // gender = people.Gender.Value == 1 ? "муж" : "жен", // TODO: ДОлжности вместо пола
                            people.sp_OrganisationDepartment.organisation_department_name, // не отдел а организация
                            people.contacts,
                        }).ToList();
@@ -133,7 +133,7 @@ namespace MedicalComponents.Models
             dic.Add("patronumic", "Отчество");
             dic.Add("gender", "Пол");
             dic.Add("contacts", "Контакты");
-            dic.Add("organisation_department_name", "Отдел");
+            dic.Add("organisation_department_name", "Организация");
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
@@ -148,10 +148,11 @@ namespace MedicalComponents.Models
                        select new
                        {
                            people_pos.people_position_id,
+                           fio = people_pos.PhysicalPeople.family+ " "+ people_pos.PhysicalPeople.name+ " "+people_pos.PhysicalPeople.patronumic,
                            people_pos.sp_PysicalPeoplePositions.physical_people_position_name,
                            people_pos.date_begin,
                            people_pos.date_end,
-                           people_pos.salary
+                           //people_pos.salary
                            
 
                        }).ToList();
@@ -247,7 +248,7 @@ namespace MedicalComponents.Models
                            // TODO: ДАТА СЕРВИСНОГО ОБСЛУЖИВАНИЯ (КОГДА, 1 ДЕНЬ)
                            // TODO: РЕЗУЛЬТАТ ОБСЛУЖИВАНИЯ
                            fio = el.PhysicalPeople.name+" "+el.PhysicalPeople.family+" "+el.PhysicalPeople.patronumic,
-                           el.sp_ServiceOperationPersonalRole.service_operation_personal_role_name,
+                           //el.sp_ServiceOperationPersonalRole.service_operation_personal_role_name,
                            el.PhysicalPeople.sp_OrganisationDepartment.organisation_department_name
                            
                        }).ToList();
@@ -260,6 +261,8 @@ namespace MedicalComponents.Models
             dic.Add("service_operation_type_name", "Тип операции");
             dic.Add("service_operation_personal_role_name", "Роль эксплуатации");
             dic.Add("other", "Наименование единицы оборудования");
+            dic.Add("organisation_department_name", "Наименование Организация");
+            //organisation_department_name
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
@@ -276,9 +279,8 @@ namespace MedicalComponents.Models
                            el.purchase_id,
                            el.sp_PurchaseType.purchase_type_name,
                            el.purchase_document_number,
-                           el.date_apply
-                           //TODO: ДАТА ПОСТАВКИ\ВЫПОЛНЕНИЕ РАБОТ
-                           //TODO: НАИМЕНОВАНИЕ ОРГАНИЗАЦИИ
+                           el.date_apply,
+                           el.ModelToPurchase.FirstOrDefault().ModelElement.ModelType.Organisations.organisation_short_name
                        }).ToList();
 
 

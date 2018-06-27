@@ -226,7 +226,7 @@ namespace MedicalComponents
             // TODO : вынести этот график на верхнюю в менюшке, а тут - по сроку оставшейся эксплуатации
             chart1.Series[0].Points.Clear();
             chart1.Series[1].Points.Clear();
-            var x = new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14 };
+            var x = new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
             var y = new List<double>();// double[] { 6, 6, 6, 5, 5, 5, 5, 4, 4, 4, 3, 3, 1 };
             //
             if (dataGridView1.SelectedRows.Count == 0)
@@ -234,6 +234,7 @@ namespace MedicalComponents
                 return;
             }
             //
+            var selectedId = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
             int current_date = DateTime.Now.Year * 100 + DateTime.Now.Month;
             List<double> dates_comments = new List<double>();
             Random rnd = new Random(123);
@@ -247,15 +248,12 @@ namespace MedicalComponents
                 }
 
                 dates_comments.Add(current_date);
-                var selectedId = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                
                 int year = (int)(current_date / 100);
                 int month = (int)(current_date % 100);
                 var brokenCount = TablesModel.entities.BrokenRequest.Where(xx => xx.model_element_id == selectedId && xx.date_to_repair.Year == year && xx.date_to_repair.Month == month ).Count();
 
-                y.Add(brokenCount);
-                //x_val.Add(current_date / 100.0);
-                //y.Add(rnd.Next(0, 100));
-                //x_val.Add(i + 1);
+                y.Add(i+1);
             }
 
 
@@ -264,13 +262,13 @@ namespace MedicalComponents
                 chart1.Series[0].Points.AddXY(x[i], y[i]);
                 chart1.Series[0].Points[i].AxisLabel = ((int)(dates_comments[11 - i] / 100)) + " - " + (dates_comments[11 - i] % 100);
             }
+            var date_util = (DateTime.Now - TablesModel.entities.ModelElement.Where(o => o.model_element_id == selectedId).First().date_utilisation).Value.Days / 30.0;
+            if (DateTime.Now > TablesModel.entities.ModelElement.Where(o => o.model_element_id == selectedId).First().date_utilisation)
+                date_util = 5;
 
-            chart1.Series[1].Points.AddXY(x[11], y[11]);
-            double x_val = 13;
-            var y_val = Interpolation.InterpolateLagrangePolynomial(x_val, x, y.ToArray(), 12);
-            y_val = Math.Abs(y_val);
-            y_val = y_val = y_val > y[10] * 1.5 ? y[10] * 1.5 : y_val;
-            chart1.Series[1].Points.AddXY(13, y_val);
+            chart1.Series[1].Points.AddXY(date_util, 0);
+            chart1.Series[1].Points.AddXY(date_util, date_util+1);
+
 
         }
     }

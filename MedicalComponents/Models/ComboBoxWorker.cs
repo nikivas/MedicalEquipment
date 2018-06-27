@@ -99,6 +99,21 @@ namespace MedicalComponents.Models
                 cmb.SelectedIndex = 0;
         }
 
+        public static void initElementsModelName(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.ModelElement
+                      select new
+                      {
+                          id = el.other,
+                          value = el.other
+                      };
+            cmb.DataSource = res.Distinct().ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
+
         public static void initFuncModel(ComboBox cmb)
         {
             var res = from el in TablesModel.entities.sp_FunctionalyUseModel

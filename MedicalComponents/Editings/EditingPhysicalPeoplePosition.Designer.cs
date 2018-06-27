@@ -52,6 +52,7 @@
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Зарплата";
+            this.label1.Visible = false;
             // 
             // textBoxSalary
             // 
@@ -59,6 +60,8 @@
             this.textBoxSalary.Name = "textBoxSalary";
             this.textBoxSalary.Size = new System.Drawing.Size(244, 20);
             this.textBoxSalary.TabIndex = 5;
+            this.textBoxSalary.Text = "1000";
+            this.textBoxSalary.Visible = false;
             // 
             // label5
             // 
@@ -83,11 +86,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 82);
+            this.label2.Location = new System.Drawing.Point(11, 305);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 25;
             this.label2.Text = "Организация";
+            this.label2.Visible = false;
             // 
             // comboBoxOrganisation
             // 
@@ -95,15 +99,16 @@
             this.comboBoxOrganisation.Items.AddRange(new object[] {
             "муж",
             "жен"});
-            this.comboBoxOrganisation.Location = new System.Drawing.Point(185, 74);
+            this.comboBoxOrganisation.Location = new System.Drawing.Point(185, 297);
             this.comboBoxOrganisation.Name = "comboBoxOrganisation";
             this.comboBoxOrganisation.Size = new System.Drawing.Size(244, 21);
             this.comboBoxOrganisation.TabIndex = 24;
+            this.comboBoxOrganisation.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 134);
+            this.label3.Location = new System.Drawing.Point(11, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 27;
@@ -115,14 +120,14 @@
             this.comboBoxPosition.Items.AddRange(new object[] {
             "муж",
             "жен"});
-            this.comboBoxPosition.Location = new System.Drawing.Point(185, 126);
+            this.comboBoxPosition.Location = new System.Drawing.Point(185, 75);
             this.comboBoxPosition.Name = "comboBoxPosition";
             this.comboBoxPosition.Size = new System.Drawing.Size(244, 21);
             this.comboBoxPosition.TabIndex = 26;
             // 
             // dateTimePickerBegin
             // 
-            this.dateTimePickerBegin.Location = new System.Drawing.Point(185, 178);
+            this.dateTimePickerBegin.Location = new System.Drawing.Point(185, 127);
             this.dateTimePickerBegin.Name = "dateTimePickerBegin";
             this.dateTimePickerBegin.Size = new System.Drawing.Size(215, 20);
             this.dateTimePickerBegin.TabIndex = 29;
@@ -130,7 +135,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 184);
+            this.label7.Location = new System.Drawing.Point(12, 133);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 13);
             this.label7.TabIndex = 28;
@@ -138,7 +143,7 @@
             // 
             // dateTimePickerEnd
             // 
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(185, 221);
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(185, 184);
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(215, 20);
             this.dateTimePickerEnd.TabIndex = 31;
@@ -146,7 +151,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 227);
+            this.label4.Location = new System.Drawing.Point(11, 190);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 30;
@@ -154,7 +159,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(325, 335);
+            this.button2.Location = new System.Drawing.Point(323, 244);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 21);
             this.button2.TabIndex = 33;
@@ -164,7 +169,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 335);
+            this.button1.Location = new System.Drawing.Point(13, 244);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 21);
             this.button1.TabIndex = 32;
@@ -176,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 379);
+            this.ClientSize = new System.Drawing.Size(441, 328);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePickerEnd);

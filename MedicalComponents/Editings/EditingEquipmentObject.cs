@@ -67,6 +67,7 @@ namespace MedicalComponents.Editings
         {
             ComboBoxWorker.initWriteOff(comboBoxWriteOffReason);
             ComboBoxWorker.initModelType(comboBoxModelType);
+            ComboBoxWorker.initCountry(comboBoxCountry);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -119,6 +120,17 @@ namespace MedicalComponents.Editings
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void checkBoxSpisano_CheckedChanged(object sender, EventArgs e)
+        {
+                comboBoxWriteOffReason.Enabled ^= true;
+                dateTimePickerWriteOff.Enabled ^= true;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            dateTimePickerMO.Enabled ^= true;
         }
     }
 }

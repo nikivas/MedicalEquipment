@@ -111,11 +111,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 178);
+            this.label5.Location = new System.Drawing.Point(15, 255);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 13);
             this.label5.TabIndex = 21;
             this.label5.Text = "Пол";
+            this.label5.Visible = false;
             // 
             // comboBoxGender
             // 
@@ -123,31 +124,32 @@
             this.comboBoxGender.Items.AddRange(new object[] {
             "муж",
             "жен"});
-            this.comboBoxGender.Location = new System.Drawing.Point(220, 170);
+            this.comboBoxGender.Location = new System.Drawing.Point(220, 247);
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(244, 21);
             this.comboBoxGender.TabIndex = 20;
+            this.comboBoxGender.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 273);
+            this.label6.Location = new System.Drawing.Point(15, 175);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.Size = new System.Drawing.Size(74, 13);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Отдел";
+            this.label6.Text = "Организация";
             // 
             // comboBoxDep
             // 
             this.comboBoxDep.FormattingEnabled = true;
-            this.comboBoxDep.Location = new System.Drawing.Point(220, 265);
+            this.comboBoxDep.Location = new System.Drawing.Point(220, 167);
             this.comboBoxDep.Name = "comboBoxDep";
             this.comboBoxDep.Size = new System.Drawing.Size(244, 21);
             this.comboBoxDep.TabIndex = 22;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(361, 321);
+            this.button2.Location = new System.Drawing.Point(361, 291);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 21);
             this.button2.TabIndex = 25;
@@ -157,7 +159,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(18, 321);
+            this.button1.Location = new System.Drawing.Point(18, 291);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 21);
             this.button1.TabIndex = 24;
@@ -169,7 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(520, 363);
+            this.ClientSize = new System.Drawing.Size(497, 337);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
