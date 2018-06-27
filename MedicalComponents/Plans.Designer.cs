@@ -105,7 +105,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(18, 158);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(292, 258);
+            this.dataGridView1.Size = new System.Drawing.Size(645, 258);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -114,7 +114,7 @@
             this.comboBoxModelType.FormattingEnabled = true;
             this.comboBoxModelType.Location = new System.Drawing.Point(18, 81);
             this.comboBoxModelType.Name = "comboBoxModelType";
-            this.comboBoxModelType.Size = new System.Drawing.Size(292, 21);
+            this.comboBoxModelType.Size = new System.Drawing.Size(645, 21);
             this.comboBoxModelType.TabIndex = 1;
             this.comboBoxModelType.SelectedIndexChanged += new System.EventHandler(this.comboBoxModelType_SelectedIndexChanged);
             // 
@@ -123,7 +123,7 @@
             this.comboBoxCorpus.FormattingEnabled = true;
             this.comboBoxCorpus.Location = new System.Drawing.Point(18, 37);
             this.comboBoxCorpus.Name = "comboBoxCorpus";
-            this.comboBoxCorpus.Size = new System.Drawing.Size(292, 21);
+            this.comboBoxCorpus.Size = new System.Drawing.Size(645, 21);
             this.comboBoxCorpus.TabIndex = 0;
             this.comboBoxCorpus.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 

@@ -57,6 +57,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.checkedListBoxRm = new System.Windows.Forms.CheckedListBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBoxRM = new System.Windows.Forms.CheckBox();
             this.comboBoxNameRM = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.buttonInstructionRM = new System.Windows.Forms.Button();
             this.buttonStatisticRM = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -93,7 +93,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(763, 633);
+            this.tabControl1.Size = new System.Drawing.Size(763, 643);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -370,7 +370,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(755, 607);
+            this.tabPage2.Size = new System.Drawing.Size(755, 617);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Расходники";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -397,6 +397,7 @@
             // 
             // checkedListBoxRm
             // 
+            this.checkedListBoxRm.CheckOnClick = true;
             this.checkedListBoxRm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.checkedListBoxRm.FormattingEnabled = true;
             this.checkedListBoxRm.Items.AddRange(new object[] {
@@ -439,12 +440,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Фильтры";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(629, 109);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(54, 24);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "все";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // checkBoxRM
             // 
             this.checkBoxRM.AutoSize = true;
             this.checkBoxRM.Checked = true;
             this.checkBoxRM.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxRM.Location = new System.Drawing.Point(629, 79);
+            this.checkBoxRM.Location = new System.Drawing.Point(607, 245);
             this.checkBoxRM.Name = "checkBoxRM";
             this.checkBoxRM.Size = new System.Drawing.Size(54, 24);
             this.checkBoxRM.TabIndex = 19;
@@ -457,7 +470,7 @@
             this.comboBoxNameRM.FormattingEnabled = true;
             this.comboBoxNameRM.Items.AddRange(new object[] {
             "Дефибриллятор"});
-            this.comboBoxNameRM.Location = new System.Drawing.Point(202, 234);
+            this.comboBoxNameRM.Location = new System.Drawing.Point(268, 104);
             this.comboBoxNameRM.Name = "comboBoxNameRM";
             this.comboBoxNameRM.Size = new System.Drawing.Size(277, 28);
             this.comboBoxNameRM.TabIndex = 18;
@@ -466,7 +479,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 242);
+            this.label12.Location = new System.Drawing.Point(3, 107);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(149, 20);
             this.label12.TabIndex = 17;
@@ -475,7 +488,7 @@
             // comboBoxFunctionalityRM
             // 
             this.comboBoxFunctionalityRM.FormattingEnabled = true;
-            this.comboBoxFunctionalityRM.Location = new System.Drawing.Point(262, 150);
+            this.comboBoxFunctionalityRM.Location = new System.Drawing.Point(298, 277);
             this.comboBoxFunctionalityRM.Name = "comboBoxFunctionalityRM";
             this.comboBoxFunctionalityRM.Size = new System.Drawing.Size(268, 28);
             this.comboBoxFunctionalityRM.TabIndex = 16;
@@ -485,7 +498,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(7, 154);
+            this.label13.Location = new System.Drawing.Point(43, 281);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(240, 20);
             this.label13.TabIndex = 15;
@@ -495,7 +508,7 @@
             // comboBoxCorpusRM2
             // 
             this.comboBoxCorpusRM2.FormattingEnabled = true;
-            this.comboBoxCorpusRM2.Location = new System.Drawing.Point(262, 114);
+            this.comboBoxCorpusRM2.Location = new System.Drawing.Point(298, 241);
             this.comboBoxCorpusRM2.Name = "comboBoxCorpusRM2";
             this.comboBoxCorpusRM2.Size = new System.Drawing.Size(268, 28);
             this.comboBoxCorpusRM2.TabIndex = 14;
@@ -505,7 +518,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(7, 118);
+            this.label14.Location = new System.Drawing.Point(43, 245);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(104, 20);
             this.label14.TabIndex = 13;
@@ -517,7 +530,7 @@
             this.comboBoxModelRM.FormattingEnabled = true;
             this.comboBoxModelRM.Items.AddRange(new object[] {
             "Дефибриллятор"});
-            this.comboBoxModelRM.Location = new System.Drawing.Point(202, 187);
+            this.comboBoxModelRM.Location = new System.Drawing.Point(238, 314);
             this.comboBoxModelRM.Name = "comboBoxModelRM";
             this.comboBoxModelRM.Size = new System.Drawing.Size(208, 28);
             this.comboBoxModelRM.TabIndex = 12;
@@ -527,7 +540,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 190);
+            this.label15.Location = new System.Drawing.Point(42, 317);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(190, 20);
             this.label15.TabIndex = 11;
@@ -537,7 +550,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(10, 293);
+            this.radioButton3.Location = new System.Drawing.Point(6, 158);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(127, 24);
             this.radioButton3.TabIndex = 10;
@@ -548,7 +561,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(157, 293);
+            this.radioButton4.Location = new System.Drawing.Point(268, 158);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(152, 24);
             this.radioButton4.TabIndex = 9;
@@ -559,7 +572,7 @@
             // comboBoxCorpusRM
             // 
             this.comboBoxCorpusRM.FormattingEnabled = true;
-            this.comboBoxCorpusRM.Location = new System.Drawing.Point(262, 75);
+            this.comboBoxCorpusRM.Location = new System.Drawing.Point(298, 202);
             this.comboBoxCorpusRM.Name = "comboBoxCorpusRM";
             this.comboBoxCorpusRM.Size = new System.Drawing.Size(268, 28);
             this.comboBoxCorpusRM.TabIndex = 6;
@@ -569,7 +582,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(7, 79);
+            this.label17.Location = new System.Drawing.Point(43, 206);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(153, 20);
             this.label17.TabIndex = 5;
@@ -641,23 +654,11 @@
             this.buttonStatisticRM.UseVisualStyleBackColor = true;
             this.buttonStatisticRM.Click += new System.EventHandler(this.buttonStatisticRM_Click);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(528, 236);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(54, 24);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "все";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 633);
+            this.ClientSize = new System.Drawing.Size(763, 643);
             this.Controls.Add(this.tabControl1);
             this.Name = "ReportsForm";
             this.Text = "Отчеты";
