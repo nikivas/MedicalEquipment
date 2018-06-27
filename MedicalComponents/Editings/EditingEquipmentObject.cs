@@ -51,6 +51,7 @@ namespace MedicalComponents.Editings
                     dateTimePickerMO.Value = el.date_mo ?? DateTime.Now;
                     dateTimePickerTO.Value = el.date_to ?? DateTime.Now;
 
+                    textBoxName.Text = el.other;
                     checkBox1.Checked = el.is_mo == 1;
 
                 }
@@ -84,7 +85,7 @@ namespace MedicalComponents.Editings
                         date_utilisation = dateTimePickerWriteOff.Value,
                         model_type_id = (int) comboBoxModelType.SelectedValue,
                         reason_write_off_id = (int) comboBoxWriteOffReason.SelectedValue,
-                        other = "...",
+                        other = textBoxName.Text,
                         is_mo = checkBox1.Checked ? 1 : 0,
                         date_mo = dateTimePickerMO.Value,
                         date_to = dateTimePickerTO.Value
@@ -100,6 +101,7 @@ namespace MedicalComponents.Editings
                     el.date_utilisation = dateTimePickerWriteOff.Value;
                     el.model_type_id = (int)comboBoxModelType.SelectedValue;
                     el.reason_write_off_id = (int)comboBoxWriteOffReason.SelectedValue;
+                    el.other = textBoxName.Text;
                     TablesModel.entities.SaveChanges();
                 }
                 var frm = DBEditing.getInstanceDB();

@@ -47,6 +47,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePickerTO = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxInventaryNumber
@@ -143,7 +145,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(104, 216);
+            this.button1.Location = new System.Drawing.Point(104, 264);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 29);
             this.button1.TabIndex = 17;
@@ -153,7 +155,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(529, 216);
+            this.button2.Location = new System.Drawing.Point(529, 264);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 29);
             this.button2.TabIndex = 18;
@@ -212,11 +214,29 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Дата ТО";
             // 
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(215, 224);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(513, 20);
+            this.textBoxName.TabIndex = 26;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(101, 227);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 13);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Название";
+            // 
             // EditingEquipmentObject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 269);
+            this.ClientSize = new System.Drawing.Size(800, 305);
+            this.Controls.Add(this.textBoxName);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.dateTimePickerTO);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePickerMO);
@@ -265,5 +285,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePickerTO;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Label label9;
     }
 }

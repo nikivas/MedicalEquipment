@@ -35,7 +35,8 @@ namespace MedicalComponents
             {
                 if (checkedListBox1.GetItemChecked(i) == true)
                 {
-                    //TODO: 
+                    //TODO: ДЛЯ КАЖДОГО ИЗ ЕДИНИЦ ОБОРУДОВАНИЯ ПО НАЗВАНИЯМ ЕДИНИЦ ОБОРУДОВАНИЯ
+                    //UPDATE - КАК ЪОТЕЛ БЮМ
                     checkedListBox1.SetItemCheckState(i, CheckState.Checked);
                     var elem = checkedListBox1.Items[i] as dynamic;
                     var selectedId = (int)elem.id;

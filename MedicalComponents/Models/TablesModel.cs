@@ -76,7 +76,7 @@ namespace MedicalComponents.Models
                        {
                            model.model_element_id,
                            model.ModelType.model_type_name,
-                           //TODO: наим (снизу)
+                           model.other,
                            model.inventory_number,                           
                            model.date_creation,
                            model.ModelType.Organisations.sp_CountryKey.country_name,                           
@@ -93,7 +93,6 @@ namespace MedicalComponents.Models
 
 
             dic.Add("model_element_id", "id записи");
-            // TODO: НАИМЕНОВАНИЕ ЕДИНИЦЫ ОБОРУДОВАНИЯ
             dic.Add("inventory_number", "Инвентарный номер");
             dic.Add("model_type_name", "Тип модели");
             dic.Add("date_creation", "Дата производства");
@@ -103,7 +102,8 @@ namespace MedicalComponents.Models
             dic.Add("purchase_document_number", "Номер документа-поставки");
             dic.Add("date_apply", "Дата ввода в эксплуатацию");
             dic.Add("country_name", "Cтрана производитель");
-            
+            dic.Add("other", "Наименование единицы оборудования");
+
             //date_apply
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
@@ -178,7 +178,8 @@ namespace MedicalComponents.Models
                            mo_exxpluatation.mo_expluatation_id,
                            fio = mo_exxpluatation.PhysicalPeople.name+" "+mo_exxpluatation.PhysicalPeople.family,
                            mo_exxpluatation.sp_ServiceOperationPersonalRole.service_operation_personal_role_name,
-                           mo_exxpluatation.ModelElement.ModelType.model_type_name, //TODO: НАЗВАНИЕ ЕДИНИЦЫ ОБОРУДОВАНИЯ
+                           mo_exxpluatation.ModelElement.other,
+                           mo_exxpluatation.ModelElement.ModelType.model_type_name, 
                            mo_exxpluatation.ModelElement.inventory_number,
                            mo_exxpluatation.date_begin,
                            mo_exxpluatation.date_end
@@ -194,6 +195,7 @@ namespace MedicalComponents.Models
             dic.Add("service_operation_personal_role_name", "Роль Операции");
             dic.Add("model_type_name", "Тип модели");
             dic.Add("inventory_number", "Инвентарный номер");
+            dic.Add("other", "Наименование единицы оборудования");
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
@@ -211,7 +213,8 @@ namespace MedicalComponents.Models
                            drags.ModelElement.ModelType.model_type_name,
                            drags.ModelElement.inventory_number,
                            drags.sp_DragMetal.drag_metal_name,
-                           drags.size
+                           drags.size,
+                           drags.ModelElement.other
 
 
                        }).ToList();
@@ -222,6 +225,7 @@ namespace MedicalComponents.Models
             dic.Add("inventory_number", "Инвентарный номер");
             dic.Add("drag_metal_name", "драгоценный металл");
             dic.Add("size", "вес (гр.)");
+            dic.Add("other", "Наименование единицы оборудования");
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
@@ -237,7 +241,7 @@ namespace MedicalComponents.Models
                        {
                            el.personal_on_service_id,
                            el.ModelElement.ModelType.model_type_name,
-                           // TODO: НАИМЕНОВАНИЕ ЕДИНИЦЫ ОБОРУДОВАНИЯ
+                           el.ModelElement.other,
                            el.ModelElement.inventory_number,
                            el.sp_ServiceOperationType.service_operation_type_name,
                            // TODO: ДАТА СЕРВИСНОГО ОБСЛУЖИВАНИЯ (КОГДА, 1 ДЕНЬ)
@@ -255,6 +259,7 @@ namespace MedicalComponents.Models
             dic.Add("fio", "ФИО");
             dic.Add("service_operation_type_name", "Тип операции");
             dic.Add("service_operation_personal_role_name", "Роль эксплуатации");
+            dic.Add("other", "Наименование единицы оборудования");
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
@@ -348,15 +353,17 @@ namespace MedicalComponents.Models
                            el.sp_ZIP_AND_PM_Element.zipPM_element_name,
                            el.date_move,
                            el.ModelElement.ModelType.model_type_name,
-                           el.ModelElement.inventory_number
+                           el.ModelElement.inventory_number,
+                           el.ModelElement.other
                        }).ToList();
 
 
             dic.Add("zipPM_on_stock_id", "id записи");
             dic.Add("zipPM_element_name", "Название ZIP ");
             dic.Add("date_move", "Дата перемещения со склада");
-            dic.Add("model_type_name", "Тип модели"); //TODO: НАЗВАНИЕ ЕДИНИЦЫ
+            dic.Add("model_type_name", "Тип модели"); 
             dic.Add("inventory_number", "Инвентарный номер");
+            dic.Add("other", "Наименование единицы оборудования");
 
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
@@ -376,14 +383,16 @@ namespace MedicalComponents.Models
                            el.sp_ZIP_AND_PM_Element.zipPM_element_name,
                            el.date_move,
                            el.ModelElement.ModelType.model_type_name,
-                           el.ModelElement.inventory_number
+                           el.ModelElement.inventory_number,
+                           el.ModelElement.other
                        }).ToList();
 
 
             dic.Add("zipPM_on_stock_id", "id записи");
             dic.Add("zipPM_element_name", "Название PM");
             dic.Add("date_move", "Дата перемещения со склада");
-            dic.Add("model_type_name", "Тип модели"); //TODO: НАЗВАНИЕ ЕДИНИЦЫ
+            dic.Add("model_type_name", "Тип модели");
+            dic.Add("other", "Наименование единицы оборудования");
             dic.Add("inventory_number", "Инвентарный номер");
 
 
@@ -402,7 +411,8 @@ namespace MedicalComponents.Models
                            el.broken_request_id,
                            el.ModelElement.ElementsPlaces.FirstOrDefault().sp_Corpus.corpus_name,
                            fio = el.PhysicalPeople.name + " " + el.PhysicalPeople.family + " " + el.PhysicalPeople.patronumic,
-                           el.ModelElement.ModelType.model_type_name, // TODO: НАЗВАНИЕ ЕДИНИЦЫ
+                           el.ModelElement.ModelType.model_type_name, 
+                           el.ModelElement.other,
                            el.ModelElement.inventory_number,                           
                            el.date_to_repair,
                            el.sp_BrokenRequestReason.broken_request_reason_name,
@@ -420,8 +430,9 @@ namespace MedicalComponents.Models
             dic.Add("date_to_repair", "Дата подачи");
             dic.Add("isFinished", "Неполадка устранена?");
             dic.Add("corpus_name", "Наименование отделения");
+            dic.Add("other", "Наименование единицы оборудования");
 
-            
+
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
@@ -877,7 +888,9 @@ namespace MedicalComponents.Models
                            el.element_place_id,
                            el.sp_Corpus.corpus_name,
                            el.ModelElement.ModelType.model_type_name,
+                           el.ModelElement.other,
                            el.ModelElement.inventory_number,
+
                            el.date_begin,
                            el.sp_MoveReason.move_reason_name
                        }).ToList();
@@ -888,7 +901,7 @@ namespace MedicalComponents.Models
             dic.Add("date_begin", "Дата перемещения");
             dic.Add("move_reason_name", "Причина перемещения");
             dic.Add("inventory_number", "Инвентарный номер");
-            
+            dic.Add("other", "Наименование единицы оборудования");
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 

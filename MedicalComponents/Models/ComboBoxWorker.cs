@@ -84,6 +84,21 @@ namespace MedicalComponents.Models
                 cmb.SelectedIndex = 0;
         }
 
+        public static void initPhysicalPeople(ComboBox cmb)
+        {
+            var res = from el in TablesModel.entities.PhysicalPeople
+                      select new
+                      {
+                          id = el.physical_people_id,
+                          value = el.family+" "+el.name+" "+el.patronumic
+                      };
+            cmb.DataSource = res.ToList();
+            cmb.DisplayMember = "value";
+            cmb.ValueMember = "id";
+            if (res.Count() > 0)
+                cmb.SelectedIndex = 0;
+        }
+
         public static void initFuncModel(ComboBox cmb)
         {
             var res = from el in TablesModel.entities.sp_FunctionalyUseModel

@@ -37,11 +37,13 @@ namespace MedicalComponents
 
 
 
-            chart2.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline; // тут сами поизменяет/повыбирайте тип вывода графика
+            chart2.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine; // тут сами поизменяет/повыбирайте тип вывода графика
             chart2.Series.Add("seriesPredict");
-            chart2.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline; // тут сами поизменяет/повыбирайте тип вывода графика
+            chart2.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine; // тут сами поизменяет/повыбирайте тип вывода графика
 
             chart2.Series["seriesPredict"].Color = Color.Red;
+            
+            
 
         }
 
@@ -89,11 +91,15 @@ namespace MedicalComponents
         private void updateChart2()
         {
             chart2.Series.Clear();
+            for (int i = 0; i < chart2.ChartAreas.Count; i++)
+            {
+                chart2.ChartAreas[i].AxisX.IsStartedFromZero = false;
+            }
             foreach (var el in listBoxZIPPMSelected.Items)
             {
                 var element = el as dynamic;
                 string name = (string)element.value;
-                string predictName = name + "predict";
+                string predictName = name + " ожидаемое";
                 chart2.Series.Add(name);
                 chart2.Series.Add(predictName);
 
@@ -104,19 +110,34 @@ namespace MedicalComponents
                 chart2.Series[name].Color = Color.Blue;
                 chart2.Series[predictName].Color = Color.Red;
                 int zippm_id = (int)element.id;
-
-                var year = DateTime.Now;
+                
                 var rnd = new Random(zippm_id);
                 List<double> y_val = new List<double>();
                 List<double> x_val = new List<double>();
+                int current_date = DateTime.Now.Year * 100 + DateTime.Now.Month;
+                List<double> dates_comments = new List<double>();
                 for (int i = 0; i < 12; i++)
                 {
-                    x_val.Add(i + 1);
+                    current_date -= 1;
+                    if (current_date % 100 == 0)
+                    {
+                        current_date += 12;
+                        current_date -= 100;
+                    }
+                    dates_comments.Add(current_date);
+                    //x_val.Add(current_date / 100.0);
                     y_val.Add(rnd.Next(0, 100));
+                    x_val.Add(i + 1);
                 }
+
                 for (int i = 0; i < y_val.Count(); i++)
                 {
+                    var year = ((int)(dates_comments[11 - i] / 100));
+                    var month = (dates_comments[11 - i] % 100);
+
+                    var count = TablesModel.entities.ZIPPMMoves.Where(x => x.date_move.Year == year && x.date_move.Month == month && x.zipPM_element_id == zippm_id).Count();
                     chart2.Series[name].Points.AddXY(x_val[i], y_val[i]);
+                    chart2.Series[name].Points[i].AxisLabel =  year+ " - "+month;
                 }
                 x_val.Add(14);
                 y_val.Add(y_val[0]);
@@ -202,16 +223,53 @@ namespace MedicalComponents
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //var data = TablesModel.entities.
-
-
+            // TODO : вынести этот график на верхнюю в менюшке, а тут - по сроку оставшейся эксплуатации
+            chart1.Series[0].Points.Clear();
+            chart1.Series[1].Points.Clear();
             var x = new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14 };
-            var y = new double[] { 6, 6, 6, 5, 5, 5, 5, 4, 4, 4, 3, 3, 1 };
+            var y = new List<double>();// double[] { 6, 6, 6, 5, 5, 5, 5, 4, 4, 4, 3, 3, 1 };
+            //
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            //
+            int current_date = DateTime.Now.Year * 100 + DateTime.Now.Month;
+            List<double> dates_comments = new List<double>();
+            Random rnd = new Random(123);
             for (int i = 0; i < 12; i++)
+            {
+                current_date -= 1;
+                if (current_date % 100 == 0)
+                {
+                    current_date += 12;
+                    current_date -= 100;
+                }
+
+                dates_comments.Add(current_date);
+                var selectedId = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                int year = (int)(current_date / 100);
+                int month = (int)(current_date % 100);
+                var brokenCount = TablesModel.entities.BrokenRequest.Where(xx => xx.model_element_id == selectedId && xx.date_to_repair.Year == year && xx.date_to_repair.Month == month ).Count();
+
+                y.Add(brokenCount);
+                //x_val.Add(current_date / 100.0);
+                //y.Add(rnd.Next(0, 100));
+                //x_val.Add(i + 1);
+            }
+
+
+            for (int i = 0; i < 12; i++)
+            { 
                 chart1.Series[0].Points.AddXY(x[i], y[i]);
+                chart1.Series[0].Points[i].AxisLabel = ((int)(dates_comments[11 - i] / 100)) + " - " + (dates_comments[11 - i] % 100);
+            }
+
             chart1.Series[1].Points.AddXY(x[11], y[11]);
             double x_val = 13;
-            var y_val = Interpolation.InterpolateLagrangePolynomial(x_val, x, y, 13);
+            var y_val = Interpolation.InterpolateLagrangePolynomial(x_val, x, y.ToArray(), 12);
             y_val = Math.Abs(y_val);
+            y_val = y_val = y_val > y[10] * 1.5 ? y[10] * 1.5 : y_val;
             chart1.Series[1].Points.AddXY(13, y_val);
 
         }

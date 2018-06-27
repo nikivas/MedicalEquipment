@@ -51,63 +51,50 @@ namespace MedicalComponents
                 selectedId = (int)checkedListBox1.SelectedValue;
             }
             catch(Exception ee) { return; }
-            chart1.Series["единицы оборудования"].Points.Clear();
 
-            const int TimeSpanMonths = 12;
-            DateTime currentDate = DateTime.Now;
-            DateTime oldDate = currentDate;
-            var dates = TablesModel.entities.ModelElement.Where(x => x.model_type_id == selectedId).Select(x => x.date_utilisation).Distinct().ToList();
 
-            var chartSource = new List<KeyValuePair<string, int>>();
-            for (int i = 0; i < TimeSpanMonths; i++)
+            chart1.Series[0].Points.Clear();
+            chart1.Series[1].Points.Clear();
+            var x = new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14 };
+            var y = new List<double>();// double[] { 6, 6, 6, 5, 5, 5, 5, 4, 4, 4, 3, 3, 1 };
+
+
+            int current_date = DateTime.Now.Year * 100 + DateTime.Now.Month;
+            List<double> dates_comments = new List<double>();
+            Random rnd = new Random(123);
+            for (int i = 0; i < 12; i++)
             {
-                string dd = currentDate
-                            .Day
-                            .ToString()
-                            .PadLeft(2, '0');
+                current_date -= 1;
+                if (current_date % 100 == 0)
+                {
+                    current_date += 12;
+                    current_date -= 100;
+                }
 
-                string yy = (currentDate.Month - 1 <= 0 ? currentDate.Year - 1 : currentDate.Year)
-                    .ToString()
-                    .PadLeft(4, '0');
+                dates_comments.Add(current_date);
+                int year = (int)(current_date / 100);
+                int month = (int)(current_date % 100);
+                var brokenCount = TablesModel.entities.BrokenRequest.Where(xx => xx.model_element_id == selectedId && xx.date_to_repair.Year == year && xx.date_to_repair.Month == month).Count();
 
-                string mm = (currentDate.Month - 1 <= 0 ? 12 : currentDate.Month - 1)
-                            .ToString()
-                            .PadLeft(2, '0');
-
-                var currentDateString = dd + "." + mm + "." + yy;
-                currentDate = DateTime.Parse(currentDateString);
-
-
-                var linqResult = TablesModel.entities
-                                            .ModelElement
-                                            .Where(x => x.ModelType.model_type_id == selectedId)
-                                            .Where(x => x.date_utilisation > currentDate && x.date_utilisation < oldDate)
-                                            .Count();
-                var element = new KeyValuePair<string, int>(currentDateString, linqResult);
-
-                chartSource.Add(element);
-                //chart1.Series["единицы оборудования"].Points.AddXY(currentDateString, linqResult);
-
+                y.Add(brokenCount);
+                //x_val.Add(current_date / 100.0);
+                //y.Add(rnd.Next(0, 100));
+                //x_val.Add(i + 1);
             }
 
-            for (int i = chartSource.Count()-1; i >= 0; i--)
+
+            for (int i = 0; i < 12; i++)
             {
-                var currentDateString = chartSource[i].Key;
-                var linqResult = chartSource[i].Value;
-                chart1.Series["единицы оборудования"].Points.AddXY(currentDateString, linqResult);
+                chart1.Series[0].Points.AddXY(x[i], y[i]);
+                chart1.Series[0].Points[i].AxisLabel = ((int)(dates_comments[11 - i] / 100)) + " - " + (dates_comments[11 - i] % 100);
             }
 
-            //for (int i = 0; i < Math.Min(12,dates.Count()); i++)
-            //{
-            //    DateTime selectedDate = dates[i].Value;
-            //    var linqResult = TablesModel.entities
-            //                                .ModelElement
-            //                                .Where(x => x.ModelType.model_type_id == selectedId)
-            //                                .Where(x => x.date_utilisation == selectedDate)
-            //                                .Count();
-            //    chart1.Series["Series1"].Points.AddXY(dates[i].Value.ToShortDateString(), linqResult);
-            //}
-
+            chart1.Series[1].Points.AddXY(x[11], y[11]);
+            double x_val = 13;
+            var y_val = Interpolation.InterpolateLagrangePolynomial(x_val, x, y.ToArray(), 12);
+            y_val = Math.Abs(y_val);
+            y_val = y_val = y_val > y[10] * 1.5 ? y[10] * 1.5 : y_val;
+            chart1.Series[1].Points.AddXY(13, y_val);
 
         }
 

@@ -69,10 +69,9 @@ namespace MedicalComponents.Editings
 
         private void initComboBoxes()
         {
-            ComboBoxWorker.initPeoplePosition(comboBoxPeople);
+            ComboBoxWorker.initPhysicalPeople(comboBoxPeople);
             ComboBoxWorker.initModelElement(comboBoxModel);
             ComboBoxWorker.initBroken(comboBoxBroken);
-
         }
 
         private void button2_Click(object sender, EventArgs e)
