@@ -133,7 +133,7 @@ namespace MedicalComponents.Models
             dic.Add("patronumic", "Отчество");
             dic.Add("gender", "Пол");
             dic.Add("contacts", "Контакты");
-            dic.Add("organisation_department_name", "Организация");
+            dic.Add("organisation_department_name", "Подразделение");
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
@@ -163,6 +163,7 @@ namespace MedicalComponents.Models
             dic.Add("date_end", "Дата конца работы");
             dic.Add("salary", "Зарплата");
             dic.Add("physical_people_position_name", "Название должности");
+            dic.Add("fio", "ФИО");
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
@@ -288,7 +289,9 @@ namespace MedicalComponents.Models
             dic.Add("purchase_type_name", "Тип закупки");
             dic.Add("purchase_document_number", "Номер договора");
             dic.Add("date_apply", "Дата заключения договора");
-            
+            dic.Add("organisation_short_name", "Название организации");
+            //organisation_short_name
+
 
             DataGridWorker.FillDataGrid(dataGridView, res, dic);
 
@@ -352,11 +355,12 @@ namespace MedicalComponents.Models
                        select new
                        {
                            el.zipPM_move_id,
-                           el.sp_ZIP_AND_PM_Element.zipPM_element_name,
-                           el.date_move,
                            el.ModelElement.ModelType.model_type_name,
+                           el.ModelElement.other,
                            el.ModelElement.inventory_number,
-                           el.ModelElement.other
+                           el.sp_ZIP_AND_PM_Element.zipPM_element_name,
+                           el.date_move
+                           
                        }).ToList();
 
 
@@ -419,6 +423,8 @@ namespace MedicalComponents.Models
                            el.date_to_repair,
                            el.sp_BrokenRequestReason.broken_request_reason_name,
                            isFinished = el.isFinished == 0 ? "Нет" : "Да"
+
+
                            // TODO: Дата выполнения
                            // TODO: Примечание
                        }).ToList();
@@ -427,7 +433,7 @@ namespace MedicalComponents.Models
             dic.Add("broken_request_id", "id записи");
             dic.Add("broken_request_reason_name", "описание проблемы");
             dic.Add("fio", "ФИО");
-            dic.Add("model_type_name", "Название единицы оборудования"); //here
+            dic.Add("model_type_name", "Название типа модели"); //here
             dic.Add("inventory_number", "Инвентарный номер");
             dic.Add("date_to_repair", "Дата подачи");
             dic.Add("isFinished", "Неполадка устранена?");

@@ -71,6 +71,7 @@ namespace MedicalComponents.Editings
             ComboBoxWorker.initModelElement(comboBoxModelElement);
             ComboBoxWorker.initCorpus(comboBoxCorpus);
             ComboBoxWorker.initMoveReason(comboBoxMoveReason);
+            ComboBoxWorker.initModelType(comboBoxType);
         }
 
         private void button2_Click(object sender, EventArgs e)

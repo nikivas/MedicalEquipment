@@ -55,6 +55,7 @@ namespace MedicalComponents.Editings
         private void initComboBoxes()
         {
             ComboBoxWorker.initPurchase(comboBoxPurchaseType);
+            ComboBoxWorker.initOrganisation(comboBoxOrg);
         }
 
         private void button2_Click(object sender, EventArgs e)

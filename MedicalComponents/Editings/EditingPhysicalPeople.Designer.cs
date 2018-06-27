@@ -135,9 +135,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(15, 175);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.Size = new System.Drawing.Size(87, 13);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Организация";
+            this.label6.Text = "Подразделение";
             // 
             // comboBoxDep
             // 

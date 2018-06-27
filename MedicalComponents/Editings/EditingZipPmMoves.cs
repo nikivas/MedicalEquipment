@@ -66,6 +66,8 @@ namespace MedicalComponents.Editings
         {
             ComboBoxWorker.initModelElement(comboBoxModel);
             ComboBoxWorker.initZIPMElementWithCountNotNull(comboBoxZIPPm,isZIP);
+            ComboBoxWorker.initElementsModelName(comboBoxName);
+            ComboBoxWorker.initModelType(comboBoxType);
         }
 
         private void button1_Click(object sender, EventArgs e)

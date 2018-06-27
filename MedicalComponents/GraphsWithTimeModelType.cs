@@ -21,6 +21,9 @@ namespace MedicalComponents
         private void GraphsWithTimeModelType_Load(object sender, EventArgs e)
         {
             CheckedListBoxWorker.initModelType(checkedListBox1);
+            chart1.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline; // тут сами поизменяет/повыбирайте тип вывода графика
+            chart1.Series.Add("Предположительно ");
+            chart1.Series[1].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline; // тут сами поизменяет/повыбирайте тип вывода графика
         }
 
         private void buttonFinder_Click(object sender, EventArgs e)
@@ -55,7 +58,7 @@ namespace MedicalComponents
 
             chart1.Series[0].Points.Clear();
             chart1.Series[1].Points.Clear();
-            var x = new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14 };
+            var x = new double[] { 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
             var y = new List<double>();// double[] { 6, 6, 6, 5, 5, 5, 5, 4, 4, 4, 3, 3, 1 };
 
 
@@ -74,7 +77,7 @@ namespace MedicalComponents
                 dates_comments.Add(current_date);
                 int year = (int)(current_date / 100);
                 int month = (int)(current_date % 100);
-                var brokenCount = TablesModel.entities.BrokenRequest.Where(xx => xx.model_element_id == selectedId && xx.date_to_repair.Year == year && xx.date_to_repair.Month == month).Count();
+                var brokenCount = TablesModel.entities.BrokenRequest.Where(xx => xx.ModelElement.ModelType.model_type_id == selectedId && xx.date_to_repair.Year == year && xx.date_to_repair.Month == month).Count();
 
                 y.Add(brokenCount);
                 //x_val.Add(current_date / 100.0);
@@ -86,7 +89,7 @@ namespace MedicalComponents
             for (int i = 0; i < 12; i++)
             {
                 chart1.Series[0].Points.AddXY(x[i], y[i]);
-                chart1.Series[0].Points[i].AxisLabel = ((int)(dates_comments[11 - i] / 100)) + " - " + (dates_comments[11 - i] % 100);
+                chart1.Series[0].Points[i].AxisLabel = ((int)(dates_comments[i] / 100)) + " - " + (dates_comments[i] % 100);
             }
 
             chart1.Series[1].Points.AddXY(x[11], y[11]);

@@ -72,6 +72,8 @@ namespace MedicalComponents.Editings
             ComboBoxWorker.initFIO(comboBoxFIO);
             ComboBoxWorker.initModelElement(comboBoxModel);
             ComboBoxWorker.initServiceOperationRole(comboBoxRole);
+            ComboBoxWorker.initModelType(comboBoxType);
+            ComboBoxWorker.initElementsModelName(comboBoxName);
         }
 
         private void button1_Click(object sender, EventArgs e)

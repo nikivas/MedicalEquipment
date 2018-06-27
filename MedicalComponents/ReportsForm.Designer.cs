@@ -77,6 +77,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.buttonInstructionRM = new System.Windows.Forms.Button();
             this.buttonStatisticRM = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -411,6 +412,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.checkBoxRM);
             this.groupBox2.Controls.Add(this.comboBoxNameRM);
             this.groupBox2.Controls.Add(this.label12);
@@ -448,6 +450,7 @@
             this.checkBoxRM.TabIndex = 19;
             this.checkBoxRM.Text = "все";
             this.checkBoxRM.UseVisualStyleBackColor = true;
+            this.checkBoxRM.Visible = false;
             // 
             // comboBoxNameRM
             // 
@@ -474,9 +477,10 @@
             this.comboBoxFunctionalityRM.FormattingEnabled = true;
             this.comboBoxFunctionalityRM.Location = new System.Drawing.Point(262, 150);
             this.comboBoxFunctionalityRM.Name = "comboBoxFunctionalityRM";
-            this.comboBoxFunctionalityRM.Size = new System.Drawing.Size(337, 28);
+            this.comboBoxFunctionalityRM.Size = new System.Drawing.Size(268, 28);
             this.comboBoxFunctionalityRM.TabIndex = 16;
             this.comboBoxFunctionalityRM.Text = "все";
+            this.comboBoxFunctionalityRM.Visible = false;
             // 
             // label13
             // 
@@ -486,15 +490,17 @@
             this.label13.Size = new System.Drawing.Size(240, 20);
             this.label13.TabIndex = 15;
             this.label13.Text = "Функциональное назначение :";
+            this.label13.Visible = false;
             // 
             // comboBoxCorpusRM2
             // 
             this.comboBoxCorpusRM2.FormattingEnabled = true;
             this.comboBoxCorpusRM2.Location = new System.Drawing.Point(262, 114);
             this.comboBoxCorpusRM2.Name = "comboBoxCorpusRM2";
-            this.comboBoxCorpusRM2.Size = new System.Drawing.Size(337, 28);
+            this.comboBoxCorpusRM2.Size = new System.Drawing.Size(268, 28);
             this.comboBoxCorpusRM2.TabIndex = 14;
             this.comboBoxCorpusRM2.Text = "хирургическое торакальное отделение";
+            this.comboBoxCorpusRM2.Visible = false;
             // 
             // label14
             // 
@@ -504,6 +510,7 @@
             this.label14.Size = new System.Drawing.Size(104, 20);
             this.label14.TabIndex = 13;
             this.label14.Text = "Отделение :";
+            this.label14.Visible = false;
             // 
             // comboBoxModelRM
             // 
@@ -512,9 +519,10 @@
             "Дефибриллятор"});
             this.comboBoxModelRM.Location = new System.Drawing.Point(202, 187);
             this.comboBoxModelRM.Name = "comboBoxModelRM";
-            this.comboBoxModelRM.Size = new System.Drawing.Size(277, 28);
+            this.comboBoxModelRM.Size = new System.Drawing.Size(208, 28);
             this.comboBoxModelRM.TabIndex = 12;
             this.comboBoxModelRM.Text = "все";
+            this.comboBoxModelRM.Visible = false;
             // 
             // label15
             // 
@@ -524,6 +532,7 @@
             this.label15.Size = new System.Drawing.Size(190, 20);
             this.label15.TabIndex = 11;
             this.label15.Text = "Модель оборудования :";
+            this.label15.Visible = false;
             // 
             // radioButton3
             // 
@@ -552,9 +561,10 @@
             this.comboBoxCorpusRM.FormattingEnabled = true;
             this.comboBoxCorpusRM.Location = new System.Drawing.Point(262, 75);
             this.comboBoxCorpusRM.Name = "comboBoxCorpusRM";
-            this.comboBoxCorpusRM.Size = new System.Drawing.Size(337, 28);
+            this.comboBoxCorpusRM.Size = new System.Drawing.Size(268, 28);
             this.comboBoxCorpusRM.TabIndex = 6;
             this.comboBoxCorpusRM.Text = "отделения хирургической помощи";
+            this.comboBoxCorpusRM.Visible = false;
             // 
             // label17
             // 
@@ -564,6 +574,7 @@
             this.label17.Size = new System.Drawing.Size(153, 20);
             this.label17.TabIndex = 5;
             this.label17.Text = "Группа отделений:";
+            this.label17.Visible = false;
             // 
             // dateTimePickerAfterRM
             // 
@@ -617,6 +628,7 @@
             this.buttonInstructionRM.TabIndex = 29;
             this.buttonInstructionRM.Text = "Инструкция";
             this.buttonInstructionRM.UseVisualStyleBackColor = true;
+            this.buttonInstructionRM.Visible = false;
             // 
             // buttonStatisticRM
             // 
@@ -628,6 +640,18 @@
             this.buttonStatisticRM.Text = "Просмотреть статистику";
             this.buttonStatisticRM.UseVisualStyleBackColor = true;
             this.buttonStatisticRM.Click += new System.EventHandler(this.buttonStatisticRM_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(528, 236);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(54, 24);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "все";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // ReportsForm
             // 
@@ -702,5 +726,6 @@
         private System.Windows.Forms.Button buttonStatisticRM;
         private System.Windows.Forms.CheckBox checkBoxAllCorpus;
         private System.Windows.Forms.CheckBox checkBoxRM;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

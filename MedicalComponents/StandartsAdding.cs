@@ -76,7 +76,9 @@ namespace MedicalComponents
                     Dictionary<string, string> buf = new Dictionary<string, string>();
                     buf.Add("Наименование модели", TablesModel.entities.ModelType.Where(x => x.model_type_id == modeltypes).Select(x => x.model_type_name).First());
                     buf.Add("Фактическое количество в отделении", count.ToString());
-                    buf.Add("Необходимое дооснащение", Math.Abs(TablesModel.entities.sp_Standarts.Where(x => x.model_type_id == modeltypes && x.corpus_id == corpusId).Select(x => x.count - count).First()).ToString());
+                    var count_doos = (TablesModel.entities.sp_Standarts.Where(x => x.model_type_id == modeltypes && x.corpus_id == corpusId).Select(x => x.count - count).First());
+                    count_doos = count_doos < 0 ? 0 : count_doos;
+                    buf.Add("Необходимое дооснащение", count_doos.ToString());
                     buf.Add("Отделение", TablesModel.entities.sp_Corpus.Where(x => x.corpus_id == corpusId).Select(x => x.corpus_name).First());
                     buf.Add("Требуемое количество по стандарту", TablesModel.entities.sp_Standarts.Where(x => x.model_type_id == modeltypes && x.corpus_id == corpusId).Select(x => x.count).First().ToString());
                     answer.Add(buf);

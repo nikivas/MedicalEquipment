@@ -130,7 +130,7 @@
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(275, 38);
+            this.button1.Size = new System.Drawing.Size(223, 38);
             this.button1.TabIndex = 7;
             this.button1.Text = "Инструкции по заполнению системы";
             this.button1.UseVisualStyleBackColor = false;
@@ -174,6 +174,8 @@
             this.Controls.Add(this.buttonTableEditing);
             this.Name = "MainMenu";
             this.Text = "Главное Меню";
+            this.Deactivate += new System.EventHandler(this.MainMenu_Deactivate);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenu_FormClosed);
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

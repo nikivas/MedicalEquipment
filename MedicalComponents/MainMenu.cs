@@ -53,7 +53,8 @@ namespace MedicalComponents
 
         private void buttonSPPRAdministration_Click(object sender, EventArgs e)
         {
-            new GraphsWithCorpuses().Show();
+            new GraphsWithTimeModelType().Show();
+            //new GraphsWithCorpuses().Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,6 +65,21 @@ namespace MedicalComponents
         private void buttonAbout_Click(object sender, EventArgs e)
         {
             new About().Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainMenu_Deactivate(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

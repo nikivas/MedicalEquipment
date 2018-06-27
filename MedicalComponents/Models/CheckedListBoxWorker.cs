@@ -23,7 +23,7 @@ namespace MedicalComponents.Models
             cmb.DataSource = res.ToList().Where(x=>Regex.IsMatch(x.value,maskValue)).ToList();
             cmb.DisplayMember = "value";
             cmb.ValueMember = "id";
-            if (res.Count() > 0)
+            if (res.ToList().Where(x => Regex.IsMatch(x.value, maskValue)).ToList().Count() > 0)
                 cmb.SelectedIndex = 0;
         }
 

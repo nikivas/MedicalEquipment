@@ -116,6 +116,7 @@ namespace MedicalComponents
                 List<double> x_val = new List<double>();
                 int current_date = DateTime.Now.Year * 100 + DateTime.Now.Month;
                 List<double> dates_comments = new List<double>();
+                current_date += 1;
                 for (int i = 0; i < 12; i++)
                 {
                     current_date -= 1;
@@ -126,8 +127,11 @@ namespace MedicalComponents
                     }
                     dates_comments.Add(current_date);
                     //x_val.Add(current_date / 100.0);
-                    y_val.Add(rnd.Next(0, 100));
-                    x_val.Add(i + 1);
+                    var current_year = (int)(current_date / 100);
+                    var current_month = (int)(current_date % 100);
+                    var countItems = TablesModel.entities.ZIPPMMoves.Where(o => o.date_move.Year == current_year && o.date_move.Month == current_month && o.zipPM_element_id == zippm_id).Count();
+                    y_val.Add(countItems);
+                    x_val.Add(12 - i);
                 }
 
                 for (int i = 0; i < y_val.Count(); i++)
@@ -136,15 +140,13 @@ namespace MedicalComponents
                     var month = (dates_comments[11 - i] % 100);
 
                     var count = TablesModel.entities.ZIPPMMoves.Where(x => x.date_move.Year == year && x.date_move.Month == month && x.zipPM_element_id == zippm_id).Count();
-                    chart2.Series[name].Points.AddXY(x_val[i], y_val[i]);
+                    chart2.Series[name].Points.AddXY(x_val[y_val.Count() - i - 1], y_val[y_val.Count() - i - 1]);
                     chart2.Series[name].Points[i].AxisLabel =  year+ " - "+month;
                 }
-                x_val.Add(14);
-                y_val.Add(y_val[0]);
-                double pred = Interpolation.InterpolateLagrangePolynomial(13, x_val.ToArray(), y_val.ToArray(), 13);
+                double pred = Interpolation.InterpolateLagrangePolynomial(13, x_val.ToArray(), y_val.ToArray(), 12);
                 pred = Math.Abs(pred);
-                pred = pred > 1.5 * y_val.Last() ? y_val.Last() : pred;
-                chart2.Series[predictName].Points.AddXY(12, y_val[11]);
+                pred = pred > 1.5 * y_val.First() ?(int)( y_val.First()*1.5) : pred;
+                chart2.Series[predictName].Points.AddXY(12, y_val[0]);
                 chart2.Series[predictName].Points.AddXY(13, pred);
 
 
@@ -202,7 +204,60 @@ namespace MedicalComponents
         private void button4_Click(object sender, EventArgs e)
         {
             ExcelController _excelController = new ExcelController();
-            _excelController.GeneratePLans(new List<Dictionary<string, string>>(), "Планы закупок");
+            List<Dictionary<string, string>> dic = new List<Dictionary<string, string>>();
+            foreach (var el in listBoxZIPPMSelected.Items)
+            {
+                var element = el as dynamic;
+                int zippm_id = (int)element.id;
+
+                Dictionary<string, string> buf = new Dictionary<string, string>();
+                buf["Наименование ЗИП/РМ"] = TablesModel.entities.sp_ZIP_AND_PM_Element.Where(x=>zippm_id == x.zipPM_element_id).First().zipPM_element_name;
+                buf["Дата закупки"] = DateTime.Now.ToShortDateString();
+
+
+                var rnd = new Random(zippm_id);
+                List<double> y_val = new List<double>();
+                List<double> x_val = new List<double>();
+                int current_date = DateTime.Now.Year * 100 + DateTime.Now.Month;
+                List<double> dates_comments = new List<double>();
+                current_date += 1;
+                for (int i = 0; i < 12; i++)
+                {
+                    current_date -= 1;
+                    if (current_date % 100 == 0)
+                    {
+                        current_date += 12;
+                        current_date -= 100;
+                    }
+                    dates_comments.Add(current_date);
+                    //x_val.Add(current_date / 100.0);
+                    var current_year = (int)(current_date / 100);
+                    var current_month = (int)(current_date % 100);
+                    var countItems = TablesModel.entities.ZIPPMMoves.Where(o => o.date_move.Year == current_year && o.date_move.Month == current_month && o.zipPM_element_id == zippm_id).Count();
+                    y_val.Add(countItems);
+                    x_val.Add(12 - i);
+                }
+
+                for (int i = 0; i < y_val.Count(); i++)
+                {
+                    var year = ((int)(dates_comments[11 - i] / 100));
+                    var month = (dates_comments[11 - i] % 100);
+
+                    var count = TablesModel.entities.ZIPPMMoves.Where(x => x.date_move.Year == year && x.date_move.Month == month && x.zipPM_element_id == zippm_id).Count();
+                    
+                }
+                double pred = Interpolation.InterpolateLagrangePolynomial(13, x_val.ToArray(), y_val.ToArray(), 12);
+                pred = Math.Abs(pred);
+                pred = pred > 1.5 * y_val.First() ? (int)(y_val.First() * 1.5 ): pred;
+
+
+
+
+                buf["Количество"] = pred.ToString();
+                dic.Add(buf);
+
+            }
+            _excelController.GeneratePLans(dic, "Планы закупок");
             //TODO
 
         }
@@ -238,6 +293,7 @@ namespace MedicalComponents
             int current_date = DateTime.Now.Year * 100 + DateTime.Now.Month;
             List<double> dates_comments = new List<double>();
             Random rnd = new Random(123);
+            
             for (int i = 0; i < 12; i++)
             {
                 current_date -= 1;
@@ -263,11 +319,21 @@ namespace MedicalComponents
                 chart1.Series[0].Points[i].AxisLabel = ((int)(dates_comments[11 - i] / 100)) + " - " + (dates_comments[11 - i] % 100);
             }
             var date_util = (DateTime.Now - TablesModel.entities.ModelElement.Where(o => o.model_element_id == selectedId).First().date_utilisation).Value.Days / 30.0;
-            if (DateTime.Now > TablesModel.entities.ModelElement.Where(o => o.model_element_id == selectedId).First().date_utilisation)
-                date_util = 5;
+            var second = (DateTime.Now.Month > TablesModel.entities.ModelElement.Where(o => o.model_element_id == selectedId).First().date_utilisation.Value.Month) && DateTime.Now.Year == TablesModel.entities.ModelElement.Where(o => o.model_element_id == selectedId).First().date_utilisation.Value.Year;
+            var first = DateTime.Now.Year > TablesModel.entities.ModelElement.Where(o => o.model_element_id == selectedId).First().date_utilisation.Value.Year;
+            if (first || second) {
+                var date = TablesModel.entities.ModelElement.Where(o => o.model_element_id == selectedId).First().date_utilisation.Value;
+                int idx = dates_comments.IndexOf(date.Year * 100 + date.Month);
+                idx = idx < 0 ? 12 : idx;
+                date_util = 12 - idx;
+            }
+            else
+            {
+                date_util += 12;
+            }
 
             chart1.Series[1].Points.AddXY(date_util, 0);
-            chart1.Series[1].Points.AddXY(date_util, date_util+1);
+            chart1.Series[1].Points.AddXY(date_util, 20+1);
 
 
         }

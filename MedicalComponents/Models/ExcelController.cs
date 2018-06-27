@@ -21,7 +21,7 @@ namespace MedicalComponents.Models
             
 
             workSheet.Cells[1, "A"] = header;
-            workSheet.Cells[2, "A"] = "Наименование медицинской организации: ___ГБУЗ ОА АМОКБ___";
+            workSheet.Cells[2, "A"] = "Наименование медицинской организации: _____________";
             ((Excel.Range)workSheet.Cells[1, "A"]).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             ((Excel.Range)workSheet.Cells[1, "A"]).Font.Name = "Times New Roman";
             ((Excel.Range)workSheet.Cells[1, "A"]).Font.Size = 22;
@@ -32,16 +32,16 @@ namespace MedicalComponents.Models
 
             workSheet.Cells[3, "A"] = "Наименование изделия";
             workSheet.Cells[3, "B"] = "Модель";
-            workSheet.Cells[3, "D"] = "Балансовая стоимость";
-            workSheet.Cells[3, "E"] = "Поставщик";
+            //workSheet.Cells[3, "D"] = "Балансовая стоимость";
+            //workSheet.Cells[3, "E"] = "Поставщик";
 
             int rowIdx = 4;
             foreach (var el in dic)
             {
                 workSheet.Cells[rowIdx, "A"] = el["Наименование изделия"];
                 workSheet.Cells[rowIdx, "B"] = el["Модель"];
-                workSheet.Cells[rowIdx, "D"] = el["Балансовая стоимость"];
-                workSheet.Cells[rowIdx, "E"] = el["Поставщик"];
+                //workSheet.Cells[rowIdx, "D"] = el["Балансовая стоимость"];
+                //workSheet.Cells[rowIdx, "E"] = el["Поставщик"];
                 rowIdx++;
             }
 
@@ -100,25 +100,24 @@ namespace MedicalComponents.Models
 
 
             workSheet.Cells[1, "A"] = header;
-            workSheet.Cells[2, "A"] = "Наименование медицинской организации: ___ГБУЗ ОА АМОКБ___";
+            workSheet.Cells[2, "A"] = "Наименование медицинской организации: _____________";
             ((Excel.Range)workSheet.Cells[1, "A"]).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             ((Excel.Range)workSheet.Cells[1, "A"]).Font.Name = "Times New Roman";
-            ((Excel.Range)workSheet.Cells[1, "A"]).Font.Size = 22;
+            ((Excel.Range)workSheet.Cells[1, "A"]).Font.Size = 20;
 
             ((Excel.Range)workSheet.Cells[2, "A"]).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             ((Excel.Range)workSheet.Cells[2, "A"]).Font.Name = "Times New Roman";
-            ((Excel.Range)workSheet.Cells[2, "A"]).Font.Size = 20;
+            ((Excel.Range)workSheet.Cells[2, "A"]).Font.Size = 16;
 
             workSheet.Cells[3, "A"] = "Наименование расходного материала";
             workSheet.Cells[3, "B"] = "На складе: ";
-            workSheet.Cells[3, "E"] = "Балансовая стоимость";
+            
 
             int rowIdx = 4;
             foreach (var el in dic)
             {
                 workSheet.Cells[rowIdx, "A"] = el["Наименование расходного материала"];
                 workSheet.Cells[rowIdx, "B"] = el["На складе: "];
-                workSheet.Cells[rowIdx, "E"] = el["Балансовая стоимость"];
                 rowIdx++;
             }
 
@@ -174,7 +173,7 @@ namespace MedicalComponents.Models
 
 
             workSheet.Cells[1, "A"] = header;
-            workSheet.Cells[2, "A"] = "Наименование медицинской организации: ___ГБУЗ ОА АМОКБ___";
+            workSheet.Cells[2, "A"] = "Наименование медицинской организации: ________________";
             ((Excel.Range)workSheet.Cells[1, "A"]).HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
             ((Excel.Range)workSheet.Cells[1, "A"]).Font.Name = "Times New Roman";
             ((Excel.Range)workSheet.Cells[1, "A"]).Font.Size = 22;

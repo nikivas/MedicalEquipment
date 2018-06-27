@@ -196,3 +196,4 @@ C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\D
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingPMDocumentsPurchase.resources
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingZIPDocumentsPurchase.resources
 C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Editings.EditingElementsPlaces.resources
+C:\учеба\C# MVC\DIPLOM\oldLiraries\MedicalEquipment\MedicalComponents\obj\Debug\MedicalComponents.Login.resources

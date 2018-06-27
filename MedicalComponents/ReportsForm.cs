@@ -31,6 +31,7 @@ namespace MedicalComponents
             ComboBoxWorker.initModelType(comboBoxModelRM);
             ComboBoxWorker.initCorpus(comboBoxCorpus);
             ComboBoxWorker.initCorpus(comboBoxCorpusRM);
+            ComboBoxWorker.initZIPMElement(comboBoxNameRM);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -72,7 +73,8 @@ namespace MedicalComponents
                                     x.date_mo,
                                     x.date_to,
                                     drag_metal = x.ElementsDragMetal.Where(o => o.model_element_id == x.model_element_id).FirstOrDefault().sp_DragMetal.drag_metal_name,
-                                    size_drag_metal = x.ElementsDragMetal.Where(o => o.model_element_id == x.model_element_id).Sum(o => o.size)
+                                    size_drag_metal = x.ElementsDragMetal.Where(o => o.model_element_id == x.model_element_id).Sum(o => o.size),
+                                    x.date_utilisation
                                 });
             if (!checkBoxAllCorpus.Checked)
             {
@@ -95,10 +97,11 @@ namespace MedicalComponents
                 dic.Add("date_to", el.date_to.HasValue ? el.date_to.ToString() : DATE_NULL);
                 dic.Add("broken_count", el.broken_count.ToString());
                 dic.Add("reason_write_off", el.reason_write_off_id.ToString());
-                dic.Add("Наименование изделия", el.inventory_number);
+                dic.Add("Наименование изделия", "инв.№ "+el.inventory_number.ToString());
                 dic.Add("Модель", el.model_type_name);
                 dic.Add("Поставщик", el.organisation_full_name);
                 dic.Add("Балансовая стоимость", el.money.ToString());
+                dic.Add("date_utilisation", el.date_utilisation.Value.ToShortDateString());
                 listDictionary.Add(dic);
             }
             var listEl = elements.ToList();
@@ -134,8 +137,9 @@ namespace MedicalComponents
             foreach (var el in elements)
             {
                 Dictionary<string, string> dic = new Dictionary<string, string>();
-                dic.Add("Наименование изделия", el.zipPM_element_name);
-                dic.Add("Модель", el.count.ToString());
+                dic.Add("Наименование расходного материала", el.zipPM_element_name);
+                dic.Add("На складе: ", el.count.ToString());
+                //dic.Add("Модель", el.sp_ZIP_AND_PM_Element.zipPM_element_name);
                 listDictionary.Add(dic);
             }
             return listDictionary;
@@ -169,6 +173,13 @@ namespace MedicalComponents
         {
             ExcelController excel = new ExcelController();
             var list = UpdateRM();
+            if (checkBox1.Checked)
+                list = UpdateRM();
+            else
+            {
+                list = UpdateRM().Where(x => x["Наименование расходного материала"] == (string)comboBoxNameRM.SelectedValue);
+            }
+
             if(checkedListBoxRm.SelectedIndex < 0)
             {
                 return;
@@ -193,8 +204,8 @@ namespace MedicalComponents
                 foreach (var el in list1)
                 {
                     Dictionary<string, string> dic = new Dictionary<string, string>();
-                    dic.Add("Наименование изделия", el.zipPM_element_name);
-                    dic.Add("Модель", el.count.ToString());
+                    dic.Add("Наименование расходного материала", el.zipPM_element_name);
+                    dic.Add("На складе: ", el.count.ToString());
                     linqResult.Add(dic);
                 }
                 excel.GeneratePMExample(linqResult);
@@ -213,8 +224,8 @@ namespace MedicalComponents
                 foreach (var el in list1)
                 {
                     Dictionary<string, string> dic = new Dictionary<string, string>();
-                    dic.Add("Наименование изделия", el.zipPM_element_name);
-                    dic.Add("Модель", el.count.ToString());
+                    dic.Add("Наименование расходного материала", el.zipPM_element_name);
+                    dic.Add("На складе: ", el.count.ToString());
                     linqResult.Add(dic);
                 }
 
@@ -234,8 +245,8 @@ namespace MedicalComponents
                 foreach (var el in list1)
                 {
                     Dictionary<string, string> dic = new Dictionary<string, string>();
-                    dic.Add("Наименование изделия", el.zipPM_element_name);
-                    dic.Add("Модель", el.count.ToString());
+                    dic.Add("Наименование расходного материала", el.zipPM_element_name);
+                    dic.Add("На складе: ", el.count.ToString());
                     linqResult.Add(dic);
                 }
 
@@ -277,10 +288,12 @@ namespace MedicalComponents
             if (checkedListBox1.SelectedIndex < 0)
                 return;
             ExcelController excel = new ExcelController();
-
+            
             if (checkedListBox1.SelectedIndex == 0)
             {//3
-                list = list.Where(x => x["reason_write_off"] == "3");
+                list = list.Where(x => DateTime.Parse(x["date_utilisation"]).Year > DateTime.Now.Year 
+                || ((DateTime.Parse(x["date_utilisation"]).Year < dateTimePickerAfter.Value.Year) && DateTime.Parse(x["date_utilisation"]).Month < dateTimePickerAfter.Value.Month)
+                || 1==0);
                 excel.GenerateModelElementsExample(list);
             }
             else if (checkedListBox1.SelectedIndex == 1)
@@ -290,12 +303,14 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 2)
             {//4
-                list = list.Where(x => x["reason_write_off"] == "4");
+                list = list.Where(x => (DateTime.Parse(x["date_utilisation"]).Year * 100 + DateTime.Parse(x["date_utilisation"]).Month > dateTimePickeBbefore.Value.Year * 100 + dateTimePickeBbefore.Value.Month &&
+                DateTime.Parse(x["date_utilisation"]).Year * 100 + DateTime.Parse(x["date_utilisation"]).Month < dateTimePickerAfter.Value.Year * 100 + dateTimePickerAfter.Value.Month));
                 excel.GenerateModelElementsExample(list);
             }
             else if (checkedListBox1.SelectedIndex == 3)
             {//1
-                list = list.Where(x => x["reason_write_off"] == "1");
+                list = list.Where(x => (DateTime.Parse(x["date_utilisation"]).Year * 100 + DateTime.Parse(x["date_utilisation"]).Month > dateTimePickeBbefore.Value.Year * 100 + dateTimePickeBbefore.Value.Month &&
+                DateTime.Parse(x["date_utilisation"]).Year * 100 + DateTime.Parse(x["date_utilisation"]).Month < dateTimePickerAfter.Value.Year * 100 + dateTimePickerAfter.Value.Month));
                 excel.GenerateModelElementsExample(list);
             }
             else if (checkedListBox1.SelectedIndex == 4)
@@ -311,7 +326,7 @@ namespace MedicalComponents
             }
             else if (checkedListBox1.SelectedIndex == 6)
             {
-                list = list.Where(x => x["is_mo"] == "0"
+                list = list.Where(x => x["is_mo"] == "1"
                             && Math.Abs((DateTime.Now - DateTime.Parse(x["date_mo"])).Days) / 365 > 1);
                 excel.GenerateModelElementsExample(list);
             }
